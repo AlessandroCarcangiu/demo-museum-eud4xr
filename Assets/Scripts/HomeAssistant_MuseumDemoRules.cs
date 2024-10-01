@@ -5,7 +5,7 @@ using ECARules4All_DLL.SmartHomeHubClients;
 using ECARules4All_DLL.Utils;
 using UnityEngine;
 
-public class Test_Home_Assistant_Rules : MonoBehaviour
+public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 {
     private APIServer _apiServer;
     
@@ -15,7 +15,7 @@ public class Test_Home_Assistant_Rules : MonoBehaviour
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
         hassClient.url = "http://127.0.0.1:8123";
         hassClient.token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5YjI0M2YzNmY2NTk0MmEyOTM4NGNmODk0MjZhNzQxZCIsImlhdCI6MTcyNTk3NTI2MSwiZXhwIjoyMDQxMzM1MjYxfQ.ylQDAWp0lEs1OGgjxGxAO7LYavuon-FuorspQhM8kDI";
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyZDhjMDAwMTBlZmU0ZGE1YTEzYWI5YTdmMzlkYzVkMiIsImlhdCI6MTcyNzc5NTcwMSwiZXhwIjoyMDQzMTU1NzAxfQ.VQXdrlIKZBFn8RxsDVKAAFwSprt4VWPxh_QzXhA18ho";
         RuleEngine.GetInstance().AddClient(hassClient);
         // configure api server
         _apiServer = new APIServer();
