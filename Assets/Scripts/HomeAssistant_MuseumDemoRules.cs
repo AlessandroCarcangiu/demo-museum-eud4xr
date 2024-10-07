@@ -7,7 +7,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 {
     private APIServer _apiServer;
     public float moveDistance = 2.0f;
-    public GameObject objectToMove;
+    private GameObject objectToMove;
     
     // Start is called before the first frame update
     void Start()
@@ -23,19 +23,17 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         // configure api server
         _apiServer = new APIServer();
         _apiServer.Update += ((HomeAssistantClient)hassClient).receivedUpdateHandler;
-        // from ngrok terminal digit and execute: ngrok http your_port --host-header="your_url:your_port" - example: ngrok http 8080 --host-header="localhost:8080"
+        // from ngrok terminal digit and execute:
+        // ngrok http your_port --host-header="your_url:your_port" -
+        // example: ngrok http 8080 --host-header="localhost:8080"
         
-        
-        
+        objectToMove = GameObject.Find("Test_01");
+        objectToMove.transform.position.Set(0, 0, 0);
+
         if (objectToMove == null)
         {
-            objectToMove = GameObject.Find("MyObject");
-
-            if (objectToMove == null)
-            {
-                Debug.LogError("Nessun oggetto assegnato e 'MyObject' non trovato nella scena.");
-                return;
-            }
+            Debug.LogError("Nessun oggetto assegnato e 'objectToMove' non trovato nella scena.");
+            return;
         }
     }
 
@@ -46,6 +44,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         {
             int randomAxis = Random.Range(0, 3);
             float randomDirection = Random.Range(0, 2) == 0 ? 1f : -1f;
+            
             Vector3 moveVector = Vector3.zero;
             Vector3 startingPosition = objectToMove.transform.position;
 
@@ -61,8 +60,16 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
                     moveVector.z = moveDistance * randomDirection;
                     break;
             }
-            
+
+            objectToMove.transform.position += moveVector;
             Vector3 finalPosition = objectToMove.transform.position;
+            RuleEngine.GetInstance().ExecuteAction(new Action(
+                objectToMove, 
+                "moves to", 
+                new Position(finalPosition.x, finalPosition.y, finalPosition.z)
+                )
+            );
+            
             Debug.Log($"Moved {objectToMove.name} by {moveVector} units on axis {randomAxis} from {startingPosition} to {finalPosition}");
         }
     }
