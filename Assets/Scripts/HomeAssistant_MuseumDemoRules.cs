@@ -6,8 +6,8 @@ using UnityEngine;
 public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 {
     private APIServer _apiServer;
-    public float moveDistance = 2.0f;
-    private GameObject objectToMove;
+    //public float moveDistance = 2.0f;
+    //private GameObject objectToMove;
     
     // Start is called before the first frame update
     void Start()
@@ -22,24 +22,24 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         
         // configure api server
         _apiServer = new APIServer();
-        _apiServer.Update += ((HomeAssistantClient)hassClient).receivedUpdateHandler;
+        _apiServer.Update += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
         // from ngrok terminal digit and execute:
         // ngrok http your_port --host-header="your_url:your_port" -
         // example: ngrok http 8080 --host-header="localhost:8080"
         
-        objectToMove = GameObject.Find("Test_01");
-        objectToMove.transform.position.Set(0, 0, 0);
+        //objectToMove = GameObject.Find("Test_01");
+        //objectToMove.transform.position.Set(0, 0, 0);
 
-        if (objectToMove == null)
-        {
-            Debug.LogError("Nessun oggetto assegnato e 'objectToMove' non trovato nella scena.");
-            return;
-        }
+        //if (objectToMove == null) {
+            //Debug.LogError("Nessun oggetto assegnato e 'objectToMove' non trovato nella scena.");
+            //return;
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.UpArrow) && objectToMove != null)
         {
             int randomAxis = Random.Range(0, 3);
@@ -71,7 +71,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
             );
             
             Debug.Log($"Moved {objectToMove.name} by {moveVector} units on axis {randomAxis} from {startingPosition} to {finalPosition}");
-        }
+        }*/
     }
     
     private void OnDisable()
