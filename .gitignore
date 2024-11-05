@@ -72,6 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 *.meta
-
+!Assets/DLL/**/*.meta
 #JetBrains Rider cache directory
 .idea/
