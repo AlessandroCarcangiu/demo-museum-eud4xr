@@ -18,7 +18,6 @@ public class ECAUI_Rule : MonoBehaviour
         {
             rule.Then.Add(child.GetComponent<ECAUI_Action>().GetActionPlaceholder());
         }
-        // var rule = RuleEngine.TryToCreateRule(When, null, Then);
         return rule;
     }
     

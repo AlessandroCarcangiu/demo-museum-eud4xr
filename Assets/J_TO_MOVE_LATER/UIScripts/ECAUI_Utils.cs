@@ -334,8 +334,7 @@ public class ECAUI_Utils
             {
                 actions.Add(actionPlaceholder.ToEcaAction());
             }
-
-            return new Rule(evt, actions);
+            return Rule.TryCreateRule(evt, null, actions);
         }
     }
 
