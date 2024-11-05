@@ -24,7 +24,11 @@ public class ECAUI_UIManager : MonoBehaviour
         var r = new Rule(
             // new Action(GameObject.Find("FishAnimal"), "interacts with", GameObject.Find("ArtInteractable")),
             new Action(GameObject.Find("FishAnimal"), "activates"),
-            new List<Action> { new Action(GameObject.Find("ArtInteractable"), "deactivates"), new Action(GameObject.Find("LandVehicle"), "deactivates")}
+            new List<Action> {
+                new Action(GameObject.Find("ArtInteractable"), "deactivates"), 
+                new Action(GameObject.Find("LandVehicle"), "deactivates")
+                
+            }
         );
         RuleEngine.GetInstance().Add(r);
         

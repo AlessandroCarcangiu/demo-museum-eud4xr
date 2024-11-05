@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5568400787830177137}
   - component: {fileID: 4101143022214994857}
-  - component: {fileID: 826274828641930854}
+  - component: {fileID: 9119616925050403258}
   m_Layer: 0
   m_Name: RuleDetails_Action
   m_TagString: Untagged
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &826274828641930854
+--- !u!114 &9119616925050403258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 134105892811966261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97ca55e70810d5d48839c347b684d0e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 74cbc57e84af9be41b26e711fc46b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WhenThen_InputText: {fileID: 5439433991439119236}
@@ -6464,7 +6464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4864c990b7d2d649b845c35cec38176, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c35d420f59f0d049ae85ee2ca7539a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
