@@ -1,0 +1,1146 @@
+- id: '1722007598806'
+  alias: Test ECAObject service
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ciao
+    event_data:
+      message: ciao
+  condition: []
+  action:
+  - event: test
+    event_data:
+      message: attribute type = giallo
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_ecaobject
+      newPos:
+        x: 0
+        y: 0
+        z: 1
+    enabled: false
+    action: eud4xr.moves_to
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_ecaobject
+      obj: sensor.your_game_object_name
+    enabled: false
+    action: eud4xr.looks_to
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_ecaobject
+      param1: 'true'
+    enabled: false
+    action: eud4xr.test
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_ecaobject
+      path:
+      - x: 10
+        y: 20
+        z: 30
+      - x: 15
+        y: 25
+        z: 35
+      - x: 5
+        y: 15
+        z: 25
+    enabled: false
+    action: eud4xr.moves_on
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_keypad
+      input: testast
+    enabled: false
+    action: eud4xr.inserts
+  - metadata: {}
+    data:
+      entity_id: sensor.tshirt_1_flyinganimal
+      p:
+      - x: 10
+        y: 20
+        z: 30
+      - x: 15
+        y: 25
+        z: 35
+      - x: 5
+        y: 15
+        z: 25
+    action: eud4xr.flies_on
+    enabled: false
+  - metadata: {}
+    data:
+      entity_id: sensor.t_shirt_test_ecaobject
+      newPos:
+        x: 30
+        y: 30
+        z: 30
+    enabled: false
+    action: eud4xr.moves_to
+  - metadata: {}
+    data:
+      entity_id: sensor.t_shirt_test_ecaobject
+      obj: sensor.tshirt_1
+    enabled: true
+    action: eud4xr.looks_to
+  mode: single
+- id: b4690c170f7841639a23fca4f88474ab
+  alias: Risposta a Pippo do_something con valori specifici
+  trigger:
+  - platform: template
+    value_template: "{{ state_attr('sensor.t_shirt_test_ecaobject', 'position')['x']
+      == 30 and\n    state_attr('sensor.t_shirt_test_ecaobject', 'position')['y']
+      == 30 and\n    state_attr('sensor.t_shirt_test_ecaobject', 'position')['z']
+      == 30 }}\n"
+  action:
+  - metadata: {}
+    data:
+      entity_id: sensor.t_shirt_test_ecaobject
+      newRot:
+        x: 5
+        y: 30
+        z: 30
+    enabled: true
+    action: eud4xr.rotates_around
+- id: '1724832341923'
+  alias: Test Event as Service
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      subject: sensor.t_shirt_test_ecaobject
+      verb: looks to
+      parameters:
+        obj: sensor.tshirt_1
+    enabled: true
+  - platform: event
+    event_type: ciao
+    event_data:
+      message: ciao2
+    enabled: false
+  condition: []
+  action:
+  - metadata: {}
+    data:
+      entity_id: sensor.t_shirt_test_ecaobject
+      path:
+      - x: 1
+        y: 1
+        z: 1
+      - x: 2
+        y: 2
+        z: 2
+      - x: 3
+        y: 3
+        z: 3
+    enabled: true
+    action: eud4xr.moves_on
+  mode: single
+- id: '1729087566439'
+  alias: Test event - 1
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: t_shirt_test
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+    event_data:
+      test: test event
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.beethovenstatue_ecaobject
+  mode: single
+- id: '1729087566440'
+  alias: Cavnas ON - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_rondadinotte
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_rondadinotte_ecaobject
+  mode: single
+- id: '1729087566441'
+  alias: Cavnas OFF - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_rondadinotte
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_rondadinotte_ecaobject
+  mode: single
+- id: '1729087566442'
+  alias: Cavnas ON - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_ophelia
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_ophelia_ecaobject
+  mode: single
+- id: '1729087566443'
+  alias: Cavnas OFF - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_ophelia
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_ophelia_ecaobject
+  mode: single
+- id: '1729087566444'
+  alias: Cavnas ON - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lazatteradellamedusa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  mode: single
+- id: '1729087566445'
+  alias: Cavnas OFF - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lazatteradellamedusa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  mode: single
+- id: '1729087566446'
+  alias: Cavnas ON - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lapersistenzadellamemoria
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  mode: single
+- id: '1729087566447'
+  alias: Cavnas OFF - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lapersistenzadellamemoria
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  mode: single
+- id: '1729087566448'
+  alias: Cavnas ON - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_colazionesullerba
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_colazionesullerba_ecaobject
+  mode: single
+- id: '1729087566449'
+  alias: Cavnas OFF - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_colazionesullerba
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_colazionesullerba_ecaobject
+  mode: single
+- id: '1729087566450'
+  alias: Cavnas ON - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lanascitadivenere
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  mode: single
+- id: '1729087566451'
+  alias: Cavnas OFF - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lanascitadivenere
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  mode: single
+- id: '1729087566452'
+  alias: Cavnas ON - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lagrandeondadikanagawa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  mode: single
+- id: '1729087566453'
+  alias: Cavnas OFF - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lagrandeondadikanagawa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  mode: single
+- id: '1729087566454'
+  alias: Cavnas ON - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_primavera
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_primavera_ecaobject
+  mode: single
+- id: '1729087566455'
+  alias: Cavnas OFF - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_primavera
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_primavera_ecaobject
+  mode: single
+- id: '1729087566456'
+  alias: Cavnas ON - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_ragazzacolturbante
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  mode: single
+- id: '1729087566457'
+  alias: Cavnas OFF - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_ragazzacolturbante
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  mode: single
+- id: '1729087566458'
+  alias: Cavnas ON - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_scuoladiatene
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.shows
+    data:
+      entity_id: sensor.canvas_scuoladiatene_ecaobject
+  mode: single
+- id: '1729087566459'
+  alias: Cavnas OFF - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_scuoladiatene
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_scuoladiatene_ecaobject
+  mode: single
+- id: '1729087566460'
+  alias: SpotLight ON - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_rondadinotte
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_rondadinotte_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566461'
+  alias: SpotLight OFF - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_rondadinotte
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_rondadinotte_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566462'
+  alias: SpotLight ON - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_ophelia
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ophelia_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566463'
+  alias: SpotLight OFF - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_ophelia
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ophelia_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566464'
+  alias: SpotLight ON - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lazatteradellamedusa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566465'
+  alias: SpotLight OFF - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lazatteradellamedusa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566466'
+  alias: SpotLight ON - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lapersistenzadellamemoria
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566467'
+  alias: SpotLight OFF - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lapersistenzadellamemoria
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566468'
+  alias: SpotLight ON - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_colazionesullerba
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_colazionesullerba_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566469'
+  alias: SpotLight OFF - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_colazionesullerba
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_colazionesullerba_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566470'
+  alias: SpotLight ON - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lanascitadivenere
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lanascitadivenere_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566471'
+  alias: SpotLight OFF - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lanascitadivenere
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lanascitadivenere_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566472'
+  alias: SpotLight ON - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_lagrandeondadikanagawa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566473'
+  alias: SpotLight OFF - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_lagrandeondadikanagawa
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566474'
+  alias: SpotLight ON - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_primavera
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_primavera_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566475'
+  alias: SpotLight OFF - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_primavera
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_primavera_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566476'
+  alias: SpotLight ON - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_ragazzacolturbante
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566477'
+  alias: SpotLight OFF - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_ragazzacolturbante
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
+      newStatus: false
+  mode: single
+- id: '1729087566478'
+  alias: SpotLight ON - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: quadro_scuoladiatene
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_scuoladiatene_ecalight
+      newStatus: true
+  mode: single
+- id: '1729087566479'
+  alias: SpotLight OFF - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: stops-interacting with
+      variable: quadro_scuoladiatene
+      subject: player
+  condition: []
+  action:
+  - event: eud4xr
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_scuoladiatene_ecalight
+      newStatus: false
+  mode: single
+
+
+- id: '1729087566491'
+  alias: Statue Prev - David <- Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_david_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_baccus_ecaobject
+  mode: single
+
+- id: '1729087566481'
+  alias: Statue Prev - Baccus <- Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active") ==
+      "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_baccus_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_hijikata_ecaobject
+  mode: single
+
+- id: '1729087566483'
+  alias: Statue Prev - Hijikata <- Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_muse_thalia_ecaobject", "active")
+      == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_hijikata_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_muse_thalia_ecaobject
+  mode: single
+
+- id: '1729087566485'
+  alias: Statue Prev - Muse Thalia <- Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active")
+      == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_muse_thalia_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_photogrammery_ecaobject
+  mode: single
+
+- id: '1729087566487'
+  alias: Statue Prev - Photogrammery <- Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_photogrammery_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_chinese_warrior_ecaobject
+  mode: single
+
+- id: '1729087566489'
+  alias: Statue Prev - Chinese Warrior <- David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_prev
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_david_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_chinese_warrior_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_david_ecaobject
+  mode: single
+
+
+
+
+
+
+- id: '1729087566591'
+  alias: Statue Next - David -> Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_david_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_baccus_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_david_ecaobject
+  mode: single
+
+- id: '1729087566581'
+  alias: Statue Next - Baccus -> Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_baccus_ecaobject", "active") ==
+      "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_hijikata_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_baccus_ecaobject
+  mode: single
+
+- id: '1729087566583'
+  alias: Statue Next - Hijikata -> Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active")
+      == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_muse_thalia_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_hijikata_ecaobject
+  mode: single
+
+- id: '1729087566585'
+  alias: Statue Next - Muse Thalia -> Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_muse_thalia_ecaobject", "active")
+      == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_photogrammery_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_muse_thalia_ecaobject
+  mode: single
+
+- id: '1729087566587'
+  alias: Statue Next - Photogrammery -> Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_chinese_warrior_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_photogrammery_ecaobject
+  mode: single
+
+- id: '1729087566589'
+  alias: Statue Next - Chinese Warrior -> David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_next
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.activates
+    data:
+      entity_id: sensor.statue_david_ecaobject
+  - action: eud4xr.deactivates
+    data:
+      entity_id: sensor.statue_chinese_warrior_ecaobject
+  mode: single
