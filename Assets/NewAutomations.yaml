@@ -856,8 +856,6 @@
       entity_id: sensor.spotlight_scuoladiatene_ecalight
       newStatus: false
   mode: single
-
-
 - id: '1729087566491'
   alias: Statue Prev - David <- Baccus
   description: ''
@@ -880,7 +878,6 @@
     data:
       entity_id: sensor.statue_baccus_ecaobject
   mode: single
-
 - id: '1729087566481'
   alias: Statue Prev - Baccus <- Hijikata
   description: ''
@@ -904,7 +901,6 @@
     data:
       entity_id: sensor.statue_hijikata_ecaobject
   mode: single
-
 - id: '1729087566483'
   alias: Statue Prev - Hijikata <- Muse Thalia
   description: ''
@@ -928,7 +924,6 @@
     data:
       entity_id: sensor.statue_muse_thalia_ecaobject
   mode: single
-
 - id: '1729087566485'
   alias: Statue Prev - Muse Thalia <- Photogrammery
   description: ''
@@ -952,7 +947,6 @@
     data:
       entity_id: sensor.statue_photogrammery_ecaobject
   mode: single
-
 - id: '1729087566487'
   alias: Statue Prev - Photogrammery <- Chinese Warrior
   description: ''
@@ -965,7 +959,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.activates
@@ -975,7 +970,6 @@
     data:
       entity_id: sensor.statue_chinese_warrior_ecaobject
   mode: single
-
 - id: '1729087566489'
   alias: Statue Prev - Chinese Warrior <- David
   description: ''
@@ -998,12 +992,6 @@
     data:
       entity_id: sensor.statue_david_ecaobject
   mode: single
-
-
-
-
-
-
 - id: '1729087566591'
   alias: Statue Next - David -> Baccus
   description: ''
@@ -1026,7 +1014,6 @@
     data:
       entity_id: sensor.statue_david_ecaobject
   mode: single
-
 - id: '1729087566581'
   alias: Statue Next - Baccus -> Hijikata
   description: ''
@@ -1039,8 +1026,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_baccus_ecaobject", "active") ==
-      "yes"}}'
+    value_template: '{{state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.activates
@@ -1050,7 +1036,6 @@
     data:
       entity_id: sensor.statue_baccus_ecaobject
   mode: single
-
 - id: '1729087566583'
   alias: Statue Next - Hijikata -> Muse Thalia
   description: ''
@@ -1063,8 +1048,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active")
-      == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active") ==
+      "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.activates
@@ -1074,7 +1059,6 @@
     data:
       entity_id: sensor.statue_hijikata_ecaobject
   mode: single
-
 - id: '1729087566585'
   alias: Statue Next - Muse Thalia -> Photogrammery
   description: ''
@@ -1098,7 +1082,6 @@
     data:
       entity_id: sensor.statue_muse_thalia_ecaobject
   mode: single
-
 - id: '1729087566587'
   alias: Statue Next - Photogrammery -> Chinese Warrior
   description: ''
@@ -1111,7 +1094,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.activates
@@ -1121,7 +1105,6 @@
     data:
       entity_id: sensor.statue_photogrammery_ecaobject
   mode: single
-
 - id: '1729087566589'
   alias: Statue Next - Chinese Warrior -> David
   description: ''
@@ -1134,7 +1117,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.activates
@@ -1143,4 +1127,148 @@
   - action: eud4xr.deactivates
     data:
       entity_id: sensor.statue_chinese_warrior_ecaobject
+  mode: single
+- id: '1729087566601'
+  alias: Statue Rotation - Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_baccus_ecaobject
+      newRot:
+        x: 0
+        y: 0
+        z: 30
+    enabled: true
+  mode: single
+- id: '1729087566602'
+  alias: Statue Rotation - Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_hijikata_ecaobject
+      newRot:
+        x: 0
+        y: 30
+        z: 0
+    enabled: true
+  mode: single
+- id: '1729087566603'
+  alias: Statue Rotation - Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_muse_thalia_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_muse_thalia_ecaobject
+      newRot:
+        x: 0
+        y: 0
+        z: 30
+    enabled: true
+  mode: single
+- id: '1729087566604'
+  alias: Statue Rotation - Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_photogrammery_ecaobject
+      newRot:
+        x: 0
+        y: 0
+        z: 30
+    enabled: true
+  mode: single
+- id: '1729087566605'
+  alias: Statue Rotation - Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_chinese_warrior_ecaobject
+      newRot:
+        x: 0
+        y: 0
+        z: 30
+    enabled: true
+  mode: single
+- id: '1729087566606'
+  alias: Statue Rotation - David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: statue_button_rotation
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{state_attr("sensor.statue_david_ecaobject", "active") == "yes"}}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.rotates_around
+    data:
+      entity_id: sensor.statue_david_ecaobject
+      newRot:
+        x: 0
+        y: 0
+        z: 30
+    enabled: true
   mode: single
