@@ -1164,7 +1164,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_hijikata_ecaobject", "active") ==
+      "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.rotates_around
@@ -1188,7 +1189,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_muse_thalia_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_muse_thalia_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.rotates_around
@@ -1212,7 +1214,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_photogrammery_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.rotates_around
@@ -1220,8 +1223,8 @@
       entity_id: sensor.statue_photogrammery_ecaobject
       newRot:
         x: 0
-        y: 0
-        z: 30
+        y: 45
+        z: 0
     enabled: true
   mode: single
 - id: '1729087566605'
@@ -1236,7 +1239,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"}}'
+    value_template: '{{state_attr("sensor.statue_chinese_warrior_ecaobject", "active")
+      == "yes"}}'
   action:
   - event: eud4xr
   - action: eud4xr.rotates_around
@@ -1271,4 +1275,68 @@
         y: 0
         z: 30
     enabled: true
+  mode: single
+- id: '1729087566701'
+  alias: Double Dimensions - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_rondadinotte
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_rondadinotte_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_rondadinotte_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_rondadinotte_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_rondadinotte_ecaobject
+      newPos:
+        x: -3.9
+        y: 3
+        z: -4
+  mode: single
+- id: '1729087566702'
+  alias: Half Dimensions - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_rondadinotte
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_rondadinotte_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_rondadinotte_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_rondadinotte_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_rondadinotte_ecaobject
   mode: single

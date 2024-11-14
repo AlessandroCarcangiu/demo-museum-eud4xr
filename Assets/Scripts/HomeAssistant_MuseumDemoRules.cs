@@ -11,7 +11,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         // Home Assistant configuration
         // configure home assistant client
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
