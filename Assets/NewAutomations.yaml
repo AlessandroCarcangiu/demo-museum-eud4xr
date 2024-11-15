@@ -997,6 +997,9 @@
         z: 30
     enabled: true
   mode: single
+
+
+
 - id: '1729087566701'
   alias: Double Dimensions - Ronda di Notte
   description: ''
@@ -1035,6 +1038,7 @@
         y: 3
         z: -4
   mode: single
+
 - id: '1729087566702'
   alias: Half Dimensions - Ronda di Notte
   description: ''
@@ -1060,4 +1064,598 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_rondadinotte_ecaobject
+  mode: single
+
+- id: '1729087566703'
+  alias: Double Dimensions - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_ophelia
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_ophelia_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_ophelia_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_ophelia_ecaobject
+      newPos:
+        x: -3.9
+        y: 3
+        z: 0.01
+  mode: single
+
+- id: '1729087566704'
+  alias: Half Dimensions - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_ophelia
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_ophelia_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_ophelia_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_ophelia_ecaobject
+  mode: single
+
+- id: '1729087566705'
+  alias: Double Dimensions - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lazatteradellamedusa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_lazatteradellamedusa_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_lazatteradellamedusa_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+      newPos:
+        x: -3.9
+        y: 3
+        z: 4
+  mode: single
+
+- id: '1729087566706'
+  alias: Half Dimensions - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lazatteradellamedusa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_lazatteradellamedusa_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_lazatteradellamedusa_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  mode: single
+
+- id: '1729087566707'
+  alias: Double Dimensions - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lapersistenzadellamemoria
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_lapersistenzadellamemoria_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_lapersistenzadellamemoria_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+      newPos:
+        x: -2.5
+        y: 3
+        z: 8
+  mode: single
+
+- id: '1729087566708'
+  alias: Half Dimensions - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lapersistenzadellamemoria
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_lapersistenzadellamemoria_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_lapersistenzadellamemoria_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  mode: single
+
+- id: '1729087566709'
+  alias: Double Dimensions - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_colazionesullerba
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_colazionesullerba_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_colazionesullerba_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_colazionesullerba_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_colazionesullerba_ecaobject
+      newPos:
+        x: 2.5
+        y: 3
+        z: 8
+  mode: single
+
+- id: '1729087566710'
+  alias: Half Dimensions - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_colazionesullerba
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_colazionesullerba_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_colazionesullerba_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_colazionesullerba_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_colazionesullerba_ecaobject
+  mode: single
+
+- id: '1729087566711'
+  alias: Double Dimensions - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lanascitadivenere
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lanascitadivenere_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_lanascitadivenere_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_lanascitadivenere_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_lanascitadivenere_ecaobject
+      newPos:
+        x: 3.9
+        y: 3
+        z: 4
+  mode: single
+
+- id: '1729087566712'
+  alias: Half Dimensions - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lanascitadivenere
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lanascitadivenere_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_lanascitadivenere_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_lanascitadivenere_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  mode: single
+
+- id: '1729087566713'
+  alias: Double Dimensions - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lagrandeondadikanagawa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_lagrandeondadikanagawa_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_lagrandeondadikanagawa_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+      newPos:
+        x: 3.9
+        y: 3
+        z: 0.01
+  mode: single
+
+- id: '1729087566714'
+  alias: Half Dimensions - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_lagrandeondadikanagawa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_lagrandeondadikanagawa_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_lagrandeondadikanagawa_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  mode: single
+
+- id: '1729087566715'
+  alias: Double Dimensions - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_primavera
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_primavera_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_primavera_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_primavera_ecaobject
+      newPos:
+        x: 3.9
+        y: 3
+        z: -4
+  mode: single
+
+- id: '1729087566716'
+  alias: Half Dimensions - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_primavera
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_primavera_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_primavera_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_primavera_ecaobject
+  mode: single
+
+- id: '1729087566717'
+  alias: Double Dimensions - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_ragazzacolturbante
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_ragazzacolturbante_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_ragazzacolturbante_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_ragazzacolturbante_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+      newPos:
+        x: -2.5
+        y: 3
+        z: -8
+  mode: single
+
+- id: '1729087566718'
+  alias: Half Dimensions - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_ragazzacolturbante
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_ragazzacolturbante_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_ragazzacolturbante_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_ragazzacolturbante_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  mode: single
+
+- id: '1729087566719'
+  alias: Double Dimensions - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_scuoladiatene
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_scuoladiatene_ecaobject", "scale")
+      == {"x": 1, "y": 1, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.scales_to
+    data:
+      entity_id: sensor.quadro_scuoladiatene_ecaobject
+      newScale:
+        x: 2
+        y: 2
+        z: 1
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.buttons_scuoladiatene_ecaobject
+      newPos:
+        x: 0.03
+        y: -0.3
+        z: 0
+  - action: eud4xr.moves_to
+    data:
+      entity_id: sensor.canvas_scuoladiatene_ecaobject
+      newPos:
+        x: 2.5
+        y: 3
+        z: 8
+  mode: single
+
+- id: '1729087566720'
+  alias: Half Dimensions - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: rd_scuoladiatene
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.quadro_scuoladiatene_ecaobject", "scale")
+      == {"x": 2, "y": 2, "z": 1} }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.quadro_scuoladiatene_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.buttons_scuoladiatene_ecaobject
+  - action: eud4xr.restores_original_settings
+    data:
+      entity_id: sensor.canvas_scuoladiatene_ecaobject
   mode: single
