@@ -157,7 +157,7 @@
       entity_id: sensor.beethovenstatue_ecaobject
   mode: single
 - id: '1729087566440'
-  alias: Cavnas ON - Ronda di Notte
+  alias: Cavnas & Spotlight ON - Ronda di Notte
   description: ''
   trigger:
   - platform: event
@@ -172,9 +172,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_rondadinotte_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_rondadinotte_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566441'
-  alias: Cavnas OFF - Ronda di Notte
+  alias: Cavnas & Spotlight OFF - Ronda di Notte
   description: ''
   trigger:
   - platform: event
@@ -189,9 +193,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_rondadinotte_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_rondadinotte_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566442'
-  alias: Cavnas ON - Ophelia
+  alias: Cavnas & Spotlight ON - Ophelia
   description: ''
   trigger:
   - platform: event
@@ -206,9 +214,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_ophelia_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ophelia_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566443'
-  alias: Cavnas OFF - Ophelia
+  alias: Cavnas & Spotlight OFF - Ophelia
   description: ''
   trigger:
   - platform: event
@@ -223,9 +235,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_ophelia_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ophelia_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566444'
-  alias: Cavnas ON - La Zattera della Medusa
+  alias: Cavnas & Spotlight ON - La Zattera della Medusa
   description: ''
   trigger:
   - platform: event
@@ -240,9 +256,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566445'
-  alias: Cavnas OFF - La Zattera della Medusa
+  alias: Cavnas & Spotlight OFF - La Zattera della Medusa
   description: ''
   trigger:
   - platform: event
@@ -257,9 +277,14 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
+      newStatus: false
   mode: single
+# Per qualche motivo, spotlight_lapersistenzadellamemoria_ecalight non si accende
 - id: '1729087566446'
-  alias: Cavnas ON - La Persistenza della Memoria
+  alias: Cavnas & Spotlight ON - La Persistenza della Memoria
   description: ''
   trigger:
   - platform: event
@@ -274,9 +299,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566447'
-  alias: Cavnas OFF - La Persistenza della Memoria
+  alias: Cavnas & Spotlight OFF - La Persistenza della Memoria
   description: ''
   trigger:
   - platform: event
@@ -291,9 +320,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566448'
-  alias: Cavnas ON - Colazione sull Erba
+  alias: Cavnas & Spotlight ON - Colazione sull Erba
   description: ''
   trigger:
   - platform: event
@@ -308,9 +341,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_colazionesullerba_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_colazionesullerba_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566449'
-  alias: Cavnas OFF - Colazione sull Erba
+  alias: Cavnas & Spotlight OFF - Colazione sull Erba
   description: ''
   trigger:
   - platform: event
@@ -325,9 +362,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_colazionesullerba_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_colazionesullerba_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566450'
-  alias: Cavnas ON - La Nascita di Venere
+  alias: Cavnas & Spotlight ON - La Nascita di Venere
   description: ''
   trigger:
   - platform: event
@@ -342,9 +383,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lanascitadivenere_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566451'
-  alias: Cavnas OFF - La Nascita di Venere
+  alias: Cavnas & Spotlight OFF - La Nascita di Venere
   description: ''
   trigger:
   - platform: event
@@ -359,9 +404,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lanascitadivenere_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566452'
-  alias: Cavnas ON - La Grande Onda di Kanagawa
+  alias: Cavnas & Spotlight ON - La Grande Onda di Kanagawa
   description: ''
   trigger:
   - platform: event
@@ -376,9 +425,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566453'
-  alias: Cavnas OFF - La Grande Onda di Kanagawa
+  alias: Cavnas & Spotlight OFF - La Grande Onda di Kanagawa
   description: ''
   trigger:
   - platform: event
@@ -393,9 +446,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566454'
-  alias: Cavnas ON - Primavera
+  alias: Cavnas & Spotlight ON - Primavera
   description: ''
   trigger:
   - platform: event
@@ -410,9 +467,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_primavera_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_primavera_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566455'
-  alias: Cavnas OFF - Primavera
+  alias: Cavnas & Spotlight OFF - Primavera
   description: ''
   trigger:
   - platform: event
@@ -427,9 +488,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_primavera_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_primavera_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566456'
-  alias: Cavnas ON - Ragazza col Turbante
+  alias: Cavnas & Spotlight ON - Ragazza col Turbante
   description: ''
   trigger:
   - platform: event
@@ -444,9 +509,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
+      newStatus: true
   mode: single
 - id: '1729087566457'
-  alias: Cavnas OFF - Ragazza col Turbante
+  alias: Cavnas & Spotlight OFF - Ragazza col Turbante
   description: ''
   trigger:
   - platform: event
@@ -461,9 +530,13 @@
   - action: eud4xr.hides
     data:
       entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  - action: eud4xr.turns
+    data:
+      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
+      newStatus: false
   mode: single
 - id: '1729087566458'
-  alias: Cavnas ON - Scuola di Atene
+  alias: Cavnas & Spotlight ON - Scuola di Atene
   description: ''
   trigger:
   - platform: event
@@ -478,368 +551,13 @@
   - action: eud4xr.shows
     data:
       entity_id: sensor.canvas_scuoladiatene_ecaobject
-  mode: single
-- id: '1729087566459'
-  alias: Cavnas OFF - Scuola di Atene
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_scuoladiatene
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.hides
-    data:
-      entity_id: sensor.canvas_scuoladiatene_ecaobject
-  mode: single
-- id: '1729087566460'
-  alias: SpotLight ON - Ronda di Notte
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_rondadinotte
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_rondadinotte_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566461'
-  alias: SpotLight OFF - Ronda di Notte
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_rondadinotte
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_rondadinotte_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566462'
-  alias: SpotLight ON - Ophelia
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_ophelia
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_ophelia_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566463'
-  alias: SpotLight OFF - Ophelia
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_ophelia
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_ophelia_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566464'
-  alias: SpotLight ON - La Zattera della Medusa
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_lazatteradellamedusa
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566465'
-  alias: SpotLight OFF - La Zattera della Medusa
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_lazatteradellamedusa
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566466'
-  alias: SpotLight ON - La Persistenza della Memoria
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_lapersistenzadellamemoria
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566467'
-  alias: SpotLight OFF - La Persistenza della Memoria
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_lapersistenzadellamemoria
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lapersistenzadellamemoria_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566468'
-  alias: SpotLight ON - Colazione sull Erba
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_colazionesullerba
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_colazionesullerba_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566469'
-  alias: SpotLight OFF - Colazione sull Erba
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_colazionesullerba
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_colazionesullerba_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566470'
-  alias: SpotLight ON - La Nascita di Venere
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_lanascitadivenere
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lanascitadivenere_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566471'
-  alias: SpotLight OFF - La Nascita di Venere
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_lanascitadivenere
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lanascitadivenere_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566472'
-  alias: SpotLight ON - La Grande Onda di Kanagawa
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_lagrandeondadikanagawa
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566473'
-  alias: SpotLight OFF - La Grande Onda di Kanagawa
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_lagrandeondadikanagawa
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_lagrandeondadikanagawa_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566474'
-  alias: SpotLight ON - Primavera
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_primavera
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_primavera_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566475'
-  alias: SpotLight OFF - Primavera
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_primavera
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_primavera_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566476'
-  alias: SpotLight ON - Ragazza col Turbante
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_ragazzacolturbante
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
-      newStatus: true
-  mode: single
-- id: '1729087566477'
-  alias: SpotLight OFF - Ragazza col Turbante
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: stops-interacting with
-      variable: quadro_ragazzacolturbante
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
-  - action: eud4xr.turns
-    data:
-      entity_id: sensor.spotlight_ragazzacolturbante_ecalight
-      newStatus: false
-  mode: single
-- id: '1729087566478'
-  alias: SpotLight ON - Scuola di Atene
-  description: ''
-  trigger:
-  - platform: event
-    event_type: eud4xr
-    event_data:
-      verb: interacts with
-      variable: quadro_scuoladiatene
-      subject: player
-  condition: []
-  action:
-  - event: eud4xr
   - action: eud4xr.turns
     data:
       entity_id: sensor.spotlight_scuoladiatene_ecalight
       newStatus: true
   mode: single
-- id: '1729087566479'
-  alias: SpotLight OFF - Scuola di Atene
+- id: '1729087566459'
+  alias: Cavnas & Spotlight OFF - Scuola di Atene
   description: ''
   trigger:
   - platform: event
@@ -851,6 +569,9 @@
   condition: []
   action:
   - event: eud4xr
+  - action: eud4xr.hides
+    data:
+      entity_id: sensor.canvas_scuoladiatene_ecaobject
   - action: eud4xr.turns
     data:
       entity_id: sensor.spotlight_scuoladiatene_ecalight
