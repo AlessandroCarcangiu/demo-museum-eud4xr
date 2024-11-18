@@ -1659,3 +1659,156 @@
     data:
       entity_id: sensor.canvas_scuoladiatene_ecaobject
   mode: single
+
+
+- id: '1729087566800'
+  alias: Set Audio Description - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_rondadinotte
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "stopped")
+      == "yes" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.stops
+    data:
+      entity_id: sensor.audio_source_sound
+  - action: eud4xr.changes_source_to
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: "RondaDiNotte_AD"
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566801'
+  alias: Pause Audio Description - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_rondadinotte
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
+      == "RondaDiNotte_AD" }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing")
+      == "yes" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566802'
+  alias: Resume Audio Description - Ronda di Notte
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_rondadinotte
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
+      == "RondaDiNotte_AD" }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused")
+      == "yes" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566803'
+  alias: Set Audio Description - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_ophelia
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
+      != "Ophelia_AD" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.stops
+    data:
+      entity_id: sensor.audio_source_sound
+  - action: eud4xr.changes_source_to
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: "Ophelia_AD"
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566804'
+  alias: Pause Audio Description - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_ophelia
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
+      == "Ophelia_AD" }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing")
+      == "yes" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566805'
+  alias: Resume Audio Description - Ophelia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable: da_ophelia
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
+      == "Ophelia_AD" }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused")
+      == "yes" }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
