@@ -282,7 +282,6 @@
       entity_id: sensor.spotlight_lazatteradellamedusa_ecalight
       newStatus: false
   mode: single
-# Per qualche motivo, spotlight_lapersistenzadellamemoria_ecalight non si accende
 - id: '1729087566446'
   alias: Cavnas & Spotlight ON - La Persistenza della Memoria
   description: ''
@@ -997,9 +996,6 @@
         z: 30
     enabled: true
   mode: single
-
-
-
 - id: '1729087566701'
   alias: Double Dimensions - Ronda di Notte
   description: ''
@@ -1038,7 +1034,6 @@
         y: 3
         z: -4
   mode: single
-
 - id: '1729087566702'
   alias: Half Dimensions - Ronda di Notte
   description: ''
@@ -1065,7 +1060,6 @@
     data:
       entity_id: sensor.canvas_rondadinotte_ecaobject
   mode: single
-
 - id: '1729087566703'
   alias: Double Dimensions - Ophelia
   description: ''
@@ -1078,8 +1072,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale")
-      == {"x": 1, "y": 1, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale") ==
+      {"x": 1, "y": 1, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.scales_to
@@ -1104,7 +1098,6 @@
         y: 3
         z: 0.01
   mode: single
-
 - id: '1729087566704'
   alias: Half Dimensions - Ophelia
   description: ''
@@ -1117,8 +1110,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale")
-      == {"x": 2, "y": 2, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_ophelia_ecaobject", "scale") ==
+      {"x": 2, "y": 2, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.restores_original_settings
@@ -1131,7 +1124,6 @@
     data:
       entity_id: sensor.canvas_ophelia_ecaobject
   mode: single
-
 - id: '1729087566705'
   alias: Double Dimensions - La Zattera della Medusa
   description: ''
@@ -1144,8 +1136,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject", "scale")
-      == {"x": 1, "y": 1, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject",
+      "scale") == {"x": 1, "y": 1, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.scales_to
@@ -1170,7 +1162,6 @@
         y: 3
         z: 4
   mode: single
-
 - id: '1729087566706'
   alias: Half Dimensions - La Zattera della Medusa
   description: ''
@@ -1183,8 +1174,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject", "scale")
-      == {"x": 2, "y": 2, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lazatteradellamedusa_ecaobject",
+      "scale") == {"x": 2, "y": 2, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.restores_original_settings
@@ -1197,7 +1188,6 @@
     data:
       entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
   mode: single
-
 - id: '1729087566707'
   alias: Double Dimensions - La Persistenza della Memoria
   description: ''
@@ -1210,8 +1200,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject", "scale")
-      == {"x": 1, "y": 1, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject",
+      "scale") == {"x": 1, "y": 1, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.scales_to
@@ -1236,7 +1226,6 @@
         y: 3
         z: 7.99
   mode: single
-
 - id: '1729087566708'
   alias: Half Dimensions - La Persistenza della Memoria
   description: ''
@@ -1249,8 +1238,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject", "scale")
-      == {"x": 2, "y": 2, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lapersistenzadellamemoria_ecaobject",
+      "scale") == {"x": 2, "y": 2, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.restores_original_settings
@@ -1263,7 +1252,6 @@
     data:
       entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
   mode: single
-
 - id: '1729087566709'
   alias: Double Dimensions - Colazione sull Erba
   description: ''
@@ -1302,7 +1290,6 @@
         y: 3
         z: 7.99
   mode: single
-
 - id: '1729087566710'
   alias: Half Dimensions - Colazione sull Erba
   description: ''
@@ -1329,7 +1316,6 @@
     data:
       entity_id: sensor.canvas_colazionesullerba_ecaobject
   mode: single
-
 - id: '1729087566711'
   alias: Double Dimensions - La Nascita di Venere
   description: ''
@@ -1368,7 +1354,6 @@
         y: 3
         z: 4
   mode: single
-
 - id: '1729087566712'
   alias: Half Dimensions - La Nascita di Venere
   description: ''
@@ -1395,7 +1380,6 @@
     data:
       entity_id: sensor.canvas_lanascitadivenere_ecaobject
   mode: single
-
 - id: '1729087566713'
   alias: Double Dimensions - La Grande Onda di Kanagawa
   description: ''
@@ -1408,8 +1392,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject", "scale")
-      == {"x": 1, "y": 1, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject",
+      "scale") == {"x": 1, "y": 1, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.scales_to
@@ -1434,7 +1418,6 @@
         y: 3
         z: 0.01
   mode: single
-
 - id: '1729087566714'
   alias: Half Dimensions - La Grande Onda di Kanagawa
   description: ''
@@ -1447,8 +1430,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject", "scale")
-      == {"x": 2, "y": 2, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_lagrandeondadikanagawa_ecaobject",
+      "scale") == {"x": 2, "y": 2, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.restores_original_settings
@@ -1461,7 +1444,6 @@
     data:
       entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
   mode: single
-
 - id: '1729087566715'
   alias: Double Dimensions - Primavera
   description: ''
@@ -1474,8 +1456,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale")
-      == {"x": 1, "y": 1, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale") ==
+      {"x": 1, "y": 1, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.scales_to
@@ -1500,7 +1482,6 @@
         y: 3
         z: -4
   mode: single
-
 - id: '1729087566716'
   alias: Half Dimensions - Primavera
   description: ''
@@ -1513,8 +1494,8 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale")
-      == {"x": 2, "y": 2, "z": 1} }}'
+    value_template: '{{ state_attr("sensor.quadro_primavera_ecaobject", "scale") ==
+      {"x": 2, "y": 2, "z": 1} }}'
   action:
   - event: eud4xr
   - action: eud4xr.restores_original_settings
@@ -1527,7 +1508,6 @@
     data:
       entity_id: sensor.canvas_primavera_ecaobject
   mode: single
-
 - id: '1729087566717'
   alias: Double Dimensions - Ragazza col Turbante
   description: ''
@@ -1566,7 +1546,6 @@
         y: 3
         z: -7.99
   mode: single
-
 - id: '1729087566718'
   alias: Half Dimensions - Ragazza col Turbante
   description: ''
@@ -1593,7 +1572,6 @@
     data:
       entity_id: sensor.canvas_ragazzacolturbante_ecaobject
   mode: single
-
 - id: '1729087566719'
   alias: Double Dimensions - Scuola di Atene
   description: ''
@@ -1632,7 +1610,6 @@
         y: 3
         z: -7.99
   mode: single
-
 - id: '1729087566720'
   alias: Half Dimensions - Scuola di Atene
   description: ''
@@ -1659,8 +1636,6 @@
     data:
       entity_id: sensor.canvas_scuoladiatene_ecaobject
   mode: single
-
-
 - id: '1729087566800'
   alias: Set Audio Description - Ronda di Notte
   description: ''
@@ -1673,22 +1648,21 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "stopped")
-      == "yes" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "stopped") == "yes"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.stops
     data:
       entity_id: sensor.audio_source_sound
-  - action: eud4xr.changes_source_to
+  - action: eud4xr.changes_source
     data:
       entity_id: sensor.audio_source_sound
-      newSource: "RondaDiNotte_AD"
+      newSource: RondaDiNotte_AD.mp3
   - action: eud4xr.plays
     data:
       entity_id: sensor.audio_source_sound
   mode: single
-
 - id: '1729087566801'
   alias: Pause Audio Description - Ronda di Notte
   description: ''
@@ -1701,18 +1675,17 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
-      == "RondaDiNotte_AD" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "RondaDiNotte_AD.mp3"
+      }}'
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "playing")
-      == "yes" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.pauses
     data:
       entity_id: sensor.audio_source_sound
   mode: single
-
 - id: '1729087566802'
   alias: Resume Audio Description - Ronda di Notte
   description: ''
@@ -1725,18 +1698,17 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
-      == "RondaDiNotte_AD" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "RondaDiNotte_AD.mp3"
+      }}'
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "paused")
-      == "yes" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.plays
     data:
       entity_id: sensor.audio_source_sound
   mode: single
-
 - id: '1729087566803'
   alias: Set Audio Description - Ophelia
   description: ''
@@ -1749,22 +1721,21 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
-      != "Ophelia_AD" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "Ophelia_AD"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.stops
     data:
       entity_id: sensor.audio_source_sound
-  - action: eud4xr.changes_source_to
+  - action: eud4xr.changes_source
     data:
       entity_id: sensor.audio_source_sound
-      newSource: "Ophelia_AD"
+      newSource: Ophelia_AD.mp3
   - action: eud4xr.plays
     data:
       entity_id: sensor.audio_source_sound
   mode: single
-
 - id: '1729087566804'
   alias: Pause Audio Description - Ophelia
   description: ''
@@ -1777,18 +1748,17 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
-      == "Ophelia_AD" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "Ophelia_AD.mp3"
+      }}'
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "playing")
-      == "yes" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.pauses
     data:
       entity_id: sensor.audio_source_sound
   mode: single
-
 - id: '1729087566805'
   alias: Resume Audio Description - Ophelia
   description: ''
@@ -1801,11 +1771,11 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source")
-      == "Ophelia_AD" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "Ophelia_AD.mp3"
+      }}'
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "paused")
-      == "yes" }}'
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
   action:
   - event: eud4xr
   - action: eud4xr.plays

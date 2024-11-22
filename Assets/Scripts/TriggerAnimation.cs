@@ -5,6 +5,7 @@ using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
 using UnityEngine;
 using UnityEngine.Events;
+using Action = ECARules4All_DLL.Action;
 
 public class TriggerAnimation : MonoBehaviour
 {
@@ -26,4 +27,21 @@ public class TriggerAnimation : MonoBehaviour
             }
         }
     }
+    
+    /*
+     // TEST
+    private void Update()
+    {
+        GameObject hand = GameObject.Find("Hand");
+        GameObject ophelia = GameObject.Find("DA_Ophelia");
+        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log(hand);
+            Debug.Log(ophelia);
+            RuleEngine.GetInstance()
+                .ExecuteAction(new Action(hand, "interacts with", ophelia));
+            Debug.Log("Tasto AAAAA premuto");
+        }
+    }*/
 }

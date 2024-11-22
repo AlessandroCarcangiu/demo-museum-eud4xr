@@ -4664,10 +4664,6 @@ GameObject:
   m_Component:
   - component: {fileID: 489906593}
   - component: {fileID: 489906598}
-  - component: {fileID: 489906597}
-  - component: {fileID: 489906596}
-  - component: {fileID: 489906595}
-  - component: {fileID: 489906594}
   m_Layer: 0
   m_Name: SpotLight_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -4689,64 +4685,6 @@ Transform:
   m_Father: {fileID: 1288602683}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: -90, z: 0}
---- !u!114 &489906594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489906592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1469597879, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intensity: 5
-  _maxIntensity: 10
-  _color: {r: 1, g: 0.9568627, b: 0.8392157, a: 1}
-  _on:
-    choice: 1
---- !u!114 &489906595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489906592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1263038528, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &489906596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489906592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 631841465, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isVisible:
-    choice: 0
-  _isActive:
-    choice: 0
-  xrCamera: {fileID: 0}
---- !u!114 &489906597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489906592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1656854827, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &489906598
 Light:
   m_ObjectHideFlags: 0
@@ -20355,10 +20293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1709123523}
   - component: {fileID: 1709123528}
-  - component: {fileID: 1709123527}
-  - component: {fileID: 1709123526}
-  - component: {fileID: 1709123525}
-  - component: {fileID: 1709123524}
   m_Layer: 0
   m_Name: SpotLight_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -20380,64 +20314,6 @@ Transform:
   m_Father: {fileID: 739681571}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: -90, z: 0}
---- !u!114 &1709123524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709123522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1469597879, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intensity: 5
-  _maxIntensity: 10
-  _color: {r: 1, g: 0.9568627, b: 0.8392157, a: 1}
-  _on:
-    choice: 1
---- !u!114 &1709123525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709123522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1263038528, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1709123526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709123522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 631841465, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isVisible:
-    choice: 0
-  _isActive:
-    choice: 0
-  xrCamera: {fileID: 0}
---- !u!114 &1709123527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709123522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1656854827, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1709123528
 Light:
   m_ObjectHideFlags: 0
@@ -21723,10 +21599,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1775767237}
   - component: {fileID: 1775767242}
-  - component: {fileID: 1775767241}
-  - component: {fileID: 1775767240}
-  - component: {fileID: 1775767239}
-  - component: {fileID: 1775767238}
   m_Layer: 0
   m_Name: SpotLight_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -21748,64 +21620,6 @@ Transform:
   m_Father: {fileID: 166823990}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: -90, z: 0}
---- !u!114 &1775767238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775767236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1469597879, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intensity: 5
-  _maxIntensity: 10
-  _color: {r: 1, g: 0.9568627, b: 0.8392157, a: 1}
-  _on:
-    choice: 1
---- !u!114 &1775767239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775767236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1263038528, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1775767240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775767236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 631841465, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isVisible:
-    choice: 0
-  _isActive:
-    choice: 0
-  xrCamera: {fileID: 0}
---- !u!114 &1775767241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775767236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1656854827, guid: a85ed39839c55504492af85dd30011c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1775767242
 Light:
   m_ObjectHideFlags: 0
@@ -25908,6 +25722,7 @@ GameObject:
   - component: {fileID: 2071488190}
   - component: {fileID: 2071488189}
   - component: {fileID: 2071488194}
+  - component: {fileID: 2071488195}
   m_Layer: 0
   m_Name: Audio_Source
   m_TagString: Untagged
@@ -25928,7 +25743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: Baccus_AD.mp3
-  _volume: 1
+  _volume: 0.1
   _maxVolume: 1
   _duration: 0
   _currentTime: 0
@@ -26003,7 +25818,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6db593430f2cef408d0dd81a3d56598, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -26089,6 +25904,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2071488195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071488188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1263038528, guid: a85ed39839c55504492af85dd30011c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073602554
 GameObject:
   m_ObjectHideFlags: 0
