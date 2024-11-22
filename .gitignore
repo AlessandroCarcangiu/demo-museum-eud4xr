@@ -76,3 +76,5 @@ crashlytics-build.properties
 
 # Logs directory
 ./Logs
+
+./Assets/Scripts/settings.json

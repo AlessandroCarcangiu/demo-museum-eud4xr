@@ -1,23 +1,50 @@
+using System;
+using System.IO;
 using ECARules4All_DLL;
 using ECARules4All_DLL.SmartHomeHubClients;
-using ECARules4All_DLL.Utils;
 using UnityEngine;
+using Path = System.IO.Path;
+
 
 public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 {
+    [System.Serializable]
+    public class Settings
+    {
+        public string hassUrl;
+        public string hassToken;
+    }
+    
     private APIServer _apiServer;
+
+    private Settings _settings;
     //public float moveDistance = 2.0f;
     //private GameObject objectToMove;
-    
+
+    private void Awake()
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, "secrets.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            _settings = JsonUtility.FromJson<Settings>(json);
+            Debug.Log("Secrets loaded successfully.");
+        }
+        else
+        {
+            Debug.LogError($"Secrets file not found at path: {path}");
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     { 
         // Home Assistant configuration
         // configure home assistant client
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
-        hassClient.url = "http://127.0.0.1:8123";
-        hassClient.token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyZDhjMDAwMTBlZmU0ZGE1YTEzYWI5YTdmMzlkYzVkMiIsImlhdCI6MTcyNzc5NTcwMSwiZXhwIjoyMDQzMTU1NzAxfQ.VQXdrlIKZBFn8RxsDVKAAFwSprt4VWPxh_QzXhA18ho";
+        hassClient.url = _settings.hassUrl;
+        hassClient.token = _settings.hassToken;
         RuleEngine.GetInstance().AddClient(hassClient);
         
         // configure api server
@@ -26,7 +53,9 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         // from ngrok terminal digit and execute:
         // ngrok http your_port --host-header="your_url:your_port" -
         // example: ngrok http 8080 --host-header="localhost:8080"
-        
+        // from ngrok static url:
+        // ngrok http 8080 --host-header="localhost:8080" --domain="fly-powerful-slug.ngrok-free.app"
+            
         //objectToMove = GameObject.Find("Test_01");
         //objectToMove.transform.position.Set(0, 0, 0);
 
