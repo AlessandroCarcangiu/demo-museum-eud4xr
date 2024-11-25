@@ -1033,6 +1033,10 @@
         x: -3.9
         y: 3
         z: -4
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_rondadinotte_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566702'
   alias: Half Dimensions - Ronda di Notte
@@ -1059,6 +1063,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_rondadinotte_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_rondadinotte_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566703'
   alias: Double Dimensions - Ophelia
@@ -1097,6 +1105,10 @@
         x: -3.9
         y: 3
         z: 0.01
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_ophelia_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566704'
   alias: Half Dimensions - Ophelia
@@ -1123,6 +1135,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_ophelia_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_ophelia_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566705'
   alias: Double Dimensions - La Zattera della Medusa
@@ -1161,6 +1177,10 @@
         x: -3.9
         y: 3
         z: 4
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lazatteradellamedusa_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566706'
   alias: Half Dimensions - La Zattera della Medusa
@@ -1187,6 +1207,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_lazatteradellamedusa_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lazatteradellamedusa_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566707'
   alias: Double Dimensions - La Persistenza della Memoria
@@ -1225,6 +1249,10 @@
         x: -2.5
         y: 3
         z: 7.99
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lapersistenzadellamemoria_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566708'
   alias: Half Dimensions - La Persistenza della Memoria
@@ -1251,6 +1279,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_lapersistenzadellamemoria_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lapersistenzadellamemoria_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566709'
   alias: Double Dimensions - Colazione sull Erba
@@ -1289,6 +1321,10 @@
         x: 2.5
         y: 3
         z: 7.99
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_colazionesullerba_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566710'
   alias: Half Dimensions - Colazione sull Erba
@@ -1315,6 +1351,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_colazionesullerba_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_colazionesullerba_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566711'
   alias: Double Dimensions - La Nascita di Venere
@@ -1353,6 +1393,10 @@
         x: 3.9
         y: 3
         z: 4
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lanascitadivenere_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566712'
   alias: Half Dimensions - La Nascita di Venere
@@ -1379,6 +1423,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_lanascitadivenere_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lanascitadivenere_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566713'
   alias: Double Dimensions - La Grande Onda di Kanagawa
@@ -1417,6 +1465,10 @@
         x: 3.9
         y: 3
         z: 0.01
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lagrandeondadikanagawa_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566714'
   alias: Half Dimensions - La Grande Onda di Kanagawa
@@ -1443,6 +1495,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_lagrandeondadikanagawa_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_lagrandeondadikanagawa_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566715'
   alias: Double Dimensions - Primavera
@@ -1481,6 +1537,10 @@
         x: 3.9
         y: 3
         z: -4
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_primavera_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566716'
   alias: Half Dimensions - Primavera
@@ -1507,6 +1567,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_primavera_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_primavera_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566717'
   alias: Double Dimensions - Ragazza col Turbante
@@ -1545,6 +1609,10 @@
         x: -2.5
         y: 3
         z: -7.99
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_ragazzacolturbante_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566718'
   alias: Half Dimensions - Ragazza col Turbante
@@ -1571,6 +1639,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_ragazzacolturbante_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_ragazzacolturbante_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566719'
   alias: Double Dimensions - Scuola di Atene
@@ -1609,6 +1681,10 @@
         x: 2.5
         y: 3
         z: -7.99
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_scuoladiatene_text_ecatext
+      c: Dimezza Dimensione
   mode: single
 - id: '1729087566720'
   alias: Half Dimensions - Scuola di Atene
@@ -1635,6 +1711,10 @@
   - action: eud4xr.restores_original_settings
     data:
       entity_id: sensor.canvas_scuoladiatene_ecaobject
+  - action: eud4xr.changes_content
+    data:
+      entity_id: sensor.rd_scuoladiatene_text_ecatext
+      c: Raddoppia Dimensione
   mode: single
 - id: '1729087566800'
   alias: Set Audio Description - Ronda di Notte
@@ -1721,13 +1801,10 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "Ophelia_AD"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "ophelia_ad.mp3"
       }}'
   action:
   - event: eud4xr
-  - action: eud4xr.stops
-    data:
-      entity_id: sensor.audio_source_sound
   - action: eud4xr.changes_source
     data:
       entity_id: sensor.audio_source_sound
@@ -1748,7 +1825,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "Ophelia_AD.mp3"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "ophelia_ad.mp3"
       }}'
   - condition: template
     value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
@@ -1771,7 +1848,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "Ophelia_AD.mp3"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "ophelia_ad.mp3"
       }}'
   - condition: template
     value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"

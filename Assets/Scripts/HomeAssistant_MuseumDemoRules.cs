@@ -23,7 +23,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 
     private void Awake()
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "secrets.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "settings.json");
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -43,8 +43,8 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         // Home Assistant configuration
         // configure home assistant client
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
-        hassClient.url = _settings.hassUrl;
-        hassClient.token = _settings.hassToken;
+        hassClient.url = "http://127.0.0.1:8123";
+        hassClient.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyZDhjMDAwMTBlZmU0ZGE1YTEzYWI5YTdmMzlkYzVkMiIsImlhdCI6MTcyNzc5NTcwMSwiZXhwIjoyMDQzMTU1NzAxfQ.VQXdrlIKZBFn8RxsDVKAAFwSprt4VWPxh_QzXhA18ho";
         RuleEngine.GetInstance().AddClient(hassClient);
         
         // configure api server
