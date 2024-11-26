@@ -1728,7 +1728,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "stopped") == "yes"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "rondadinotte_ad.mp3"
       }}'
   action:
   - event: eud4xr
@@ -1738,7 +1738,7 @@
   - action: eud4xr.changes_source
     data:
       entity_id: sensor.audio_source_sound
-      newSource: RondaDiNotte_AD.mp3
+      newSource: rondadinotte_ad.mp3
   - action: eud4xr.plays
     data:
       entity_id: sensor.audio_source_sound
@@ -1755,7 +1755,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "RondaDiNotte_AD.mp3"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "rondadinotte_ad.mp3"
       }}'
   - condition: template
     value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
@@ -1778,7 +1778,7 @@
       subject: hand
   condition:
   - condition: template
-    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "RondaDiNotte_AD.mp3"
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "rondadinotte_ad.mp3"
       }}'
   - condition: template
     value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
@@ -1852,6 +1852,1055 @@
       }}'
   - condition: template
     value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+
+- id: '1729087566806'
+  alias: Set Audio Description - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lazatteradellamedusa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "lazatteradellamedusa_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: LaZatteraDellaMedusa_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566807'
+  alias: Pause Audio Description - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lazatteradellamedusa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lazatteradellamedusa_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566808'
+  alias: Resume Audio Description - La Zattera della Medusa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lazatteradellamedusa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lazatteradellamedusa_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566809'
+  alias: Set Audio Description - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lapersistenzadellamemoria
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "lapersistenzadellamemoria_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: LaPersistenzaDellaMemoria_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566810'
+  alias: Pause Audio Description - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lapersistenzadellamemoria
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lapersistenzadellamemoria_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566811'
+  alias: Resume Audio Description - La Persistenza della Memoria
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lapersistenzadellamemoria
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lapersistenzadellamemoria_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566812'
+  alias: Set Audio Description - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_colazionesullerba
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "colazionesullerba_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: ColazioneSullErba_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566813'
+  alias: Pause Audio Description - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_colazionesullerba
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "colazionesullerba_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566814'
+  alias: Resume Audio Description - Colazione sull Erba
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_colazionesullerba
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "colazionesullerba_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566815'
+  alias: Set Audio Description - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lanascitadivenere
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "lanascitadivenere_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: LaNascitaDiVenere_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566816'
+  alias: Pause Audio Description - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lanascitadivenere
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lanascitadivenere_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566817'
+  alias: Resume Audio Description - La Nascita di Venere
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lanascitadivenere
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lanascitadivenere_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566818'
+  alias: Set Audio Description - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lagrandeondadikanagawa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "lagrandeondadikanagawa_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: LaGrandeOndaDiKanagawa_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566819'
+  alias: Pause Audio Description - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lagrandeondadikanagawa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lagrandeondadikanagawa_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566820'
+  alias: Resume Audio Description - La Grande Onda di Kanagawa
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_lagrandeondadikanagawa
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "lagrandeondadikanagawa_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566821'
+  alias: Set Audio Description - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_primavera
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "primavera_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Primavera_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566822'
+  alias: Pause Audio Description - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_primavera
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "primavera_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566823'
+  alias: Resume Audio Description - Primavera
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_primavera
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "primavera_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566824'
+  alias: Set Audio Description - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_ragazzacolturbante
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "ragazzacolturbante_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: RagazzaColTurbante_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566825'
+  alias: Pause Audio Description - Ragazza col Turbante
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_ragazzacolturbante
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "ragazzacolturbante_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566826'
+  alias: Resume Audio Description - Ragazza col Turbanre
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_ragazzacolturbante
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "ragazzacolturbante_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566827'
+  alias: Set Audio Description - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_scuoladiatene
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "scuoladiatene_ad.mp3"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: ScuolaDiAtene_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566828'
+  alias: Pause Audio Description - Scuola Di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_scuoladiatene
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "scuoladiatene_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566829'
+  alias: Resume Audio Description - Scuola di Atene
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: da_scuoladiatene
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "scuoladiatene_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566900'
+  alias: Set Audio Description - Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "baccus_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Baccus_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566901'
+  alias: Pause Audio Description - Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "baccus_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566902'
+  alias: Resume Audio Description - Baccus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "baccus_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_baccus_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566903'
+  alias: Set Audio Description - Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "hijikata_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_hijikata_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Hijikata_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566904'
+  alias: Pause Audio Description - Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "hijikata_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_hijikata_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566905'
+  alias: Resume Audio Description - Hijikata
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "hijikata_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_hijikata_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566906'
+  alias: Set Audio Description - Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "muse_thalia_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_muse_thalia_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Muse_Thalia_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566907'
+  alias: Pause Audio Description - Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "muse_thalia_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_muse_thalia_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566908'
+  alias: Resume Audio Description - Muse Thalia
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "muse_thalia_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_muse_thalia_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566909'
+  alias: Set Audio Description - Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "photogrammery_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Photogrammery_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566910'
+  alias: Pause Audio Description - Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "photogrammery_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566911'
+  alias: Resume Audio Description - Photogrammery
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "photogrammery_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_photogrammery_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566912'
+  alias: Set Audio Description - Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "chinese_warrior_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: Chinese_Warrior_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566913'
+  alias: Pause Audio Description - Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "chinese_warrior_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566914'
+  alias: Resume Audio Description - Chinese Warrior
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "chinese_warrior_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_chinese_warrior_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+
+- id: '1729087566915'
+  alias: Set Audio Description - David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") != "david_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_david_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.changes_source
+    data:
+      entity_id: sensor.audio_source_sound
+      newSource: David_AD.mp3
+  - action: eud4xr.plays
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566916'
+  alias: Pause Audio Description - David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "david_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "playing") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_david_ecaobject", "active") == "yes"
+      }}'
+  action:
+  - event: eud4xr
+  - action: eud4xr.pauses
+    data:
+      entity_id: sensor.audio_source_sound
+  mode: single
+- id: '1729087566917'
+  alias: Resume Audio Description - David
+  description: ''
+  trigger:
+  - platform: event
+    event_type: eud4xr
+    event_data:
+      verb: interacts with
+      variable_name: statue_button_description
+      subject: hand
+  condition:
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "source") == "david_ad.mp3"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.audio_source_sound", "paused") == "yes"
+      }}'
+  - condition: template
+    value_template: '{{ state_attr("sensor.statue_david_ecaobject", "active") == "yes"
       }}'
   action:
   - event: eud4xr
