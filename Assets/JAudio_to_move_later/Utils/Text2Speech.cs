@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Text;
+﻿using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class TTSRequest : MonoBehaviour
+public static class Text2Speech
 {
-    private void Start()
-    {
-        string url = "http://localhost:3000/api/generate-speech";
-        string message = "Hello, this is a test message!";
-        StartCoroutine(GetSpeechAudioCoroutine(url, message));
-    }
+    const string url = "http://localhost:3000/api/generate-speech";
 
-    public AudioSource audioSource;
-
-    public IEnumerator GetSpeechAudioCoroutine(string url, string message)
+    // Usage: StartCoroutine(CreateAudio(textToSpeak, YourLogicHere));
+    public static IEnumerator CreateAudio(string textToSpeak, System.Action<AudioClip> callback)
     {
         // Create the JSON payload
-        var jsonPayload = new { message = message };
+        var jsonPayload = new { message = textToSpeak };
         string jsonString = JsonConvert.SerializeObject(jsonPayload);
 
         // Create the UnityWebRequest
@@ -44,16 +36,17 @@ public class TTSRequest : MonoBehaviour
 
             // Directly get the AudioClip from the response
             AudioClip audioClip = DownloadHandlerAudioClip.GetContent(uwr);
-
-            if (audioSource != null)
-            {
-                audioSource.clip = audioClip;
-                audioSource.Play();
-            }
-            else
-            {
-                Debug.LogError("AudioSource is not set!");
-            }
+            callback?.Invoke(audioClip);
+            //TODO Delete
+            // if (audioSource != null)
+            // {
+            //     audioSource.clip = audioClip;
+            //     audioSource.Play();
+            // }
+            // else
+            // {
+                // Debug.LogError("AudioSource is not set!");
+            // }
         }
     }
 }

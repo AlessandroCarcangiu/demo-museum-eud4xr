@@ -40,10 +40,9 @@ public static class SaveWav
             filename += ".wav";
         }
 
-        var filepath = Path.Combine(Application.persistentDataPath, filename);
-
+        // var filepath = Path.Combine(Application.persistentDataPath, filename);
         // Make sure directory exists if user is saving to sub dir.
-        Directory.CreateDirectory(Path.GetDirectoryName(filepath) ?? string.Empty);
+        // Directory.CreateDirectory(Path.GetDirectoryName(filepath) ?? string.Empty);
 
         using (var memoryStream = CreateEmpty())
         {
@@ -187,5 +186,11 @@ public static class SaveWav
         memoryStream.Write(subChunk2, 0, 4);
 
         // fileStream.Close();
+    }
+    
+    //TODO For emergency use only
+    public static byte[] Clip2Bytes(AudioClip clip)
+    {
+        return Save("output.wav", clip);
     }
 }
