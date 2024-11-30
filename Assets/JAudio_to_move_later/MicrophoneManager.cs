@@ -8,7 +8,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
     private AudioClip clip;
     private bool isRecording;
     private string currentDevice;
-
+    private const int maxFrequencyHumansHear = 44000;
     public void ChangeMicrophone(string newMic) => currentDevice = newMic;
     public bool IsRecording() => isRecording;
 
@@ -26,7 +26,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         #if !UNITY_WEBGL
             Debug.Log("Current Device = " + currentDevice);
             startPosition = Microphone.GetPosition(currentDevice); // Get starting position
-            clip = Microphone.Start(currentDevice, false, durationSeconds, 44100);
+            clip = Microphone.Start(currentDevice, false, durationSeconds, maxFrequencyHumansHear);
         #endif
     }
 

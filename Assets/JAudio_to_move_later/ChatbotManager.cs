@@ -2,14 +2,17 @@
 using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 
 public class ChatbotManager : Singleton<ChatbotManager>
 {
+    public InputActionReference interactionButton;
+    
     const string urlChatAI = "http://localhost:3000/api/fake-answer";
     private bool UserPressedInteractionButton()
     {
-        return Input.GetKeyDown(KeyCode.Space);
+        return interactionButton.action.triggered;
     }
 
     private void Update()
