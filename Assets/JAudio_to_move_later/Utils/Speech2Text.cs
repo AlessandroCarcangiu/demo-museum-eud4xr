@@ -63,7 +63,7 @@ public static class Speech2Text
     
     // Define a response structure to match your server's JSON response
     [System.Serializable]
-    public class AudioResponse
+    private class AudioResponse
     {
         public bool success;
         public string transcription;

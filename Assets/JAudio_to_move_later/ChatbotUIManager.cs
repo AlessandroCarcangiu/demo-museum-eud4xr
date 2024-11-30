@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ChatbotUIManager : Singleton<ChatbotUIManager>
 {
-    public Button b_speakToChatbot;
     public TextMeshProUGUI message;
     public TMP_Dropdown d_micList;
 
@@ -26,7 +25,6 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         }
         DrawDropdownMicOptions();
 
-        //TODO Delete it?
         // void OnButtonClick()
         // {
         //     if (MicrophoneManager.Instance.IsRecording())
@@ -37,7 +35,6 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         //     MicrophoneManager.Instance.StartRecording(); // StartRecording();
         // }
         // b_speakToChatbot.onClick.AddListener(OnButtonClick);
-        b_speakToChatbot.gameObject.SetActive(false);
             
         void OnDropdownValueChanged(int index)
         {

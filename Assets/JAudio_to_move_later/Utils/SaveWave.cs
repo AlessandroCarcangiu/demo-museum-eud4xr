@@ -33,13 +33,8 @@ public static class SaveWav
 {
     private const int HeaderSize = 44;
 
-    public static byte[] Save(string filename, AudioClip clip)
+    public static byte[] Save(AudioClip clip)
     {
-        if (!filename.ToLower().EndsWith(".wav"))
-        {
-            filename += ".wav";
-        }
-
         // var filepath = Path.Combine(Application.persistentDataPath, filename);
         // Make sure directory exists if user is saving to sub dir.
         // Directory.CreateDirectory(Path.GetDirectoryName(filepath) ?? string.Empty);
@@ -62,7 +57,7 @@ public static class SaveWav
         return TrimSilence(new List<float>(samples), min, clip.channels, clip.frequency);
     }
 
-    public static AudioClip TrimSilence(List<float> samples, float min, int channels, int hz, bool stream = false)
+    private static AudioClip TrimSilence(List<float> samples, float min, int channels, int hz, bool stream = false)
     {
         int i;
 
@@ -92,6 +87,17 @@ public static class SaveWav
         clip.SetData(samples.ToArray(), 0);
 
         return clip;
+    }
+
+    public static AudioClip TrimSilenceSmart(AudioClip clip)
+    {
+        var samples = new float[clip.samples];
+
+        clip.GetData(samples, 0);
+
+        const float min = 0.01f; // Minimum amplitude to consider as silence
+
+        return TrimSilence(new List<float>(samples), min, clip.channels, clip.frequency);
     }
 
     static MemoryStream CreateEmpty()
@@ -187,10 +193,73 @@ public static class SaveWav
 
         // fileStream.Close();
     }
-    
+
     //TODO For emergency use only
     public static byte[] Clip2Bytes(AudioClip clip)
     {
-        return Save("output.wav", clip);
+        return Save(clip);
+    }
+
+    public static AudioClip TrimClipDuration(AudioClip source, int startSample, int endSample) //, float paddingSeconds = 0f)
+    {
+        int totalSamples = source.samples;
+        int channels = source.channels;
+        int sampleRate = source.frequency;
+
+        // Ensure valid indices and handle wrap-around
+        if (endSample < startSample)
+            endSample += source.samples;
+
+        // if (paddingSeconds < 0)
+        //     paddingSeconds = 0;
+        // if (paddingSeconds > 0) {
+        //     int paddingSamples = source.frequency * paddingSeconds;
+        //     endSample += paddingSamples;
+        // }
+
+        // Calculate total trimmed length (accounting for channels)
+        int trimmedLength = (endSample - startSample) * channels;
+
+        // Retrieve the entire audio data
+        float[] fullSamples = new float[totalSamples * channels];
+        source.GetData(fullSamples, 0);
+
+        // Prepare array for trimmed data
+        float[] trimmedSamples = new float[trimmedLength];
+
+        // Copy data from the relevant range, handling wrap-around if necessary
+        for (int i = 0; i < trimmedLength; i++)
+        {
+            int sampleIndex = (startSample * channels + i) % fullSamples.Length;
+            trimmedSamples[i] = fullSamples[sampleIndex];
+        }
+
+        // Create a new AudioClip with the trimmed data
+        AudioClip trimmedClip = AudioClip.Create(
+            source.name + "_trimmed",
+            trimmedLength / channels, // Samples per channel
+            channels,
+            sampleRate,
+            false
+        );
+
+        trimmedClip.SetData(trimmedSamples, 0);
+
+        return trimmedClip;
+    }
+
+
+    public static AudioClip TrimDuration(AudioClip clip, int startSample, int lastTime, bool stream = false)
+    {
+        int c = clip.channels;
+        int hz = clip.frequency;
+
+        float[] samples = new float[clip.samples]; //
+        clip.GetData(samples, 0);
+        float[] clipSamples = new float[lastTime];
+        Array.Copy(samples, clipSamples, clipSamples.Length - 1);
+        clip = AudioClip.Create("playRecordClip", clipSamples.Length, c, hz, false);
+        clip.SetData(clipSamples, 0);
+        return clip;
     }
 }
