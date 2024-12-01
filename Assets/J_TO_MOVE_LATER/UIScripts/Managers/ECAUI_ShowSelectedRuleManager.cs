@@ -52,7 +52,7 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
             throw new NotImplementedException();
         }
 
-        infoCapabilities = FindObjectOfType<ECAObjectInfo>().GetAllInfoAboutCurrentECAObjects(); //todo fare un singleton statico
+        infoCapabilities = ECAObjectInfo.Instance.GetAllInfoAboutCurrentECAObjects();
         DrawView(uiManager.SelectedRule);
     }
 

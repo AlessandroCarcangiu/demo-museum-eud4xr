@@ -121,7 +121,7 @@ public class ECAUI_Utils
             Value = action.GetModifierValue()?.ToString(); //todo what about ActionAttributeInfo?
             
             //
-            var infoCapabilities  = GameObject.FindObjectOfType<ECAObjectInfo>().GetAllInfoAboutCurrentECAObjects(); //todo make it a singleton
+            var infoCapabilities  = ECAObjectInfo.Instance.GetAllInfoAboutCurrentECAObjects(); //todo make it a singleton
             var actionAttributesList = infoCapabilities.allActionAttributes[Subject][Verb];
             if (actionAttributesList != null)
             {
@@ -241,7 +241,7 @@ public class ECAUI_Utils
                     case "System.Single":
                         var valueAsSingle = Convert.ToSingle(Value);
                         return new Action(subjectGameObject, Verb, Object, Prep, valueAsSingle);
-                    //////////////////////////////////////////////////////////////////
+                    //////////////////// ECABooleans /////////////////////////////
                     case ecaDLLDomain + "." + "Utils.YesNo":
                         var booleanYesNo = Value == "yes" ? ECABoolean.YES : ECABoolean.NO;
                         return new Action(subjectGameObject, Verb, Object, Prep, new ECABoolean(booleanYesNo));
@@ -251,6 +251,10 @@ public class ECAUI_Utils
                     case ecaDLLDomain + "." + "Utils.OnOff":
                         var booleanOnOff = Value == "on" ? ECABoolean.ON : ECABoolean.OFF;
                         return new Action(subjectGameObject, Verb, Object, Prep, new ECABoolean(booleanOnOff));
+                    //////////////////////////////////////////////////////////////////
+                    case ecaDLLDomain + "." + "Utils.ECAColor":
+                        ECAColor c = new ECAColor(Value);
+                        return new Action(subjectGameObject, Verb, Object, Prep, c);
                     //////////////////////////////////////////////////////////////////
                     // TV-box changes visible to yes
                     // case "ECAScripts.Utils.YesNo":

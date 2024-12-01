@@ -9,7 +9,7 @@ using ECARules4All_DLL.Utils;
 using Newtonsoft.Json;
 using UnityEngine;
 
-public class ECAObjectInfo : MonoBehaviour
+public class ECAObjectInfo : Singleton<ECAObjectInfo>
 {
     ////////////// From Generic Hook //////////////
     private static string CheckValues(string s, int needed)
