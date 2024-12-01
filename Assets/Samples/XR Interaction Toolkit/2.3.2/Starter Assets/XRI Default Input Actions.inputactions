@@ -2104,6 +2104,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "EUD4XR",
+            "id": "054dceef-80de-4779-8607-d28f1298f067",
+            "actions": [
+                {
+                    "name": "ToggleConversationChatbot",
+                    "type": "Button",
+                    "id": "b3f1412d-8664-4ffd-a6b3-c2e010160f00",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7c1dd4cd-e69c-44b3-989a-1e20c0ee6cf0",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleConversationChatbot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98a762c9-5a6c-496c-967d-f673e819559a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleConversationChatbot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24c211df-590c-4ecb-abe6-01bb9529aa62",
+                    "path": "<XRSimulatedController>{RightHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleConversationChatbot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
