@@ -8,11 +8,20 @@ using UnityEngine.Networking;
 public class ChatbotManager : Singleton<ChatbotManager>
 {
     public InputActionReference interactionButton;
+
+    private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
+    private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
+    private const string forceLogoutUrl = "http://localhost:3000/api/logout";
     
-    const string urlChatAI = "http://localhost:3000/api/fake-answer";
     private bool UserPressedInteractionButton()
     {
         return interactionButton.action.triggered;
+    }
+    
+    private void OnEnable()
+    {
+        Debug.Log("Enabling ChatbotManager");
+        StartCoroutine(ForceLogin());
     }
 
     private void Update()
@@ -89,8 +98,8 @@ public class ChatbotManager : Singleton<ChatbotManager>
             try
             {
                 // Example of parsing a JSON response
-                var jsonResponse = JsonConvert.DeserializeObject<AIResponse>(responseText);
-                if (jsonResponse != null && jsonResponse.success)
+                var jsonResponse = JsonConvert.DeserializeObject<AIMessageResponse>(responseText);
+                if (jsonResponse != null)
                 {
                     Debug.Log("Transcription: " + jsonResponse.message);
                     callback?.Invoke(jsonResponse.message);
@@ -109,9 +118,101 @@ public class ChatbotManager : Singleton<ChatbotManager>
     
     // Define a response structure to match your server's JSON response
     [System.Serializable]
-    private class AIResponse
+    private class AIMessageResponse
+    {
+        public string message;
+        public string currNode;
+        public string sessionId;
+    }
+    [System.Serializable]
+    private class AILoginResponse
     {
         public bool success;
-        public string message;
+    }
+    [System.Serializable]
+    private class AILogoutResponse
+    {
+        public bool success;
+    }
+    
+
+    private IEnumerator ForceLogin()
+    {
+        // Get request to the forceLoginUrl
+        // The server will respond with a JSON object { success: {true, false} }
+        
+        using (UnityWebRequest uwr = UnityWebRequest.Get(forceLoginUrl))
+        {
+            yield return uwr.SendWebRequest();
+
+            if (uwr.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + uwr.error);
+                throw new Exception("Error: " + uwr.error);
+            }
+            
+            string responseText = uwr.downloadHandler.text;
+
+            try
+            {
+                // Example of parsing a JSON response
+                var jsonResponse = JsonConvert.DeserializeObject<AILoginResponse>(responseText);
+                if (jsonResponse != null && jsonResponse.success)
+                {
+                    Debug.Log("Forced login successful.");
+                }
+                else
+                {
+                    throw new Exception("Forced login failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error parsing JSON response: " + ex.Message);
+            }
+        }
+    }
+
+    private IEnumerator ForceLogout()
+    {
+        // Do a Post request to the forceLogoutUrl
+        // The server will respond with a JSON object { success: {true, false} }
+        using (UnityWebRequest uwr = UnityWebRequest.Post(forceLogoutUrl, "POST"))
+        {
+            yield return uwr.SendWebRequest();
+
+            if (uwr.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + uwr.error);
+                throw new Exception("Error: " + uwr.error);
+            }
+            
+            string responseText = uwr.downloadHandler.text;
+
+            try
+            {
+                // Example of parsing a JSON response
+                var jsonResponse = JsonConvert.DeserializeObject<AILogoutResponse>(responseText);
+                if (jsonResponse != null && jsonResponse.success)
+                {
+                    Debug.Log("Forced logout successful.");
+                }
+                else
+                {
+                    throw new Exception("Forced logout failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error parsing JSON response: " + ex.Message);
+            }
+        }
+        
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("Disabling ChatbotManager");
+        StartCoroutine(ForceLogout());
     }
 }

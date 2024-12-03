@@ -12,7 +12,7 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
     [ECARules4All("text")]
     [RequireComponent(typeof(Interaction))] //gerarchia 
     [DisallowMultipleComponent]
-    public class MyECAText : ECAScript
+    public class ECAText : ECAScript
     {
         private TextMeshPro textMesh;
 
