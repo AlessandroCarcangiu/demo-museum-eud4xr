@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Taxonomies.Behaviours.Subcategories;
+using ECARules4All_DLL.UI;
 using JetBrains.Annotations;
 using UnityEngine;
 using Action = ECARules4All_DLL.Action;

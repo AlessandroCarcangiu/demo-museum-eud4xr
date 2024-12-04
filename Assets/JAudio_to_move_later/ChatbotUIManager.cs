@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using ECARules4All_DLL.Utils;
 
 public class ChatbotUIManager : Singleton<ChatbotUIManager>
 {
