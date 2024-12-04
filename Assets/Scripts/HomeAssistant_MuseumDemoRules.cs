@@ -1,32 +1,63 @@
+using System;
+using System.IO;
 using ECARules4All_DLL;
 using ECARules4All_DLL.SmartHomeHubClients;
-using ECARules4All_DLL.Utils;
+using ECARules4All_DLL.SmartHomeHubClients.Clients;
+using UnityEditor;
 using UnityEngine;
+using Path = System.IO.Path;
+
 
 public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 {
+    [System.Serializable]
+    public class Settings
+    {
+        public string hassUrl;
+        public string hassToken;
+    }
+    
     private APIServer _apiServer;
+
+    private Settings _settings;
     //public float moveDistance = 2.0f;
     //private GameObject objectToMove;
-    
+
+    private void Awake()
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, "settings.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            _settings = JsonUtility.FromJson<Settings>(json);
+            Debug.Log("Secrets loaded successfully.");
+        }
+        else
+        {
+            Debug.LogError($"Secrets file not found at path: {path}");
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         // Home Assistant configuration
         // configure home assistant client
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
-        hassClient.url = "http://127.0.0.1:8123";
-        hassClient.token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyZDhjMDAwMTBlZmU0ZGE1YTEzYWI5YTdmMzlkYzVkMiIsImlhdCI6MTcyNzc5NTcwMSwiZXhwIjoyMDQzMTU1NzAxfQ.VQXdrlIKZBFn8RxsDVKAAFwSprt4VWPxh_QzXhA18ho";
+        hassClient.url = _settings.hassUrl;
+        hassClient.token = _settings.hassToken;
         RuleEngine.GetInstance().AddClient(hassClient);
         
         // configure api server
         _apiServer = new APIServer();
-        _apiServer.Update += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
+        _apiServer.ActionUpdate += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
         // from ngrok terminal digit and execute:
         // ngrok http your_port --host-header="your_url:your_port" -
         // example: ngrok http 8080 --host-header="localhost:8080"
-        
+        // from ngrok static url:
+        // ngrok http 8080 --host-header="localhost:8080" --domain="fly-powerful-slug.ngrok-free.app"
+            
         //objectToMove = GameObject.Find("Test_01");
         //objectToMove.transform.position.Set(0, 0, 0);
 
@@ -39,39 +70,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.UpArrow) && objectToMove != null)
-        {
-            int randomAxis = Random.Range(0, 3);
-            float randomDirection = Random.Range(0, 2) == 0 ? 1f : -1f;
-            
-            Vector3 moveVector = Vector3.zero;
-            Vector3 startingPosition = objectToMove.transform.position;
-
-            switch (randomAxis)
-            {
-                case 0: // Asse X
-                    moveVector.x = moveDistance * randomDirection;
-                    break;
-                case 1: // Asse Y
-                    moveVector.y = moveDistance * randomDirection;
-                    break;
-                case 2: // Asse Z
-                    moveVector.z = moveDistance * randomDirection;
-                    break;
-            }
-
-            objectToMove.transform.position += moveVector;
-            Vector3 finalPosition = objectToMove.transform.position;
-            RuleEngine.GetInstance().ExecuteAction(new Action(
-                objectToMove, 
-                "moves to", 
-                new Position(finalPosition.x, finalPosition.y, finalPosition.z)
-                )
-            );
-            
-            Debug.Log($"Moved {objectToMove.name} by {moveVector} units on axis {randomAxis} from {startingPosition} to {finalPosition}");
-        }*/
+        
     }
     
     private void OnDisable()

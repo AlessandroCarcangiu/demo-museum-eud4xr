@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ECARules4All_DLL;
+using ECARules4All_DLL.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
