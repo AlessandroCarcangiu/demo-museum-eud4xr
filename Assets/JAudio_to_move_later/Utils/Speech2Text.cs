@@ -18,7 +18,7 @@ public static class Speech2Text
     
     public static IEnumerator Transcribe(byte[] byteArray, System.Action<string> callback)
     {
-        UnityWebRequest uwr = UnityWebRequest.Post(url, "POST");
+        UnityWebRequest uwr = UnityWebRequest.PostWwwForm(url, "POST");
         
         // Set up the request with a byte array of raw data
         UploadHandler uploader = new UploadHandlerRaw(byteArray);

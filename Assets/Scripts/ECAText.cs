@@ -14,15 +14,15 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
     [DisallowMultipleComponent]
     public class ECAText : ECAScript
     {
-        private TextMeshProUGUI textMesh;
+        private TMP_Text textMesh;
 
         private void Start()
         {
-            textMesh = GetComponent<TextMeshProUGUI>();
+            textMesh = GetComponent<TMP_Text>();
          
             if (textMesh == null)
             {   
-                throw new Exception("The object must have a TextMeshProUGUI component. Or do we want to put it as public instance?");
+                throw new Exception("The object must have a TMP_Text component. Or do we want to put it as public instance?");
             }
             textMesh.text = content;
         }

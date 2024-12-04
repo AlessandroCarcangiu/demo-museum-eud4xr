@@ -80,7 +80,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
         // Do a Unity POST request to the chatbot server with the { message = userMessage }
         // The server will respond with a JSON object { success: {true, false}, message: <string answer> }
         
-        using (UnityWebRequest uwr = UnityWebRequest.Post(urlChatAI, "POST"))
+        using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(urlChatAI, "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"message\": \"" + userMessage + "\"}");
             uwr.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
@@ -178,7 +178,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
     {
         // Do a Post request to the forceLogoutUrl
         // The server will respond with a JSON object { success: {true, false} }
-        using (UnityWebRequest uwr = UnityWebRequest.Post(forceLogoutUrl, "POST"))
+        using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(forceLogoutUrl, "POST"))
         {
             yield return uwr.SendWebRequest();
 
