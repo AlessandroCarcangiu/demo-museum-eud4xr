@@ -51,12 +51,12 @@ public class ChatbotManager : Singleton<ChatbotManager>
                             // The chatbot answered, generate the fake voice
                             StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
                         }
-
+                        ChatbotUIManager.Instance.UpdateTranscription("Ho analizzato ciò che hai detto, ora genero una risposta...dammi qualche secondo");
                         // The transcription is ready, ask the chatbot
                         StartCoroutine(this.AskChatbot(transcription, AfterChatbotAnswered));
                     }
                     
-                    ChatbotUIManager.Instance.UpdateTranscription("Transcribing...");
+                    ChatbotUIManager.Instance.UpdateTranscription("Sto analizzando ciò che hai detto...dammi qualche secondo");
                     // The user stopped speaking, the clip contains the audio
                     StartCoroutine(Speech2Text.Transcribe(clipBytes, AfterTranscriptionGenerated));
                 }
@@ -69,7 +69,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
 
                 // Start the recording
                 MicrophoneManager.Instance.StartRecording();
-                ChatbotUIManager.Instance.UpdateTranscription("Listening...");
+                ChatbotUIManager.Instance.UpdateTranscription("Ti sto ascoltando :)");
             }
         }
     }

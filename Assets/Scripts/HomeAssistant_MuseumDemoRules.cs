@@ -17,7 +17,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
         hassClient.url = "http://127.0.0.1:8123";
         hassClient.token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyZDhjMDAwMTBlZmU0ZGE1YTEzYWI5YTdmMzlkYzVkMiIsImlhdCI6MTcyNzc5NTcwMSwiZXhwIjoyMDQzMTU1NzAxfQ.VQXdrlIKZBFn8RxsDVKAAFwSprt4VWPxh_QzXhA18ho";
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0NGZlNWVjNzlkYmY0MTEwOTEwMTg1MjY4ODVmOTAyNSIsImlhdCI6MTczMTUwMTMxMywiZXhwIjoyMDQ2ODYxMzEzfQ.4r-kqatbXSzYfl5p37KHS7TL2Ldsi1Wk__2ug3ajFLU";
         RuleEngine.GetInstance().AddClient(hassClient);
         
         // configure api server

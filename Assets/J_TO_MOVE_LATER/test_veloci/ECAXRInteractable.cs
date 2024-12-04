@@ -15,7 +15,7 @@ public class ECAXRInteractable : XRGrabInteractable
 
     private void Start()
     {
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
 
     // Called when the object is first grabbed
