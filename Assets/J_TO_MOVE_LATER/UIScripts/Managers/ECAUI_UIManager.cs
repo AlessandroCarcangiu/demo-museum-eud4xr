@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ECARules4All_DLL;
-using ECARules4All_DLL.Taxonomies.Behaviours.Subcategories;
 using ECARules4All_DLL.UI;
-using JetBrains.Annotations;
+using ECARules4All_DLL.Utils;
 using UnityEngine;
 using Action = ECARules4All_DLL.Action;
 
@@ -22,7 +20,7 @@ public class ECAUI_UIManager : MonoBehaviour
     private void Awake()
     {
         //////// DEBUG CODE: ADDING RULES ////////
-        var r = new Rule(
+        var r = Rule.TryCreateRule(
             // new Action(GameObject.Find("FishAnimal"), "interacts with", GameObject.Find("ArtInteractable")),
             new Action(GameObject.Find("FishAnimal"), "activates"),
             new List<Action> {
@@ -33,26 +31,34 @@ public class ECAUI_UIManager : MonoBehaviour
         );
         RuleEngine.GetInstance().Add(r);
         
-        RuleEngine.GetInstance().Add(new Rule(
+        RuleEngine.GetInstance().Add(Rule.TryCreateRule(
                 // new Action(GameObject.Find("FishAnimal"), "interacts with", GameObject.Find("ArtInteractable")),
                 new Action(GameObject.Find("LandVehicle"), "activates"),
-                new List<Action> { new Action(GameObject.Find("LandVehicle"), "deactivates")}
+                new List<Action> { new Action(GameObject.Find("FishAnimal"), "deactivates")}
             )
         );
         
-        RuleEngine.GetInstance().Add(new Rule(
+        RuleEngine.GetInstance().Add(Rule.TryCreateRule(
                 new Action(GameObject.Find("FishAnimal"), "interacts with", GameObject.Find("ArtInteractable")),
                 // new Action(GameObject.Find("LandVehicle"), "activates"),
                 new List<Action> { new Action(GameObject.Find("FishAnimal"), "changes", "visible","to","yes"), new Action(GameObject.Find("LandVehicle"), "activates"),}
             )
         );
         
-        RuleEngine.GetInstance().Add(new Rule(
+        RuleEngine.GetInstance().Add(Rule.TryCreateRule(
                 new Action(GameObject.Find("FishAnimal"), "interacts with", GameObject.Find("ArtInteractable")),
                 // new Action(GameObject.Find("LandVehicle"), "activates"),
                 new List<Action> { new Action(GameObject.Find("ECALuce"), "sets", "intensity","to",2f)}
             )
         );
+
+        RuleEngine.GetInstance().Add(Rule.TryCreateRule(
+                new Action(GameObject.Find("LandVehicle"), "activates"),
+                new SimpleCondition(GameObject.Find("FishAnimal"), "visible", "is", ECABoolean.YES),
+                new List<Action> { new Action(GameObject.Find("ECALuce"), "sets", "intensity","to",2f)}
+            )
+        );
+        Debug.LogError("Ti ricordo che stai inizializzando delle regole qui per provare robe. Non ti dimenticare di cancellarle prima dei test!");
         /////////////////////////////////////////
 
         

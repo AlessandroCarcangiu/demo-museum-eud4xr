@@ -18,53 +18,6 @@ public class CapabilityManager : Singleton<CapabilityManager>
         rootToMove.SetActive(false);
     }
 
-    //region Component Tracker
-    
-    private static Dictionary<string, (ECARules4AllType, Type)> FindStateVariables(GameObject gameObject)
-    {
-        var variables = new Dictionary<string, (ECARules4AllType, Type)>();
-
-        foreach (Component c in gameObject.GetComponents<Component>())
-        {
-            Type cType = c.GetType();
-
-            //searching for the components of type ecarules
-            if (Attribute.IsDefined(cType, typeof(ECARules4AllAttribute)))
-            {
-                //foreach component we find the verbs
-                var componentVariables = ListStateVariables(cType);
-                foreach (var var in componentVariables)
-                {
-                    if (!variables.ContainsKey(var.Key)) variables.Add(var.Key, (var.Value, cType));
-                }
-            }
-        }
-
-        return variables;
-    }
-
-    private static Dictionary<string, ECARules4AllType> ListStateVariables(Type cType)
-    {
-        Dictionary<string, ECARules4AllType> variables = new Dictionary<string, ECARules4AllType>();
-        var x = from it in cType.GetMembers( BindingFlags.Public | BindingFlags.Instance) where it is PropertyInfo || it is FieldInfo select it;
-        // foreach (FieldInfo m in cType.GetFields())
-        foreach (var m in x)
-        {
-            object[] a = m.GetCustomAttributes(typeof(StateVariableAttribute), true);
-            if (a.Length > 0)
-            {
-                foreach (var item in a)
-                {
-                    StateVariableAttribute var = (StateVariableAttribute)item;
-                    variables.Add(var.Name, var.type);
-                }
-            }
-        }
-
-        return variables;
-    }
-
-    //endregion
     // private void OnGUI()
     // {
     //     if (GUI.Button(new Rect(10, 10, 150, 100), "Test Component Tracker"))
@@ -189,7 +142,7 @@ public class CapabilityManager : Singleton<CapabilityManager>
 
         var name = ecaObject.gameObject.name;
 
-        var ecaStateVariables = FindStateVariables(GameObject.Find(name))
+        var ecaStateVariables = RuleUtils.FindStateVariables(GameObject.Find(name))
             .Select(kv => kv.Value.Item1 + " " + kv.Key).ToList();
         var ecaMethodNames = info.allActionAttributes[name].Select(kv => kv.Key).Distinct().ToList();
         
