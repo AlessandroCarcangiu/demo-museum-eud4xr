@@ -3,42 +3,49 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-
-public class OnCanvasEnableDisable<T> : MonoBehaviour where T : MonoBehaviour
+[DisallowMultipleComponent]
+public abstract class OnCanvasEnableDisable<T> : MonoBehaviour where T : MonoBehaviour
 {
+    public GameObject iGameObjectProviderRef;
+    private ISourceProvider<T> iSourceProviderRef;
+
     private Canvas canvas;
-    
-    private void Start()
+
+    private void Awake()
     {
         canvas = GetComponent<Canvas>();
         if (canvas == null)
         {
-            Debug.LogError("Canvas not found in " + gameObject.name);
+            throw new Exception("Canvas not found in " + gameObject.name);
+        }
+
+        iSourceProviderRef = iGameObjectProviderRef.GetComponent<ISourceProvider<T>>();
+        
+        if (iSourceProviderRef == null)
+        {
+            throw new Exception("iSourceProviderRef not found in " + gameObject.name);
         }
     }
 
-    
-    public void DoEnable(T newDataSource)
+
+    public void OnEnable()
     {
-        if (newDataSource != null) dataSourceRef = newDataSource;
         canvas.enabled = true;
-        UpdateTexts();
+        UpdateUI();
     }
-    
-    public void DoDisable()
+
+    public void OnDisable()
     {
         canvas.enabled = false;
     }
 
 
-    public T dataSourceRef;
-
-    public void UpdateTarget(T newDataSource)
+    private void UpdateUI()
     {
-        dataSourceRef = newDataSource;
-        UpdateTexts();
+        var cached = iSourceProviderRef.dataSourceRef;
+        if (cached == null) return;
+        UpdateTexts(cached);
     }
-
 
     #region UpdateTextOnEnable
 
@@ -54,7 +61,7 @@ public class OnCanvasEnableDisable<T> : MonoBehaviour where T : MonoBehaviour
         public Data2String onCanvasEnableCallback;
     }
 
-    private void UpdateTexts()
+    private void UpdateTexts(T dataSourceRef)
     {
         foreach (var textItem in textItems)
         {
@@ -68,6 +75,6 @@ public class OnCanvasEnableDisable<T> : MonoBehaviour where T : MonoBehaviour
     public List<TextItem> textItems;
 }
 
-public class OnCanvasEnableDisable : OnCanvasEnableDisable<MonoBehaviour>
-{
-}
+// public abstract class OnCanvasEnableDisable : OnCanvasEnableDisable<MonoBehaviour>
+// {
+// }
