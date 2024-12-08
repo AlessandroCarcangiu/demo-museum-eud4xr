@@ -325,6 +325,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67511533}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &170781747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254720097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251c5308bf04c17a4766ae529497b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iGameObjectProviderRef: {fileID: 842995231}
+  textItems:
+  - textRef: {fileID: 1035250097}
+    onCanvasEnableCallback:
+      _target: {fileID: 1956837948}
+      _methodName: GetCapabilitiesAsString
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 5
+        _typeName: ECARules4All_DLL.ECAObject, ECARules4All_DLL, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      _dynamic: 1
+      _typeName: OnCanvasEnableDisable`1+Data2String[[ECARules4All_DLL.ECAObject,
+        ECARules4All_DLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
 --- !u!1 &179015675
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +581,11 @@ Transform:
 --- !u!1 &687727523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3172232848243330806, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
+  m_PrefabInstance: {fileID: 4136575445630257744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &842995231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4452473805340389129, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
   m_PrefabInstance: {fileID: 4136575445630257744}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &849558573
@@ -782,12 +819,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1035250097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7161797530593043975, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
+  m_PrefabInstance: {fileID: 4136575445630257744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1138508092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2028826321831046424, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
   m_PrefabInstance: {fileID: 35402436}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1491397850
+--- !u!114 &1196664860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -796,15 +844,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 687727523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabeeffb8adb4efb84825a43cfe5466f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7251c5308bf04c17a4766ae529497b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataSourceRef: {fileID: 0}
+  iGameObjectProviderRef: {fileID: 842995231}
   textItems:
   - textRef: {fileID: 987692163}
     onCanvasEnableCallback:
       _target: {fileID: 1956837948}
-      _methodName: GetCapabilitiesAsString
+      _methodName: GetRulesInvolvingECAObjectAsString
       _args:
       - boolValue: 0
         intValue: 0
@@ -815,10 +863,15 @@ MonoBehaviour:
         _typeName: ECARules4All_DLL.ECAObject, ECARules4All_DLL, Version=1.0.0.0,
           Culture=neutral, PublicKeyToken=null
       _dynamic: 1
-      _typeName: OnCanvasEnableDisable`1+Data2String[[UnityEngine.MonoBehaviour,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+      _typeName: OnCanvasEnableDisable`1+Data2String[[ECARules4All_DLL.ECAObject,
+        ECARules4All_DLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       dirty: 0
+--- !u!1 &1254720097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3400517798566394576, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
+  m_PrefabInstance: {fileID: 4136575445630257744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616021419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1501,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3172232848243330806, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1491397850}
+      addedObject: {fileID: 1196664860}
+    - targetCorrespondingSourceObject: {fileID: 3400517798566394576, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 170781747}
   m_SourcePrefab: {fileID: 100100000, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
 --- !u!223 &4136575445630257745 stripped
 Canvas:
