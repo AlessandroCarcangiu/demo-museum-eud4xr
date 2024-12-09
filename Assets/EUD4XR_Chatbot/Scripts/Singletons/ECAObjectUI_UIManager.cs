@@ -1,6 +1,5 @@
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
-using TMPro;
 using UnityEngine;
 
 public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
@@ -14,8 +13,8 @@ public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
 
         // var transformToMove = currentCanvas.transform;
         var transformToMove =  currentCanvas.transform.parent;
-        var d = (playerTransform.position - ecaObject.transform.position).normalized;
         
+        // var d = (playerTransform.position - ecaObject.transform.position).normalized;
         // SetCanvasCloseToPlayer(transformToMove, playerTransform, d);
         SetCanvasCloseToTargetLookingAtPlayer(transformToMove, playerTransform, ecaObject.gameObject.transform);
     }
