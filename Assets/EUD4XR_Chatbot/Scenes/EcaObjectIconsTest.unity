@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7903507, g: 0.92019737, b: 1.1028755, a: 1}
+  m_IndirectSpecularColor: {r: 1.068766, g: 1.1064711, b: 1.1810751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -699,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5357311245605582581, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_LocomotionProvider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5357311245605582585, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_TrackingStateInput.m_Action.m_Name
       value: Tracking State Input
@@ -767,7 +771,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3584250009831998462, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7007339729973531302, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
@@ -8780,7 +8785,7 @@ PrefabInstance:
     - target: {fileID: 7404367834334578676, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
       propertyPath: canvasList.Array.data[0].b_open
       value: 
-      objectReference: {fileID: 4136575445630257747}
+      objectReference: {fileID: 4136575445630257746}
     - target: {fileID: 7404367834334578676, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
       propertyPath: canvasList.Array.data[0].canvas
       value: 
@@ -8788,7 +8793,7 @@ PrefabInstance:
     - target: {fileID: 7404367834334578676, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
       propertyPath: canvasList.Array.data[1].b_open
       value: 
-      objectReference: {fileID: 4136575445630257746}
+      objectReference: {fileID: 4136575445630257747}
     - target: {fileID: 7404367834334578676, guid: d075155ba2bc5c54db7584522a6e15b6, type: 3}
       propertyPath: canvasList.Array.data[1].canvas
       value: 
