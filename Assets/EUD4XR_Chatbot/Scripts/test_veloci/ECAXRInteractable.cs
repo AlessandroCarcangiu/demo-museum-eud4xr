@@ -9,7 +9,7 @@ using Behaviour = ECARules4All_DLL.Behaviour;
 [RequireComponent(typeof(Behaviour))]  //TODO Bug se non metti RequireComponent(typeof(Interactable))
 [RequireComponent(typeof(Interactable))]
 [DisallowMultipleComponent]
-public class ECAXRInteractable : XRGrabInteractable
+public class ECAXRInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
 {
     public string tagPlayer = string.Empty;
 
@@ -28,9 +28,9 @@ public class ECAXRInteractable : XRGrabInteractable
             ? args.interactorObject.transform.gameObject
             : GameObject.FindWithTag("Player");
 
-        if (args.interactorObject is XRRayInteractor
-            || args.interactorObject is XRDirectInteractor
-            || args.interactorObject is XRPokeInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor
+            || args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor
+            || args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
             Debug.Log("Pointer Down: Object grabbed by ray");
 
@@ -55,9 +55,9 @@ public class ECAXRInteractable : XRGrabInteractable
             ? args.interactorObject.transform.gameObject
             : GameObject.FindWithTag("Player");
 
-        if (args.interactorObject is XRRayInteractor
-            || args.interactorObject is XRDirectInteractor
-            || args.interactorObject is XRPokeInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor
+            || args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor
+            || args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
             Debug.Log("Pointer Up: Object released by ray");
 
@@ -81,7 +81,7 @@ public class ECAXRInteractable : XRGrabInteractable
         GameObject subject = string.IsNullOrEmpty(tagPlayer)
             ? args.interactorObject.transform.gameObject
             : GameObject.FindWithTag("Player");
-        if (args.interactorObject is XRRayInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
         {
             Debug.Log($"{gameObject.name} pointed at by ray.");
             
@@ -104,7 +104,7 @@ public class ECAXRInteractable : XRGrabInteractable
             : GameObject.FindWithTag("Player");
 
         
-        if (args.interactorObject is XRRayInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
         {
             Debug.Log($"{gameObject.name} stopped pointing at by ray.");
         }

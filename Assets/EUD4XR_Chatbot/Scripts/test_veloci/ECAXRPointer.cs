@@ -10,7 +10,7 @@ using Action = ECARules4All_DLL.Action;
 [RequireComponent(typeof(Behaviour))] //TODO Bug se non metti RequireComponent(typeof(Interactable))
 [RequireComponent(typeof(Interactable))]
 [DisallowMultipleComponent]
-public class ECAXRPointer : XRBaseInteractable
+public class ECAXRPointer : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
 {
     public string tagPlayer = string.Empty;
 
@@ -24,7 +24,7 @@ public class ECAXRPointer : XRBaseInteractable
             ? args.interactorObject.transform.gameObject
             : GameObject.FindWithTag("Player");
 
-        if (args.interactorObject is XRRayInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
         {
             Debug.Log($"{gameObject.name} pointed at by ray.");
             
@@ -47,7 +47,7 @@ public class ECAXRPointer : XRBaseInteractable
             : GameObject.FindWithTag("Player");
 
         
-        if (args.interactorObject is XRRayInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
         {
             Debug.Log($"{gameObject.name} stopped pointing at by ray.");
         }

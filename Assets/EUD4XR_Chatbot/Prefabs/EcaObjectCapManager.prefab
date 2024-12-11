@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1862606008895068383}
   - component: {fileID: 6293919024984604290}
   m_Layer: 5
-  m_Name: B_Cap
+  m_Name: B_Capabilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,10 +266,10 @@ RectTransform:
   - {fileID: 2819289516464065145}
   m_Father: {fileID: 6594412927830347697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 32}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &2550284504517640306
 GameObject:
@@ -305,8 +305,8 @@ RectTransform:
   - {fileID: 556479842563273755}
   m_Father: {fileID: 359343912240640264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -500,7 +500,7 @@ RectTransform:
   m_Father: {fileID: 8888058655592824410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: CanvasCap
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 2846171346972906293}
   - component: {fileID: 6090944727380181052}
   - component: {fileID: 874554358155386500}
+  - component: {fileID: 2313764774315519656}
   m_Layer: 0
   m_Name: CanvasRules
   m_TagString: Untagged
@@ -723,6 +724,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &2313764774315519656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172232848243330806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251c5308bf04c17a4766ae529497b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iGameObjectProviderRef: {fileID: 4452473805340389129}
+  textItems:
+  - textRef: {fileID: 1280253866865507012}
+    onCanvasEnableCallback:
+      _target: {fileID: 0}
+      _methodName: GetRulesInvolvingECAObjectAsString
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 5
+        _typeName: ECARules4All_DLL.ECAObject, ECARules4All_DLL, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      _dynamic: 1
+      _typeName: OnCanvasEnableDisable`1+Data2String[[ECARules4All_DLL.ECAObject,
+        ECARules4All_DLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
 --- !u!1 &3400517798566394576
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +769,7 @@ GameObject:
   - component: {fileID: 1163174194729497465}
   - component: {fileID: 4094360965966819132}
   - component: {fileID: 4457543702141880280}
+  - component: {fileID: 1630127084840472029}
   m_Layer: 0
   m_Name: CanvasCapabilities
   m_TagString: Untagged
@@ -845,6 +879,38 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &1630127084840472029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400517798566394576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251c5308bf04c17a4766ae529497b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iGameObjectProviderRef: {fileID: 4452473805340389129}
+  textItems:
+  - textRef: {fileID: 7161797530593043975}
+    onCanvasEnableCallback:
+      _target: {fileID: 0}
+      _methodName: GetCapabilitiesAsString
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 5
+        _typeName: ECARules4All_DLL.ECAObject, ECARules4All_DLL, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      _dynamic: 1
+      _typeName: OnCanvasEnableDisable`1+Data2String[[ECARules4All_DLL.ECAObject,
+        ECARules4All_DLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
 --- !u!1 &3875457229215042083
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +924,7 @@ GameObject:
   - component: {fileID: 6489558897279983322}
   - component: {fileID: 3277637599463311262}
   m_Layer: 5
-  m_Name: B_Rules
+  m_Name: B_Regole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,13 +1200,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCanvas: {fileID: 7363527406273996719}
-  ShowDefaultCanvasOnAwake: 1
+  ShowDefaultCanvasOnAwake: 0
   canvasList:
   - canvas: {fileID: 2115178943525777035}
-    b_open: {fileID: 3277637599463311262}
+    b_open: {fileID: 6293919024984604290}
     b_close: {fileID: 5625130471146525640}
   - canvas: {fileID: 4631900742984847087}
-    b_open: {fileID: 6293919024984604290}
+    b_open: {fileID: 3277637599463311262}
     b_close: {fileID: 1754851698070904508}
 --- !u!1 &4536581281224104505
 GameObject:
@@ -1385,7 +1451,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5461867962870127740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1394,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7363527406273996719
@@ -1773,7 +1839,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6932429139014428711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000011920929}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000055879354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2157,7 +2223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: CanvasRegole
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2252,7 +2318,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5687291337717280946}
@@ -2294,5 +2360,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
