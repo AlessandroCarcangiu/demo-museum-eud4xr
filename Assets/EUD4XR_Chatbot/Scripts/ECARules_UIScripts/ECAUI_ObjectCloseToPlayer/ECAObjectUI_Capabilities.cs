@@ -31,7 +31,7 @@ public class ECAObjectUI_Capabilities : MonoBehaviour
         if (ecaObject == null) return;
 
         //TODO Ottenere una lista di stringhe o un dict {"variables": <>, "actions": <>}
-        var t = ECAObjectInfo.Instance.GetCapabilitiesAsDoubleString(ecaObject);
+        var t = ECAObjectInfo.Instance.GetCapabilitiesAsDoubleString(ecaObject, filterEcaRelevant:true);
 
         // if (rulesInvolvingEcaObject.Count == 0)
         // Instantiate(uiNoInfoPrefab, listParent.transform);
