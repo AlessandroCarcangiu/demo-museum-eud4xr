@@ -12,7 +12,7 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
     [ECARules4All("text")]
     [RequireComponent(typeof(Interaction))] //gerarchia 
     [DisallowMultipleComponent]
-    public class ECAText : ECAScript
+    public class ECAText : MonoBehaviour
     {
         private TMP_Text textMesh;
 
@@ -38,7 +38,7 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
             {
                 _content = value;
                 textMesh.text = value;
-                NotifyUpdate(nameof(content), content);
+                ECAScript.NotifyUpdate(this, nameof(content), content);
             }
         }
         [SerializeField]
