@@ -2,7 +2,8 @@ using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
 using UnityEngine;
 
-public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
+// public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
+public class ECAObjectUI_UIManager : UIGenericMRTKMenu, ISourceProvider<ECAObject>
 {
     public void PlayerStartsTriggeringEcaObject(ECAObject ecaObject, Transform playerTransform)
     {
@@ -30,7 +31,8 @@ public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
      public ECAObject dataSourceRef { get; set; }
 }
 
-public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMenu>
+// public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMenu>
+public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMRTKMenu>
 {
     protected override void OnAwake()
     {
