@@ -1,17 +1,19 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL;
+using ECARules4All_DLL.Utils;
 using TMPro;
 using UnityEngine;
 
-public class ECAObjectUI_InvolvedRule : MonoBehaviour
+public class ECAObjectUI_InvolvedRule : Singleton<ECAObjectUI_InvolvedRule>
 {
     public GameObject uiNoRulePrefab;
     public GameObject uiRuleItemPrefab; // It contains 
     public GameObject listParent;
 
     public TMP_Text titleRef;
-
+    public GameObject T_GoToRules;
+    
 
     private void Awake()
     {
@@ -19,9 +21,9 @@ public class ECAObjectUI_InvolvedRule : MonoBehaviour
         if (uiNoRulePrefab == null) throw new Exception("uiNoRulePrefab is null");
         if (uiRuleItemPrefab == null) throw new Exception("uiRuleItemPrefab is null");
         if (listParent == null) throw new Exception("listParent is null");
-        
-        if (titleRef == null) throw new Exception("titleRef is null");
 
+        if (titleRef == null) throw new Exception("titleRef is null");
+        if (T_GoToRules == null) throw new Exception("T_GoToRules is null");
     }
 
     private void OnEnable()
@@ -45,6 +47,8 @@ public class ECAObjectUI_InvolvedRule : MonoBehaviour
             }
 
         SetTitle(ecaObject);
+        
+        T_GoToRules.SetActive(false);
     }
 
     private void OnDisable()

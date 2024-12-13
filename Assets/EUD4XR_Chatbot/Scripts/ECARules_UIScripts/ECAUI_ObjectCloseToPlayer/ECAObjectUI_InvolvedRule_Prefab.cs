@@ -33,6 +33,7 @@ public class ECAObjectUI_InvolvedRule_Prefab : MonoBehaviour
         {
             ECAUI_UIManager.Instance.Intention_EditRuleFromUI(ruleToDisplay);
             ECAUI_UIManager.Instance.GetComponent<Waypoint_Indicator>().enabled = true;
+            ECAObjectUI_InvolvedRule.Instance.T_GoToRules.SetActive(true); // Do we want to make it more clear with a callback from ECAObjectUI_InvolvedRule?
         });
     }
 

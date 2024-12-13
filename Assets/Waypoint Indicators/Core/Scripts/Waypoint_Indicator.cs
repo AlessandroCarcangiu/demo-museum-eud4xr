@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Diagnostics;
 using UnityEngine.Events;
 
 
@@ -1481,10 +1482,44 @@ public class Waypoint_Indicator : MonoBehaviour
 
                                 //Color
                                 spriteIndicatorColor = offScreenSpriteColor;
-
+                                
+                                ////// J did this.
+                                /// Original code was:
+                                /// spriteIndicatorRect.localPosition = offScreenSpriteOffset;
+                                
+                                /// New code:
                                 //Position
-                                spriteIndicatorRect.localPosition = offScreenSpriteOffset;
+                                // spriteIndicatorRect.localPosition = offScreenSpriteOffset;
+                                // var isLeft = WaypointUtils.IsSpriteOnLeftVerticalScreenSide(spriteIndicatorRect);
+                                // var isTop = WaypointUtils.IsSpriteOnTopHorizontalScreenSide(spriteIndicatorRect);
+                                // var newOffset = new Vector2(
+                                //     offScreenSpriteOffset.x*(isLeft ?  1: -1), 
+                                //     offScreenSpriteOffset.y*(isTop ?  1: -1) 
+                                // );
+                                // spriteIndicatorRect.localPosition = newOffset;
+                                Vector2 newLocalPosition = Vector2.zero;
 
+                                if (topEdgeDetected)
+                                {
+                                    newLocalPosition = new Vector2(offScreenSpriteOffset.x, offScreenSpriteOffset.y);
+                                }
+                                else if (botEdgeDetected)
+                                {
+                                    newLocalPosition = new Vector2(offScreenSpriteOffset.x, -offScreenSpriteOffset.y);
+                                }
+                                else if (rightEdgeDetected)
+                                {
+                                    newLocalPosition = new Vector2(-offScreenSpriteOffset.x, offScreenSpriteOffset.y);
+                                }
+                                else if (leftEdgeDetected)
+                                {
+                                    newLocalPosition = new Vector2(offScreenSpriteOffset.x, offScreenSpriteOffset.y);
+                                }
+
+                                // Apply the calculated offset
+                                spriteIndicatorRect.localPosition = newLocalPosition;
+                                //////
+                                
                                 //Rotation
                                 if (offScreenSpriteRotates)
                                 {
@@ -3516,5 +3551,13 @@ static class WaypointUtils
             return true;
         }
     }
-    // return waypointDist < displayRangeMax && waypointDist > (displayRangeMin + 1);
+
+    public static bool IsSpriteOnLeftVerticalScreenSide(RectTransform spriteIndicatorRect)
+    {
+        return spriteIndicatorRect.localRotation.eulerAngles.z is >= 0 and <= 180;
+    }
+    public static bool IsSpriteOnTopHorizontalScreenSide(RectTransform spriteIndicatorRect)
+    {
+        return Mathf.Abs(spriteIndicatorRect.localRotation.eulerAngles.z) is >= 0 and <= 90;
+    }
 }
