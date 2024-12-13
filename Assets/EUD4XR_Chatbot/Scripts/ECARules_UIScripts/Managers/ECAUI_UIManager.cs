@@ -7,11 +7,11 @@ using ECARules4All_DLL.Utils;
 using UnityEngine;
 using Action = ECARules4All_DLL.Action;
 
-public class ECAUI_UIManager : MonoBehaviour
+public class ECAUI_UIManager : Singleton<ECAUI_UIManager>
 {
     public ECAUI_ShowAllRulesManager showAllRules;
     public ECAUI_ShowSelectedRuleManager showSelectedRule;
-    private ECAUI_RuleOverview _selectedUIRuleRendering = null;
+    // private ECAUI_RuleOverview _selectedUIRuleRendering = null; // useless
 
     private List<Rule> rules = new List<Rule>();
     private Rule selectedRule = null;
@@ -91,6 +91,11 @@ public class ECAUI_UIManager : MonoBehaviour
         EnableShowAllRules();
     }
 
+    // private void OnEnable()
+    // {
+        // WPI_Manager.onToggleVisibility += () => {Debug.Log("Waypoint indicators are visible: " + WPI_Manager.waypoint_indicators_are_visible);};
+    // }
+
     private void EnableShowAllRules()
     {
         showAllRules.gameObject.SetActive(true);
@@ -118,13 +123,13 @@ public class ECAUI_UIManager : MonoBehaviour
         OnRuleDeleted();
     }
 
-    public void Intention_EditRuleFromUI(ECAUI_RuleOverview ruleRendering)
+
+    public void Intention_EditRuleFromUI(Rule ruleToRender)
     {
-        _selectedUIRuleRendering = ruleRendering;
-        EnableShowSelectedRule(ruleRendering.GetRule());
-        // RuleEngine.GetInstance().Remove(rule);
-        // OnRuleAdded();
+        // _selectedUIRuleRendering = ruleRendering; // useless
+        EnableShowSelectedRule(ruleToRender);
     }
+    public void Intention_EditRuleFromUI(ECAUI_RuleOverview ruleRendering) => this.Intention_EditRuleFromUI(ruleRendering.GetRule());
 
     public void Intention_SaveRuleEditedFromUI(Rule originalRule, ECAUI_Utils.RulePlaceholder newPlaceholderRule)
     {
