@@ -218,7 +218,7 @@ public class ECAUI_Action : MonoBehaviour
             deleteActionButton.gameObject.SetActive(false);
         }
 
-        if (false) // (action == null) //todo TEMPORARY 
+        if (action == null) 
         {
             throw new NotImplementedException(
                 "Action is null. Why? Do we want to create Rules from the UI from scratch?");
