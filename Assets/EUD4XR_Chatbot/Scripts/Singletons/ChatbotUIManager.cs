@@ -6,7 +6,7 @@ using ECARules4All_DLL.Utils;
 public class ChatbotUIManager : Singleton<ChatbotUIManager>
 {
     public TextMeshProUGUI message;
-    public TMP_Dropdown d_micList;
+    public TMP_Dropdown d_micList; //TODO Rimuoverlo in futuro. Direi di lasciarlo fino alla 1a build per vedere meglio quali microfoni ci sono nel visreo
 
     public AudioSource speaker;
 
