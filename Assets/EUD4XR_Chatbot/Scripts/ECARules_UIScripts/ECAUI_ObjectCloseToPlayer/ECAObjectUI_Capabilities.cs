@@ -6,7 +6,7 @@ using ECARules4All_DLL.Utils;
 using TMPro;
 using UnityEngine;
 
-public class ECAObjectUI_Capabilities : MonoBehaviour
+public class ECAObjectUI_Capabilities : Singleton<ECAObjectUI_Capabilities>
 {
     public GameObject uiNoInfoPrefab;
     public GameObject uiInfoItemPrefab; // It contains 
@@ -75,7 +75,8 @@ public class ECAObjectUI_Capabilities : MonoBehaviour
 
     private void SetTitle([NotNull] GameObject ecaObject)
     {
-        const string template = "<size=14>Info </size><size=11>di <color=#7f7f7f>{0}</color></size>";
+        const string template = "<size=11>Info di </size><size=11><color=#548AF7>{0}</color></size>";
+        // const string template = "<size=14>Info </size><size=11>di <color=#7f7f7f>{0}</color></size>";
         titleRef.text = string.Format(template, ecaObject.gameObject.name);
     }
 

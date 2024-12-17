@@ -62,7 +62,7 @@ public class ECAObjectUI_InvolvedRule : Singleton<ECAObjectUI_InvolvedRule>
 
     private void SetTitle([NotNull] GameObject ecaObject)
     {
-        const string template = "<size=14>Regole </size><size=11>con <color=#7f7f7f>{0}</color></size>";
+        const string template = "<size=14>Regole </size><size=11>con <color=#548AF7>{0}</color></size>";
         titleRef.text = string.Format(template, ecaObject.gameObject.name);
     }
 
