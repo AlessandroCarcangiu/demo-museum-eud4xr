@@ -17,7 +17,7 @@ public class ECAUI_RuleOverview : MonoBehaviour
     private ECAUI_UIManager uiManager;
     private void Awake()
     {
-        uiManager = GameObject.FindObjectOfType<ECAUI_UIManager>();
+        uiManager = ECAUI_UIManager.Instance;
         if (uiManager == null)
         {
             throw new ArgumentNullException("uiManager", "uiManager must be set");
@@ -26,11 +26,7 @@ public class ECAUI_RuleOverview : MonoBehaviour
 
     public void SetRule(Rule rule)
     {
-        if (rule == null)
-        {
-            throw new System.ArgumentNullException("rule", "rule must be set");
-        }
-        this.rule = rule;
+        this.rule = rule ?? throw new ArgumentNullException("rule", "rule must be set");
         ruleText.text = RuleUtils.FormatRuleLabel(rule);
         
         deleteButton.onClick.AddListener(() => { uiManager.Intention_DeleteRuleFromUI(rule); });

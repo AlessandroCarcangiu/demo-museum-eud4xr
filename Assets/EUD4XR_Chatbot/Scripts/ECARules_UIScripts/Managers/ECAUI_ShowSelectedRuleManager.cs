@@ -53,7 +53,7 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
             throw new NotImplementedException();
         }
 
-        infoCapabilities = ECAObjectInfo.Instance.GetAllInfoAboutCurrentECAObjects_Efficient();
+        infoCapabilities = ECAObjectInfo.Instance.GetAllInfoAboutCurrentECAObjects_Cached();
         DrawView(uiManager.SelectedRule);
     }
 

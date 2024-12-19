@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8f1ce8139888c4ab621f6b3c8bb558, type: 3}
   m_Name: MotionControllerFeaturePlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Motion Controller Model
   version: 1.11.2
   featureIdInternal: com.microsoft.openxr.feature.controller
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f647cc0545697264a9878224faada6d5, type: 3}
   m_Name: MetaQuestFeature Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Meta Quest Support
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.metaquest
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8ec2975f18d5e479159feb34b4dc86, type: 3}
   m_Name: MixedRealityFeaturePlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Mixed Reality Features
   version: 1.11.2
   featureIdInternal: com.microsoft.openxr.feature.hololens
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8f1ce8139888c4ab621f6b3c8bb558, type: 3}
   m_Name: MotionControllerFeaturePlugin Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Motion Controller Model
   version: 1.11.2
   featureIdInternal: com.microsoft.openxr.feature.controller
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c911b38743a649b1c1eddb5097202, type: 3}
   m_Name: HandTrackingFeaturePlugin Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Hand Tracking
   version: 1.11.2
   featureIdInternal: com.microsoft.openxr.feature.handtracking
@@ -737,7 +737,7 @@ MonoBehaviour:
   - {fileID: 395267737109343011}
   - {fileID: -4385011007331992820}
   m_renderMode: 1
-  m_depthSubmissionMode: 0
+  m_depthSubmissionMode: 1
 --- !u!114 &4132278501710749235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c911b38743a649b1c1eddb5097202, type: 3}
   m_Name: HandTrackingFeaturePlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Hand Tracking
   version: 1.11.2
   featureIdInternal: com.microsoft.openxr.feature.handtracking
