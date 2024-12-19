@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using ECARules4All_DLL;
 using ECARules4All_DLL.SmartHomeHubClients;
 using ECARules4All_DLL.SmartHomeHubClients.Clients;
+using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
+using Action = ECARules4All_DLL.Action;
 using Path = System.IO.Path;
 
 
@@ -58,19 +61,40 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         // from ngrok static url:
         // ngrok http 8080 --host-header="localhost:8080" --domain="fly-powerful-slug.ngrok-free.app"
             
-        //objectToMove = GameObject.Find("Test_01");
-        //objectToMove.transform.position.Set(0, 0, 0);
-
-        //if (objectToMove == null) {
-            //Debug.LogError("Nessun oggetto assegnato e 'objectToMove' non trovato nella scena.");
-            //return;
-        //}
+        
+        /*var cube1 = GameObject.Find("Cube1");
+        var cube2 = GameObject.Find("Cube2");
+        Action e = new Action(
+            cube1,
+            "eats",
+            cube2
+        );
+        Action a1 = new Action(
+            cube1,
+            "moves to",
+            new Position(10, 11, 12)
+        );
+        Action a2 = new Action(
+            cube2,
+            "hides"
+        );
+        Rule r = Rule.TryCreateRule(e, new List<Action>() { a1, a2 });
+        RuleEngine.GetInstance().Add(r);*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("space"))
+        {
+            string filePath = "Assets/Scripts/automations.json";
+            string jsonContent = File.ReadAllText(filePath);
+            List<AutomationDTO> rules = JsonConvert.DeserializeObject<List<AutomationDTO>>(jsonContent);
+            foreach (var rule in rules)
+            {
+                Debug.Log(rule);
+            }
+        }
     }
     
     private void OnDisable()
