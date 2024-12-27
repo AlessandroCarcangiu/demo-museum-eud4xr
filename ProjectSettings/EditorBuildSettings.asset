@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/EUD4XR_Chatbot/Scenes/EcaObjectIconsTest.unity
-    guid: 53e82c0bf24d8b34c9a1218533d60eb9
+    path: Assets/Scenes/Museum 2.0 Demo Test.unity
+    guid: 6a001c2b0b15fc14ab3f7cc1348ce28d
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 899b4c90a1bb00c4c82cadca42907ec5, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 02a34bb5b4cb1dc4d82d834085f16a5f, type: 2}
