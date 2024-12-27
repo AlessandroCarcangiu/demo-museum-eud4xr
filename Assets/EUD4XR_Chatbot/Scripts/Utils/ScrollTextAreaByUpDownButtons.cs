@@ -22,7 +22,9 @@ public class ScrollTextAreaByUpDownButtons : MonoBehaviour
 
    [SerializeField] private RectTransform rt;
 
-   private void Awake()
+   private Coroutine currentRoutine = null;
+   
+    void Awake()
    {
       rt = text.GetComponent<RectTransform>();
       
@@ -65,26 +67,38 @@ public class ScrollTextAreaByUpDownButtons : MonoBehaviour
    }
 
 
-   public void Start()
+   void Start()
    {
       scrollUp.OnClicked.AddListener(ScrollUp);
       scrollDown.OnClicked.AddListener(ScrollDown);
    }
    
-   void ScrollUp()
+   public void ScrollUp()
    {
+      // Check if there is a current routine running. If so, stop it
+      if (currentRoutine != null)
+      {
+         StopCoroutine(currentRoutine);
+      }
+      
       // Decrease text z position by one page
       int offset = CalcOnePageHeight();
       var targetLocPos = new Vector3(rt.localPosition.x, rt.localPosition.y - offset, rt.localPosition.z);
-      StartCoroutine(SmoothScrollToPosition(targetLocPos, 3f));
+      currentRoutine = StartCoroutine(SmoothScrollToPosition(targetLocPos, 3f));
    }
    
-   void ScrollDown()
+   public void ScrollDown()
    {
+      // Check if there is a current routine running. If so, stop it
+      if (currentRoutine != null)
+      {
+         StopCoroutine(currentRoutine);
+      }
+      
       // Increase text z position by one page
       int offset = CalcOnePageHeight();
       var targetLocPos = new Vector3(rt.localPosition.x, rt.localPosition.y + offset, rt.localPosition.z);
-      StartCoroutine(SmoothScrollToPosition(targetLocPos, 3f));
+      currentRoutine = StartCoroutine(SmoothScrollToPosition(targetLocPos, 3f));
    }
    
    private int CalcOnePageHeight()
