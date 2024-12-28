@@ -85,15 +85,17 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            string filePath = "Assets/Scripts/automations.json";
+            /*string filePath = "Assets/Scripts/automations.json";
             string jsonContent = File.ReadAllText(filePath);
             List<AutomationDTO> rules = JsonConvert.DeserializeObject<List<AutomationDTO>>(jsonContent);
             foreach (var rule in rules)
             {
                 Debug.Log(rule);
-            }
+            }#1#*/
+
+            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Generating);
         }
     }
     
