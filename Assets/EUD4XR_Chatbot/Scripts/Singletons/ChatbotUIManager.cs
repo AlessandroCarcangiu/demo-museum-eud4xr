@@ -1,4 +1,7 @@
-﻿using TMPro;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using ECARules4All_DLL.Utils;
@@ -10,6 +13,7 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
 
     public AudioSource speaker;
 
+    public event Action OnAudioPlaybackCompleted;
     private void Start()
     {
         void DrawDropdownMicOptions()
@@ -26,16 +30,6 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         }
         DrawDropdownMicOptions();
 
-        // void OnButtonClick()
-        // {
-        //     if (MicrophoneManager.Instance.IsRecording())
-        //     {
-        //         MicrophoneManager.Instance.EndRecording();
-        //         return;
-        //     }
-        //     MicrophoneManager.Instance.StartRecording(); // StartRecording();
-        // }
-        // b_speakToChatbot.onClick.AddListener(OnButtonClick);
             
         void OnDropdownValueChanged(int index)
         {
@@ -58,18 +52,32 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
 
     private void SpeakTranscription(string s)
     {
-        void OnAudioCreated(AudioClip clip)
-        {
-            speaker.clip = clip;
-            speaker.Play();
-        }
+        void OnAudioCreated(AudioClip clip) => SpeakTranscription(clip);
         StartCoroutine(Text2Speech.CreateAudio(s, OnAudioCreated));
     }
     
-    public void SpeakTranscription(AudioClip clip)
+    public void SpeakTranscription(AudioClip clip, Action adHocCallback = null)
     {
         speaker.clip = clip;
         speaker.Play();
+
+        List<Action> callbacks = new List<Action>() {() => OnAudioPlaybackCompleted?.Invoke()};
+        if (adHocCallback != null)
+            callbacks.Add(adHocCallback);
         
+        StartCoroutine(CheckAudioPlaybackCompletion(callbacks));
+    }
+    
+    private IEnumerator CheckAudioPlaybackCompletion(List<Action> callbackList)
+    {
+        // Wait for the audio to start playing
+        if (!speaker.isPlaying)
+            yield return new WaitUntil(() => !speaker.isPlaying);
+        
+        // Now wait for the audio to finish playing        
+        yield return new WaitUntil(() => !speaker.isPlaying);
+        
+        // Invoke the callbacks
+        callbackList.ForEach(c => c?.Invoke());
     }
 }

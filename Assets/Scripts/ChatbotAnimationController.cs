@@ -9,7 +9,8 @@ public enum ChatbotState
     Idle,
     Listening,
     Analyzing,
-    Generating,
+    GeneratingAnswer,
+    PreparingAnswerAudio, //TODO J - Ho aggiunto questo stato, c'è bisogno di un'animazione per questo?
     Answering
 }
 
@@ -47,7 +48,7 @@ public class ChatbotAnimationController : MonoBehaviour
             "pose4"
         },
         {
-            ChatbotState.Generating,
+            ChatbotState.GeneratingAnswer,
             "pose5"
         }
     };

@@ -95,7 +95,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
                 Debug.Log(rule);
             }#1#*/
 
-            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Generating);
+            ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
         }
     }
     
