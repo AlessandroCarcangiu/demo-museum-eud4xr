@@ -65,11 +65,6 @@ public class ChatbotAnimationController : MonoBehaviour
         {
             throw new Exception("Animator is null");
         };
-        
-        foreach (var trigger in animations.Values)
-        {
-            animator.ResetTrigger(trigger);
-        }
 
         if (animations.TryGetValue(e.State, out string poseName))
         {
