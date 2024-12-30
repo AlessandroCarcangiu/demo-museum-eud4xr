@@ -9370,7 +9370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016211623223765452, guid: ef05ccee82a8a294cae973e3dba7821b, type: 3}
       propertyPath: _source
-      value: 
+      value: nona_sinfonia_video.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016211623223765452, guid: ef05ccee82a8a294cae973e3dba7821b, type: 3}
+      propertyPath: _volume
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9016211623223765452, guid: ef05ccee82a8a294cae973e3dba7821b, type: 3}
       propertyPath: _playing.choice
@@ -32957,7 +32961,7 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: Baccus_AD.mp3
+  _source: nona_sinfonia_audio.mp3
   _volume: 0.4
   _maxVolume: 1
   _currentTime: 0
