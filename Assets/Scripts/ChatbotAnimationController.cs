@@ -33,7 +33,7 @@ public class ChatbotAnimationController : MonoBehaviour
     {
         {
             ChatbotState.Idle,
-            "idle"
+            "Idle"
         },
         {
             ChatbotState.Analyzing,
@@ -49,6 +49,10 @@ public class ChatbotAnimationController : MonoBehaviour
         },
         {
             ChatbotState.GeneratingAnswer,
+            "pose5"
+        },
+        {
+            ChatbotState.PreparingAnswerAudio,
             "pose5"
         }
     };
