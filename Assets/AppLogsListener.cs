@@ -40,7 +40,7 @@ public class AppLogsListener : MonoBehaviour
         // {
             // return;
         // }
-        output = "> " + logString + "\n\n" + output;
+        output += "\n\n>" + logString + " (Stack: " + stackTrace + ")";
         stack = stackTrace;
 
         DebugText.text = output;

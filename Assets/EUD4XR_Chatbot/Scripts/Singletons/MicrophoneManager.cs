@@ -54,8 +54,8 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         byte[] data = SaveWav.Save(clip);
 
         // For Debugging
-        // GetComponent<AudioSource>().clip = clip;
-        // GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().clip = clip;
+        GetComponent<AudioSource>().Play();
         isRecording = false;
         callback?.Invoke(clip, data);
     }
