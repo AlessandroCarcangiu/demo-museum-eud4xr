@@ -33,7 +33,7 @@ public class ChatbotAnimationController : MonoBehaviour
     {
         {
             ChatbotState.Idle,
-            "idle"
+            "Idle"
         },
         {
             ChatbotState.Analyzing,
@@ -50,6 +50,10 @@ public class ChatbotAnimationController : MonoBehaviour
         {
             ChatbotState.GeneratingAnswer,
             "pose5"
+        },
+        {
+            ChatbotState.PreparingAnswerAudio,
+            "pose5"
         }
     };
     
@@ -65,11 +69,6 @@ public class ChatbotAnimationController : MonoBehaviour
         {
             throw new Exception("Animator is null");
         };
-        
-        foreach (var trigger in animations.Values)
-        {
-            animator.ResetTrigger(trigger);
-        }
 
         if (animations.TryGetValue(e.State, out string poseName))
         {
