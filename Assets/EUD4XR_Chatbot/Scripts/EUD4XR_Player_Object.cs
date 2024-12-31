@@ -17,8 +17,18 @@ public class EUD4XR_Player_Object : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        var ecaObject = other.transform.GetComponent<ECAObject>();
+        if (ecaObject == null || other.gameObject.CompareTag("Player")) return;
+        Debug.LogWarning("EUD4XR_Object OnCollisionEnter with " + other.gameObject.name);
+        throw new NotImplementedException("OnCollisionEnter Not implemented yet");
+    }
+    
+
     private void OnTriggerEnter(Collider other)
     {
+        UnityEngine.Debug.Log("EUD4XR_Object OnTriggerEnter with " + other.gameObject.name);
         var ecaObject = other.GetComponent<ECAObject>();
         if (ecaObject == null || other.gameObject.CompareTag("Player")) return;
         
