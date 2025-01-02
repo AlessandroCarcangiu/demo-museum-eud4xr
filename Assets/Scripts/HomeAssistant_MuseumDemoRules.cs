@@ -1,14 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using ECARules4All_DLL;
 using ECARules4All_DLL.SmartHomeHubClients;
 using ECARules4All_DLL.SmartHomeHubClients.Clients;
+using ECARules4All_DLL.Utils;
 using Newtonsoft.Json;
+//using Newtonsoft.Json;
+using Serilog;
 using UnityEditor;
 using UnityEngine;
 using Action = ECARules4All_DLL.Action;
-using Path = System.IO.Path;
+using Path = ECARules4All_DLL.Path;
+//using System.Text.Json;
+
+//using Path = System.IO.Path;
 
 
 public class HomeAssistant_MuseumDemoRules : MonoBehaviour
@@ -28,7 +37,7 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
 
     private void Awake()
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "settings.json");
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "settings.json");
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -81,21 +90,21 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
         Rule r = Rule.TryCreateRule(e, new List<Action>() { a1, a2 });
         RuleEngine.GetInstance().Add(r);*/
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            /*string filePath = "Assets/Scripts/automations.json";
+            string filePath = "Assets/Scripts/automationsV2.json";
             string jsonContent = File.ReadAllText(filePath);
             List<AutomationDTO> rules = JsonConvert.DeserializeObject<List<AutomationDTO>>(jsonContent);
             foreach (var rule in rules)
             {
-                Debug.Log(rule);
-            }#1#*/
-
-            ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
+	            Debug.Log($"Regola ricevuta: {rule.ToString()} - {rule.id}");
+                Rule a = rule.ConvertToRule();
+                Debug.Log($"Regola creata: {a.GetEvent()}");
+            }
         }
     }
     
@@ -116,4 +125,18 @@ public class HomeAssistant_MuseumDemoRules : MonoBehaviour
             _apiServer.Stop();
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
