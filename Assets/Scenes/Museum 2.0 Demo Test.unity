@@ -9865,7 +9865,7 @@ GameObject:
   - component: {fileID: 829417922}
   - component: {fileID: 829417921}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: DescrizioneLaGrandeOndaDiKanagawa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
