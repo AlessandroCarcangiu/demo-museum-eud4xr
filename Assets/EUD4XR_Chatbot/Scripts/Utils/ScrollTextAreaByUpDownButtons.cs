@@ -71,6 +71,7 @@ public class ScrollTextAreaByUpDownButtons : MonoBehaviour
    {
       scrollUp.OnClicked.AddListener(ScrollUp);
       scrollDown.OnClicked.AddListener(ScrollDown);
+      Debug.Log("LISTENERS ADDED");
    }
    
    public void ScrollUp()
