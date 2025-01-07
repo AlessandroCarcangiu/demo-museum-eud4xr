@@ -9860,8 +9860,12 @@ GameObject:
   - component: {fileID: 829417918}
   - component: {fileID: 829417920}
   - component: {fileID: 829417919}
+  - component: {fileID: 829417924}
+  - component: {fileID: 829417923}
+  - component: {fileID: 829417922}
+  - component: {fileID: 829417921}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: DescrizioneLaGrandeOndaDiKanagawa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9906,14 +9910,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>La Grande Onda di Kanagawa</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=88><color=#fff>La Grande Onda di Kanagawa</size>\n<br><size=66><color=#c2c2c3>Realizzata
     da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa
-    parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n\n<size=88><color=#fff>Un
-    simbolo senza tempo</size>\n<size=66><color=#c2c2c3>Raffigura un'enorme onda
+    parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n<br><br><size=88><color=#fff>Un
+    simbolo senza tempo</size>\n<br><size=66><color=#c2c2c3>Raffigura un'enorme onda
     in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena
     combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra
-    la forza della natura e la stabilit\xE0</color>.</size>\n\n<size=88><color=#fff>L\u2019onda
-    e il Monte Fuji</size>\n<size=66><color=#c2c2c3>Celebrata per la sua bellezza
+    la forza della natura e la stabilit\xE0</color>.</size>\n<br><br><size=88><color=#fff>L\u2019onda
+    e il Monte Fuji</size>\n<br><size=66><color=#c2c2c3>Celebrata per la sua bellezza
     e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
     dell'arte globale.</size>"
   m_isRightToLeft: 0
@@ -9950,7 +9954,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 8
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9978,7 +9982,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 24, y: 24, z: 24, w: 24}
+  m_margin: {x: 40, y: 40, z: 40, w: 40}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9992,6 +9996,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829417917}
   m_CullTransparentMesh: 1
+--- !u!114 &829417921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829417917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d13648fb487e244ebd90973d12c7c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _content: "<size=88><color=#fff>La Grande Onda di Kanagawa</size> <br><size=66><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa
+    parte della serie \"Trentasei vedute del Monte Fuji\".</size> <br><br><size=88><color=#fff>Un
+    simbolo senza tempo</size> <br><size=66><color=#c2c2c3>Raffigura un'enorme onda
+    in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena
+    combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra
+    la forza della natura e la stabilit\xE0</color>.</size> <br><br><size=88><color=#fff>L\u2019onda
+    e il Monte Fuji</size> <br><size=66><color=#c2c2c3>Celebrata per la sua bellezza
+    e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
+    dell'arte globale.</size>"
+--- !u!114 &829417922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829417917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1263038528, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &829417923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829417917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 631841465, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isVisible:
+    choice: 0
+  _isActive:
+    choice: 0
+--- !u!114 &829417924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829417917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &830187088
 GameObject:
   m_ObjectHideFlags: 0
