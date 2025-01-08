@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7947436, g: 0.9210028, b: 1.0983701, a: 1}
+  m_IndirectSpecularColor: {r: 1.3200967, g: 1.3980745, b: 1.5852747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9633,11 +9633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016211623223765452, guid: ef05ccee82a8a294cae973e3dba7821b, type: 3}
       propertyPath: _playing.choice
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9016211623223765452, guid: ef05ccee82a8a294cae973e3dba7821b, type: 3}
       propertyPath: _stopped.choice
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9860,12 +9860,8 @@ GameObject:
   - component: {fileID: 829417918}
   - component: {fileID: 829417920}
   - component: {fileID: 829417919}
-  - component: {fileID: 829417924}
-  - component: {fileID: 829417923}
-  - component: {fileID: 829417922}
-  - component: {fileID: 829417921}
   m_Layer: 0
-  m_Name: DescrizioneLaGrandeOndaDiKanagawa
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9910,14 +9906,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>La Grande Onda di Kanagawa</size>\n<br><size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=88><color=#fff>La Grande Onda di Kanagawa</size>\n<size=66><color=#c2c2c3>Realizzata
     da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa
-    parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n<br><br><size=88><color=#fff>Un
-    simbolo senza tempo</size>\n<br><size=66><color=#c2c2c3>Raffigura un'enorme onda
+    parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n\n<size=88><color=#fff>Un
+    simbolo senza tempo</size>\n<size=66><color=#c2c2c3>Raffigura un'enorme onda
     in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena
     combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra
-    la forza della natura e la stabilit\xE0</color>.</size>\n<br><br><size=88><color=#fff>L\u2019onda
-    e il Monte Fuji</size>\n<br><size=66><color=#c2c2c3>Celebrata per la sua bellezza
+    la forza della natura e la stabilit\xE0</color>.</size>\n\n<size=88><color=#fff>L\u2019onda
+    e il Monte Fuji</size>\n<size=66><color=#c2c2c3>Celebrata per la sua bellezza
     e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
     dell'arte globale.</size>"
   m_isRightToLeft: 0
@@ -9954,7 +9950,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 8
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9982,7 +9978,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 40, y: 40, z: 40, w: 40}
+  m_margin: {x: 24, y: 24, z: 24, w: 24}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9996,68 +9992,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829417917}
   m_CullTransparentMesh: 1
---- !u!114 &829417921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829417917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d13648fb487e244ebd90973d12c7c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>La Grande Onda di Kanagawa</size> <br><size=66><color=#c2c2c3>Realizzata
-    da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa
-    parte della serie \"Trentasei vedute del Monte Fuji\".</size> <br><br><size=88><color=#fff>Un
-    simbolo senza tempo</size> <br><size=66><color=#c2c2c3>Raffigura un'enorme onda
-    in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena
-    combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra
-    la forza della natura e la stabilit\xE0</color>.</size> <br><br><size=88><color=#fff>L\u2019onda
-    e il Monte Fuji</size> <br><size=66><color=#c2c2c3>Celebrata per la sua bellezza
-    e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
-    dell'arte globale.</size>"
---- !u!114 &829417922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829417917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1263038528, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &829417923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829417917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 631841465, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isVisible:
-    choice: 0
-  _isActive:
-    choice: 0
---- !u!114 &829417924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829417917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &830187088
 GameObject:
   m_ObjectHideFlags: 0
@@ -13582,6 +13516,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2131891398444900558, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131891398444900558, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 190
+      objectReference: {fileID: 0}
     - target: {fileID: 2471840561679426261, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -13637,6 +13579,14 @@ PrefabInstance:
     - target: {fileID: 2861155008261040072, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904385714488172994, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382074820019073086, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3394671814766837910, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: additionalOffset.z
@@ -14201,7 +14151,7 @@ PrefabInstance:
     - target: {fileID: 8521295746498201100, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: interactionButton
       value: 
-      objectReference: {fileID: -4924696533150269957, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
+      objectReference: {fileID: 4645097783820124386, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
     - target: {fileID: 8642837416672902239, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -14273,6 +14223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf01695f9f3da9b4e81116758009b3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persistent: 1
+  settings:
+    hassUrl: 
+    hassToken: 
+    doLog: 0
+  test: {fileID: 4645097783820124386, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
 --- !u!4 &1027076437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5130605825910170414, guid: 6590996e6d8555149ab4816aceb05246, type: 3}

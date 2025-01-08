@@ -52,10 +52,13 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         clip = SaveWav.TrimClipDuration(clip, startPosition, endPosition);
         // clip = SaveWav.TrimSilence(clip, 0.01f); //TODO Non mi pare funzioni troppo bene
         byte[] data = SaveWav.Save(clip);
-
-        // For Debugging
-        GetComponent<AudioSource>().clip = clip;
-        GetComponent<AudioSource>().Play();
+        
+        if (HomeAssistant_MuseumDemoRules.Instance.settings.doLog)
+        {
+            // For Debugging play recorded audio
+            GetComponent<AudioSource>().clip = clip;
+            GetComponent<AudioSource>().Play();
+        }
         isRecording = false;
         callback?.Invoke(clip, data);
     }

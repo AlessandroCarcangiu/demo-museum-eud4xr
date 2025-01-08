@@ -12,7 +12,7 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
     public TMP_Dropdown d_micList; //TODO Rimuoverlo in futuro. Direi di lasciarlo fino alla 1a build per vedere meglio quali microfoni ci sono nel visreo
 
     public AudioSource speaker;
-
+    
     public event Action OnAudioPlaybackCompleted;
     private void Start()
     {
@@ -39,7 +39,7 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         }
         d_micList.onValueChanged.AddListener(OnDropdownValueChanged);
 
-        var index = PlayerPrefs.GetInt("user-mic-device-index", 0);
+        var index = PlayerPrefs.GetInt("user-mic-device-index", 1);
         string mic = Microphone.devices[index];
         MicrophoneManager.Instance.ChangeMicrophone(mic);
         d_micList.SetValueWithoutNotify(index);
