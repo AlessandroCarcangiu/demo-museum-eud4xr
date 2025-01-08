@@ -10,8 +10,9 @@ public class ChatbotManager : Singleton<ChatbotManager>
 {
     public InputActionReference interactionButton;
 
-    // private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
-    private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
+    private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
+    // private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
+    
     private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
     private const string forceLogoutUrl = "http://localhost:3000/api/logout";
     
@@ -121,6 +122,10 @@ public class ChatbotManager : Singleton<ChatbotManager>
 
             // Start the recording
             MicrophoneManager.Instance.StartRecording();
+            
+            // Stop the chatbot from speaking
+            ChatbotUIManager.Instance.StopSpeaking();
+            
             // Update Text
             ChatbotUIManager.Instance.UpdateTranscription("Ti sto ascoltando :)");
             // Update Animation

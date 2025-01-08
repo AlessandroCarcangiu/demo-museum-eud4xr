@@ -80,4 +80,9 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         // Invoke the callbacks
         callbackList.ForEach(c => c?.Invoke());
     }
+    
+    public void StopSpeaking()
+    {
+        speaker.Stop();
+    }
 }
