@@ -18,7 +18,7 @@ public class VideoTutorialPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.LogError("ONENABLE");
+        // Debug.LogError("ONENABLE");
     }
 
     private GameObject RecursiveFindChild(GameObject parent, string childName)
@@ -76,7 +76,7 @@ public class VideoTutorialPlayer : MonoBehaviour
 
     private void Start_VideoSource()
     {
-        Debug.LogError("START VIDEO SOURCE");
+        // Debug.LogError("START VIDEO SOURCE");
         this.TrySetCanvas("PlaneVideo");
         // SelectVideo(source); // Non deve essere fatto allo start perché altrimenti darebbe errore non appena viene aggiunto il componente
 

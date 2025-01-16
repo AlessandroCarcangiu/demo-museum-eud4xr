@@ -5,6 +5,8 @@ using ECARules4All_DLL.Utils;
 
 public class MicrophoneManager : Singleton<MicrophoneManager>
 {
+    [Header("Debug")]
+    public bool listenBack = false;
     private readonly int durationSeconds = 150;
 
     private AudioClip clip;
@@ -53,7 +55,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         // clip = SaveWav.TrimSilence(clip, 0.01f); //TODO Non mi pare funzioni troppo bene
         byte[] data = SaveWav.Save(clip);
         
-        if (HomeAssistant_MuseumDemoRules.Instance.settings.doLog)
+        if (this.listenBack)//HomeAssistant_MuseumDemoRules.Instance.settings.doLog)
         {
             // For Debugging play recorded audio
             GetComponent<AudioSource>().clip = clip;
