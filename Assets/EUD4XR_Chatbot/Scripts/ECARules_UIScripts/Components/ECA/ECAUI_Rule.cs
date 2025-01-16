@@ -78,7 +78,10 @@ public class ECAUI_Rule : MonoBehaviour
         {
             var realAction = r.GetActions()[i];
             var thenAction = Instantiate(thenActionPrefab, thenActionParent.transform).GetComponent<ECAUI_Action>();
-            thenAction.SetUIParameters(ECAUI_Action.ActionPreLabel.Then, realAction, infoCapabilities,this, i > 0);
+            
+            var doEnableDelete = i > 0;
+            var preLabel = i == 0 ? ECAUI_Action.ActionPreLabel.Then : ECAUI_Action.ActionPreLabel.None;
+            thenAction.SetUIParameters(preLabel, realAction, infoCapabilities,this, i > 0);
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ECARules4All_DLL.UI;
 using ECARules4All_DLL.Utils;
+using MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +27,8 @@ public class ECAUI_Action : MonoBehaviour
     public TMP_Dropdown Value_5A_Dropdown;
     public TMP_InputField Value_5B_InputText;
 
-    public Button deleteActionButton;
+    // public Button deleteActionButton;
+    public PressableButton deleteActionButton;
     ///////////////////////////////////////
 
 
@@ -44,6 +46,10 @@ public class ECAUI_Action : MonoBehaviour
     private void SetActionLabelAsWhen(ActionPreLabel preLabel)
     {
         var s = Enum.GetName(typeof(ActionPreLabel), preLabel);
+        if (s == null || s.ToLower() == "none")
+        {
+            s =  string.Empty;
+        }
         WhenThen_InputText.text = s;
     }
 
@@ -153,7 +159,7 @@ public class ECAUI_Action : MonoBehaviour
     void ClearAllComponents()
     {
         // Clear all dropdowns, options in dropdowns, and input text
-        WhenThen_InputText.text = "";
+        // WhenThen_InputText.text = "";
 
         Subject_1_Dropdown.ClearOptions();
         Subject_1_Dropdown.gameObject.SetActive(true);
@@ -194,9 +200,7 @@ public class ECAUI_Action : MonoBehaviour
 
     private ECAObjectInfo.ECAObjectsCapabilties infoCapabilities;
 
-    public void SetUIParameters(ActionPreLabel preLabel, Action action,
-        ECAObjectInfo.ECAObjectsCapabilties infoCapabilities, ECAUI_Rule containerRuleRef,
-        bool enableDeleteButton = true)
+    public void SetUIParameters(ActionPreLabel preLabel, Action action, ECAObjectInfo.ECAObjectsCapabilties infoCapabilities, ECAUI_Rule containerRuleRef, bool enableDeleteButton = true)
     {
         this.ClearFieldsAndTheirListeners();
         this.infoCapabilities = infoCapabilities;
@@ -206,7 +210,7 @@ public class ECAUI_Action : MonoBehaviour
         if (enableDeleteButton)
         {
             deleteActionButton.gameObject.SetActive(true);
-            deleteActionButton.onClick.AddListener(() =>
+            deleteActionButton.OnClicked.AddListener(() =>
                 {
                     Debug.Log("CLICK DELETE ACTION");
                     containerRuleRef?.RemoveThenAction(this);

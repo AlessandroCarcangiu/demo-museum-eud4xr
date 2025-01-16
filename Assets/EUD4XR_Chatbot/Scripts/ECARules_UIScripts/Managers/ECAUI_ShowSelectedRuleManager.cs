@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
+using MixedReality.Toolkit.UX;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +10,8 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
     // public GameObject ruleDetailsPrefab;
     // public GameObject objectContainingRules;
     public ECAUI_Rule ecaui_ruleScript;
-    public Button backRuleButton;
-    public Button saveRuleButton;
+    public PressableButton backRuleButton;
+    public PressableButton saveRuleButton;
     private ECAUI_UIManager uiManager;
     
     // private ECAUI_Utils.RulePlaceholder rulePlaceholder;
@@ -35,12 +34,12 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
         {
             throw new ArgumentNullException("backRuleButton", "backRuleButton must be set");
         }
-        backRuleButton.onClick.AddListener(() => { uiManager.Intention_ShowAllRules(); });
+        backRuleButton.OnClicked.AddListener(() => { uiManager.Intention_ShowAllRules(); });
         if (saveRuleButton == null)
         {
             throw new ArgumentNullException("saveRuleButton", "saveRuleButton must be set");
         }
-        saveRuleButton.onClick.AddListener(() => { uiManager.Intention_SaveRuleEditedFromUI(ecaui_ruleScript.GetRule(), ecaui_ruleScript.GetRulePlaceholder()); });
+        saveRuleButton.OnClicked.AddListener(() => { uiManager.Intention_SaveRuleEditedFromUI(ecaui_ruleScript.GetRule(), ecaui_ruleScript.GetRulePlaceholder()); });
     }
     
     private void OnEnable()
