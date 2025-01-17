@@ -31,6 +31,7 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
         /// <b>Content</b> is the text content of the text element.
         /// </summary>
         [StateVariable("content", ECARules4AllType.Text)]
+        [ECARelevance(true)]
         public string content
         {
             get => _content;
