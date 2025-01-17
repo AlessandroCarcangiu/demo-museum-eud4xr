@@ -6,77 +6,36 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 
+
 public class ChatbotManager : Singleton<ChatbotManager>
 {
     public InputActionReference interactionButton;
 
     private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
-    // private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
-
+    //private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
     private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
     private const string forceLogoutUrl = "http://localhost:3000/api/logout";
+    
+    /* Speech detection every 1 second */
+    private bool isSpeaking = false;
+    private float lastSpeechTime;
+    //private AudioClip microphoneClip;
+    private const int SampleRate = 44100;
+    private const float Threshold = 0.02f;
+    private const float isSpeakingTolerance = 1.5f;
+    // check update
+    private float checkInterval = 0.5f;
+    private float lastSpeechCheckTime = 0f;
     
     private bool UserPressedInteractionButton()
     {
         return interactionButton.action.triggered;
     }
-
+    
     private void OnEnable()
     {
         Debug.Log("Enabling ChatbotManager");
         StartCoroutine(ForceLogin());
-    }
-
-
-    private void Start()
-    {
-        // Checks?
-
-        const string defaultStartMessage = "Ciao";
-        void GetDefaultMessage()
-        {
-            void AfterChatbotAnswered(string chatbotAnswer)
-            {
-                void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
-                {
-                    void AfterAudioPlaybackCompleted()
-                    {
-                        // Update animation
-                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
-                    }
-
-                    // Trigger the EndedGeneratingAudioAnswer event
-                    // EndedGeneratingAudioAnswer?.Invoke();
-                    // Update Text
-                    ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
-                    // Update animation
-                    ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
-                    // Update audio 
-                    ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
-                }
-
-                // Update text
-                ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
-                // Update animation
-                ChatbotAnimationController.RequestAnimationChange(ChatbotState.PreparingAnswerAudio);
-                // Call Listeners
-                // EndedGeneratingAnswer?.Invoke();
-                // The chatbot answered, generate the fake voice
-                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
-            }
-
-            // Update text
-            ChatbotUIManager.Instance.UpdateTranscription("Sto preparando il primo messaggio...dammi qualche secondo");
-            // Update animation
-            ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
-            // Call listeners
-            // EndedAnalyzingUserInput?.Invoke();
-
-            // The transcription is ready, ask the chatbot
-            StartCoroutine(this.AskChatbot(defaultStartMessage, AfterChatbotAnswered));
-        }
-
-        GetDefaultMessage();
     }
 
     // Define events for each state
@@ -84,120 +43,156 @@ public class ChatbotManager : Singleton<ChatbotManager>
     // public event Action EndedAnalyzingUserInput;
     // public event Action EndedGeneratingAnswer;
     // public event Action EndedGeneratingAudioAnswer;
+    
+    
+   /* private void Start()
+    {
+        //microphoneClip = Microphone.Start(Microphone.devices[1], true, 1, SampleRate);
+    }
 
     private void Update()
     {
-        if (UserPressedInteractionButton())
+        // no microfone!
+        if (MicrophoneManager.Instance.clip == null)
         {
-            Debug.Log("User pressed interaction button");
-
-            // The user either started or stopped speaking, check the microphone manager
-            if (MicrophoneManager.Instance.IsRecording())
-            {
-                HandleEndRecording();
-            }
-            else
-            {
-                HandleStartRecording();
-            }
+            //Debug.LogError("No microphone found!");   
         }
-
-        return;
-
-        void HandleEndRecording()
+        
+        //Speech detection (every 0.5 second)
+        lastSpeechCheckTime += Time.deltaTime;
+        if (isSpeaking && lastSpeechCheckTime >= checkInterval)
         {
-            Debug.Log("Ending recording");
-
-            // End the recording
-            void AfterUserStoppedSpeaking(AudioClip clip, byte[] clipBytes)
+            lastSpeechCheckTime = 0f;
+            float[] samples = new float[SampleRate];
+            
+            MicrophoneManager.Instance.clip.GetData(samples, 0);
+            float maxVolume = 0f;
+            foreach (float sample in samples)
             {
-                void AfterTranscriptionGenerated(string transcription)
+                if (Mathf.Abs(sample) > maxVolume)
                 {
-                    void AfterChatbotAnswered(string chatbotAnswer)
-                    {
-                        void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
-                        {
-                            void AfterAudioPlaybackCompleted()
-                            {
-                                // Update animation
-                                ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
-                            }
-
-                            // Trigger the EndedGeneratingAudioAnswer event
-                            // EndedGeneratingAudioAnswer?.Invoke();
-                            // Update Text
-                            ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
-                            // Update animation
-                            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
-                            // Update audio 
-                            ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
-                        }
-
-                        // Update text
-                        ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
-                        // Update animation
-                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.PreparingAnswerAudio);
-                        // Call Listeners
-                        // EndedGeneratingAnswer?.Invoke();
-                        // The chatbot answered, generate the fake voice
-                        StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
-                    }
-
-                    // Update text
-                    ChatbotUIManager.Instance.UpdateTranscription(
-                        "Ho analizzato ciò che hai detto, ora genero una risposta...dammi qualche secondo");
-                    // Update animation
-                    ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
-                    // Call listeners
-                    // EndedAnalyzingUserInput?.Invoke();
-
-                    // The transcription is ready, ask the chatbot
-                    StartCoroutine(this.AskChatbot(transcription, AfterChatbotAnswered));
+                    maxVolume = Mathf.Abs(sample);
                 }
-
-                // Update the transcription UI
-                ChatbotUIManager.Instance.UpdateTranscription(
-                    "Sto analizzando ciò che hai detto...dammi qualche secondo");
-                // Update the Avatar animation
-                ChatbotAnimationController.RequestAnimationChange(ChatbotState.Analyzing);
-                // If there are listeners, trigger the EndedListeningUser event
-                // EndedListeningUser?.Invoke();
-
-                // The user stopped speaking, the clip contains the audio
-                StartCoroutine(Speech2Text.Transcribe(clipBytes, AfterTranscriptionGenerated));
             }
-
-            MicrophoneManager.Instance.EndRecording(AfterUserStoppedSpeaking);
+            
+            bool speakingNow = maxVolume > Threshold;
+            if (speakingNow)
+            {
+                lastSpeechTime = Time.time;
+            }
+            else if(Time.time - lastSpeechTime >= isSpeakingTolerance)
+            {
+                Debug.Log("Silenzio");
+                isSpeaking = false;
+                HandleEndRecording();
+                //WakeUpWordHandler.Instance.picovoiceManager.Start();
+            }
         }
-
-        void HandleStartRecording()
+    }*/
+    
+    public void HandleStartRecording()
+    {
+        if(!isSpeaking)
         {
+            WakeUpWordHandler.Instance.picovoiceManager.Stop();
+            
             Debug.Log("Started recording");
 
             // Start the recording
             MicrophoneManager.Instance.StartRecording();
-
+            
             // Stop the chatbot from speaking
             ChatbotUIManager.Instance.StopSpeaking();
-
+            
             // Update Text
             ChatbotUIManager.Instance.UpdateTranscription("Ti sto ascoltando :)");
             // Update Animation
             ChatbotAnimationController.RequestAnimationChange(ChatbotState.Listening);
+
+            // Start speaking
+            isSpeaking = true;
+            lastSpeechTime = Time.time;
         }
     }
+    
+    public void HandleEndRecording()
+    {
+        Debug.Log("Ending recording");
+        
+        isSpeaking = false;
+        
+        // End the recording
+        void AfterUserStoppedSpeaking(AudioClip clip, byte[] clipBytes)
+        {
+            void AfterTranscriptionGenerated(string transcription)
+            {
+                void AfterChatbotAnswered(string chatbotAnswer)
+                {
+                    void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
+                    {
+                        void AfterAudioPlaybackCompleted()
+                        {
+                            // Update animation
+                            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
+                        }
+                        
+                        // Trigger the EndedGeneratingAudioAnswer event
+                        // EndedGeneratingAudioAnswer?.Invoke();
+                        // Update Text
+                        ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
+                        // Update animation
+                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
+                        // Update audio 
+                        ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
+                    }
 
-
+                    // Update text
+                    ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
+                    // Update animation
+                    ChatbotAnimationController.RequestAnimationChange(ChatbotState.PreparingAnswerAudio);
+                    // Call Listeners
+                    // EndedGeneratingAnswer?.Invoke();
+                    // The chatbot answered, generate the fake voice
+                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
+                }
+                
+                // Update text
+                ChatbotUIManager.Instance.UpdateTranscription("Ho analizzato ciò che hai detto, ora genero una risposta...dammi qualche secondo");
+                // Update animation
+                ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
+                // Call listeners
+                // EndedAnalyzingUserInput?.Invoke();
+                
+                // The transcription is ready, ask the chatbot
+                StartCoroutine(this.AskChatbot(transcription, AfterChatbotAnswered));
+            }
+            
+            // Update the transcription UI
+            ChatbotUIManager.Instance.UpdateTranscription("Sto analizzando ciò che hai detto...dammi qualche secondo");
+            // Update the Avatar animation
+            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Analyzing);
+            // If there are listeners, trigger the EndedListeningUser event
+            // EndedListeningUser?.Invoke();
+            
+            // The user stopped speaking, the clip contains the audio
+            StartCoroutine(Speech2Text.Transcribe(clipBytes, AfterTranscriptionGenerated));
+        }
+        
+        MicrophoneManager.Instance.EndRecording(AfterUserStoppedSpeaking);
+        
+        WakeUpWordHandler.Instance.picovoiceManager.Start();
+    }
+    
     private IEnumerator AskChatbot(string userMessage, System.Action<string> callback)
     {
         // Do a Unity POST request to the chatbot server with the { message = userMessage }
         // The server will respond with a JSON object { success: {true, false}, message: <string answer> }
-
+        
         using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(urlChatAI, "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"message\": \"" + userMessage + "\"}");
-            uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
-            uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            uwr.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+            uwr.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
             uwr.SetRequestHeader("Content-Type", "application/json");
             yield return uwr.SendWebRequest();
 
@@ -206,7 +201,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new System.Exception("Error: " + uwr.error);
             }
-
+            
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -229,7 +224,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
             }
         }
     }
-
+    
     // Define a response structure to match your server's JSON response
     [System.Serializable]
     private class AIMessageResponse
@@ -238,25 +233,22 @@ public class ChatbotManager : Singleton<ChatbotManager>
         public string currNode;
         public string sessionId;
     }
-
     [System.Serializable]
     private class AILoginResponse
     {
         public bool success;
     }
-
     [System.Serializable]
     private class AILogoutResponse
     {
         public bool success;
     }
-
-
+    
     private IEnumerator ForceLogin()
     {
         // Get request to the forceLoginUrl
         // The server will respond with a JSON object { success: {true, false} }
-
+        
         using (UnityWebRequest uwr = UnityWebRequest.Get(forceLoginUrl))
         {
             yield return uwr.SendWebRequest();
@@ -266,7 +258,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new Exception("Error: " + uwr.error);
             }
-
+            
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -302,7 +294,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new Exception("Error: " + uwr.error);
             }
-
+            
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -323,6 +315,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 throw new Exception("Error parsing JSON response: " + ex.Message);
             }
         }
+        
     }
 
     private void OnDisable()
