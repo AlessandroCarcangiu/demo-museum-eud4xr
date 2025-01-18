@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.7735849, g: 0.13501246, b: 0.13501246, a: 1}
+  outlineColor: {r: 0.972549, g: 0.8352941, b: 0, a: 1}
   outlineWidth: 3
   precomputeOutline: 1
   bakeKeys:
@@ -22029,7 +22029,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1255982633427224767, guid: 670e63717c4d51245907973862ecfcd7, type: 3}
+  - {fileID: 2100000, guid: fe56a2f8d9a8d8e4fb1d2737b595dd51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22443,7 +22443,7 @@ GameObject:
   - component: {fileID: 1697894538595905628}
   - component: {fileID: 7470681125861133720}
   m_Layer: 0
-  m_Name: Frustino_SocketInteractor
+  m_Name: Frustino_SocketInteractor_ForFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22457,8 +22457,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4916908177323281786}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.04}
+  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: 0.3000002, z: -3.339999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -22466,7 +22466,7 @@ Transform:
   - {fileID: 7449309187186258494}
   - {fileID: 6423878045395748222}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &2544335330292086798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22503,7 +22503,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: c62bdcb536be6714492a775068af6e4a, type: 2}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1

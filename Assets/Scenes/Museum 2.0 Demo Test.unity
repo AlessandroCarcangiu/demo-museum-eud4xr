@@ -1963,9 +1963,11 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Unknown
+  _author: 
   _price: 0
-  _year: -253
+  _year: 0
+  _type: sculpture, statue
+  _description: TODO
 --- !u!114 &102248536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5019,6 +5021,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7259449764016024205, guid: fe268417720b8584384d8bd207306022, type: 3}
   m_PrefabInstance: {fileID: 846642980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &259091329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+  m_PrefabInstance: {fileID: 522671385}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &270148228
 GameObject:
@@ -8135,6 +8142,13 @@ MonoBehaviour:
   _author: "Th\xE9odore G\xE9ricault"
   _price: 0
   _year: 1818
+  _type: painting
+  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
+    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
+    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
+    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
+    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
+    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &455815740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9914,6 +9928,13 @@ MonoBehaviour:
   _author: Katsushika Hokusai
   _price: 0
   _year: 1831
+  _type: painting
+  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
+    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
+    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
+    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
+    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
+    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &507127028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10059,6 +10080,71 @@ MonoBehaviour:
   m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &522671385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2099681297}
+    m_Modifications:
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.84745765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5305119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7415589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8573141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916908177323281786, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_Name
+      value: Frustino_SocketInteractor_ForWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
 --- !u!1 &524247479
 GameObject:
   m_ObjectHideFlags: 0
@@ -10223,6 +10309,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &543107729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13761,6 +13849,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &822339536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14056,9 +14146,13 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Unknown
-  _price: 0
-  _year: -1353
+  _author: Thutmose
+  _price: 123456800
+  _year: -1345
+  _type: sculpture, bust
+  _description: "Il Busto di Nefertiti \xE8 una scultura in calcare ricoperta di
+    stucco dipinto che raffigura Nefertiti, la Grande Sposa Reale del faraone egizio
+    Akhenaton. Attualmente \xE8 esposto presso il Museo Egizio di Berlino."
 --- !u!114 &828943452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15302,6 +15396,13 @@ MonoBehaviour:
   _author: "Salvador Dal\xED"
   _price: 0
   _year: 1931
+  _type: painting
+  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
+    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
+    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
+    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
+    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
+    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &868945882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16957,6 +17058,13 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1484
+  _type: painting
+  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
+    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
+    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
+    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
+    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
+    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &921703378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18165,6 +18273,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &983076488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18558,6 +18668,71 @@ Transform:
   - {fileID: 6938265697659224826}
   m_Father: {fileID: 270640193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &995567321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2099681297}
+    m_Modifications:
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.80000013
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.84745765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05280076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3847057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.060002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916908177323281786, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_Name
+      value: Frustino_SocketInteractor_ForWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
 --- !u!1001 &1005825158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19300,6 +19475,13 @@ MonoBehaviour:
   _author: "Salvador Dal\xED"
   _price: 0
   _year: 1931
+  _type: painting
+  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
+    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
+    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
+    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
+    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
+    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &1022083408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21818,6 +22000,11 @@ MonoBehaviour:
   m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1102819596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+  m_PrefabInstance: {fileID: 995567321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104316185
 GameObject:
   m_ObjectHideFlags: 0
@@ -26730,7 +26917,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1385485120349386850, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
       propertyPath: m_Name
-      value: Anubis_Statue
+      value: Anubis_Statuette
       objectReference: {fileID: 0}
     - target: {fileID: 1385485120349386850, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26822,6 +27009,11 @@ MonoBehaviour:
   _author: Unknown
   _price: 0
   _year: -305
+  _type: sculpture, statuette
+  _description: Statua solida in lega di rame raffigurante Anubi, con indosso una
+    parrucca e il gonnellino shendit; il braccio sinistro sollevato; occhi e sopracciglia
+    intarsiati in oro; perno situato sotto la base rettangolare cava; testo geroglifico
+    sui bordi della base.
 --- !u!114 &1362235181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27395,6 +27587,13 @@ MonoBehaviour:
   _author: "Th\xE9odore G\xE9ricault"
   _price: 0
   _year: 1818
+  _type: painting
+  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
+    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
+    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
+    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
+    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
+    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &1389641697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27754,6 +27953,13 @@ MonoBehaviour:
   _author: Johannes Vermeer
   _price: 0
   _year: 1665
+  _type: painting
+  _description: "Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
+    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
+    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
+    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
+    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
+    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1401804704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28052,6 +28258,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &1411364353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29814,8 +30022,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _author: Hugo Hagen
-  _price: 0
+  _price: 500000
   _year: 1859
+  _type: sculpture, bust
+  _description: "La scultura, in bronzo, ritrae Beethoven con un'espressione intensa
+    e concentrata, sottolineando il genio e la passione del compositore. I dettagli
+    accurati del viso e dei capelli ricci trasmettono un senso di forza e determinazione.
+    La base del busto pu\xF2 presentare iscrizioni o decorazioni semplici, tipiche
+    dello stile sobrio di Hagen. Quest'opera \xE8 un omaggio al leggendario musicista
+    e al suo impatto eterno sulla storia della musica."
 --- !u!114 &1463060821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30135,6 +30350,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465443774}
   m_Mesh: {fileID: -9146618070568788744, guid: b210779c1f254e94e8945e6229ef17a1, type: 3}
+--- !u!4 &1472784920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+  m_PrefabInstance: {fileID: 1727870031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1474513009 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7473995447393240142, guid: caf9d6bdd5bb5f645bf97ba3bc45ff4b, type: 3}
@@ -30280,52 +30500,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480848825}
   m_Mesh: {fileID: -9146618070568788744, guid: b210779c1f254e94e8945e6229ef17a1, type: 3}
---- !u!1 &1485061838
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1485061839}
-  - component: {fileID: 1485061840}
-  m_Layer: 0
-  m_Name: TEST_SOCKET
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1485061839
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485061838}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.97828746, y: 3.9726176, z: -1.2443027}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 139158453}
-  - {fileID: 1605896065}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485061840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485061838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cddc9f961e31304cb665e22eeca8658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1485157107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
@@ -32087,6 +32261,13 @@ MonoBehaviour:
   _author: "\xC9douard Manet"
   _price: 0
   _year: 1863
+  _type: painting
+  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
+    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
+    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
+    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
+    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
+    la strada all\u2019Impressionismo."
 --- !u!114 &1565017025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32713,8 +32894,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _author: Unknown
-  _price: 0
-  _year: -269
+  _price: 100000000
+  _year: -200
+  _type: sculpture, bust
+  _description: "La testa, di circa due volte le dimensioni reali, appartiene al
+    busto di Attalo I, re di Pergamo durante l'epoca ellenistica avanzata. Il diadema
+    reale visibile sul collo identifica chiaramente la figura come sovrana. Attalo
+    I \xE8 noto per le sue vittorie contro i Galati e per il suo ruolo cruciale nello
+    sviluppo culturale e politico di Pergamo, rendendo questa scultura un'importante
+    testimonianza del suo regno e della sua eredit\xE0 storica."
 --- !u!114 &1597125690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32972,11 +33160,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604222743}
   m_CullTransparentMesh: 1
---- !u!4 &1605896065 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-  m_PrefabInstance: {fileID: 7699078110195327749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1612557409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8067477133809135671, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -33327,6 +33510,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &1629588716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33496,6 +33681,13 @@ MonoBehaviour:
   _author: Rembrandt van Rijn
   _price: 0
   _year: 1642
+  _type: painting
+  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
+    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
+    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
+    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
+    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
+    centrale nella storia dell'arte europea."
 --- !u!114 &1638912640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33799,6 +33991,13 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1484
+  _type: painting
+  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
+    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
+    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
+    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
+    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
+    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &1647271567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34488,6 +34687,13 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1480
+  _type: painting
+  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
+    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
+    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
+    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
+    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
+    fiorentino."
 --- !u!114 &1673279558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34657,6 +34863,13 @@ MonoBehaviour:
   _author: "\xC9douard Manet"
   _price: 0
   _year: 1863
+  _type: painting
+  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
+    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
+    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
+    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
+    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
+    la strada all\u2019Impressionismo."
 --- !u!114 &1673809332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35107,6 +35320,13 @@ MonoBehaviour:
   _author: John Everett Millais
   _price: 0
   _year: 1851
+  _type: painting
+  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
+    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
+    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
+    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
+    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
+    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1693968017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35644,6 +35864,13 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1480
+  _type: painting
+  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
+    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
+    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
+    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
+    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
+    fiorentino."
 --- !u!114 &1710380309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36644,6 +36871,71 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1727870031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2099681297}
+    m_Modifications:
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.84745765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7415589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916908177323281786, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
+      propertyPath: m_Name
+      value: Frustino_SocketInteractor_ForWall (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
 --- !u!1 &1737739833
 GameObject:
   m_ObjectHideFlags: 0
@@ -36856,6 +37148,13 @@ MonoBehaviour:
   _author: Katsushika Hokusai
   _price: 0
   _year: 1831
+  _type: painting
+  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
+    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
+    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
+    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
+    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
+    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &1742411853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37799,6 +38098,13 @@ MonoBehaviour:
   _author: John Everett Millais
   _price: 0
   _year: 1851
+  _type: painting
+  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
+    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
+    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
+    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
+    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
+    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1815160692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39487,6 +39793,13 @@ MonoBehaviour:
   _author: Raffaello Sanzio
   _price: 0
   _year: 1509
+  _type: painting
+  _description: "La Scuola di Atene (1509-1511) di Raffaello Sanzio \xE8 uno dei
+    capolavori del Rinascimento, situato nelle Stanze Vaticane. Il dipinto rappresenta
+    filosofi e pensatori dell'antichit\xE0, come Platone e Aristotele, in un'ambientazione
+    architettonica grandiosa. Con una composizione equilibrata e una luce naturale,
+    Raffaello celebra la conoscenza e l'umanesimo, simboleggiando l'incontro tra
+    filosofia, scienza e arte, icona della cultura del Rinascimento."
 --- !u!114 &1900521491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40115,6 +40428,13 @@ MonoBehaviour:
   _author: Johannes Vermeer
   _price: 0
   _year: 1665
+  _type: painting
+  _description: "Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
+    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
+    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
+    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
+    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
+    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1913045053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40284,6 +40604,13 @@ MonoBehaviour:
   _author: Raffaello Sanzio
   _price: 0
   _year: 1509
+  _type: painting
+  _description: "La Scuola di Atene (1509-1511) di Raffaello Sanzio \xE8 uno dei
+    capolavori del Rinascimento, situato nelle Stanze Vaticane. Il dipinto rappresenta
+    filosofi e pensatori dell'antichit\xE0, come Platone e Aristotele, in un'ambientazione
+    architettonica grandiosa. Con una composizione equilibrata e una luce naturale,
+    Raffaello celebra la conoscenza e l'umanesimo, simboleggiando l'incontro tra
+    filosofia, scienza e arte, icona della cultura del Rinascimento."
 --- !u!114 &1914308038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43666,6 +43993,41 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2099681296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099681297}
+  m_Layer: 0
+  m_Name: Sockets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2099681297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099681296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 139158453}
+  - {fileID: 259091329}
+  - {fileID: 1472784920}
+  - {fileID: 1102819596}
+  m_Father: {fileID: 543450652824160440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2104390203
 GameObject:
   m_ObjectHideFlags: 0
@@ -44705,6 +45067,13 @@ MonoBehaviour:
   _author: Rembrandt van Rijn
   _price: 0
   _year: 1642
+  _type: painting
+  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
+    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
+    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
+    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
+    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
+    centrale nella storia dell'arte europea."
 --- !u!114 &2123225043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45087,6 +45456,7 @@ Transform:
   - {fileID: 270640193}
   - {fileID: 1018785901}
   - {fileID: 1897354758}
+  - {fileID: 2099681297}
   m_Father: {fileID: 1876786209}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &543450653432652993
@@ -47023,7 +47393,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1485061839}
+    m_TransformParent: {fileID: 2099681297}
     m_Modifications:
     - target: {fileID: 8333717611037647486, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_Name
@@ -47031,15 +47401,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.038
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.928
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47946,67 +48316,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 77504967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7699078110195327749
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1485061839}
-    m_Modifications:
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1734466886252015101, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2544335330292086798, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 1546387851}
-    - target: {fileID: 4916908177323281786, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
-      propertyPath: m_Name
-      value: Frustino_SocketInteractor
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb67299cd30dbe84dad6f9c830bfec1d, type: 3}
 --- !u!1 &7710861063879776320
 GameObject:
   m_ObjectHideFlags: 0
@@ -48422,6 +48731,8 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
+  _type: 
+  _description: 
 --- !u!114 &9003801905373373345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48625,4 +48936,3 @@ SceneRoots:
   - {fileID: 1027076434}
   - {fileID: 610067662}
   - {fileID: 1925856494}
-  - {fileID: 1485061839}
