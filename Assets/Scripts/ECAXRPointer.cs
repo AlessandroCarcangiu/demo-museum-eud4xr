@@ -1,14 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using ECARules4All_DLL;
-using ECARules4All_DLL.Taxonomies.Behaviours.Subcategories;
 using ECARules4All_DLL.Utils;
-using Serilog;
+using MixedReality.Toolkit.Input;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using Action = ECARules4All_DLL.Action;
-using Behaviour = UnityEngine.Behaviour;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
 {
@@ -38,28 +35,45 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
         }
         private ECABoolean _isPointed = new ECABoolean(ECABoolean.BoolType.NO);
 
+        private List<Type> hoverIgnoreInteractors = new() { typeof(GazePinchInteractor) };
         protected override void OnHoverEntered(HoverEnterEventArgs args)
         {
-            
             base.OnHoverEntered(args);
 
-            Action a;
+            Action a = null;
             GameObject subject = string.IsNullOrEmpty(tagPlayer)
                 ? args.interactorObject.transform.gameObject
                 : GameObject.FindWithTag("Player");
 
-            if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
+            if (args.interactorObject is XRRayInteractor)
             {
-                Debug.Log($"{gameObject.name} pointed at by ray.");
-                
-                //TODO Do we want to use interacts with or another verb?. In case you need to add the ECAMethods in ECACharacters.cs
-                // a = new Action(subject, "points", this.gameObject);
-                a = new Action(subject, "points", this.gameObject);
+                if (args.interactorObject is GazeInteractor)
+                {
+                    // The GazeInteractor is a custom class that extends XRRayInteractor, do we want to handle it differently?
+                    Debug.Log($"{gameObject.name} is looked passively (gaze).");
+                    return;
+                }
+                else
+                {
+                    Debug.Log($"{gameObject.name} pointed at by ray.");
+                    //TODO Do we want to use interacts with or another verb?. In case you need to add the ECAMethods in ECACharacters.cs
+                    // a = new Action(subject, "points", this.gameObject);
+                    a = new Action(subject, "points", this.gameObject);                    
+                }
+            }
+            else if (hoverIgnoreInteractors.Contains(args.interactorObject.GetType()))
+            {
+                Debug.Log($"Ignoring hover-enter with interactor {args.interactorObject}");
+                return;
             }
             else {
                 throw new Exception($"Unknown/Not Handled interactor: {args.interactorObject.GetType()}");
             }
             
+            if (a == null)
+            {
+                throw new Exception("Action is null, something went wrong.");
+            }
             hoverStartTime = Time.time;
             isHover = true;
             StartCoroutine(CheckHoverDuration());
@@ -73,20 +87,38 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
         {
             base.OnHoverExited(args);
 
-            Action a;
+            Action a = null;
             GameObject subject = string.IsNullOrEmpty(tagPlayer)
                 ? args.interactorObject.transform.gameObject
                 : GameObject.FindWithTag("Player");
-            if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor)
+            if (args.interactorObject is XRRayInteractor)
             {
-                a = new Action(subject, "stops-pointing", this.gameObject);
-                Debug.Log($"{gameObject.name} stopped pointing at by ray.");
+                if (args.interactorObject is GazeInteractor)
+                {
+                    // The GazeInteractor is a custom class that extends XRRayInteractor, do we want to handle it differently?
+                    Debug.Log($"{gameObject.name} stopped looked at passively (gaze).");
+                    return;
+                }
+                else
+                {
+                    a = new Action(subject, "stops-pointing", this.gameObject);
+                    Debug.Log($"{gameObject.name} stopped pointing at by ray.");   
+                }
+            }
+            else if (hoverIgnoreInteractors.Contains(args.interactorObject.GetType()))
+            {
+                Debug.Log($"Ignoring hover-exit with interactor {args.interactorObject}");
+                return;
             }
             else
             {
                 throw new Exception($"Unknown/Not Handled interactor: {args.interactorObject.GetType()}");
             }
 
+            if (a == null)
+            {
+                throw new Exception("Action is null, something went wrong.");
+            }
             isHover = false;
             if (isPointed.Equals(ECABoolean.YES))
             {
@@ -102,7 +134,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
         {
             while (isHovered && isPointed.Equals(ECABoolean.NO))
             {
-                Debug.Log($"Time: {Time.time - hoverStartTime} >= {hoverDuration}");
+                // Debug.Log($"Time: {Time.time - hoverStartTime} >= {hoverDuration}");
                 if (Time.time - hoverStartTime >= hoverDuration)
                 {
                     isPointed = new ECABoolean(ECABoolean.BoolType.YES);

@@ -28,7 +28,7 @@ public class EUD4XR_Player_Object : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UnityEngine.Debug.Log("EUD4XR_Object OnTriggerEnter with " + other.gameObject.name);
+        Debug.Log($"[EUD4XR_Object: OnTriggerEnter] {this.gameObject} is triggering with {other.gameObject.name}");
         var ecaObject = other.GetComponent<ECAObject>();
         if (ecaObject == null || other.gameObject.CompareTag("Player")) return;
         
