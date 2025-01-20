@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.3200967, g: 1.3980745, b: 1.5852747, a: 1}
+  m_IndirectSpecularColor: {r: 2.4586902, g: 2.5457945, b: 2.7149444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1978,8 +1978,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: sculpture, statue
-  _description: TODO
 --- !u!114 &102248536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8279,13 +8277,6 @@ MonoBehaviour:
   _author: "Th\xE9odore G\xE9ricault"
   _price: 0
   _year: 1818
-  _type: painting
-  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
-    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
-    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
-    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
-    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
-    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &455815740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10139,13 +10130,6 @@ MonoBehaviour:
   _author: Katsushika Hokusai
   _price: 0
   _year: 1831
-  _type: painting
-  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
-    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
-    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
-    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
-    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
-    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &507127028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10593,8 +10577,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &543107729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14133,8 +14115,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &822339536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14445,10 +14425,6 @@ MonoBehaviour:
   _author: Thutmose
   _price: 123456800
   _year: -1345
-  _type: sculpture, bust
-  _description: "Il Busto di Nefertiti \xE8 una scultura in calcare ricoperta di
-    stucco dipinto che raffigura Nefertiti, la Grande Sposa Reale del faraone egizio
-    Akhenaton. Attualmente \xE8 esposto presso il Museo Egizio di Berlino."
 --- !u!114 &828943452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15817,13 +15793,6 @@ MonoBehaviour:
   _author: "Salvador Dal\xED"
   _price: 0
   _year: 1931
-  _type: painting
-  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
-    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
-    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
-    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
-    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
-    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &868945882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15937,6 +15906,37 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!1 &872705132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872705133}
+  m_Layer: 0
+  m_Name: ListaRegoleDefault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872705133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872705132}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 989122265}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &873846458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15947,55 +15947,55 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 201886120708533908, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 201886120708533908, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 201886120708533908, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 361.3333
       objectReference: {fileID: 0}
     - target: {fileID: 201886120708533908, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 367370458063074388, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 367370458063074388, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 367370458063074388, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 361.3333
       objectReference: {fileID: 0}
     - target: {fileID: 367370458063074388, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 744841679350484931, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 744841679350484931, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 744841679350484931, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: 744841679350484931, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 744841679350484931, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -106.11
       objectReference: {fileID: 0}
     - target: {fileID: 1406209313476564767, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16007,11 +16007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1406209313476564767, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1406209313476564767, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 1465865383660899807, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16023,51 +16023,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1465865383660899807, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1465865383660899807, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -72
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1581979773019271958, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     - target: {fileID: 1827627035749529057, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1827627035749529057, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1827627035749529057, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1827627035749529057, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 1880847546025125956, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_Name
@@ -16075,115 +16075,115 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1880847546025125956, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200323137335963425, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2200323137335963425, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2200323137335963425, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2200323137335963425, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2200323137335963425, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 2280024910568592272, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 408
       objectReference: {fileID: 0}
     - target: {fileID: 2280024910568592272, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 182.11
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2402814215544411898, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2777759907719613498, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     - target: {fileID: 2777955007128534255, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777955007128534255, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777955007128534255, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 20.11
       objectReference: {fileID: 0}
     - target: {fileID: 2777955007128534255, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 2777955007128534255, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -14.055
       objectReference: {fileID: 0}
     - target: {fileID: 3582043443765989816, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3582043443765989816, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3582043443765989816, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 38.666664
       objectReference: {fileID: 0}
     - target: {fileID: 3582043443765989816, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 3609998873050317910, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_VerticalFit
@@ -16203,59 +16203,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5432906537817670960, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     - target: {fileID: 6595790978361967218, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595790978361967218, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595790978361967218, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 38.666664
       objectReference: {fileID: 0}
     - target: {fileID: 6595790978361967218, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 6655444856498182322, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6655444856498182322, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6655444856498182322, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 38.666664
       objectReference: {fileID: 0}
     - target: {fileID: 6655444856498182322, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 7298698413737708146, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_ChildControlHeight
@@ -16359,59 +16359,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008565646828758942, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8008565646828758942, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8008565646828758942, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 361.3333
       objectReference: {fileID: 0}
     - target: {fileID: 8008565646828758942, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 8313649728555165227, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8313649728555165227, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8313649728555165227, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8313649728555165227, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8655153661445192220, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     - target: {fileID: 9109306186824146453, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16423,35 +16423,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9109306186824146453, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9109306186824146453, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 27.999989
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9207995653209661660, guid: db5640edb58eddb4386a577b4fa60886, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.999994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17553,13 +17553,6 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1484
-  _type: painting
-  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
-    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
-    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
-    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
-    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
-    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &921703378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18841,8 +18834,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &983076488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18883,6 +18874,11 @@ MonoBehaviour:
   m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &989122265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7007339729973531302, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+  m_PrefabInstance: {fileID: 1027076434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &992702775
 GameObject:
   m_ObjectHideFlags: 0
@@ -20044,13 +20040,6 @@ MonoBehaviour:
   _author: "Salvador Dal\xED"
   _price: 0
   _year: 1931
-  _type: painting
-  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
-    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
-    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
-    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
-    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
-    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &1022083408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21200,6 +21189,9 @@ PrefabInstance:
     - {fileID: 6691221526865974936, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7007339729973531302, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 872705133}
     - targetCorrespondingSourceObject: {fileID: 377500692972314126, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1005825159}
@@ -22069,10 +22061,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 873846459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 54, y: -29.11}
+  m_SizeDelta: {x: 100, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077811888
 MonoBehaviour:
@@ -27675,11 +27667,6 @@ MonoBehaviour:
   _author: Unknown
   _price: 0
   _year: -305
-  _type: sculpture, statuette
-  _description: Statua solida in lega di rame raffigurante Anubi, con indosso una
-    parrucca e il gonnellino shendit; il braccio sinistro sollevato; occhi e sopracciglia
-    intarsiati in oro; perno situato sotto la base rettangolare cava; testo geroglifico
-    sui bordi della base.
 --- !u!114 &1362235181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28378,13 +28365,6 @@ MonoBehaviour:
   _author: "Th\xE9odore G\xE9ricault"
   _price: 0
   _year: 1818
-  _type: painting
-  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
-    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
-    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
-    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
-    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
-    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &1389641697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28818,13 +28798,6 @@ MonoBehaviour:
   _author: Johannes Vermeer
   _price: 0
   _year: 1665
-  _type: painting
-  _description: "Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
-    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
-    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
-    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
-    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
-    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1401804704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29196,8 +29169,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &1411364353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30974,13 +30945,6 @@ MonoBehaviour:
   _author: Hugo Hagen
   _price: 500000
   _year: 1859
-  _type: sculpture, bust
-  _description: "La scultura, in bronzo, ritrae Beethoven con un'espressione intensa
-    e concentrata, sottolineando il genio e la passione del compositore. I dettagli
-    accurati del viso e dei capelli ricci trasmettono un senso di forza e determinazione.
-    La base del busto pu\xF2 presentare iscrizioni o decorazioni semplici, tipiche
-    dello stile sobrio di Hagen. Quest'opera \xE8 un omaggio al leggendario musicista
-    e al suo impatto eterno sulla storia della musica."
 --- !u!114 &1463060821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33336,13 +33300,6 @@ MonoBehaviour:
   _author: "\xC9douard Manet"
   _price: 0
   _year: 1863
-  _type: painting
-  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
-    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
-    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
-    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
-    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
-    la strada all\u2019Impressionismo."
 --- !u!114 &1565017025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34056,13 +34013,6 @@ MonoBehaviour:
   _author: Unknown
   _price: 100000000
   _year: -200
-  _type: sculpture, bust
-  _description: "La testa, di circa due volte le dimensioni reali, appartiene al
-    busto di Attalo I, re di Pergamo durante l'epoca ellenistica avanzata. Il diadema
-    reale visibile sul collo identifica chiaramente la figura come sovrana. Attalo
-    I \xE8 noto per le sue vittorie contro i Galati e per il suo ruolo cruciale nello
-    sviluppo culturale e politico di Pergamo, rendendo questa scultura un'importante
-    testimonianza del suo regno e della sua eredit\xE0 storica."
 --- !u!114 &1597125690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34794,8 +34744,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &1629588716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34966,13 +34914,6 @@ MonoBehaviour:
   _author: Rembrandt van Rijn
   _price: 0
   _year: 1642
-  _type: painting
-  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
-    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
-    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
-    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
-    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
-    centrale nella storia dell'arte europea."
 --- !u!114 &1638912640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35350,13 +35291,6 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1484
-  _type: painting
-  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
-    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
-    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
-    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
-    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
-    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &1647271567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36120,13 +36054,6 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1480
-  _type: painting
-  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
-    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
-    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
-    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
-    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
-    fiorentino."
 --- !u!114 &1673279558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36370,13 +36297,6 @@ MonoBehaviour:
   _author: "\xC9douard Manet"
   _price: 0
   _year: 1863
-  _type: painting
-  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
-    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
-    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
-    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
-    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
-    la strada all\u2019Impressionismo."
 --- !u!114 &1673809332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36901,13 +36821,6 @@ MonoBehaviour:
   _author: John Everett Millais
   _price: 0
   _year: 1851
-  _type: painting
-  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
-    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
-    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
-    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
-    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
-    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1693968017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37519,13 +37432,6 @@ MonoBehaviour:
   _author: Sandro Botticelli
   _price: 0
   _year: 1480
-  _type: painting
-  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
-    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
-    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
-    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
-    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
-    fiorentino."
 --- !u!114 &1710380309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38877,13 +38783,6 @@ MonoBehaviour:
   _author: Katsushika Hokusai
   _price: 0
   _year: 1831
-  _type: painting
-  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
-    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
-    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
-    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
-    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
-    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &1742411853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39901,13 +39800,6 @@ MonoBehaviour:
   _author: John Everett Millais
   _price: 0
   _year: 1851
-  _type: painting
-  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
-    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
-    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
-    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
-    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
-    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1815160692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41670,13 +41562,6 @@ MonoBehaviour:
   _author: Raffaello Sanzio
   _price: 0
   _year: 1509
-  _type: painting
-  _description: "La Scuola di Atene (1509-1511) di Raffaello Sanzio \xE8 uno dei
-    capolavori del Rinascimento, situato nelle Stanze Vaticane. Il dipinto rappresenta
-    filosofi e pensatori dell'antichit\xE0, come Platone e Aristotele, in un'ambientazione
-    architettonica grandiosa. Con una composizione equilibrata e una luce naturale,
-    Raffaello celebra la conoscenza e l'umanesimo, simboleggiando l'incontro tra
-    filosofia, scienza e arte, icona della cultura del Rinascimento."
 --- !u!114 &1900521491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42379,13 +42264,6 @@ MonoBehaviour:
   _author: Johannes Vermeer
   _price: 0
   _year: 1665
-  _type: painting
-  _description: "Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
-    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
-    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
-    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
-    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
-    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1913045053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42629,13 +42507,6 @@ MonoBehaviour:
   _author: Raffaello Sanzio
   _price: 0
   _year: 1509
-  _type: painting
-  _description: "La Scuola di Atene (1509-1511) di Raffaello Sanzio \xE8 uno dei
-    capolavori del Rinascimento, situato nelle Stanze Vaticane. Il dipinto rappresenta
-    filosofi e pensatori dell'antichit\xE0, come Platone e Aristotele, in un'ambientazione
-    architettonica grandiosa. Con una composizione equilibrata e una luce naturale,
-    Raffaello celebra la conoscenza e l'umanesimo, simboleggiando l'incontro tra
-    filosofia, scienza e arte, icona della cultura del Rinascimento."
 --- !u!114 &1914308038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47166,13 +47037,6 @@ MonoBehaviour:
   _author: Rembrandt van Rijn
   _price: 0
   _year: 1642
-  _type: painting
-  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
-    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
-    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
-    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
-    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
-    centrale nella storia dell'arte europea."
 --- !u!114 &2123225043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50903,8 +50767,6 @@ MonoBehaviour:
   _author: 
   _price: 0
   _year: 0
-  _type: 
-  _description: 
 --- !u!114 &9003801905373373345
 MonoBehaviour:
   m_ObjectHideFlags: 0
