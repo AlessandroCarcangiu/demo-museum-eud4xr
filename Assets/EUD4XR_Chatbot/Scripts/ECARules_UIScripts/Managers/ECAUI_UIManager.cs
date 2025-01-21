@@ -12,6 +12,9 @@ public class ECAUI_UIManager : Singleton<ECAUI_UIManager>
     public ECAUI_ShowAllRulesManager showAllRules;
     public ECAUI_ShowSelectedRuleManager showSelectedRule;
     // private ECAUI_RuleOverview _selectedUIRuleRendering = null; // useless
+    
+    public Transform playerCamera;
+    public float distanceFromCamera = 2.0f;
 
     private List<Rule> rules = new List<Rule>();
     private Rule selectedRule = null;
@@ -88,13 +91,19 @@ public class ECAUI_UIManager : Singleton<ECAUI_UIManager>
 
         rules = RuleEngine.GetInstance().Rules().ToList();
 
-        EnableShowAllRules();
+        //EnableShowAllRules();
     }
 
-    // private void OnEnable()
-    // {
-        // WPI_Manager.onToggleVisibility += () => {Debug.Log("Waypoint indicators are visible: " + WPI_Manager.waypoint_indicators_are_visible);};
-    // }
+    private void Update()
+    {
+        if (showSelectedRule.gameObject.activeSelf)
+        {
+            Vector3 forward = playerCamera.forward;
+            forward.y = 0;
+            showSelectedRule.transform.position = playerCamera.position + forward.normalized * distanceFromCamera;
+            showSelectedRule.transform.rotation = Quaternion.LookRotation(forward);
+        }
+    }
 
     private void EnableShowAllRules()
     {
