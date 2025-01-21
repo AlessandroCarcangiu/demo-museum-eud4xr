@@ -119,7 +119,6 @@ public class HomeAssistant_MuseumDemoRules : Singleton<HomeAssistant_MuseumDemoR
         _apiServer.ActionUpdate += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
     }
 
-    public InputActionReference test;
     // Update is called once per frame
     void Update()
     {
