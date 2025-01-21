@@ -14434,7 +14434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mostra Info
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14563,7 +14563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: 
+  _content: Mostra Info
 --- !u!1 &762121588
 GameObject:
   m_ObjectHideFlags: 0
@@ -14848,6 +14848,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &767574695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6460212926550775035, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+  m_PrefabInstance: {fileID: 1027076434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &767574699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767574695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9959b2a1714c32b95ada0a08e1e308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistent: 1
 --- !u!4 &772113515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035446054819217465, guid: 16bbd5abdefcfa84581251ccbcbb4b73, type: 3}
@@ -22250,6 +22268,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 605518997546586207, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Name
+      value: ChatbotManagers
+      objectReference: {fileID: 0}
     - target: {fileID: 690043992371396221, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -23089,7 +23111,7 @@ PrefabInstance:
     - target: {fileID: 8521295746498201100, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: interactionButton
       value: 
-      objectReference: {fileID: -7664795661806604429, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
+      objectReference: {fileID: -3731713376337487456, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
     - target: {fileID: 8642837416672902239, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -23131,6 +23153,9 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 740320989}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6460212926550775035, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 767574699}
     - targetCorrespondingSourceObject: {fileID: 4767700513670817057, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       insertIndex: 2
       addedObject: {fileID: 72467759}
