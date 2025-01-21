@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.4586902, g: 2.5457945, b: 2.7149444, a: 1}
+  m_IndirectSpecularColor: {r: 1.3200967, g: 1.3980745, b: 1.5852747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Abilita file multimediali:\n<color=green>Verde</color> s\xEC\n<color=red>Rosso</color>
+  m_text: "Abilita file multimediali:\n<color=#01B636>Verde</color> s\xEC\n<color=#DB5050>Rosso</color>
     no"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15124,8 +15124,6 @@ MonoBehaviour:
   _persistent: 0
   showAllRules: {fileID: 2059684600}
   showSelectedRule: {fileID: 2111011200}
-  playerCamera: {fileID: 471157582}
-  distanceFromCamera: 2
 --- !u!114 &799717546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37666,7 +37664,7 @@ GameObject:
   - component: {fileID: 1603239717}
   - component: {fileID: 1603239716}
   m_Layer: 0
-  m_Name: MRTK3Canvas_LaGrandeOndaDiKanagawa
+  m_Name: MRTK3Canvas_ToggleCoso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
