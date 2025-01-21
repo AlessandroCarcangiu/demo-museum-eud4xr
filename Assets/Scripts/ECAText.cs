@@ -1,4 +1,3 @@
-
 using System;
 using ECARules4All_DLL.Utils;
 using TMPro;
@@ -22,8 +21,13 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
          
             if (textMesh == null)
             {   
-                throw new Exception("The object must have a TMP_Text component. Or do we want to put it as public instance?");
+                textMesh = GetComponentInChildren<TMP_Text>();
+                if (textMesh == null)
+                {
+                    throw new Exception("The object must have a TMP_Text component. Or do we want to put it as public instance?");
+                }
             }
+            
             textMesh.text = content;
         }
 
@@ -42,6 +46,7 @@ namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
                 ECAScript.NotifyUpdate(this, nameof(content), content);
             }
         }
+        [TextArea(2,8)]
         [SerializeField]
         private string _content;
 
