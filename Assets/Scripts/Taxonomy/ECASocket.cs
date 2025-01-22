@@ -29,25 +29,24 @@ public class ECASocket : MonoBehaviour
 
     [StateVariable("content", ECARules4AllType.Text)]
     [ECARelevance(true)]
-    public string objectName
+    public string content
     {
-        get => _objectName;
+        get => _content;
         set
         {
-            _objectName = value;
-            ECAScript.NotifyUpdate(this, nameof(objectName), objectName);
+            _content = value;
+            ECAScript.NotifyUpdate(this, nameof(content), content);
         }
     }
-    // [SerializeField]
-    private string _objectName;
+    private string _content;
+    
     private void OnObjectSet(SelectEnterEventArgs args)
     {
         var gO = args.interactableObject.transform.gameObject;
         ECAObject gO_ECAObject = gO.GetComponent<ECAObject>();
         if (gO_ECAObject == null) {return;}
-        
-        Debug.Log("Hand entered socket with " + gO.name);
-        objectName = gO.name;
+
+        content = gO.name;
         if (previewOutline) previewOutline.enabled = false;
     }  
     
@@ -56,9 +55,8 @@ public class ECASocket : MonoBehaviour
         var gO = args.interactableObject.transform.gameObject;
         ECAObject gO_ECAObject = gO.GetComponent<ECAObject>();
         if (gO_ECAObject == null) {return;}
-        
-        Debug.Log("Hand exited socket with " + gO.name);
-        objectName = string.Empty;
+
+        content = string.Empty;
         if (previewOutline) previewOutline.enabled = true;
     }
 }
