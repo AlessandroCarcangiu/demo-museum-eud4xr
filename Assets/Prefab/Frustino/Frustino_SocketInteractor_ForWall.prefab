@@ -2905,7 +2905,7 @@ MonoBehaviour:
   m_Script: {fileID: -173657910, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.972549, g: 0.8352941, b: 0, a: 1}
   outlineWidth: 3
   precomputeOutline: 1
