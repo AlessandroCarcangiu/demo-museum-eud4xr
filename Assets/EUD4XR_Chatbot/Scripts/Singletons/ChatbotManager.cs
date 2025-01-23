@@ -36,59 +36,71 @@ public class ChatbotManager : Singleton<ChatbotManager>
     {
         Debug.Log("Enabling ChatbotManager");
         StartCoroutine(ForceLogin());
+        interactionButton.action.performed += HandleRecording;
     }
 
-    // Define events for each state
-    // public event Action EndedListeningUser;
-    // public event Action EndedAnalyzingUserInput;
-    // public event Action EndedGeneratingAnswer;
-    // public event Action EndedGeneratingAudioAnswer;
-    
-    
-   /* private void Start()
+        private void Start()
     {
-        //microphoneClip = Microphone.Start(Microphone.devices[1], true, 1, SampleRate);
-    }
+        // Checks?
 
-    private void Update()
-    {
-        // no microfone!
-        if (MicrophoneManager.Instance.clip == null)
+        const string defaultStartMessage = "Ciao";
+        void GetDefaultMessage()
         {
-            //Debug.LogError("No microphone found!");   
-        }
-        
-        //Speech detection (every 0.5 second)
-        lastSpeechCheckTime += Time.deltaTime;
-        if (isSpeaking && lastSpeechCheckTime >= checkInterval)
-        {
-            lastSpeechCheckTime = 0f;
-            float[] samples = new float[SampleRate];
-            
-            MicrophoneManager.Instance.clip.GetData(samples, 0);
-            float maxVolume = 0f;
-            foreach (float sample in samples)
+            void AfterChatbotAnswered(string chatbotAnswer)
             {
-                if (Mathf.Abs(sample) > maxVolume)
+                void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
                 {
-                    maxVolume = Mathf.Abs(sample);
+                    void AfterAudioPlaybackCompleted()
+                    {
+                        // Update animation
+                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
+                    }
+
+                    // Trigger the EndedGeneratingAudioAnswer event
+                    // EndedGeneratingAudioAnswer?.Invoke();
+                    // Update Text
+                    ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
+                    // Update animation
+                    ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
+                    // Update audio 
+                    ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
                 }
+
+                // Update text
+                ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
+                // Update animation
+                ChatbotAnimationController.RequestAnimationChange(ChatbotState.PreparingAnswerAudio);
+                // Call Listeners
+                // EndedGeneratingAnswer?.Invoke();
+                // The chatbot answered, generate the fake voice
+                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
             }
-            
-            bool speakingNow = maxVolume > Threshold;
-            if (speakingNow)
-            {
-                lastSpeechTime = Time.time;
-            }
-            else if(Time.time - lastSpeechTime >= isSpeakingTolerance)
-            {
-                Debug.Log("Silenzio");
-                isSpeaking = false;
-                HandleEndRecording();
-                //WakeUpWordHandler.Instance.picovoiceManager.Start();
-            }
+
+            // Update text
+            ChatbotUIManager.Instance.UpdateTranscription("Sto preparando il primo messaggio...dammi qualche secondo");
+            // Update animation
+            ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
+            // Call listeners
+            // EndedAnalyzingUserInput?.Invoke();
+
+            // The transcription is ready, ask the chatbot
+            StartCoroutine(this.AskChatbot(defaultStartMessage, AfterChatbotAnswered));
         }
-    }*/
+
+        GetDefaultMessage();
+    }
+        
+    public void HandleRecording(InputAction.CallbackContext context)
+    {
+        if (isSpeaking)
+        {
+            HandleEndRecording();
+        }
+        else
+        {
+            HandleStartRecording();
+        }
+    }
     
     public void HandleStartRecording()
     {
