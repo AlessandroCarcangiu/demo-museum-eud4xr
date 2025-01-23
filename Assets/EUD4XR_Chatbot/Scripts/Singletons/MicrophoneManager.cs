@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using ECARules4All_DLL.Utils;
@@ -5,6 +6,12 @@ using System.Collections;
 
 public class MicrophoneManager : Singleton<MicrophoneManager>
 {
+    [Header("Main")]
+    private AudioSource _audioSource;
+    public AudioClip startRecordingSound;
+    public AudioClip stopRecordingSound;
+    
+    
     [Header("Debug")]
     public bool listenBack = false;
     private readonly int durationSeconds = 150;
@@ -18,7 +25,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
     private float silenceTimer;
     private bool isSilenceDetectionActive;
 
-    public AudioClip clip;
+    private AudioClip clip;
     private bool isRecording;
     private string currentDevice;
     private const int maxFrequencyHumansHear = 44000;
@@ -27,15 +34,34 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
 
     private int startPosition;
     private System.Action<AudioClip, byte[]> recordingCallback;
-    
-    public void StartRecording()
+
+    private void Start()
+    {
+        if (startRecordingSound == null)
+            throw new Exception("Start recording sound is not set in ChatbotUIManager");
+        
+        if (stopRecordingSound == null)
+            throw new Exception("Stop recording sound is not set in ChatbotUIManager");
+        
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+            throw new Exception("AudioSource is not set in ChatbotUIManager");
+    }
+
+    public void StartRecording(bool makeBeep = true)
     {
         if (isRecording)
         {
             Debug.LogWarning("[WARNING] Micr manager is already recording");
             return;
         }
-        
+
+        if (makeBeep)
+        {
+            _audioSource.clip = startRecordingSound;
+            _audioSource.Play();
+        }
+
         isRecording = true;
         silenceTimer = 0f;
         isSilenceDetectionActive = false;
@@ -94,7 +120,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         }
     }
 
-    public void EndRecording(System.Action<AudioClip, byte[]> callback)
+    public void EndRecording(System.Action<AudioClip, byte[]> callback, bool makeBeep = true)
     {
         if (!isRecording)
         {
@@ -123,12 +149,17 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         if (this.listenBack)
         {
             Debug.Log("--------------------Inizio riproduzione");
-            GetComponent<AudioSource>().clip = clip;
-            GetComponent<AudioSource>().Play();
+            _audioSource.clip = clip;
+            _audioSource.Play();
             Debug.Log("--------------------Fine riproduzione");
         }
 
         isRecording = false;
+        if (makeBeep)
+        {
+            _audioSource.clip = stopRecordingSound;
+            _audioSource.Play();
+        }
         callback?.Invoke(clip, data);
     }
     

@@ -13,6 +13,7 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
 
     public AudioSource speaker;
     
+
     public event Action OnAudioPlaybackCompleted;
     private void Start()
     {
@@ -43,6 +44,8 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         string mic = Microphone.devices[index];
         MicrophoneManager.Instance.ChangeMicrophone(mic);
         d_micList.SetValueWithoutNotify(index);
+        
+
     }
 
     public void UpdateTranscription(string s)
