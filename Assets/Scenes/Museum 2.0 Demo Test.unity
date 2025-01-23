@@ -367,16 +367,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13500237}
-  - component: {fileID: 13500240}
   - component: {fileID: 13500239}
   - component: {fileID: 13500238}
+  - component: {fileID: 13500240}
   m_Layer: 0
-  m_Name: GameObject3
+  m_Name: PannelloDescrizione3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &13500237
 Transform:
   m_ObjectHideFlags: 0
@@ -385,14 +385,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13500236}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.558, y: 1.209, z: 1.792}
+  m_LocalRotation: {x: -0, y: 0.6539512, z: -0, w: 0.75653666}
+  m_LocalPosition: {x: 0.06, y: 1.209, z: 1.701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 893042074}
   m_Father: {fileID: 770899436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 81.68, z: 0}
 --- !u!114 &13500238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.15, y: 0.5, z: 1}
+  m_Size: {x: 1, y: 0.67, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &13799707 stripped
 Transform:
@@ -1056,6 +1056,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62027843}
   m_CullTransparentMesh: 1
+--- !u!1 &68861239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68861240}
+  - component: {fileID: 68861241}
+  m_Layer: 0
+  m_Name: PannelloDescrizione5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &68861240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68861239}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.08678179, y: 0.723953, z: 0.092654355, w: 0.6780679}
+  m_LocalPosition: {x: -3.757, y: 1.255, z: -7.117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1100339083}
+  m_Father: {fileID: 1841897182}
+  m_LocalEulerAnglesHint: {x: -14.587, y: 93.749, z: 0}
+--- !u!65 &68861241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68861239}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02779528, y: 0.5, z: 1.392354}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &71614496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dcc9cf41d6c556b4f9629d9260ed8d1e, type: 3}
@@ -2143,6 +2197,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!1 &101296425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101296426}
+  - component: {fileID: 101296427}
+  m_Layer: 0
+  m_Name: PannelloDescrizione4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &101296426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101296425}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.414, y: 1.281, z: -7.084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1567175444}
+  m_Father: {fileID: 1841897182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &101296427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101296425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02779528, y: 0.5, z: 1.392354}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &102035643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,15 +3891,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.681
+      value: -0.686
       objectReference: {fileID: 0}
     - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9804686
+      value: 1.043
       objectReference: {fileID: 0}
     - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.071
+      value: 2.068
       objectReference: {fileID: 0}
     - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4645,7 +4753,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.854, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211894495
 MonoBehaviour:
@@ -4659,15 +4767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>Ophelia</size>\n<size=66><color=#c2c2c3>Realizzata
+  _content: "<size=40><color=#fff>Ophelia</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>John Everett Millais</color> tra il 1851 e il 1852, questa
     opera \xE8 un capolavoro del Preraffaellitismo, che celebra la purezza dei dettagli
-    medievali e rinascimentali.</size>\n\n<size=88><color=#fff>Una scena tragica
-    e poetica</size>\n<size=66><color=#c2c2c3>L'opera ritrae <color=#548AF7>Ofelia</color>
-    di Shakespeare galleggiante in un fiume, circondata da fiori. Il suo volto, ispirato
-    a <color=#548AF7>Elizabeth Siddal</color>, esprime la tragicit\xE0 della follia.
-    Millais cattura la bellezza e malinconia della scena con dettagli naturali e
-    struggenti.</size>\n\n<size=88><color=#fff>Un capolavoro preraffaellita</size>\n<size=66><color=#c2c2c3>Esibita
+    medievali e rinascimentali.</size>\n\n<size=40><color=#fff>Un capolavoro preraffaellita</size>\n<size=32><color=#c2c2c3>Esibita
     alla <color=#548AF7>Tate Britain</color>, \"Ophelia\" \xE8 nota per la sua maestria
     tecnica e il contrasto tra la bellezza della natura e la tragedia imminente,
     lasciando un impatto emotivo duraturo.</size>"
@@ -6396,7 +6499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &258326813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6415,7 +6518,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.854, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258326815
 MonoBehaviour:
@@ -6557,23 +6660,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>La Zattera della Medusa</size>  \r\n<size=66><color=#c2c2c3>Realizzata
+  _content: "<size=40><color=#fff>La Zattera della Medusa</size>  \r\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Th\xE9odore G\xE9ricault tra il 1818 e il 1819</color>, quest'opera
     \xE8 un capolavoro del Romanticismo francese e si ispira a un tragico evento
-    reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=88><color=#fff>Un
-    dramma umano sulla tela</size>  \r\n<size=66><color=#c2c2c3>La composizione rappresenta
-    il caos e la disperazione dei naufraghi. Alcuni giacciono ormai morti, mentre
-    altri si aggrappano alla speranza, con un uomo che sventola uno straccio per
-    attirare l\u2019attenzione di una nave all\u2019orizzonte.</size>  \r\n\r\n<size=88><color=#fff>Contrasto
-    e potenza emotiva</size>  \r\n<size=66><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita
+    reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=40><color=#fff>Contrasto
+    e potenza emotiva</size>  \r\n<size=32><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita
     e morte</color>, speranza e disperazione, \xE8 reso attraverso un drammatico
     uso della luce e dei colori cupi. L'opera \xE8 conservata al <color=#548AF7>Museo
-    del Louvre di Parigi</color>.</size>  \r\n\r\n<size=88><color=#fff>Un simbolo
-    del Romanticismo</size>  \r\n<size=66><color=#c2c2c3>\"La Zattera della Medusa\"
-    non \xE8 solo un trionfo artistico, ma anche una <color=#548AF7>forte critica
-    sociale e politica</color>. G\xE9ricault denunci\xF2 l'incompetenza del governo
-    francese, rendendo l'opera un emblema delle emozioni estreme e del dramma umano
-    che caratterizzano il Romanticismo.</size>\r"
+    del Louvre di Parigi</color>.</size>  \r"
 --- !u!4 &258770030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7259449764016024205, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -8867,8 +8961,6 @@ Transform:
   - {fileID: 1647271555}
   - {fileID: 507127016}
   - {fileID: 1673279546}
-  - {fileID: 1401804692}
-  - {fileID: 1900521479}
   - {fileID: 1116825244}
   m_Father: {fileID: 543450652824160440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12025,8 +12117,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507127015}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.1829877, y: -0.2907098, z: 2.190222}
+  m_LocalRotation: {x: -0, y: -0.7241486, z: -0, w: 0.68964404}
+  m_LocalPosition: {x: 4.192, y: -0.228, z: 2.421}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12034,7 +12126,7 @@ Transform:
   - {fileID: 1627168406}
   - {fileID: 1097513210}
   m_Father: {fileID: 376470342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -92.796, z: 0}
 --- !u!65 &507127023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12628,7 +12720,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 770899436}
+    m_TransformParent: {fileID: 1841897182}
     m_Modifications:
     - target: {fileID: 3244191575706552233, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_Name
@@ -12640,23 +12732,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8000001
+      value: 0.80000013
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.301
+      value: -2.9490006
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 1.002
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.605
+      value: -7.083002
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.9998981
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -12664,7 +12756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: -0.0142798405
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalRotation.z
@@ -12676,7 +12768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1.636
       objectReference: {fileID: 0}
     - target: {fileID: 7684617653641277454, guid: 57c150de30637b34ca36feeb63c9d7cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -14308,11 +14400,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<size=40><color=#fff>La nascita di Venere</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Sandro Botticelli</color> tra il 1484 e il 1486, quest'opera
-    celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un'icona
-    di bellezza</size>\n<size=32><color=#c2c2c3>Venere emerge dalle acque su una
-    conchiglia, mentre <color=#548AF7>Zefiro e Aura</color> la spingono verso la
-    riva, accolta dalle Grazie. Il dipinto riflette l'influenza della filosofia <color=#548AF7>neoplatonica</color>
-    celebrando l'amore ideale e la bellezza divina.</size>\n\n<size=40><color=#fff>Un
+    celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un
     simbolo universale</size>\n<size=32><color=#c2c2c3>Oggi conservata alla <color=#548AF7>Galleria
     degli Uffizi di Firenze</color>, \"La nascita di Venere\" \xE8 un simbolo di
     amore, fertilit\xE0 e della rinascita culturale del Rinascimento.</size>"
@@ -14773,7 +14861,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 725930337}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   rigidbodyMovementType: 0
@@ -14816,8 +14904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!65 &725930341
-BoxCollider:
+--- !u!136 &725930341
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14834,9 +14922,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1, y: 5, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.37
+  m_Height: 3.03
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.36, z: 0}
 --- !u!1 &731359270
 GameObject:
   m_ObjectHideFlags: 0
@@ -14952,7 +15042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731673982}
   m_Layer: 0
-  m_Name: Picture Frames Canvases (forse da aggiungere)
+  m_Name: Picture Frames Canvases
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14971,13 +15061,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1429616068}
   - {fileID: 986191720}
   - {fileID: 211894494}
   - {fileID: 258326813}
   - {fileID: 2055691469}
   - {fileID: 1243478032}
-  - {fileID: 1567175444}
-  - {fileID: 1100339083}
   m_Father: {fileID: 543450652824160440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732706818
@@ -15037,15 +15126,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>Scuola di Atene</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>Scuola di Atene</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Raffaello Sanzio</color> tra il 1509 e il 1511, quest'opera
-    \xE8 un capolavoro del Rinascimento, simbolo dell'umanesimo e della cultura classica.</size>\n\n<size=88><color=#fff>Filosofia
-    e scienza</size>\n<size=66><color=#c2c2c3>Nel cuore dell'affresco, <color=#548AF7>Platone</color>
-    e <color=#548AF7>Aristotele</color> rappresentano rispettivamente le idee e la
-    conoscenza empirica, circondati da filosofi come <color=#548AF7>Socrate</color>
-    e <color=#548AF7>Epicuro</color>. L'uso magistrale della <color=#548AF7>prospettiva</color>
-    e la disposizione armoniosa delle figure creano un senso di movimento e serenit\xE0.</size>\n\n<size=88><color=#fff>Un
-    simbolo di armonia</size>\n<size=66><color=#c2c2c3>\"Scuola di Atene\" esprime
+    \xE8 un capolavoro del Rinascimento, simbolo dell'umanesimo e della cultura classica.</size>\n\n<size=40><color=#fff>Un
+    simbolo di armonia</size>\n<size=32><color=#c2c2c3>\"Scuola di Atene\" esprime
     l'ideale rinascimentale di armonia tra <color=#548AF7>fede e ragione</color>,
     diventando un'icona della ricerca di verit\xE0 e bellezza che ha ispirato generazioni
     di pensatori e artisti.</size>"
@@ -15496,288 +15580,6 @@ MonoBehaviour:
   m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &747992073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 747992074}
-  - component: {fileID: 747992077}
-  - component: {fileID: 747992076}
-  - component: {fileID: 747992075}
-  m_Layer: 0
-  m_Name: GameObject2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &747992074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747992073}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.347, y: 1.209, z: 1.792}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1429616068}
-  m_Father: {fileID: 770899436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &747992075
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747992073}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.15, y: 0.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &747992076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747992073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ad66e7cc9a2754d8ea989740c9f00d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  isGazePinchSelected:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isRaySelected:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isPokeSelected:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isGrabSelected:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isGazeHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isGazePinchHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isRayHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isGrabHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isPokeHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  isActiveHovered:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  disabledInteractorTypes:
-  - reference: MixedReality.Toolkit.IPokeInteractor, MixedReality.Toolkit.Core
-  <ToggleMode>k__BackingField: 0
-  <SelectThreshold>k__BackingField: 0.9
-  <DeselectThreshold>k__BackingField: 0.1
-  <TriggerOnRelease>k__BackingField: 1
-  <UseGazeDwell>k__BackingField: 0
-  <GazeDwellTime>k__BackingField: 1
-  <UseFarDwell>k__BackingField: 0
-  <FarDwellTime>k__BackingField: 1
-  allowSelectByVoice: 1
-  speechRecognitionKeyword: select
-  <VoiceRequiresFocus>k__BackingField: 1
-  <SelectRequiresHover>k__BackingField: 0
-  <IsToggled>k__BackingField:
-    active: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-  <OnClicked>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnEnabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnDisabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  hostTransform: {fileID: 0}
-  allowedManipulations: 7
-  allowedInteractionTypes: -2147483641
-  rigidbodyMovementType: 0
-  applyTorque: 1
-  springForceSoftness: 0.1
-  springTorqueSoftness: 0.1
-  springDamping: 1
-  springForceLimit: 100
-  rotationAnchorNear: 1
-  rotationAnchorFar: 1
-  releaseBehavior: 3
-  transformSmoothingLogicType:
-    reference: MixedReality.Toolkit.SpatialManipulation.DefaultTransformSmoothingLogic,
-      MixedReality.Toolkit.SpatialManipulation
-  smoothingFar: 1
-  smoothingNear: 1
-  moveLerpTime: 0.001
-  rotateLerpTime: 0.001
-  scaleLerpTime: 0.001
-  enableConstraints: 1
-  constraintsManager: {fileID: 0}
-  manipulationLogicTypes:
-    moveLogicType:
-      reference: MixedReality.Toolkit.SpatialManipulation.MoveLogic, MixedReality.Toolkit.SpatialManipulation
-    rotateLogicType:
-      reference: MixedReality.Toolkit.SpatialManipulation.RotateLogic, MixedReality.Toolkit.SpatialManipulation
-    scaleLogicType:
-      reference: MixedReality.Toolkit.SpatialManipulation.ScaleLogic, MixedReality.Toolkit.SpatialManipulation
---- !u!114 &747992077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747992073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cdab0cd5a0916419324bb54314773d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoConstraintSelection: 1
-  selectedConstraints: []
 --- !u!1001 &749956607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16058,18 +15860,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>La Ronda di Notte</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>La Ronda di Notte</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Rembrandt van Rijn nel 1642</color>, quest'opera \xE8 un capolavoro
     del Barocco olandese, rappresentante una compagnia di miliziani in movimento,
     guidata da <color=#548AF7>Frans Banning Cocq</color> e <color=#548AF7>Willem
-    van Ruytenburch</color>.</size>\n\n<size=88><color=#fff>Una scena dinamica</size>\n<size=66><color=#c2c2c3>Rompendo
-    la tradizione delle pose rigide, Rembrandt usa il <color=#548AF7>chiaroscuro</color>
-    per infondere vitalit\xE0 alla scena. Sebbene il titolo faccia riferimento alla
-    notte, il buio \xE8 in parte dovuto all'ossidazione delle vernici.</size>\n\n<size=88><color=#fff>Un
-    capolavoro senza tempo</size>\n<size=66><color=#c2c2c3>Esposta al <color=#548AF7>Rijksmuseum
-    di Amsterdam</color>,l'opera  \xE8 celebrata per la sua composizione dinamica
-    e la maestria nel catturare luce, spazio e l'animo umano, testimoniando il genio
-    di Rembrandt.</size>"
+    van Ruytenburch</color>.</size>\n\n<size=40><color=#fff>Un capolavoro senza tempo</size>\n<size=32><color=#c2c2c3>Esposta
+    al <color=#548AF7>Rijksmuseum di Amsterdam</color>,l'opera  \xE8 celebrata per
+    la sua composizione dinamica e la maestria nel catturare luce, spazio e l'animo
+    umano, testimoniando il genio di Rembrandt.</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16313,7 +16111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770899436}
   m_Layer: 0
-  m_Name: TableEditor
+  m_Name: TableEditor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16334,14 +16132,11 @@ Transform:
   m_Children:
   - {fileID: 1247126040}
   - {fileID: 1554214732}
-  - {fileID: 1719521076}
   - {fileID: 289361162}
   - {fileID: 725930337}
   - {fileID: 1829285859}
-  - {fileID: 747992074}
   - {fileID: 13500237}
   - {fileID: 1459994796}
-  - {fileID: 1190039660}
   m_Father: {fileID: 543450652824160440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &772113515 stripped
@@ -18159,16 +17954,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>Primavera</size>\n<size=66><color=#c2c2c3>Realizzata
-    da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest'opera
-    celebra la bellezza della primavera e dell'amore, unendo elementi mitologici
-    e allegorici.</size>\n\n<size=88><color=#fff>Un'armonia divina</size>\n<size=66><color=#c2c2c3>Al
-    centro, <color=#548AF7>Venere</color> \xE8 circondata dalle Grazie e da <color=#548AF7>Mercurio</color>,
-    simbolo dell'amore divino e umano. Sul lato destro, <color=#548AF7>Zefiro</color>
-    rapisce <color=#548AF7>Flora</color>, portando vitalit\xE0 e rinascita.</size>\n\n<size=88><color=#fff>Un
-    simbolo di bellezza</size>\n<size=66><color=#c2c2c3>\"Primavera\" incarna l'ideale
-    rinascimentale di bellezza e amore, diventando un capolavoro universale che continua
-    a ispirare per la sua straordinaria bellezza e significato culturale.</size>"
+  m_text: '<size=40><color=#fff>Primavera</size>
+
+    <size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest''opera
+    celebra la bellezza della primavera e dell''amore, unendo elementi mitologici
+    e allegorici.</size>
+
+
+    <size=40><color=#fff>Un simbolo di bellezza</size>
+
+    <size=32><color=#c2c2c3>"Primavera"
+    incarna l''ideale rinascimentale di bellezza e amore, diventando un capolavoro
+    universale che continua a ispirare per la sua straordinaria bellezza e significato
+    culturale.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19635,7 +19434,6 @@ GameObject:
   - component: {fileID: 893042082}
   - component: {fileID: 893042084}
   - component: {fileID: 893042083}
-  - component: {fileID: 893042085}
   m_Layer: 0
   m_Name: PannelloDescrizione_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -19650,17 +19448,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893042073}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.08091185, z: -0, w: 0.99672127}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.0010000002, y: 0.00085000007, z: 0.0008000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1153644820}
   m_Father: {fileID: 13500237}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.282, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.056, y: 0}
+  m_AnchoredPosition: {x: -0.083, y: 0}
   m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893042075
@@ -19677,10 +19475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: "<size=40><color=#fff>La persistenza della memoria</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Salvador Dal\xED</color> nel 1931, quest'opera \xE8 uno dei
-    capolavori del Surrealismo, esplorando il confine tra sogno e realt\xE0.</size>\n\n<size=40><color=#fff>Orologi
-    molli e paesaggi onirici</size>\n<size=32><color=#c2c2c3>Il dipinto mostra orologi
-    deformati in un paesaggio desolato, simbolo del tempo fluido nei sogni, con montagne
-    che richiamano la <color=#548AF7>costa catalana</color>.</size>\n\n<size=40><color=#fff>Un'icona
+    capolavori del Surrealismo, esplorando il confine tra sogno e realt\xE0.</size>\n\n<size=40><color=#fff>Un'icona
     del Surrealismo</size>\n<size=32><color=#c2c2c3>Al centro, un volto deformato
     suggerisce un'immersione nell'inconscio. Esposta al <color=#548AF7>MoMA</color>,
     l'opera incarna l'essenza del Surrealismo, trasformando l'ordinario in straordinario.</size>"
@@ -20065,27 +19860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!65 &893042085
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893042073}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &898614686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dcc9cf41d6c556b4f9629d9260ed8d1e, type: 3}
@@ -20296,6 +20070,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9, y: 0.4, z: 18.2}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &903494524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139419177610049385, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+  m_PrefabInstance: {fileID: 1027076434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &903494527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903494524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b29b6c6428c984a8a73ffc2d58063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Mediator: {fileID: 1494792536}
+  m_TransformationPriority: 0
+  m_TurnSpeed: 60
+  m_LeftHandTurnInput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Left Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: ad2d3c24-281e-4294-8c13-3e366a01a292
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: 0}
+    m_ObjectReferenceObject: {fileID: 0}
+    m_ManualValue: {x: 0, y: 0}
+  m_RightHandTurnInput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Right Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: cee4e624-c11a-4369-9023-df150f91c323
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: -6493913391331992944, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+    m_ManualValue: {x: 0, y: 0}
 --- !u!1 &907529065
 GameObject:
   m_ObjectHideFlags: 0
@@ -21872,7 +21694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &986191720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21891,7 +21713,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.854, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986191721
 MonoBehaviour:
@@ -21905,18 +21727,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>La Ronda di Notte</size>\n<size=66><color=#c2c2c3>Realizzata
+  _content: "<size=40><color=#fff>La Ronda di Notte</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Rembrandt van Rijn nel 1642</color>, quest'opera \xE8 un capolavoro
     del Barocco olandese, rappresentante una compagnia di miliziani in movimento,
     guidata da <color=#548AF7>Frans Banning Cocq</color> e <color=#548AF7>Willem
-    van Ruytenburch</color>.</size>\n\n<size=88><color=#fff>Una scena dinamica</size>\n<size=66><color=#c2c2c3>Rompendo
-    la tradizione delle pose rigide, Rembrandt usa il <color=#548AF7>chiaroscuro</color>
-    per infondere vitalit\xE0 alla scena. Sebbene il titolo faccia riferimento alla
-    notte, il buio \xE8 in parte dovuto all'ossidazione delle vernici.</size>\n\n<size=88><color=#fff>Un
-    capolavoro senza tempo</size>\n<size=66><color=#c2c2c3>Esposta al <color=#548AF7>Rijksmuseum
-    di Amsterdam</color>,l'opera  \xE8 celebrata per la sua composizione dinamica
-    e la maestria nel catturare luce, spazio e l'animo umano, testimoniando il genio
-    di Rembrandt.</size>"
+    van Ruytenburch</color>.</size>\n\n<size=40><color=#fff>Un capolavoro senza tempo</size>\n<size=32><color=#c2c2c3>Esposta
+    al <color=#548AF7>Rijksmuseum di Amsterdam</color>,l'opera  \xE8 celebrata per
+    la sua composizione dinamica e la maestria nel catturare luce, spazio e l'animo
+    umano, testimoniando il genio di Rembrandt.</size>"
 --- !u!114 &986191722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23100,7 +22918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1022083396
 Transform:
   m_ObjectHideFlags: 0
@@ -23576,6 +23394,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -31.999994
       objectReference: {fileID: 0}
+    - target: {fileID: 1150897573172165719, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c991aa842ba5bb4b98b8f19be11b0eb, type: 2}
+    - target: {fileID: 1150897573172165719, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1296981439800283185, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23726,6 +23552,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651123914762171609, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722964585420185522, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2797114661058042936, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
@@ -23925,6 +23755,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4402838551894662253, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_text
+      value: "Sto caricando il 1\xB0 messaggio."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402838551894662253, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
@@ -24012,6 +23846,10 @@ PrefabInstance:
       propertyPath: scrollDown
       value: 
       objectReference: {fileID: 1880329477}
+    - target: {fileID: 5002622549281843775, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_DefaultParameters.m_ApertureSize
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5080173945655641592, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: _persistent
       value: 0
@@ -24079,6 +23917,22 @@ PrefabInstance:
     - target: {fileID: 5287305142021561775, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: _persistent
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395965127476579634, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: endPointLerp
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395965127476579634, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: lineStepCount
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395965127476579634, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: startPointLerp
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395965127476579634, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: widthMultiplier
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6244291443015357085, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: additionalOffset.x
@@ -24403,6 +24257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7007339731372704873, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1027076436}
+    - targetCorrespondingSourceObject: {fileID: 1139419177610049385, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 903494527}
   m_SourcePrefab: {fileID: 100100000, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
 --- !u!1 &1027076435 stripped
 GameObject:
@@ -25654,7 +25511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1100339083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25662,18 +25519,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100339082}
-  m_LocalRotation: {x: 0, y: 0.9917385, z: 0.12827638, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -7.814}
-  m_LocalScale: {x: 0.001, y: 0.00085, z: 0.0008}
+  m_LocalRotation: {x: -0, y: 0.9917385, z: 0.12827638, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.001, y: 0.00085000024, z: 0.0008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1588625837}
-  m_Father: {fileID: 731673982}
+  m_Father: {fileID: 68861240}
   m_LocalEulerAnglesHint: {x: -14.74, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.441, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100339084
 MonoBehaviour:
@@ -25687,15 +25544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>Scuola di Atene</size>\n<size=66><color=#c2c2c3>Realizzata
+  _content: "<size=40><color=#fff>Scuola di Atene</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Raffaello Sanzio</color> tra il 1509 e il 1511, quest'opera
-    \xE8 un capolavoro del Rinascimento, simbolo dell'umanesimo e della cultura classica.</size>\n\n<size=88><color=#fff>Filosofia
-    e scienza</size>\n<size=66><color=#c2c2c3>Nel cuore dell'affresco, <color=#548AF7>Platone</color>
-    e <color=#548AF7>Aristotele</color> rappresentano rispettivamente le idee e la
-    conoscenza empirica, circondati da filosofi come <color=#548AF7>Socrate</color>
-    e <color=#548AF7>Epicuro</color>. L'uso magistrale della <color=#548AF7>prospettiva</color>
-    e la disposizione armoniosa delle figure creano un senso di movimento e serenit\xE0.</size>\n\n<size=88><color=#fff>Un
-    simbolo di armonia</size>\n<size=66><color=#c2c2c3>\"Scuola di Atene\" esprime
+    \xE8 un capolavoro del Rinascimento, simbolo dell'umanesimo e della cultura classica.</size>\n\n<size=40><color=#fff>Un
+    simbolo di armonia</size>\n<size=32><color=#c2c2c3>\"Scuola di Atene\" esprime
     l'ideale rinascimentale di armonia tra <color=#548AF7>fede e ragione</color>,
     diventando un'icona della ricerca di verit\xE0 e bellezza che ha ispirato generazioni
     di pensatori e artisti.</size>"
@@ -27683,8 +27535,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36282173, y: 0.60451007, z: 0.32933688}
-  m_Center: {x: 0.0030761948, y: 0.30615532, z: 0.010331553}
+  m_Size: {x: 0.37736836, y: 0.616513, z: 0.35715118}
+  m_Center: {x: -0.00419712, y: 0.3121568, z: 0.0242387}
 --- !u!114 &1190039667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28176,7 +28028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7620881604095485056, guid: 9c869228e9c213a41aefae1073a6d220, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7620881604095485056, guid: 9c869228e9c213a41aefae1073a6d220, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28184,10 +28036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1338985816984676056, guid: 9c869228e9c213a41aefae1073a6d220, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1597125688}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c869228e9c213a41aefae1073a6d220, type: 3}
 --- !u!4 &1199552987 stripped
@@ -28941,7 +28790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1243478032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28960,7 +28809,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.85, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243478033
 MonoBehaviour:
@@ -28974,16 +28823,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>Primavera</size>\n<size=66><color=#c2c2c3>Realizzata
-    da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest'opera
-    celebra la bellezza della primavera e dell'amore, unendo elementi mitologici
-    e allegorici.</size>\n\n<size=88><color=#fff>Un'armonia divina</size>\n<size=66><color=#c2c2c3>Al
-    centro, <color=#548AF7>Venere</color> \xE8 circondata dalle Grazie e da <color=#548AF7>Mercurio</color>,
-    simbolo dell'amore divino e umano. Sul lato destro, <color=#548AF7>Zefiro</color>
-    rapisce <color=#548AF7>Flora</color>, portando vitalit\xE0 e rinascita.</size>\n\n<size=88><color=#fff>Un
-    simbolo di bellezza</size>\n<size=66><color=#c2c2c3>\"Primavera\" incarna l'ideale
-    rinascimentale di bellezza e amore, diventando un capolavoro universale che continua
-    a ispirare per la sua straordinaria bellezza e significato culturale.</size>"
+  _content: '<size=40><color=#fff>Primavera</size>
+
+    <size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest''opera
+    celebra la bellezza della primavera e dell''amore, unendo elementi mitologici
+    e allegorici.</size>
+
+
+    <size=40><color=#fff>Un simbolo di bellezza</size>
+
+    <size=32><color=#c2c2c3>"Primavera"
+    incarna l''ideale rinascimentale di bellezza e amore, diventando un capolavoro
+    universale che continua a ispirare per la sua straordinaria bellezza e significato
+    culturale.</size>'
 --- !u!114 &1243478034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29972,13 +29825,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>Ragazza col turbante</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>Ragazza col turbante</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Johannes Vermeer</color> intorno al 1665, questa opera del
-    Barocco olandese \xE8 famosa per la sua maestria nel catturare luce e dettagli.</size>\n\n<size=88><color=#fff>Un
-    volto misterioso</size>\n<size=66><color=#c2c2c3>La giovane donna, con un <color=#548AF7>turbante
-    azzurro e giallo</color> e un orecchino di perla, ha un'espressione enigmatica
-    che invita alla connessione misteriosa, catturando l'attenzione dello spettatore.</size>\n\n<size=88><color=#fff>Un'icona
-    del Barocco</size>\n<size=66><color=#c2c2c3>Conservata al <color=#548AF7>Mauritshuis
+    Barocco olandese \xE8 famosa per la sua maestria nel catturare luce e dettagli.</size>\n\n<size=40><color=#fff>Un'icona
+    del Barocco</size>\n<size=32><color=#c2c2c3>Conservata al <color=#548AF7>Mauritshuis
     dell'Aia</color>, \"Ragazza col turbante\" \xE8 soprannominata la \"Monna Lisa
     del Nord\", simbolo della bellezza e della maestria del XVII secolo olandese.</size>"
   m_isRightToLeft: 0
@@ -30780,6 +30630,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329853652}
   m_CullTransparentMesh: 1
+--- !u!1001 &1332050891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 543450652824160440}
+    m_Modifications:
+    - target: {fileID: 984807182850798718, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039105331768483766, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569201157695484881, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00928701
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113087147913064994, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885692304885732219, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_Name
+      value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151069878712191159, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 9151069878712191159, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+    - {fileID: 2649398434348611795, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+--- !u!4 &1332050892 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3974378197299999491, guid: 6df60b420de965a41bf074286ea9560d, type: 3}
+  m_PrefabInstance: {fileID: 1332050891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333337192
 GameObject:
   m_ObjectHideFlags: 0
@@ -32512,16 +32462,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401804691}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.28, y: -0.29071164, z: -5.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7050971, z: -0, w: -0.70911086}
+  m_LocalPosition: {x: -3.3540008, y: 1.2788135, z: -7.052002}
+  m_LocalScale: {x: 1, y: 0.84745765, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1090500318}
   - {fileID: 936921468}
   - {fileID: 404686323}
-  m_Father: {fileID: 376470342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1841897182}
+  m_LocalEulerAnglesHint: {x: 0, y: -270.325, z: 0}
 --- !u!65 &1401804699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32541,7 +32491,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9609453, y: 0.695925, z: 0.04002679}
+  m_Size: {x: 1.02309, y: 0.7244332, z: 0.1049797}
   m_Center: {x: 0, y: 0, z: 0.020024948}
 --- !u!54 &1401804700
 Rigidbody:
@@ -33465,17 +33415,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429616067}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0010000003, y: 0.00084999995, z: 0.0008000002}
+  m_LocalRotation: {x: -0.05864004, y: 0.7046711, z: 0.058640055, w: 0.7046711}
+  m_LocalPosition: {x: 0, y: 0, z: 4.010002}
+  m_LocalScale: {x: 0.0010000004, y: 0.0008499999, z: 0.0008000005}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1996105917}
-  m_Father: {fileID: 747992074}
+  m_Father: {fileID: 731673982}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.896002, y: 2.708}
   m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1429616069
@@ -33492,11 +33442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: "<size=40><color=#fff>La nascita di Venere</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Sandro Botticelli</color> tra il 1484 e il 1486, quest'opera
-    celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un'icona
-    di bellezza</size>\n<size=32><color=#c2c2c3>Venere emerge dalle acque su una
-    conchiglia, mentre <color=#548AF7>Zefiro e Aura</color> la spingono verso la
-    riva, accolta dalle Grazie. Il dipinto riflette l'influenza della filosofia <color=#548AF7>neoplatonica</color>
-    celebrando l'amore ideale e la bellezza divina.</size>\n\n<size=40><color=#fff>Un
+    celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un
     simbolo universale</size>\n<size=32><color=#c2c2c3>Oggi conservata alla <color=#548AF7>Galleria
     degli Uffizi di Firenze</color>, \"La nascita di Venere\" \xE8 un simbolo di
     amore, fertilit\xE0 e della rinascita culturale del Rinascimento.</size>"
@@ -34428,7 +34374,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36282173, y: 0.60451007, z: 0.32933688}
+  m_Size: {x: 0.3773684, y: 0.616513, z: 0.3571512}
   m_Center: {x: 0.0030761948, y: 0.30615532, z: 0.010331553}
 --- !u!114 &1459994803
 MonoBehaviour:
@@ -36036,6 +35982,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490554933}
   m_Mesh: {fileID: 5622126682026569557, guid: b210779c1f254e94e8945e6229ef17a1, type: 3}
+--- !u!114 &1494792536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3523004053085389019, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+  m_PrefabInstance: {fileID: 1027076434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa7b4195685c3846be746c74f0ab2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498595414
 GameObject:
   m_ObjectHideFlags: 0
@@ -37578,8 +37535,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565017012}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 2.682987, y: -0.29071164, z: 10.190222}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00026771423}
+  m_LocalPosition: {x: 2.63, y: 0.114, z: 10.155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37587,7 +37544,7 @@ Transform:
   - {fileID: 270148229}
   - {fileID: 880438540}
   m_Father: {fileID: 376470342}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.031, z: 0}
 --- !u!65 &1565017020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37994,7 +37951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1567175444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38002,18 +37959,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567175443}
-  m_LocalRotation: {x: 0, y: 0.9917385, z: 0.12827638, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -7.81}
-  m_LocalScale: {x: 0.001, y: 0.00085, z: 0.0008}
+  m_LocalRotation: {x: 0.008394189, y: 0.68886954, z: 0.010926944, w: -0.7247544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.001, y: 0.00085000024, z: 0.0008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 126779312}
-  m_Father: {fileID: 731673982}
-  m_LocalEulerAnglesHint: {x: -14.74, y: 180, z: 0}
+  m_Father: {fileID: 101296426}
+  m_LocalEulerAnglesHint: {x: -1.56, y: 272.912, z: -0.245}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.412, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567175445
 MonoBehaviour:
@@ -38405,13 +38362,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>Colazione sull'erba</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>Colazione sull'erba</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>\xC9douard Manet</color> nel 1863, quest'opera segna una svolta
-    nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=88><color=#fff>Una
-    scena provocatoria</size>\n<size=66><color=#c2c2c3>Manet rappresenta una donna
-    nuda in un contesto moderno con due uomini vestiti. La nudit\xE0 in un contesto
-    non mitologico fu scioccante per l\u2019epoca.</size>\n\n<size=88><color=#fff>Un'opera
-    rivoluzionaria</size>\n<size=66><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon
+    nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=40><color=#fff>Un'opera
+    rivoluzionaria</size>\n<size=32><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon
     ufficiale</color>, esposta al Salon des Refus\xE9s, l'opera rompe le convenzioni
     accademiche con luci, ombre e prospettiva non convenzionale. Esposta al <color=#548AF7>Mus\xE9e
     d'Orsay</color>, ha influenzato profondamente l'arte moderna.</size>"
@@ -38535,7 +38489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1588625837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38698,7 +38652,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1199552987}
+    m_TransformParent: {fileID: 1841897182}
     m_Modifications:
     - target: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_Name
@@ -38714,19 +38668,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.4570005
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96367013
+      value: 0.97295797
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.009000778
+      value: -7.609779
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9982418
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalRotation.x
@@ -38734,7 +38688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.059273563
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalRotation.z
@@ -38746,7 +38700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 173.204
       objectReference: {fileID: 0}
     - target: {fileID: 8803126872799091216, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -39393,10 +39347,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<size=40><color=#fff>La persistenza della memoria</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Salvador Dal\xED</color> nel 1931, quest'opera \xE8 uno dei
-    capolavori del Surrealismo, esplorando il confine tra sogno e realt\xE0.</size>\n\n<size=40><color=#fff>Orologi
-    molli e paesaggi onirici</size>\n<size=32><color=#c2c2c3>Il dipinto mostra orologi
-    deformati in un paesaggio desolato, simbolo del tempo fluido nei sogni, con montagne
-    che richiamano la <color=#548AF7>costa catalana</color>.</size>\n\n<size=40><color=#fff>Un'icona
+    capolavori del Surrealismo, esplorando il confine tra sogno e realt\xE0.</size>\n\n<size=40><color=#fff>Un'icona
     del Surrealismo</size>\n<size=32><color=#c2c2c3>Al centro, un volto deformato
     suggerisce un'immersione nell'inconscio. Esposta al <color=#548AF7>MoMA</color>,
     l'opera incarna l'essenza del Surrealismo, trasformando l'ordinario in straordinario.</size>"
@@ -45384,7 +45335,7 @@ GameObject:
   - component: {fileID: 1829285861}
   - component: {fileID: 1829285860}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PannelloDescrizione1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45399,7 +45350,7 @@ Transform:
   m_GameObject: {fileID: 1829285858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.085, y: 1.209, z: 1.792}
+  m_LocalPosition: {x: 0.729, y: 1.209, z: 1.765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45425,7 +45376,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.15, y: 0.5, z: 1}
+  m_Size: {x: 0.02779528, y: 0.5, z: 1.392354}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1829285861
 MonoBehaviour:
@@ -45706,6 +45657,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 3, z: 1}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &1841897181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841897182}
+  m_Layer: 0
+  m_Name: TableEditor2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841897182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841897181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1597125688}
+  - {fileID: 1190039660}
+  - {fileID: 1719521076}
+  - {fileID: 1401804692}
+  - {fileID: 101296426}
+  - {fileID: 1900521479}
+  - {fileID: 68861240}
+  m_Father: {fileID: 543450652824160440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1857202222
 GameObject:
   m_ObjectHideFlags: 0
@@ -46313,15 +46302,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>Ophelia</size>\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>Ophelia</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>John Everett Millais</color> tra il 1851 e il 1852, questa
     opera \xE8 un capolavoro del Preraffaellitismo, che celebra la purezza dei dettagli
-    medievali e rinascimentali.</size>\n\n<size=88><color=#fff>Una scena tragica
-    e poetica</size>\n<size=66><color=#c2c2c3>L'opera ritrae <color=#548AF7>Ofelia</color>
-    di Shakespeare galleggiante in un fiume, circondata da fiori. Il suo volto, ispirato
-    a <color=#548AF7>Elizabeth Siddal</color>, esprime la tragicit\xE0 della follia.
-    Millais cattura la bellezza e malinconia della scena con dettagli naturali e
-    struggenti.</size>\n\n<size=88><color=#fff>Un capolavoro preraffaellita</size>\n<size=66><color=#c2c2c3>Esibita
+    medievali e rinascimentali.</size>\n\n<size=40><color=#fff>Un capolavoro preraffaellita</size>\n<size=32><color=#c2c2c3>Esibita
     alla <color=#548AF7>Tate Britain</color>, \"Ophelia\" \xE8 nota per la sua maestria
     tecnica e il contrasto tra la bellezza della natura e la tragedia imminente,
     lasciando un impatto emotivo duraturo.</size>"
@@ -46831,7 +46815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1900521479
 Transform:
   m_ObjectHideFlags: 0
@@ -46840,16 +46824,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900521478}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.682987, y: -0.29071164, z: -5.8097777}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7194405, z: -0, w: 0.69455415}
+  m_LocalPosition: {x: -3.616, y: 1.267, z: -7.125}
+  m_LocalScale: {x: 1, y: 0.84745765, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1919358955}
   - {fileID: 874901034}
   - {fileID: 1794635777}
-  m_Father: {fileID: 376470342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1841897182}
+  m_LocalEulerAnglesHint: {x: 0, y: 92.017, z: 0}
 --- !u!65 &1900521486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46869,8 +46853,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9609453, y: 0.695925, z: 0.04002679}
-  m_Center: {x: 0, y: 0, z: 0.020024948}
+  m_Size: {x: 1.0230899, y: 0.7244332, z: 0.104979694}
+  m_Center: {x: -0.031000255, y: 0.0062378645, z: 0.028136278}
 --- !u!54 &1900521487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47170,13 +47154,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902801328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3535534, y: -0.61237246, z: 0.3535534, w: 0.61237246}
+  m_LocalRotation: {x: 0.31824112, y: -0.6679579, z: 0.38564572, w: 0.5512098}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.80000013, y: 1.1764708, z: 1.0526319}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514214452692680715}
-  m_LocalEulerAnglesHint: {x: 60, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: -100.94, z: 0}
 --- !u!108 &1902801330
 Light:
   m_ObjectHideFlags: 0
@@ -49200,23 +49184,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=88><color=#fff>La Zattera della Medusa</size>  \r\n<size=66><color=#c2c2c3>Realizzata
+  m_text: "<size=40><color=#fff>La Zattera della Medusa</size>  \r\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>Th\xE9odore G\xE9ricault tra il 1818 e il 1819</color>, quest'opera
     \xE8 un capolavoro del Romanticismo francese e si ispira a un tragico evento
-    reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=88><color=#fff>Un
-    dramma umano sulla tela</size>  \r\n<size=66><color=#c2c2c3>La composizione rappresenta
-    il caos e la disperazione dei naufraghi. Alcuni giacciono ormai morti, mentre
-    altri si aggrappano alla speranza, con un uomo che sventola uno straccio per
-    attirare l\u2019attenzione di una nave all\u2019orizzonte.</size>  \r\n\r\n<size=88><color=#fff>Contrasto
-    e potenza emotiva</size>  \r\n<size=66><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita
+    reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=40><color=#fff>Contrasto
+    e potenza emotiva</size>  \r\n<size=32><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita
     e morte</color>, speranza e disperazione, \xE8 reso attraverso un drammatico
     uso della luce e dei colori cupi. L'opera \xE8 conservata al <color=#548AF7>Museo
-    del Louvre di Parigi</color>.</size>  \r\n\r\n<size=88><color=#fff>Un simbolo
-    del Romanticismo</size>  \r\n<size=66><color=#c2c2c3>\"La Zattera della Medusa\"
-    non \xE8 solo un trionfo artistico, ma anche una <color=#548AF7>forte critica
-    sociale e politica</color>. G\xE9ricault denunci\xF2 l'incompetenza del governo
-    francese, rendendo l'opera un emblema delle emozioni estreme e del dramma umano
-    che caratterizzano il Romanticismo.</size>\r"
+    del Louvre di Parigi</color>.</size>  \r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -49293,13 +49268,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973155534}
   m_CullTransparentMesh: 1
+--- !u!1001 &1980152347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 442776524555326610, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801808419798317588, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244667290278501386, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402119858615389855, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_Name
+      value: blossi_floor_lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.817499
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824051738733822798, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501527094797577185, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
 --- !u!1001 &1990673734
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 770899436}
+    m_TransformParent: {fileID: 1841897182}
     m_Modifications:
     - target: {fileID: 6556787642367056478, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -49319,23 +49367,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05010527
+      value: 0.050105274
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.16924343
+      value: 0.16924341
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27200025
+      value: -2.3990004
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98700005
+      value: 1.0320001
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1900003
+      value: -6.6310015
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50538,7 +50586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2055691469
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50557,7 +50605,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.497, y: 2.708}
-  m_SizeDelta: {x: 2000, y: 1350}
+  m_SizeDelta: {x: 1250, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055691471
 MonoBehaviour:
@@ -50699,13 +50747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: "<size=88><color=#fff>Colazione sull'erba</size>\n<size=66><color=#c2c2c3>Realizzata
+  _content: "<size=40><color=#fff>Colazione sull'erba</size>\n<size=32><color=#c2c2c3>Realizzata
     da <color=#548AF7>\xC9douard Manet</color> nel 1863, quest'opera segna una svolta
-    nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=88><color=#fff>Una
-    scena provocatoria</size>\n<size=66><color=#c2c2c3>Manet rappresenta una donna
-    nuda in un contesto moderno con due uomini vestiti. La nudit\xE0 in un contesto
-    non mitologico fu scioccante per l\u2019epoca.</size>\n\n<size=88><color=#fff>Un'opera
-    rivoluzionaria</size>\n<size=66><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon
+    nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=40><color=#fff>Un'opera
+    rivoluzionaria</size>\n<size=32><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon
     ufficiale</color>, esposta al Salon des Refus\xE9s, l'opera rompe le convenzioni
     accademiche con luci, ombre e prospettiva non convenzionale. Esposta al <color=#548AF7>Mus\xE9e
     d'Orsay</color>, ha influenzato profondamente l'arte moderna.</size>"
@@ -53121,6 +53166,8 @@ Transform:
   - {fileID: 2099681297}
   - {fileID: 1419568749}
   - {fileID: 770899436}
+  - {fileID: 1841897182}
+  - {fileID: 1332050892}
   m_Father: {fileID: 1876786209}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &543450653432652993
@@ -55073,7 +55120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.537
+      value: 7.501
       objectReference: {fileID: 0}
     - target: {fileID: 8506340501467392053, guid: 41476256842d68044a8d85b137a9c99f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56601,3 +56648,4 @@ SceneRoots:
   - {fileID: 610067662}
   - {fileID: 1925856494}
   - {fileID: 1387347479}
+  - {fileID: 1980152347}
