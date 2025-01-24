@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,8 +13,9 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
 
     public AudioSource speaker;
     
-
+    public FeedbackGenerator feedbackGenerator;
     public event Action OnAudioPlaybackCompleted;
+    
     private void Start()
     {
         void DrawDropdownMicOptions()
@@ -45,7 +46,10 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         MicrophoneManager.Instance.ChangeMicrophone(mic);
         d_micList.SetValueWithoutNotify(index);
         
-
+        if (feedbackGenerator == null)
+        {
+            throw new Exception("FeedbackGenerator not set in ChatbotUIManager");
+        }
     }
 
     public void UpdateTranscription(string s)
@@ -87,5 +91,22 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
     public void StopSpeaking()
     {
         speaker.Stop();
+    }
+
+    private const string EXPORT_AGENT_LABEL = "exportAgent";
+    public void FeedbackAutomationCreated(string currNode)
+    {
+        if (currNode == EXPORT_AGENT_LABEL)
+        {
+            Debug.Log("Exporting agent");
+            feedbackGenerator.PlayFeedback();
+        }
+    }
+
+    
+    [ContextMenu("TEST PARTICLE")]
+    void TestParticle()
+    {
+        FeedbackAutomationCreated(EXPORT_AGENT_LABEL);
     }
 }

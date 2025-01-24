@@ -46,7 +46,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
         const string defaultStartMessage = "Ciao";
         void GetDefaultMessage()
         {
-            void AfterChatbotAnswered(string chatbotAnswer)
+            void AfterChatbotAnswered(AIMessageResponse chatbotAnswer)
             {
                 void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
                 {
@@ -59,7 +59,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     // Trigger the EndedGeneratingAudioAnswer event
                     // EndedGeneratingAudioAnswer?.Invoke();
                     // Update Text
-                    ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
+                    ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer.message);
                     // Update animation
                     ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
                     // Update audio 
@@ -73,7 +73,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 // Call Listeners
                 // EndedGeneratingAnswer?.Invoke();
                 // The chatbot answered, generate the fake voice
-                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
+                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated));
             }
 
             // Update text
@@ -138,7 +138,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
         {
             void AfterTranscriptionGenerated(string transcription)
             {
-                void AfterChatbotAnswered(string chatbotAnswer)
+                void AfterChatbotAnswered(AIMessageResponse chatbotAnswer)
                 {
                     void AfterFakeVoiceGenerated(AudioClip botVoiceClip)
                     {
@@ -151,11 +151,13 @@ public class ChatbotManager : Singleton<ChatbotManager>
                         // Trigger the EndedGeneratingAudioAnswer event
                         // EndedGeneratingAudioAnswer?.Invoke();
                         // Update Text
-                        ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer);
+                        ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer.message);
                         // Update animation
                         ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
                         // Update audio 
                         ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
+                        // Make feedback if an automation is triggered
+                        ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
                     }
 
                     // Update text
@@ -165,7 +167,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     // Call Listeners
                     // EndedGeneratingAnswer?.Invoke();
                     // The chatbot answered, generate the fake voice
-                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer, AfterFakeVoiceGenerated));
+                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated));
                 }
                 
                 // Update text
@@ -195,7 +197,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
         WakeUpWordHandler.Instance.picovoiceManager.Start();
     }
     
-    private IEnumerator AskChatbot(string userMessage, System.Action<string> callback)
+    private IEnumerator AskChatbot(string userMessage, System.Action<AIMessageResponse> callback)
     {
         // Do a Unity POST request to the chatbot server with the { message = userMessage }
         // The server will respond with a JSON object { success: {true, false}, message: <string answer> }
@@ -223,7 +225,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 if (jsonResponse != null)
                 {
                     Debug.Log("Transcription: " + jsonResponse.message);
-                    callback?.Invoke(jsonResponse.message);
+                    callback?.Invoke(jsonResponse);
                 }
                 else
                 {
