@@ -25,8 +25,7 @@ public class TeleportAreaWithFade : TeleportationArea
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
-        // Debug.Log("[TELEPORT] OnSelectExited");
-        base.OnSelectExited(args);
+        // base.OnSelectExited(args);
         
         if (teleportTrigger == TeleportTrigger.OnSelectExited)
             StartCoroutine(FadeSequence(base.OnSelectExited, args));
