@@ -34,9 +34,9 @@ namespace Assets.SimpleSpinner
             new Color(0.49804f,  0.72941f,  0.21961f) // hsv(87, 70%, 73%) rgb(127, 186, 56)
         };
 
-        private int _currentColorIndex = 0;
+        // private int _currentColorIndex = 0;
 
-        private bool colorChanged = false;
+        // private bool colorChanged = false;
 
 
         public void Start()
@@ -56,7 +56,7 @@ namespace Assets.SimpleSpinner
             {
                 int colorIndex = Mathf.FloorToInt((RainbowSpeed * Time.time + _period) % _avvaleColors.Length);
                 _image.color = _avvaleColors[colorIndex];
-                colorChanged = true;
+                // colorChanged = true;
             }
         }
     }

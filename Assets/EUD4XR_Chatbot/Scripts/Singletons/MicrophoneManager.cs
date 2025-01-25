@@ -21,8 +21,8 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
     [SerializeField] private float silenceDuration = 2.5f;
     private float lastSpeechTime;
     
-    private float lastAudioLevel;
-    private float silenceTimer;
+    // private float lastAudioLevel;
+    // private float silenceTimer;
     private bool isSilenceDetectionActive;
 
     private AudioClip clip;
@@ -63,7 +63,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         }
 
         isRecording = true;
-        silenceTimer = 0f;
+        // silenceTimer = 0f;
         isSilenceDetectionActive = false;
         lastSpeechTime = Time.time;
         
@@ -115,7 +115,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
                 lastSpeechTime = Time.time;
             }
 
-            lastAudioLevel = rms;
+            // lastAudioLevel = rms;
             yield return new WaitForSeconds(0.1f);
         }
     }

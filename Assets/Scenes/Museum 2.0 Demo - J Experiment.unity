@@ -26146,6 +26146,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7424821321313298852, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: listenBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424821321313298852, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: _persistent
       value: 0
       objectReference: {fileID: 0}

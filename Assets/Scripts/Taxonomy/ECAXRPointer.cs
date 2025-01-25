@@ -16,7 +16,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
     public class ECAXRPointer : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
     {
         public string tagPlayer = string.Empty;
-        private bool isHover = false;
+        // private bool isHover = false;
         private float hoverStartTime;
         private float hoverDuration = 0.50f;
         
@@ -75,7 +75,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
                 throw new Exception("Action is null, something went wrong.");
             }
             hoverStartTime = Time.time;
-            isHover = true;
+            // isHover = true;
             StartCoroutine(CheckHoverDuration());
             
             EventBus.GetInstance().Publish(a);
@@ -119,7 +119,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
             {
                 throw new Exception("Action is null, something went wrong.");
             }
-            isHover = false;
+            // isHover = false;
             if (isPointed.Equals(ECABoolean.YES))
             {
                 isPointed = new ECABoolean(ECABoolean.BoolType.NO);

@@ -11,6 +11,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
 {
     public InputActionReference interactionButton;
 
+    public bool isLogged = false;
     private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
     //private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
     private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
@@ -24,18 +25,14 @@ public class ChatbotManager : Singleton<ChatbotManager>
     private const float Threshold = 0.02f;
     private const float isSpeakingTolerance = 1.5f;
     // check update
-    private float checkInterval = 0.5f;
-    private float lastSpeechCheckTime = 0f;
+    // private float checkInterval = 0.5f;
+    // private float lastSpeechCheckTime = 0f;
     
-    private bool UserPressedInteractionButton()
-    {
-        return interactionButton.action.triggered;
-    }
     
     private void OnEnable()
     {
         Debug.Log("Enabling ChatbotManager");
-        StartCoroutine(ForceLogin());
+        StartCoroutine(ForceLogin(isFirstLogin:true));
         interactionButton.action.performed += HandleRecording;
     }
 
@@ -146,6 +143,10 @@ public class ChatbotManager : Singleton<ChatbotManager>
                         {
                             // Update animation
                             ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
+                            if (chatbotAnswer.currNode == "exportAgent")
+                            {
+                                StartCoroutine(ResetSession());
+                            }
                         }
                         
                         // Trigger the EndedGeneratingAudioAnswer event
@@ -258,12 +259,17 @@ public class ChatbotManager : Singleton<ChatbotManager>
         public bool success;
     }
     
-    private IEnumerator ForceLogin()
+    private IEnumerator ForceLogin(bool isFirstLogin)
     {
+        if (isLogged)
+        {
+            Debug.LogWarning("Already logged in.");
+            yield break;
+        }
         // Get request to the forceLoginUrl
         // The server will respond with a JSON object { success: {true, false} }
-        
-        using (UnityWebRequest uwr = UnityWebRequest.Get(forceLoginUrl))
+        var url = forceLoginUrl + $"?firstLogin={isFirstLogin}";   
+        using (UnityWebRequest uwr = UnityWebRequest.Get(url))
         {
             yield return uwr.SendWebRequest();
 
@@ -281,7 +287,8 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 var jsonResponse = JsonConvert.DeserializeObject<AILoginResponse>(responseText);
                 if (jsonResponse != null && jsonResponse.success)
                 {
-                    Debug.Log("Forced login successful.");
+                    Debug.Log("Forced login successful with url: " + url);
+                    isLogged = true;
                 }
                 else
                 {
@@ -297,6 +304,13 @@ public class ChatbotManager : Singleton<ChatbotManager>
 
     private IEnumerator ForceLogout()
     {
+        
+        if (!isLogged)
+        {
+            Debug.LogWarning("Already logged out.");
+            yield break;
+        }
+        
         // Do a Post request to the forceLogoutUrl
         // The server will respond with a JSON object { success: {true, false} }
         using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(forceLogoutUrl, "POST"))
@@ -318,6 +332,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 if (jsonResponse != null && jsonResponse.success)
                 {
                     Debug.Log("Forced logout successful.");
+                    isLogged = false;
                 }
                 else
                 {
@@ -336,5 +351,23 @@ public class ChatbotManager : Singleton<ChatbotManager>
     {
         Debug.Log("Disabling ChatbotManager");
         StartCoroutine(ForceLogout());
+    }
+    
+    [ContextMenu("TEST RESET SESSION")]
+    void TestCoroutineResetSession()
+    {
+        Debug.Log("[RESETSESSION] BEFORE STOPPING ALL COROUTINES");
+        StopAllCoroutines();
+        Debug.Log("[RESETSESSION] AFTER STOPPING ALL COROUTINES");
+        StartCoroutine(ResetSession());
+    }
+    
+    private IEnumerator ResetSession()
+    {
+
+        yield return ForceLogout();
+        Debug.Log("[RESETSESSION] HO FATTO LOGOUT");
+        yield return ForceLogin(isFirstLogin:false);
+        Debug.Log("[RESETSESSION] HO FATTO LOGOIN");
     }
 }

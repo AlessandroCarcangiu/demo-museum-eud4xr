@@ -19,7 +19,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
     public class ECAXRInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
     {
         public string tagPlayer = string.Empty;
-        private bool interactionIsStarted = false;
+        // private bool interactionIsStarted = false;
         private float interactionStartTime;
         private float interactionDuration = 0.50f;
 
@@ -65,7 +65,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
             }
             
             interactionStartTime = Time.time;
-            interactionIsStarted = true;
+            // interactionIsStarted = true;
             StartCoroutine(CheckHoverDuration());
             
             EventBus.GetInstance().Publish(a);
@@ -96,7 +96,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
                 throw new Exception($"Unknown/Not Handled interactor: {args.interactorObject.GetType()}");
             }
             
-            interactionIsStarted = false;
+            // interactionIsStarted = false;
             if (isInteracted.Equals(ECABoolean.YES))
             {
                 isInteracted = new ECABoolean(ECABoolean.BoolType.NO);
