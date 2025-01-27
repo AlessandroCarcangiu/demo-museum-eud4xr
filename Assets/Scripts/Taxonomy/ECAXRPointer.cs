@@ -15,7 +15,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
     [ECARules4All("xrpointer")]
     public class ECAXRPointer : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
     {
-        public string tagPlayer = string.Empty;
+        public string tagPlayer = "Player";
         // private bool isHover = false;
         private float hoverStartTime;
         private float hoverDuration = 0.50f;
@@ -41,9 +41,9 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
             base.OnHoverEntered(args);
 
             Action a = null;
-            GameObject subject = string.IsNullOrEmpty(tagPlayer)
+            GameObject subject = GameObject.FindWithTag("Player"); /* string.IsNullOrEmpty(tagPlayer)
                 ? args.interactorObject.transform.gameObject
-                : GameObject.FindWithTag("Player");
+                : GameObject.FindWithTag("Player");*/
 
             if (args.interactorObject is XRRayInteractor)
             {
@@ -55,7 +55,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
                 }
                 else
                 {
-                    Debug.Log($"{gameObject.name} pointed at by ray.");
+                    Debug.Log($"{gameObject.name} pointed at by ray by {subject}.");
                     //TODO Do we want to use interacts with or another verb?. In case you need to add the ECAMethods in ECACharacters.cs
                     // a = new Action(subject, "points", this.gameObject);
                     a = new Action(subject, "points", this.gameObject);                    
