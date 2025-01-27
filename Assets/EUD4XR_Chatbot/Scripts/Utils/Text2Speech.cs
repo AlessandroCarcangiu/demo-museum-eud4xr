@@ -8,7 +8,7 @@ public static class Text2Speech
     const string url = "http://localhost:3000/api/generate-speech";
 
     // Usage: StartCoroutine(CreateAudio(textToSpeak, YourLogicHere));
-    public static IEnumerator CreateAudio(string textToSpeak, System.Action<AudioClip> callback)
+    public static IEnumerator CreateAudio(string textToSpeak, System.Action<AudioClip> callback, System.Action<string> onErrorCallback)
     {
         // Create the JSON payload
         var jsonPayload = new { message = textToSpeak };
@@ -29,6 +29,7 @@ public static class Text2Speech
         if (uwr.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error in TTS Request: " + uwr.error);
+            onErrorCallback?.Invoke(uwr.error);
         }
         else
         {
