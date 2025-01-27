@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.3200967, g: 1.3980745, b: 1.5852747, a: 1}
+  m_IndirectSpecularColor: {r: 2.4586902, g: 2.5457945, b: 2.7149444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2206,6 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &101296425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,6 +4547,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>La Grande Onda di Kanagawa</size>\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa
+    parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n\n<size=40><color=#fff>Un
+    simbolo senza tempo</size>\n<size=32><color=#c2c2c3>Raffigura un'enorme onda
+    in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena
+    combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra
+    la forza della natura e la stabilit\xE0</color>.</size>\n\n<size=40><color=#fff>L\u2019onda
+    e il Monte Fuji</size>\n<size=32><color=#c2c2c3>Celebrata per la sua bellezza
+    e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
+    dell'arte globale.</size>"
 --- !u!1 &191325493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8067477133809135671, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -5108,6 +5119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>Ophelia</size>\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>John Everett Millais</color> tra il 1851 e il 1852, questa
+    opera \xE8 un capolavoro del Preraffaellitismo, che celebra la purezza dei dettagli
+    medievali e rinascimentali.</size>\n\n<size=40><color=#fff>Un capolavoro preraffaellita</size>\n<size=32><color=#c2c2c3>Esibita
+    alla <color=#548AF7>Tate Britain</color>, \"Ophelia\" \xE8 nota per la sua maestria
+    tecnica e il contrasto tra la bellezza della natura e la tragedia imminente,
+    lasciando un impatto emotivo duraturo.</size>"
 --- !u!114 &211894496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7088,6 +7106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>La Zattera della Medusa</size>  \r\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Th\xE9odore G\xE9ricault tra il 1818 e il 1819</color>, quest'opera
+    \xE8 un capolavoro del Romanticismo francese e si ispira a un tragico evento
+    reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=40><color=#fff>Contrasto
+    e potenza emotiva</size>  \r\n<size=32><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita
+    e morte</color>, speranza e disperazione, \xE8 reso attraverso un drammatico
+    uso della luce e dei colori cupi. L'opera \xE8 conservata al <color=#548AF7>Museo
+    del Louvre di Parigi</color>.</size>  \r"
 --- !u!4 &258770030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7259449764016024205, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -10918,6 +10944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &443288594
 GameObject:
   m_ObjectHideFlags: 0
@@ -13042,7 +13069,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -15697,6 +15724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &674923525
 GameObject:
   m_ObjectHideFlags: 0
@@ -21358,6 +21386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!114 &893042076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23747,6 +23776,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>La Ronda di Notte</size>\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Rembrandt van Rijn nel 1642</color>, quest'opera \xE8 un capolavoro
+    del Barocco olandese, rappresentante una compagnia di miliziani in movimento,
+    guidata da <color=#548AF7>Frans Banning Cocq</color> e <color=#548AF7>Willem
+    van Ruytenburch</color>.</size>\n\n<size=40><color=#fff>Un capolavoro senza tempo</size>\n<size=32><color=#c2c2c3>Esposta
+    al <color=#548AF7>Rijksmuseum di Amsterdam</color>,l'opera  \xE8 celebrata per
+    la sua composizione dinamica e la maestria nel catturare luce, spazio e l'animo
+    umano, testimoniando il genio di Rembrandt.</size>"
 --- !u!114 &986191722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24924,6 +24961,8 @@ GameObject:
   - component: {fileID: 1022083406}
   - component: {fileID: 1022083405}
   - component: {fileID: 1022083411}
+  - component: {fileID: 1022083413}
+  - component: {fileID: 1022083412}
   m_Layer: 0
   m_Name: Quadro_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -25156,6 +25195,232 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1022083412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022083395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ad66e7cc9a2754d8ea989740c9f00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 1
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  isGazePinchSelected:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isRaySelected:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isPokeSelected:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isGrabSelected:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isGazeHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isGazePinchHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isRayHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isGrabHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isPokeHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  isActiveHovered:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  disabledInteractorTypes:
+  - reference: MixedReality.Toolkit.IPokeInteractor, MixedReality.Toolkit.Core
+  <ToggleMode>k__BackingField: 0
+  <SelectThreshold>k__BackingField: 0.9
+  <DeselectThreshold>k__BackingField: 0.1
+  <TriggerOnRelease>k__BackingField: 1
+  <UseGazeDwell>k__BackingField: 0
+  <GazeDwellTime>k__BackingField: 1
+  <UseFarDwell>k__BackingField: 0
+  <FarDwellTime>k__BackingField: 1
+  allowSelectByVoice: 1
+  speechRecognitionKeyword: select
+  <VoiceRequiresFocus>k__BackingField: 1
+  <SelectRequiresHover>k__BackingField: 0
+  <IsToggled>k__BackingField:
+    active: 0
+    onEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onExited:
+      m_PersistentCalls:
+        m_Calls: []
+  <OnClicked>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnEnabled>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDisabled>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  hostTransform: {fileID: 0}
+  allowedManipulations: 7
+  allowedInteractionTypes: -2147483641
+  rigidbodyMovementType: 0
+  applyTorque: 1
+  springForceSoftness: 0.1
+  springTorqueSoftness: 0.1
+  springDamping: 1
+  springForceLimit: 100
+  rotationAnchorNear: 1
+  rotationAnchorFar: 1
+  releaseBehavior: 3
+  transformSmoothingLogicType:
+    reference: MixedReality.Toolkit.SpatialManipulation.DefaultTransformSmoothingLogic,
+      MixedReality.Toolkit.SpatialManipulation
+  smoothingFar: 1
+  smoothingNear: 1
+  moveLerpTime: 0.001
+  rotateLerpTime: 0.001
+  scaleLerpTime: 0.001
+  enableConstraints: 1
+  constraintsManager: {fileID: 0}
+  manipulationLogicTypes:
+    moveLogicType:
+      reference: MixedReality.Toolkit.SpatialManipulation.MoveLogic, MixedReality.Toolkit.SpatialManipulation
+    rotateLogicType:
+      reference: MixedReality.Toolkit.SpatialManipulation.RotateLogic, MixedReality.Toolkit.SpatialManipulation
+    scaleLogicType:
+      reference: MixedReality.Toolkit.SpatialManipulation.ScaleLogic, MixedReality.Toolkit.SpatialManipulation
+--- !u!114 &1022083413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022083395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cdab0cd5a0916419324bb54314773d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoConstraintSelection: 1
+  selectedConstraints: []
 --- !u!1 &1023096381
 GameObject:
   m_ObjectHideFlags: 0
@@ -27365,7 +27630,7 @@ PrefabInstance:
     - target: {fileID: 8521295746498201100, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: interactionButton
       value: 
-      objectReference: {fileID: -3206077525723590344, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
+      objectReference: {fileID: 6571374561822135263, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
     - target: {fileID: 8525118766742163899, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -29769,6 +30034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &1139758018
 GameObject:
   m_ObjectHideFlags: 0
@@ -32042,6 +32308,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: '<size=40><color=#fff>Primavera</size>
+
+    <size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest''opera
+    celebra la bellezza della primavera e dell''amore, unendo elementi mitologici
+    e allegorici.</size>
+
+
+    <size=40><color=#fff>Un simbolo di bellezza</size>
+
+    <size=32><color=#c2c2c3>"Primavera"
+    incarna l''ideale rinascimentale di bellezza e amore, diventando un capolavoro
+    universale che continua a ispirare per la sua straordinaria bellezza e significato
+    culturale.</size>'
 --- !u!114 &1243478034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32566,6 +32846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &1272623137
 GameObject:
   m_ObjectHideFlags: 0
@@ -33407,6 +33688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &1318285546
 GameObject:
   m_ObjectHideFlags: 0
@@ -35425,7 +35707,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -35847,10 +36129,9 @@ GameObject:
   - component: {fileID: 1401804703}
   - component: {fileID: 1401804702}
   - component: {fileID: 1401804701}
+  - component: {fileID: 1401804708}
   - component: {fileID: 1401804707}
   - component: {fileID: 1401804709}
-  - component: {fileID: 1401804708}
-  - component: {fileID: 1401804710}
   m_Layer: 0
   m_Name: Quadro_RagazzaColTurbante
   m_TagString: Untagged
@@ -36011,79 +36292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1401804707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401804691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05547d60974cf3c469e671ba573029e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  tagPlayer: 
---- !u!114 &1401804708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36266,7 +36474,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 1401804692}
+  hostTransform: {fileID: 0}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   rigidbodyMovementType: 0
@@ -36295,7 +36503,7 @@ MonoBehaviour:
       reference: MixedReality.Toolkit.SpatialManipulation.RotateLogic, MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: MixedReality.Toolkit.SpatialManipulation.ScaleLogic, MixedReality.Toolkit.SpatialManipulation
---- !u!114 &1401804709
+--- !u!114 &1401804708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36309,7 +36517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!114 &1401804710
+--- !u!114 &1401804709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36321,14 +36529,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0861e989cbf99b41af1f1fbd5dcb244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoList:
-  - schermo
-  audioList:
-  - audio
+  videoList: []
+  audioList: []
   textList: []
   lightList: []
-  listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
-  spawnPrefab: {fileID: 1608974857}
+  listPrefab: {fileID: 0}
+  spawnPrefab: {fileID: 0}
 --- !u!1 &1403613070
 GameObject:
   m_ObjectHideFlags: 0
@@ -37242,6 +37448,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>La nascita di Venere</size>\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>Sandro Botticelli</color> tra il 1484 e il 1486, quest'opera
+    celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un
+    simbolo universale</size>\n<size=32><color=#c2c2c3>Oggi conservata alla <color=#548AF7>Galleria
+    degli Uffizi di Firenze</color>, \"La nascita di Venere\" \xE8 un simbolo di
+    amore, fertilit\xE0 e della rinascita culturale del Rinascimento.</size>"
 --- !u!114 &1429616070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40080,6 +40292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &1508417830
 GameObject:
   m_ObjectHideFlags: 0
@@ -41422,7 +41635,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -41866,6 +42079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!114 &1567175446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42626,6 +42840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1841897182}
     m_Modifications:
+    - target: {fileID: 6709846069667730368, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       propertyPath: m_Name
       value: Statua_Attalus
@@ -42714,10 +42932,10 @@ PrefabInstance:
       addedObject: {fileID: 1597125700}
     - targetCorrespondingSourceObject: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1597125705}
+      addedObject: {fileID: 1597125710}
     - targetCorrespondingSourceObject: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1597125704}
+      addedObject: {fileID: 1597125709}
   m_SourcePrefab: {fileID: 100100000, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
 --- !u!1 &1597125687 stripped
 GameObject:
@@ -42929,12 +43147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoList: []
   audioList: []
-  textList:
-  - aaaa
+  textList: []
   lightList: []
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 476536025}
---- !u!114 &1597125704
+--- !u!114 &1597125709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43117,7 +43334,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 1597125688}
+  hostTransform: {fileID: 0}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   rigidbodyMovementType: 0
@@ -43146,7 +43363,7 @@ MonoBehaviour:
       reference: MixedReality.Toolkit.SpatialManipulation.RotateLogic, MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: MixedReality.Toolkit.SpatialManipulation.ScaleLogic, MixedReality.Toolkit.SpatialManipulation
---- !u!114 &1597125705
+--- !u!114 &1597125710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44504,7 +44721,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -45296,7 +45513,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -49115,7 +49332,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -52782,7 +52999,7 @@ PrefabInstance:
     - target: {fileID: 8419068286423537537, guid: d8789af4b56af704685c83183ff8998a, type: 3}
       propertyPath: toggleVisibilityInputActionReference
       value: 
-      objectReference: {fileID: -5335168524739941608, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
+      objectReference: {fileID: -8365604563269850776, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
     - target: {fileID: 8875801599981029529, guid: d8789af4b56af704685c83183ff8998a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -54333,6 +54550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &2026738450
 GameObject:
   m_ObjectHideFlags: 0
@@ -55154,6 +55372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: "<size=40><color=#fff>Colazione sull'erba</size>\n<size=32><color=#c2c2c3>Realizzata
+    da <color=#548AF7>\xC9douard Manet</color> nel 1863, quest'opera segna una svolta
+    nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=40><color=#fff>Un'opera
+    rivoluzionaria</size>\n<size=32><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon
+    ufficiale</color>, esposta al Salon des Refus\xE9s, l'opera rompe le convenzioni
+    accademiche con luci, ombre e prospettiva non convenzionale. Esposta al <color=#548AF7>Mus\xE9e
+    d'Orsay</color>, ha influenzato profondamente l'arte moderna.</size>"
 --- !u!1 &2056586601
 GameObject:
   m_ObjectHideFlags: 0
@@ -56799,6 +57024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5ff958b5e044f489b3c3093aad60fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: 
 --- !u!1 &2110708036
 GameObject:
   m_ObjectHideFlags: 0
@@ -57329,7 +57555,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
