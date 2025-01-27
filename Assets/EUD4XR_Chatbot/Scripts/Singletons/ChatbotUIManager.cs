@@ -57,11 +57,11 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         message.text = s;
     }
 
-    private void SpeakTranscription(string s)
-    {
-        void OnAudioCreated(AudioClip clip) => SpeakTranscription(clip);
-        StartCoroutine(Text2Speech.CreateAudio(s, OnAudioCreated));
-    }
+    // private void SpeakTranscription(string s)
+    // {
+    //     void OnAudioCreated(AudioClip clip) => SpeakTranscription(clip);
+    //     StartCoroutine(Text2Speech.CreateAudio(s, OnAudioCreated));
+    // }
     
     public void SpeakTranscription(AudioClip clip, Action adHocCallback = null)
     {

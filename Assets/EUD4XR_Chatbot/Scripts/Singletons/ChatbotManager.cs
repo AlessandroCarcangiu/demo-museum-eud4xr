@@ -70,7 +70,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 // Call Listeners
                 // EndedGeneratingAnswer?.Invoke();
                 // The chatbot answered, generate the fake voice
-                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated));
+                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, null));
             }
 
             // Update text
@@ -160,6 +160,30 @@ public class ChatbotManager : Singleton<ChatbotManager>
                         // Make feedback if an automation is triggered
                         ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
                     }
+                    void IfFailedGeneratingVoice(string ttsErrorMessage)
+                    {
+                        void AfterAudioPlaybackCompleted()
+                        {
+                            // Update animation
+                            ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
+                            if (chatbotAnswer.currNode == "exportAgent")
+                            {
+                                StartCoroutine(ResetSession());
+                            }
+                        }
+                        
+                        // Trigger the EndedGeneratingAudioAnswer event
+                        // EndedGeneratingAudioAnswer?.Invoke();
+                        // Update Text
+                        ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer.message);
+                        // Update animation
+                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
+                        // Update audio 
+                        // ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
+                        AfterAudioPlaybackCompleted();
+                        // Make feedback if an automation is triggered
+                        ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
+                    }
 
                     // Update text
                     ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
@@ -168,7 +192,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     // Call Listeners
                     // EndedGeneratingAnswer?.Invoke();
                     // The chatbot answered, generate the fake voice
-                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated));
+                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, IfFailedGeneratingVoice));
                 }
                 
                 // Update text
