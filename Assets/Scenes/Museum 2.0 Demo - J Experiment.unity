@@ -26078,6 +26078,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1908070061933152775, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1922022579837093390, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -27344,7 +27348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.999939
+      value: 10.000036
       objectReference: {fileID: 0}
     - target: {fileID: 7007339729973531297, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Name
@@ -27412,7 +27416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7059803765811163960, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Size
-      value: 0.11602343
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059803765811163960, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7093518620690576187, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
@@ -27469,6 +27477,10 @@ PrefabInstance:
     - target: {fileID: 7392088107673494252, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419502810669689646, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Handedness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7419502810669689646, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_InteractionManager
@@ -27553,6 +27565,10 @@ PrefabInstance:
     - target: {fileID: 7776098161524021828, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793165349552725964, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_Handedness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7793165349552725964, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_InteractionManager
@@ -43432,7 +43448,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 1597125688}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   rigidbodyMovementType: 0
