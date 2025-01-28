@@ -39,16 +39,6 @@ public static class Text2Speech
             // Directly get the AudioClip from the response
             AudioClip audioClip = DownloadHandlerAudioClip.GetContent(uwr);
             callback?.Invoke(audioClip);
-            //TODO Delete
-            // if (audioSource != null)
-            // {
-            //     audioSource.clip = audioClip;
-            //     audioSource.Play();
-            // }
-            // else
-            // {
-                // Debug.LogError("AudioSource is not set!");
-            // }
         }
     }
 }

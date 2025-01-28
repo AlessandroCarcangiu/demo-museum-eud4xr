@@ -12490,7 +12490,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_Name
-      value: RD_Ophelia
+      value: Pulsante_MostraDescrizione_Ophelia
       objectReference: {fileID: 0}
     - target: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_IsActive
@@ -12514,15 +12514,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.0270147
+      value: -3.943
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.887
+      value: 1.176
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.41022253
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17587,7 +17587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_Name
-      value: Pulsante_MostraDescrizione_LaGrandeOnda
+      value: Pulsante_Verde_LaGrandeOnda
       objectReference: {fileID: 0}
     - target: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_IsActive
@@ -17611,11 +17611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.933
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.887
+      value: 1.227
       objectReference: {fileID: 0}
     - target: {fileID: 7869975218785522368, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17692,7 +17692,6 @@ GameObject:
   - component: {fileID: 799717543}
   - component: {fileID: 799717545}
   - component: {fileID: 799717544}
-  - component: {fileID: 799717546}
   m_Layer: 0
   m_Name: UI_MRTK3
   m_TagString: Untagged
@@ -17867,18 +17866,6 @@ MonoBehaviour:
   showSelectedRule: {fileID: 2111011200}
   playerCamera: {fileID: 0}
   distanceFromCamera: 2
---- !u!114 &799717546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799717542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cddc9f961e31304cb665e22eeca8658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &813766597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8067477133809135671, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -27201,7 +27188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.999902
+      value: 9.9998455
       objectReference: {fileID: 0}
     - target: {fileID: 7007339729973531297, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Name

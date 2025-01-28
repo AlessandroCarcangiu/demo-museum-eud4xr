@@ -2,6 +2,7 @@
 using System.Collections;
 using ECARules4All_DLL.Utils;
 using Newtonsoft.Json;
+using Serilog;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Networking;
@@ -264,10 +265,11 @@ public class ChatbotManager : Singleton<ChatbotManager>
             try
             {
                 // Example of parsing a JSON response
+                Log.Information($"Risposta ricevuta: {responseText}");
                 var jsonResponse = JsonConvert.DeserializeObject<AIMessageResponse>(responseText);
                 if (jsonResponse != null)
                 {
-                    Debug.Log("Transcription: " + jsonResponse.message);
+                    Log.Information("Transcription: " + jsonResponse.message);
                     callback?.Invoke(jsonResponse);
                 }
                 else
@@ -410,6 +412,15 @@ public class ChatbotManager : Singleton<ChatbotManager>
         yield return ForceLogout();
         Debug.Log("[RESETSESSION] HO FATTO LOGOUT");
         yield return ForceLogin(isFirstLogin:false);
-        Debug.Log("[RESETSESSION] HO FATTO LOGOIN");
+        Debug.Log("[RESETSESSION] HO FATTO LOGIN");
+        
+        const string defaultStartMessage = "Ciao";
+        void GetDefaultMessage()
+        {
+            // The transcription is ready, ask the chatbot
+            StartCoroutine(this.AskChatbot(defaultStartMessage, null));
+        }
+        
+        GetDefaultMessage();
     }
 }
