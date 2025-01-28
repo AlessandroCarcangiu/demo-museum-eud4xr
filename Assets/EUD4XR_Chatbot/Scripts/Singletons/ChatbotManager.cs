@@ -62,6 +62,24 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     // Update audio 
                     ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
                 }
+                void IfFailedGeneratingVoice(string ttsErrorMessage)
+                {
+                    void AfterAudioPlaybackCompleted()
+                    {
+                        // Update animation
+                        ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
+                    }
+                        
+                    // Trigger the EndedGeneratingAudioAnswer event
+                    // EndedGeneratingAudioAnswer?.Invoke();
+                    // Update Text
+                    ChatbotUIManager.Instance.UpdateTranscription(chatbotAnswer.message);
+                    // Update animation
+                    ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
+                    // Update text but not audio since it crashed
+                    // ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
+                    AfterAudioPlaybackCompleted();
+                }
 
                 // Update text
                 ChatbotUIManager.Instance.UpdateTranscription("Ho la risposta pronta! Mi preparo a dirtela...");
@@ -70,7 +88,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 // Call Listeners
                 // EndedGeneratingAnswer?.Invoke();
                 // The chatbot answered, generate the fake voice
-                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, null));
+                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, IfFailedGeneratingVoice));
             }
 
             // Update text

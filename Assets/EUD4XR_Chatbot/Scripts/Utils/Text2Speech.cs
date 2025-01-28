@@ -27,6 +27,7 @@ public static class Text2Speech
         yield return uwr.SendWebRequest();
 
         if (uwr.result != UnityWebRequest.Result.Success)
+        // if (true)
         {
             Debug.LogError("Error in TTS Request: " + uwr.error);
             onErrorCallback?.Invoke(uwr.error);
