@@ -18,7 +18,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
         public string tagPlayer = "Player";
         // private bool isHover = false;
         private float hoverStartTime;
-        private float hoverDuration = 0.50f;
+        private float hoverDuration = 0.11f;
         
         /// <summary>
         /// <b>isPointed</b> 

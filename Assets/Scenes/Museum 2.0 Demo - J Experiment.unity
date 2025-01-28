@@ -13117,7 +13117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoList: []
   audioList: []
-  textList: []
+  textList:
+  - descrizione
   lightList:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
