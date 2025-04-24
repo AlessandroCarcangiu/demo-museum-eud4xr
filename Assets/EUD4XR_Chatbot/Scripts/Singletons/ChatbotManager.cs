@@ -13,7 +13,8 @@ public class ChatbotManager : Singleton<ChatbotManager>
     public InputActionReference interactionButton;
 
     public bool isLogged = false;
-    private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/fake-answer";
+
+    private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/forceExport"; // "http://localhost:3000/api/fake-answer";
     //private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
     private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
     private const string forceLogoutUrl = "http://localhost:3000/api/logout";
@@ -62,6 +63,8 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
                     // Update audio 
                     ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
+                    
+                    ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
                 }
                 void IfFailedGeneratingVoice(string ttsErrorMessage)
                 {

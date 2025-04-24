@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Networking;
+using Action = ECARules4All_DLL.Action;
 
 
 public class HomeAssistant_MuseumDemoRules : Singleton<HomeAssistant_MuseumDemoRules>
@@ -117,6 +118,23 @@ public class HomeAssistant_MuseumDemoRules : Singleton<HomeAssistant_MuseumDemoR
         RuleEngine.GetInstance().AddClient(hassClient);
         _apiServer = new APIServer();
         _apiServer.ActionUpdate += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
+
+        GameObject player = GameObject.Find("Player");
+        GameObject statue = GameObject.Find("Bust_Nefertiti");
+        GameObject contenitore = GameObject.Find("Socket_Nefertiti");
+        GameObject scettro = GameObject.Find("Scepter");
+        GameObject casse = GameObject.Find("Speaker_Nefertiti");
+        
+        /*Action trigger = new Action(player, "interacts with", statue);
+        //Action trigger = new Action(casse, "plays");
+        List<Action> actions = new List<Action>{
+            new (casse, "changes", "source", "to", "la_regina_egizia.mp3"),
+            new (casse, "plays")
+        };
+        SimpleCondition condition = new SimpleCondition(contenitore, "content", "==", "Scepter");
+        Rule r = Rule.TryCreateRule(trigger, condition, actions);
+        Debug.Log("Regola creata");
+        RuleEngine.GetInstance().Add(r);*/
     }
 
     // Update is called once per frame
@@ -134,6 +152,8 @@ public class HomeAssistant_MuseumDemoRules : Singleton<HomeAssistant_MuseumDemoR
                 Debug.Log($"Regola creata: {a.GetEvent()}");
             }
         }
+        
+        Camera.main.backgroundColor = new Color(0f,0f,0f,0f);
     }
     
     private void OnDisable()
