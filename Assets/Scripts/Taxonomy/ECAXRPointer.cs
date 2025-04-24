@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+
 namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
 {
     [DisallowMultipleComponent]
@@ -41,9 +42,7 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
             base.OnHoverEntered(args);
 
             Action a = null;
-            GameObject subject = GameObject.FindWithTag("Player"); /* string.IsNullOrEmpty(tagPlayer)
-                ? args.interactorObject.transform.gameObject
-                : GameObject.FindWithTag("Player");*/
+            GameObject subject = GameObject.FindWithTag("Player");
 
             if (args.interactorObject is XRRayInteractor)
             {
@@ -143,28 +142,5 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
                 yield return null;
             }
         }
-
-        //TODO Do we want/need to use these methods?
-        // protected override void OnSelectEntered(SelectEnterEventArgs args)
-        // {
-        //     base.OnSelectEntered(args);
-        //
-        //     if (args.interactorObject is XRDirectInteractor)
-        //     {
-        //         Debug.Log($"{gameObject.name} grabbed by hand.");
-        //         // Custom grab logic
-        //     }
-        // }
-        //
-        // protected override void OnSelectExited(SelectExitEventArgs args)
-        // {
-        //     base.OnSelectExited(args);
-        //
-        //     if (args.interactorObject is XRDirectInteractor)
-        //     {
-        //         Debug.Log($"{gameObject.name} released.");
-        //         // Custom release logic
-        //     }
-        // }
     }
 }

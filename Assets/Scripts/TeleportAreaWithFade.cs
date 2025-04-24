@@ -14,15 +14,6 @@ public class TeleportAreaWithFade : TeleportationArea
         fadeCanvas = FadeCanvas.Instance;
     }
 
-    // protected override void OnSelectEntered(SelectEnterEventArgs args)
-    // {
-    //     Debug.Log("[TELEPORT] OnSelectEntered");
-    //     base.OnSelectEntered(args);
-    //
-    //     if (teleportTrigger == TeleportTrigger.OnSelectEntered)
-    //         StartCoroutine(FadeSequence(base.OnSelectEntered, args));
-    // }
-
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         // base.OnSelectExited(args);
@@ -30,24 +21,6 @@ public class TeleportAreaWithFade : TeleportationArea
         if (teleportTrigger == TeleportTrigger.OnSelectExited)
             StartCoroutine(FadeSequence(base.OnSelectExited, args));
     }
-
-    // protected override void OnActivated(ActivateEventArgs args)
-    // {
-    //     Debug.Log("[TELEPORT] OnActivated");
-    //     base.OnActivated(args);
-    //     
-    //     if (teleportTrigger == TeleportTrigger.OnActivated)
-    //         StartCoroutine(FadeSequence(base.OnActivated, args));
-    // }
-    //
-    // protected override void OnDeactivated(DeactivateEventArgs args)
-    // {
-    //     Debug.Log("[TELEPORT] OnDeactivated");
-    //     base.OnDeactivated(args);
-    //     
-    //     if (teleportTrigger == TeleportTrigger.OnDeactivated)
-    //         StartCoroutine(FadeSequence(base.OnDeactivated, args));
-    // }
 
     private IEnumerator FadeSequence<T>(UnityAction<T> action, T args)
         where T : BaseInteractionEventArgs

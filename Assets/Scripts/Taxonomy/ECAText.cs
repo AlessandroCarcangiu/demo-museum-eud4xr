@@ -3,6 +3,7 @@ using ECARules4All_DLL.Utils;
 using TMPro;
 using UnityEngine;
 
+
 namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
 {
     /// <summary>

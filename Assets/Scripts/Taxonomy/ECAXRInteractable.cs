@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
-using ECARules4All_DLL;
-using ECARules4All_DLL.Taxonomies.Behaviours.Subcategories;
 using ECARules4All_DLL.Utils;
-using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using Action = ECARules4All_DLL.Action;
-using Behaviour = ECARules4All_DLL.Behaviour;
 
 
 namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
@@ -65,7 +60,6 @@ namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
             }
             
             interactionStartTime = Time.time;
-            // interactionIsStarted = true;
             StartCoroutine(CheckHoverDuration());
             
             EventBus.GetInstance().Publish(a);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -10,7 +9,7 @@ public enum ChatbotState
     Listening,
     Analyzing,
     GeneratingAnswer,
-    PreparingAnswerAudio, //TODO J - Ho aggiunto questo stato, c'è bisogno di un'animazione per questo?
+    PreparingAnswerAudio,
     Answering
 }
 
