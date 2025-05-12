@@ -28,7 +28,7 @@ public class ECAUI_Action : MonoBehaviour
     public TMP_InputField Value_5B_InputText;
 
     // public Button deleteActionButton;
-    public PressableButton deleteActionButton;
+    public Button deleteActionButton;
     ///////////////////////////////////////
 
 
@@ -201,39 +201,39 @@ public class ECAUI_Action : MonoBehaviour
     private ECAObjectInfo.ECAObjectsCapabilties infoCapabilities;
 
     public void SetUIParameters(ActionPreLabel preLabel, Action action, ECAObjectInfo.ECAObjectsCapabilties infoCapabilities, ECAUI_Rule containerRuleRef, bool enableDeleteButton = true)
+{
+    this.ClearFieldsAndTheirListeners();
+    this.infoCapabilities = infoCapabilities;
+    // this.containerRuleRef = containerRuleRef;
+
+    SetActionLabelAsWhen(preLabel);
+    if (enableDeleteButton)
     {
-        this.ClearFieldsAndTheirListeners();
-        this.infoCapabilities = infoCapabilities;
-        // this.containerRuleRef = containerRuleRef;
-
-        SetActionLabelAsWhen(preLabel);
-        if (enableDeleteButton)
+        deleteActionButton.gameObject.SetActive(true);
+        deleteActionButton.onClick.AddListener(() =>
         {
-            deleteActionButton.gameObject.SetActive(true);
-            deleteActionButton.OnClicked.AddListener(() =>
-                {
-                    Debug.Log("CLICK DELETE ACTION");
-                    containerRuleRef?.RemoveThenAction(this);
-                }
-            );
-        }
-        else
-        {
-            deleteActionButton.gameObject.SetActive(false);
-        }
-
-        if (action == null) 
-        {
-            throw new NotImplementedException(
-                "Action is null. Why? Do we want to create Rules from the UI from scratch?");
-        }
-
-        // Load the current action's values into the dropdowns
-        actionPlaceholder.SetFromAction(action);
-
-        // Draw the UI
-        this.DrawView();
+            Debug.Log("CLICK DELETE ACTION");
+            containerRuleRef?.RemoveThenAction(this);
+        });
     }
+    else
+    {
+        deleteActionButton.gameObject.SetActive(false);
+    }
+
+    if (action == null) 
+    {
+        throw new NotImplementedException(
+            "Action is null. Why? Do we want to create Rules from the UI from scratch?");
+    }
+
+    // Load the current action's values into the dropdowns
+    actionPlaceholder.SetFromAction(action);
+
+    // Draw the UI
+    this.DrawView();
+}
+
 
     private void DrawView()
     {
@@ -263,17 +263,17 @@ public class ECAUI_Action : MonoBehaviour
         var isValueInserted = !string.IsNullOrEmpty(value);
 
         /**
-         *             <Dropdown className={classes.dropdown}
-                      value={subject}
-                      options={subjects}
-                      onChange={handleSubjectChange}
-                      placeholder="Select the subject"/>
-            <Dropdown disabled={!subjectInserted}
-                      className={classes.dropdown}
-                      value={verb}
-                      options={evalVerbs(subject)}
-                      onChange={handleVerbChange}
-                      placeholder="Select the verb"/>
+        *          <Dropdown className={classes.dropdown}
+                    value={subject}
+                    options={subjects}
+                    onChange={handleSubjectChange}
+                    placeholder="Select the subject"/>
+                <Dropdown disabled={!subjectInserted}
+                    className={classes.dropdown}
+                    value={verb}
+                    options={evalVerbs(subject)}
+                    onChange={handleVerbChange}
+                    placeholder="Select the verb"/>
          */
         Subject_1_Dropdown.gameObject.SetActive(true);
         Subject_1_Dropdown.ClearOptions();
