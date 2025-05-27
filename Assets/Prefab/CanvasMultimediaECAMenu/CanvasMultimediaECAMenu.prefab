@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2585402524298754200, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 2927355421845832625, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_text
       value: "\uF35A"
@@ -535,6 +539,10 @@ PrefabInstance:
     - target: {fileID: 5053067720746995232, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236955420909580563, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6313803984729600886, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_Name

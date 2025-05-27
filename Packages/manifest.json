@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "com.atteneder.gltfast": "6.8.0",
+    "com.atteneder.ktx": "2.2.3",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.github.siccity.serializablecallback": "git+https://github.com/Siccity/SerializableCallback.git",
+    "com.meta.xr.sdk.all": "72.0.0",
     "com.microsoft.mixedreality.openxr": "file:MixedReality/com.microsoft.mixedreality.openxr-1.11.2.tgz",
     "com.microsoft.mrtk.graphicstools.unity": "file:MixedReality/com.microsoft.mrtk.graphicstools.unity-0.7.1.tgz",
     "com.microsoft.mrtk.tts.windows": "file:MixedReality/com.microsoft.mrtk.tts.windows-1.0.4.tgz",
@@ -60,9 +63,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.atteneder.ktx": "2.2.3",
-    "com.atteneder.gltfast": "6.8.0"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {
