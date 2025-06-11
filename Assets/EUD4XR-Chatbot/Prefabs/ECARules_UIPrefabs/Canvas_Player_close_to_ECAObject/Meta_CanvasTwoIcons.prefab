@@ -319,7 +319,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484179087420114734}
+  - component: {fileID: 4310055865387549120}
+  - component: {fileID: 3535621747515548033}
   - component: {fileID: 3944455392891227384}
+  - component: {fileID: 576527604656583052}
+  - component: {fileID: 9188104781360140678}
   m_Layer: 0
   m_Name: Meta_CanvasTwoIcons
   m_TagString: Untagged
@@ -348,6 +352,52 @@ RectTransform:
   m_AnchoredPosition: {x: 144.56763, y: 167.30202}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &4310055865387549120
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566417358424926917}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: -1
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &3535621747515548033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566417358424926917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3944455392891227384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +413,56 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _canvas: {fileID: 5219890580247228334}
+  _canvas: {fileID: 4310055865387549120}
+--- !u!114 &576527604656583052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566417358424926917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &9188104781360140678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566417358424926917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251c5308bf04c17a4766ae529497b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iGameObjectProviderRef: {fileID: 0}
+  textItems:
+  - textRef: {fileID: 8578429630146679933}
+    onCanvasEnableCallback:
+      _target: {fileID: 0}
+      _methodName: GetDeepestTypePlusNameAsString
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 5
+        _typeName: ECARules4All_DLL.ECAObject, ECARules4All_DLL, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      _dynamic: 1
+      _typeName: OnCanvasEnableDisable`1+Data2String[[ECARules4All_DLL.ECAObject,
+        ECARules4All_DLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
 --- !u!1 &8619218604209037559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1377,24 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6012753433567136604, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 3091418240010358242, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 6557888817396536252, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 6547311654619146480, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 1293340953124617062, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 7186619520416169097, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 596977970611212207, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 5249709125502370115, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 3552721373569648637, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 4659375019809888675, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 4623580406758997393, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 4717406827416707823, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 745908104872374649, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 8653422206337857174, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 1433206309833295280, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 6593657040020109198, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+    - {fileID: 2585402524298754200, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6313803984729600886, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
     m_AddedGameObjects:
@@ -1290,10 +1406,5 @@ PrefabInstance:
 --- !u!224 &3036451919253616055 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4733938347722449537, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
-  m_PrefabInstance: {fileID: 7751248246260012854}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &5219890580247228334 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 2585402524298754200, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
   m_PrefabInstance: {fileID: 7751248246260012854}
   m_PrefabAsset: {fileID: 0}
