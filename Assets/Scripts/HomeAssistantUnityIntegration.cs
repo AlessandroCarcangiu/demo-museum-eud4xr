@@ -85,7 +85,7 @@ public class HomeAssistantUnityIntegration : Singleton<HomeAssistantUnityIntegra
         //    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5YjI0M2YzNmY2NTk0MmEyOTM4NGNmODk0MjZhNzQxZCIsImlhdCI6MTcyNTk3NTI2MSwiZXhwIjoyMDQxMzM1MjYxfQ.ylQDAWp0lEs1OGgjxGxAO7LYavuon-FuorspQhM8kDI";
         hassClient.token = settings.hassToken;
         RuleEngine.GetInstance().AddClient(hassClient);
-        _apiServer = new APIServer();
+        _apiServer = new APIServer("http://192.168.68.122", 5000);
         _apiServer.ActionUpdate += ((HomeAssistantClient)hassClient).ReceivedUpdateHandler;
     }
 
