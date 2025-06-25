@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
 using JetBrains.Annotations;
+using MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ECAObjectUI_Capabilities_Prefab : MonoBehaviour
+public class ECAObjectUI_Capabilities_Prefab_MRTK : MonoBehaviour
 {
     public TMP_Text contentRef;
-    public Button buttonRef;
+    public PressableButton buttonRef;
 
     
     private void Awake()

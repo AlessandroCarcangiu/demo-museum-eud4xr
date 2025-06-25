@@ -2,15 +2,15 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
+using MixedReality.Toolkit.UX;
 using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ECAObjectUI_InvolvedRule_Prefab : MonoBehaviour
+public class ECAObjectUI_InvolvedRule_Prefab_MRTK : MonoBehaviour
 {
     public TMP_Text contentRef;
-    public Button buttonRef;
+    public PressableButton buttonRef;
 
 
     private void Awake()
@@ -29,7 +29,7 @@ public class ECAObjectUI_InvolvedRule_Prefab : MonoBehaviour
         SetBody(ruleToDisplay);
         
         // buttonRef.OnClicked.RemoveAllListeners();
-        buttonRef.onClick.AddListener(() =>
+        buttonRef.OnClicked.AddListener(() =>
         {
             ECAUI_UIManager.Instance.Intention_EditRuleFromUI(ruleToDisplay);
             ECAUI_UIManager.Instance.GetComponent<Waypoint_Indicator>().enabled = true;

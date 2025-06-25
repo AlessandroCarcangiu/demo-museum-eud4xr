@@ -48,6 +48,9 @@ public class NewOrbitalTest : MonoBehaviour
     private Vector3 worldOffset = Vector3.zero;
 
     [SerializeField]
+    private Vector3 additionalRotation; // from SolverHandler
+
+    [SerializeField]
     private bool useAngleStepping = false;
     
     [Range(2, 24)]
@@ -150,6 +153,8 @@ public class NewOrbitalTest : MonoBehaviour
 
         if (useAngleStepping)
             desiredRotation = SnapToTetherAngleSteps(desiredRotation);
+
+        desiredRotation *= Quaternion.Euler(additionalRotation);
 
         return desiredRotation;
     }

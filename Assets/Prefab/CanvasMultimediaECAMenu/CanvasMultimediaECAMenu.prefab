@@ -84,7 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &26748695718245432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 31
       objectReference: {fileID: 0}
+    - target: {fileID: 2825434814290068419, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2927355421845832625, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_text
       value: "\uF35A"
@@ -576,6 +580,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7474578927357599021, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7507203915929247071, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_text
       value: "\uF566"
@@ -615,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 8665174940885080663, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_Size.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939689412807137074, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9053736740932786260, guid: 5220dbdddfbc67a4e9fb808ebf286afe, type: 3}
       propertyPath: m_AnchorMax.y
@@ -743,6 +755,10 @@ PrefabInstance:
     - target: {fileID: 1760747218629547997, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_Size.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5821892114181197827, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_Pivot.x
