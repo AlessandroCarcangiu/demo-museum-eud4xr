@@ -1496,7 +1496,7 @@ GameObject:
   - component: {fileID: 6094206108233994805}
   - component: {fileID: 7947919904625250207}
   m_Layer: 5
-  m_Name: B_ObjectInfo
+  m_Name: B_ObjectInfo MRTK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

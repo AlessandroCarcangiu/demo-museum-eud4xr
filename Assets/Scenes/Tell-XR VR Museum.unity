@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7700559}
   - component: {fileID: 7700558}
   - component: {fileID: 7700562}
+  - component: {fileID: 7700563}
   m_Layer: 0
   m_Name: Faretto_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -359,6 +360,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7700563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &13500236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1839,7 @@ GameObject:
   - component: {fileID: 100490657}
   - component: {fileID: 100490656}
   - component: {fileID: 100490659}
+  - component: {fileID: 100490660}
   m_Layer: 5
   m_Name: RD_LaZatteraDellaMedusa_Text
   m_TagString: Untagged
@@ -2003,6 +2017,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &100490660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100490648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &101296425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2542,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5635502678099389361, guid: b12513a25e045224e839aa5e575b3466, type: 3}
       insertIndex: -1
       addedObject: {fileID: 102248542}
+    - targetCorrespondingSourceObject: {fileID: 5635502678099389361, guid: b12513a25e045224e839aa5e575b3466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 102248547}
+    - targetCorrespondingSourceObject: {fileID: 5635502678099389361, guid: b12513a25e045224e839aa5e575b3466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 102248546}
   m_SourcePrefab: {fileID: 100100000, guid: b12513a25e045224e839aa5e575b3466, type: 3}
 --- !u!1 &102248533 stripped
 GameObject:
@@ -2539,11 +2571,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Unknown
-  _price: 0
-  _year: 0
-  _type: sculpture, statue
-  _description: TODO
 --- !u!114 &102248536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2707,6 +2734,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1557270959, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &102248546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102248533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &102248547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102248533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &109925043
@@ -3813,6 +3864,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3402119858615389855, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 725930341}
+    - targetCorrespondingSourceObject: {fileID: 3402119858615389855, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 725930342}
   m_SourcePrefab: {fileID: 100100000, guid: ad517393315ae4b4bada61a9ff2516ae, type: 3}
 --- !u!1 &175364821
 GameObject:
@@ -3830,6 +3884,7 @@ GameObject:
   - component: {fileID: 175364826}
   - component: {fileID: 175364829}
   - component: {fileID: 175364830}
+  - component: {fileID: 175364831}
   m_Layer: 0
   m_Name: PannelloDescrizione_LaGrandeOnda
   m_TagString: Untagged
@@ -4008,6 +4063,18 @@ MonoBehaviour:
     e il Monte Fuji</size>\n<size=32><color=#c2c2c3>Celebrata per la sua bellezza
     e influenza sull'arte occidentale, <color=#548AF7>\xE8 un simbolo universale</color>
     dell'arte globale.</size>"
+--- !u!114 &175364831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175364821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &191325493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8067477133809135671, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -4468,8 +4535,6 @@ MonoBehaviour:
   m_Script: {fileID: 1549066851, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _on:
-    choice: 3
 --- !u!114 &196959376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,6 +4597,7 @@ GameObject:
   - component: {fileID: 211894496}
   - component: {fileID: 211894495}
   - component: {fileID: 211894501}
+  - component: {fileID: 211894502}
   m_Layer: 0
   m_Name: PannelloDescrizione_Ophelia
   m_TagString: Untagged
@@ -4707,6 +4773,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &211894502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211894493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &216471003
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5343,7 @@ GameObject:
   - component: {fileID: 258326815}
   - component: {fileID: 258326820}
   - component: {fileID: 258326821}
+  - component: {fileID: 258326822}
   m_Layer: 0
   m_Name: PannelloDescrizione_LaZatteraDellaMedusa
   m_TagString: Untagged
@@ -5441,6 +5520,18 @@ MonoBehaviour:
     e morte</color>, speranza e disperazione, \xE8 reso attraverso un drammatico
     uso della luce e dei colori cupi. L'opera \xE8 conservata al <color=#548AF7>Museo
     del Louvre di Parigi</color>.</size>  \r"
+--- !u!114 &258326822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258326812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &258770030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7259449764016024205, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -8501,6 +8592,7 @@ GameObject:
   - component: {fileID: 433516590}
   - component: {fileID: 433516589}
   - component: {fileID: 433516592}
+  - component: {fileID: 433516593}
   m_Layer: 5
   m_Name: RD_Ophelia_Text
   m_TagString: Untagged
@@ -8678,6 +8770,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &433516593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433516581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &443288594
 GameObject:
   m_ObjectHideFlags: 0
@@ -8784,6 +8888,8 @@ GameObject:
   - component: {fileID: 455815738}
   - component: {fileID: 455815737}
   - component: {fileID: 455815743}
+  - component: {fileID: 455815745}
+  - component: {fileID: 455815744}
   m_Layer: 0
   m_Name: Quadro_LaZatteraDellaMedusa_2x
   m_TagString: Untagged
@@ -8893,16 +8999,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "Th\xE9odore G\xE9ricault"
-  _price: 0
-  _year: 1818
-  _type: painting
-  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
-    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
-    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
-    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
-    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
-    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &455815740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9017,6 +9113,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &455815744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455815727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &455815745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455815727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &465540528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9065,74 +9185,6 @@ PrefabInstance:
       propertyPath: currentIconName
       value: Icon 35
       objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 465540530}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_FadeDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_NormalColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 0.21568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 0.1882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 0.16862746
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.32156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.27450982
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.21568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6025005f2e963554aa130a6642746130, type: 3}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_SpriteState.m_HighlightedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 03c5af2888f7fec4f84dd83b66cef7a5, type: 3}
     - target: {fileID: 3315992628877122639, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8
@@ -9384,17 +9436,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5821892114181197827, guid: d73e39e466098434ea29cac23016e282, type: 3}
   m_PrefabInstance: {fileID: 465540528}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &465540530 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8723335078593216745, guid: d73e39e466098434ea29cac23016e282, type: 3}
-  m_PrefabInstance: {fileID: 465540528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465540531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &465540531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7824285706473302541, guid: d73e39e466098434ea29cac23016e282, type: 3}
@@ -10155,6 +10196,8 @@ GameObject:
   - component: {fileID: 507127025}
   - component: {fileID: 507127031}
   - component: {fileID: 507127032}
+  - component: {fileID: 507127034}
+  - component: {fileID: 507127033}
   m_Layer: 0
   m_Name: Quadro_LaGrandeOnda
   m_TagString: Untagged
@@ -10265,16 +10308,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Katsushika Hokusai
-  _price: 0
-  _year: 1831
-  _type: painting
-  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
-    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
-    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
-    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
-    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
-    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &507127028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10409,6 +10442,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1106971537}
+--- !u!114 &507127033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507127015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &507127034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507127015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &514723325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8067477133809135671, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -10673,11 +10730,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &543107729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11527,6 +11579,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 3196222600972394305, guid: 20cf9c153c0a9d844accdc91eab883a8, type: 3}
+      propertyPath: m_fontSize
+      value: 15.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196222600972394305, guid: 20cf9c153c0a9d844accdc91eab883a8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15.67
+      objectReference: {fileID: 0}
     - target: {fileID: 3594460351859240557, guid: 20cf9c153c0a9d844accdc91eab883a8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -11629,7 +11689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449374730392656971, guid: 20cf9c153c0a9d844accdc91eab883a8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -350.12
+      value: -350.49
       objectReference: {fileID: 0}
     - target: {fileID: 6449374730392656971, guid: 20cf9c153c0a9d844accdc91eab883a8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12408,6 +12468,7 @@ GameObject:
   - component: {fileID: 671498127}
   - component: {fileID: 671498126}
   - component: {fileID: 671498129}
+  - component: {fileID: 671498130}
   m_Layer: 5
   m_Name: RD_RondaDiNotte_Text
   m_TagString: Untagged
@@ -12585,6 +12646,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &671498130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671498118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &674769527
 GameObject:
   m_ObjectHideFlags: 0
@@ -13576,6 +13649,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.73, y: 2.01, z: 0.4}
   m_Center: {x: 0, y: 1.52, z: 0}
+--- !u!114 &725930342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725930330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &728111245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15173,11 +15258,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &822339536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15500,6 +15580,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3734129065933998868, guid: 9783f4bfce1f6ae4cacb20667cf6562e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 828943465}
+    - targetCorrespondingSourceObject: {fileID: 3734129065933998868, guid: 9783f4bfce1f6ae4cacb20667cf6562e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828943467}
+    - targetCorrespondingSourceObject: {fileID: 3734129065933998868, guid: 9783f4bfce1f6ae4cacb20667cf6562e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828943466}
   m_SourcePrefab: {fileID: 100100000, guid: 9783f4bfce1f6ae4cacb20667cf6562e, type: 3}
 --- !u!1 &828943449 stripped
 GameObject:
@@ -15523,16 +15609,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Thutmose
-  _price: 123456800
-  _year: -1345
-  _type: sculpture, bust
-  _description: "Il Busto di Nefertiti, attribuito a Thutmose, \xE8 un capolavoro
-    dell'arte egizia risalente al 1345 a.C., oggi conservato nel Neues Museum di
-    Berlino. Raffigura la regina Nefertiti con straordinaria eleganza e simmetria,
-    caratterizzata dal suo iconico copricapo blu. Celebre per la perfezione dei dettagli
-    e la vivida policromia, il busto incarna la bellezza ideale e il prestigio dell'epoca
-    amarniana."
 --- !u!114 &828943452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15718,6 +15794,30 @@ MonoBehaviour:
   lightList: []
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1342833452}
+--- !u!114 &828943466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828943449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &828943467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828943449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829417917
 GameObject:
   m_ObjectHideFlags: 0
@@ -16164,6 +16264,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1656854827, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &843658165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1681532264140784870, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
+  m_PrefabInstance: {fileID: 1497507690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd927768041afd4d90e5d822283f0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &845148392
@@ -16816,6 +16927,8 @@ GameObject:
   - component: {fileID: 868945880}
   - component: {fileID: 868945879}
   - component: {fileID: 868945885}
+  - component: {fileID: 868945887}
+  - component: {fileID: 868945886}
   m_Layer: 0
   m_Name: Quadro_LaPersistenzaDellaMemoria_2x
   m_TagString: Untagged
@@ -16925,16 +17038,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "Salvador Dal\xED"
-  _price: 0
-  _year: 1931
-  _type: painting
-  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
-    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
-    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
-    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
-    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
-    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &868945882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17049,6 +17152,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &868945886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868945869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &868945887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868945869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &870352289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17195,16 +17322,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: 
-  _volume: 0.4
-  _maxVolume: 1
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!114 &878141537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17573,6 +17690,7 @@ GameObject:
   - component: {fileID: 893042082}
   - component: {fileID: 893042084}
   - component: {fileID: 893042083}
+  - component: {fileID: 893042085}
   m_Layer: 0
   m_Name: PannelloDescrizione_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -17995,6 +18113,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
+--- !u!114 &893042085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893042073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &898614686
 GameObject:
   m_ObjectHideFlags: 0
@@ -18297,6 +18427,8 @@ GameObject:
   - component: {fileID: 921703376}
   - component: {fileID: 921703375}
   - component: {fileID: 921703381}
+  - component: {fileID: 921703383}
+  - component: {fileID: 921703382}
   m_Layer: 0
   m_Name: Quadro_LaNascitaDiVenere_2x
   m_TagString: Untagged
@@ -18406,16 +18538,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Sandro Botticelli
-  _price: 0
-  _year: 1484
-  _type: painting
-  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
-    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
-    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
-    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
-    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
-    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &921703378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18530,6 +18652,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &921703382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921703365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &921703383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921703365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &923258353
 GameObject:
   m_ObjectHideFlags: 0
@@ -18674,16 +18820,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: nona_sinfonia.mp3
-  _volume: 0.4
-  _maxVolume: 1
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!114 &923258357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18827,8 +18963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propertiesButton: {fileID: 1979894672}
   rulesButton: {fileID: 465540538}
-  backToPropertiesButton: {fileID: 1497507691}
-  backToRulesButton: {fileID: 1683254603}
+  propertiesBackButton: {fileID: 1497507691}
+  rulesBackButton: {fileID: 1683254603}
 --- !u!1 &963352911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1061403401760637975, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
@@ -18999,11 +19135,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &983076488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19111,6 +19242,7 @@ GameObject:
   - component: {fileID: 986191722}
   - component: {fileID: 986191721}
   - component: {fileID: 986191727}
+  - component: {fileID: 986191728}
   m_Layer: 0
   m_Name: PannelloDescrizione_RondaDiNotte
   m_TagString: Untagged
@@ -19287,6 +19419,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &986191728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986191719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &992702775
 GameObject:
   m_ObjectHideFlags: 0
@@ -19837,6 +19981,8 @@ GameObject:
   - component: {fileID: 1022083411}
   - component: {fileID: 1022083413}
   - component: {fileID: 1022083412}
+  - component: {fileID: 1022083415}
+  - component: {fileID: 1022083414}
   m_Layer: 0
   m_Name: Quadro_LaPersistenzaDellaMemoria
   m_TagString: Untagged
@@ -19946,16 +20092,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "Salvador Dal\xED"
-  _price: 0
-  _year: 1931
-  _type: painting
-  _description: "La persistenza della memoria (1931) di Salvador Dal\xEC \xE8 una
-    delle opere pi\xF9 celebri del surrealismo. Il dipinto rappresenta orologi molli
-    che si deformano in un paesaggio desolato, sfidando le leggi della realt\xE0.
-    L'opera esplora il concetto relativo del tempo e della percezione, simbolizzando
-    l\u2019effimero e l\u2019infinito. La sua atmosfera onirica e il contrasto tra
-    realt\xE0 e illusione ne fanno un\u2019icona dell'arte moderna."
 --- !u!114 &1022083408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20296,6 +20432,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
+--- !u!114 &1022083414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022083395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1022083415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022083395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023096381
 GameObject:
   m_ObjectHideFlags: 0
@@ -20424,15 +20584,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 88424871844698598, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 88424871844698598, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 88424871844698598, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 328172268561673418, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -20440,27 +20600,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 63.99999
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 502259255555214442, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -31.999994
       objectReference: {fileID: 0}
     - target: {fileID: 509063981334701206, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
@@ -20736,19 +20896,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3113050995726591413, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3113050995726591413, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3113050995726591413, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 3113050995726591413, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 3240580709715655964, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -20992,31 +21152,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 63.99999
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5900754952069902653, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -31.999994
       objectReference: {fileID: 0}
     - target: {fileID: 6172206784307618378, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273547208822775388, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6333339485801603396, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_IsActive
@@ -21076,11 +21240,11 @@ PrefabInstance:
       objectReference: {fileID: 401000071}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -355.99
       objectReference: {fileID: 0}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.000012
+      value: 9.999894
       objectReference: {fileID: 0}
     - target: {fileID: 7007339729973531297, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Name
@@ -21126,6 +21290,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7007339730214801989, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007339731372704873, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7059803765811163960, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Size
       value: 0.9999403
@@ -21140,11 +21312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412508056298305235, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 7412508056298305235, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 7421794628098465066, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
@@ -21172,6 +21344,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707207298818220565, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911269902918405777, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8096229418221019678, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
@@ -21208,15 +21384,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642837416672902239, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8642837416672902239, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8642837416672902239, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.00005954504
       objectReference: {fileID: 0}
     - target: {fileID: 8726639229391147253, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
@@ -21224,19 +21400,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8946422784350755042, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8946422784350755042, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8946422784350755042, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 8946422784350755042, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -116
       objectReference: {fileID: 0}
     - target: {fileID: 9031022523197921077, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Layer
@@ -22595,6 +22771,7 @@ GameObject:
   - component: {fileID: 1139643860}
   - component: {fileID: 1139643859}
   - component: {fileID: 1139643862}
+  - component: {fileID: 1139643863}
   m_Layer: 5
   m_Name: RD_ScuolaDiAtene_Text
   m_TagString: Untagged
@@ -22772,6 +22949,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &1139643863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139643851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1153644819
 GameObject:
   m_ObjectHideFlags: 0
@@ -23540,16 +23729,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: 
-  _volume: 0
-  _maxVolume: 0
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!82 &1190039662
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24531,6 +24710,7 @@ GameObject:
   - component: {fileID: 1230053010}
   - component: {fileID: 1230053009}
   - component: {fileID: 1230053013}
+  - component: {fileID: 1230053014}
   m_Layer: 0
   m_Name: Faretto_Primavera
   m_TagString: Untagged
@@ -24715,6 +24895,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1230053014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230053006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243478031
 GameObject:
   m_ObjectHideFlags: 0
@@ -24731,6 +24923,7 @@ GameObject:
   - component: {fileID: 1243478034}
   - component: {fileID: 1243478033}
   - component: {fileID: 1243478039}
+  - component: {fileID: 1243478040}
   m_Layer: 0
   m_Name: PannelloDescrizione_Primavera
   m_TagString: Untagged
@@ -24913,6 +25106,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1243478040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243478031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1247126039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25166,6 +25371,7 @@ GameObject:
   - component: {fileID: 1271408521}
   - component: {fileID: 1271408520}
   - component: {fileID: 1271408523}
+  - component: {fileID: 1271408524}
   m_Layer: 5
   m_Name: RD_RagazzaColTurbante_Text
   m_TagString: Untagged
@@ -25343,6 +25549,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &1271408524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271408512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1272623137
 GameObject:
   m_ObjectHideFlags: 0
@@ -26041,6 +26259,7 @@ GameObject:
   - component: {fileID: 1305020680}
   - component: {fileID: 1305020679}
   - component: {fileID: 1305020682}
+  - component: {fileID: 1305020683}
   m_Layer: 5
   m_Name: RD_LaPersistenzaDellaMemoria_Text
   m_TagString: Untagged
@@ -26218,6 +26437,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &1305020683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305020671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318285546
 GameObject:
   m_ObjectHideFlags: 0
@@ -27002,6 +27233,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1385485120349386850, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1362235194}
+    - targetCorrespondingSourceObject: {fileID: 1385485120349386850, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1362235196}
+    - targetCorrespondingSourceObject: {fileID: 1385485120349386850, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1362235195}
   m_SourcePrefab: {fileID: 100100000, guid: 99ceaa5a2a950274b985e1710a467349, type: 3}
 --- !u!4 &1362235178 stripped
 Transform:
@@ -27025,16 +27262,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Unknown
-  _price: 0
-  _year: -305
-  _type: sculpture, statuette
-  _description: "La Statuetta di Anubi rappresenta il dio egizio della mummificazione
-    e protettore dei defunti, raffigurato con corpo umano e testa di sciacallo. Realizzata
-    in bronzo o legno intorno al periodo tardo dell'Antico Egitto, simboleggia il
-    legame tra il mondo terreno e l'aldil\xE0. Usata spesso in contesti funerari,
-    la statuetta esprime la sacralit\xE0 e la venerazione per Anubi come guida delle
-    anime nell'oltretomba."
 --- !u!114 &1362235181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27220,6 +27447,30 @@ MonoBehaviour:
   lightList: []
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 546546627}
+--- !u!114 &1362235195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362235179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1362235196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362235179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1362805967
 GameObject:
   m_ObjectHideFlags: 0
@@ -27859,6 +28110,8 @@ GameObject:
   - component: {fileID: 1389641694}
   - component: {fileID: 1389641700}
   - component: {fileID: 1389641701}
+  - component: {fileID: 1389641703}
+  - component: {fileID: 1389641702}
   m_Layer: 0
   m_Name: Quadro_LaZatteraDellaMedusa
   m_TagString: Untagged
@@ -27969,16 +28222,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "Th\xE9odore G\xE9ricault"
-  _price: 0
-  _year: 1818
-  _type: painting
-  _description: "La zattera della Medusa (1818-1819) di Th\xE9odore G\xE9ricault
-    \xE8 un capolavoro del romanticismo che rappresenta il dramma della naufragio
-    della fregata francese Medusa. Il dipinto ritrae i sopravvissuti, abbandonati
-    in mare, in una scena di disperazione e lotta per la vita. Con una potente espressione
-    emotiva, G\xE9ricault esplora la sofferenza umana, l\u2019eroismo e la tragedia,
-    usando una tecnica realistica che cattura il caos e la tensione del momento."
 --- !u!114 &1389641697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28113,6 +28356,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1367137774}
+--- !u!114 &1389641702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389641684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1389641703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389641684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1393974391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28435,16 +28702,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Johannes Vermeer
-  _price: 0
-  _year: 1665
-  _type: painting
-  _description: " Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
-    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
-    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
-    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
-    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
-    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1401804704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28883,7 +29140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406103091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 916108424, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Script: {fileID: 972298709, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IdleAnimation: 
@@ -28899,7 +29156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406103091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1921197847, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Script: {fileID: 408637163, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1406103096
@@ -28911,7 +29168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406103091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1686888941, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Script: {fileID: 373330108, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _life: 0
@@ -29046,11 +29303,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &1411364353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29679,6 +29931,7 @@ GameObject:
   - component: {fileID: 1429616070}
   - component: {fileID: 1429616069}
   - component: {fileID: 1429616075}
+  - component: {fileID: 1429616076}
   m_Layer: 0
   m_Name: PannelloDescrizione_LaNascitaDiVenere
   m_TagString: Untagged
@@ -29853,6 +30106,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1429616076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429616067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1433397973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30279,16 +30544,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: 
-  _volume: 0
-  _maxVolume: 0
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!82 &1459994798
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30901,6 +31156,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1460921381137035357, guid: e314f93fb0fcfbf43958a223da9a7a4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1463060834}
+    - targetCorrespondingSourceObject: {fileID: 1460921381137035357, guid: e314f93fb0fcfbf43958a223da9a7a4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1463060836}
+    - targetCorrespondingSourceObject: {fileID: 1460921381137035357, guid: e314f93fb0fcfbf43958a223da9a7a4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1463060835}
   m_SourcePrefab: {fileID: 100100000, guid: e314f93fb0fcfbf43958a223da9a7a4c, type: 3}
 --- !u!1 &1463060818 stripped
 GameObject:
@@ -30924,16 +31185,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Hugo Hagen
-  _price: 500000
-  _year: 1859
-  _type: sculpture, bust
-  _description: "Il Busto di Beethoven realizzato da Hugo Hagen nel XIX secolo \xE8
-    un omaggio alla grandezza del compositore tedesco Ludwig van Beethoven. Raffigurato
-    con tratti decisi e un\u2019espressione intensa, il busto trasmette la forza
-    e il genio creativo di Beethoven. Hagen, con la sua abilit\xE0 scultorea, celebra
-    l'immortalit\xE0 dell'artista, enfatizzandone il carattere imponente e l'eredit\xE0
-    musicale senza tempo."
 --- !u!114 &1463060821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31119,6 +31370,30 @@ MonoBehaviour:
   lightList: []
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1608974857}
+--- !u!114 &1463060835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463060818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1463060836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463060818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1463088242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31914,7 +32189,7 @@ PrefabInstance:
     - target: {fileID: 166819377005651140, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: uiInfoItemPrefab
       value: 
-      objectReference: {fileID: 8589319973880350944, guid: 3a9c602c234b8be4bb87e524d02e6079, type: 3}
+      objectReference: {fileID: 8589319973880350944, guid: ba3f5048d3cc4bf45a0251d946afbb13, type: 3}
     - target: {fileID: 245160355623752161, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -32187,6 +32462,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2578058048218363235, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
+      propertyPath: _surfacePatch
+      value: 
+      objectReference: {fileID: 843658165}
     - target: {fileID: 2609645223774508065, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -32230,6 +32509,10 @@ PrefabInstance:
     - target: {fileID: 3223099662821539052, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223099662821539052, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3249497405877355864, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: m_Layer
@@ -32414,7 +32697,7 @@ PrefabInstance:
     - target: {fileID: 7325372866672199909, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: _canvas
       value: 
-      objectReference: {fileID: 998151835}
+      objectReference: {fileID: 284055687}
     - target: {fileID: 7386319102578317368, guid: 88ea3abae07495647bccacb7caafa557, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -32924,6 +33207,7 @@ GameObject:
   - component: {fileID: 1500461636}
   - component: {fileID: 1500461635}
   - component: {fileID: 1500461638}
+  - component: {fileID: 1500461639}
   m_Layer: 5
   m_Name: RD_Primavera_Text
   m_TagString: Untagged
@@ -33101,6 +33385,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &1500461639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500461627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1508417830
 GameObject:
   m_ObjectHideFlags: 0
@@ -34001,6 +34297,8 @@ GameObject:
   - component: {fileID: 1565017022}
   - component: {fileID: 1565017028}
   - component: {fileID: 1565017029}
+  - component: {fileID: 1565017031}
+  - component: {fileID: 1565017030}
   m_Layer: 0
   m_Name: Quadro_ColazioneSullErba
   m_TagString: Untagged
@@ -34111,16 +34409,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "\xC9douard Manet"
-  _price: 0
-  _year: 1863
-  _type: painting
-  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
-    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
-    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
-    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
-    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
-    la strada all\u2019Impressionismo."
 --- !u!114 &1565017025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34255,6 +34543,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 47246799}
+--- !u!114 &1565017030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565017012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1565017031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565017012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1565094370
 GameObject:
   m_ObjectHideFlags: 0
@@ -34448,6 +34760,7 @@ GameObject:
   - component: {fileID: 1567175446}
   - component: {fileID: 1567175445}
   - component: {fileID: 1567175451}
+  - component: {fileID: 1567175452}
   m_Layer: 0
   m_Name: PannelloDescrizione_RagazzaColTurbante
   m_TagString: Untagged
@@ -34617,6 +34930,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1567175452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567175443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1568542915
 GameObject:
   m_ObjectHideFlags: 0
@@ -35236,6 +35561,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1597125709}
+    - targetCorrespondingSourceObject: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1597125712}
+    - targetCorrespondingSourceObject: {fileID: 8169861310277927082, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1597125711}
   m_SourcePrefab: {fileID: 100100000, guid: cddcf1e01be1a6f4fa96dc5fb3a357ad, type: 3}
 --- !u!1 &1597125687 stripped
 GameObject:
@@ -35259,16 +35590,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Unknown
-  _price: 100000000
-  _year: -200
-  _type: sculpture, bust
-  _description: "Il Busto di Attalo I, databile al periodo ellenistico (241-197 a.C.),
-    celebra il re di Pergamo noto per le sue vittorie contro i Galati. Realizzato
-    con straordinaria attenzione ai dettagli, raffigura il sovrano con un\u2019espressione
-    fiera e maestosa, simbolo del suo ruolo di difensore della civilt\xE0 greca.
-    Quest'opera incarna i valori di eroismo e potere tipici dell\u2019arte ellenistica,
-    enfatizzando la grandezza del regno di Pergamo."
 --- !u!114 &1597125690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35678,6 +35999,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
+--- !u!114 &1597125711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597125687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1597125712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597125687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1599604226
 GameObject:
   m_ObjectHideFlags: 0
@@ -36453,11 +36798,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &1629588716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36517,6 +36857,8 @@ GameObject:
   - component: {fileID: 1638912638}
   - component: {fileID: 1638912637}
   - component: {fileID: 1638912643}
+  - component: {fileID: 1638912645}
+  - component: {fileID: 1638912644}
   m_Layer: 0
   m_Name: Quadro_RondaDiNotte_2x
   m_TagString: Untagged
@@ -36626,16 +36968,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Rembrandt van Rijn
-  _price: 0
-  _year: 1642
-  _type: painting
-  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
-    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
-    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
-    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
-    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
-    centrale nella storia dell'arte europea."
 --- !u!114 &1638912640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36750,6 +37082,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1638912644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638912627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1638912645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638912627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645825596
 GameObject:
   m_ObjectHideFlags: 0
@@ -36903,6 +37259,8 @@ GameObject:
   - component: {fileID: 1647271564}
   - component: {fileID: 1647271570}
   - component: {fileID: 1647271571}
+  - component: {fileID: 1647271573}
+  - component: {fileID: 1647271572}
   m_Layer: 0
   m_Name: Quadro_LaNascitaDiVenere
   m_TagString: Untagged
@@ -37013,16 +37371,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Sandro Botticelli
-  _price: 0
-  _year: 1484
-  _type: painting
-  _description: "Nel 1484 Sandro Botticelli realizz\xF2 La nascita di Venere, uno
-    dei suoi capolavori pi\xF9 celebri. L\u2019opera, commissionata dai Medici, celebra
-    la bellezza ideale e la mitologia classica. La dea Venere emerge da una conchiglia,
-    trasportata dal vento e accolta da una ninfa. Caratterizzata da grazia, equilibrio
-    e colori delicati, la pittura rappresenta l\u2019apice dell\u2019arte rinascimentale
-    fiorentina, fondendo simbolismo e armonia."
 --- !u!114 &1647271567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37157,6 +37505,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 612876870}
+--- !u!114 &1647271572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647271554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1647271573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647271554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653865652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7384799956498303098, guid: 8345c516e03ede44aad0b30b974896c7, type: 3}
@@ -37388,6 +37760,8 @@ GameObject:
   - component: {fileID: 1673279555}
   - component: {fileID: 1673279561}
   - component: {fileID: 1673279562}
+  - component: {fileID: 1673279564}
+  - component: {fileID: 1673279563}
   m_Layer: 0
   m_Name: Quadro_Primavera
   m_TagString: Untagged
@@ -37498,16 +37872,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Sandro Botticelli
-  _price: 0
-  _year: 1480
-  _type: painting
-  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
-    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
-    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
-    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
-    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
-    fiorentino."
 --- !u!114 &1673279558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37642,6 +38006,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1419781964}
+--- !u!114 &1673279563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673279545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1673279564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673279545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1673809319
 GameObject:
   m_ObjectHideFlags: 0
@@ -37660,6 +38048,8 @@ GameObject:
   - component: {fileID: 1673809330}
   - component: {fileID: 1673809329}
   - component: {fileID: 1673809335}
+  - component: {fileID: 1673809337}
+  - component: {fileID: 1673809336}
   m_Layer: 0
   m_Name: Quadro_ColazioneSullErba_2x
   m_TagString: Untagged
@@ -37769,16 +38159,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: "\xC9douard Manet"
-  _price: 0
-  _year: 1863
-  _type: painting
-  _description: "Colazione sull\u2019erba (Le D\xE9jeuner sur l\u2019herbe), dipinto
-    da \xC9douard Manet nel 1863, rivoluzion\xF2 l\u2019arte moderna per il suo soggetto
-    provocatorio: una donna nuda tra due uomini vestiti. Esposto al Salon des Refus\xE9s,
-    suscit\xF2 scandalo per il contrasto tra realismo e stile innovativo. Ispirato
-    ai maestri rinascimentali, Manet sfid\xF2 le convenzioni accademiche, aprendo
-    la strada all\u2019Impressionismo."
 --- !u!114 &1673809332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37893,6 +38273,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1673809336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673809319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1673809337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673809319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1680125536
 GameObject:
   m_ObjectHideFlags: 0
@@ -37908,6 +38312,7 @@ GameObject:
   - component: {fileID: 1680125540}
   - component: {fileID: 1680125539}
   - component: {fileID: 1680125543}
+  - component: {fileID: 1680125544}
   m_Layer: 0
   m_Name: Faretto_ScuolaDiAtene
   m_TagString: Untagged
@@ -38092,6 +38497,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1680125544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680125536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1683254602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38171,7 +38588,7 @@ PrefabInstance:
     - target: {fileID: 616140763795418841, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
       propertyPath: uiRuleItemPrefab
       value: 
-      objectReference: {fileID: 8439342176390481972, guid: edf5e27c75b09354bad2413cecf552cc, type: 3}
+      objectReference: {fileID: 8439342176390481972, guid: c5fc17e6f10f81246a48378dd8fbcf8a, type: 3}
     - target: {fileID: 762585348730264865, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
       propertyPath: colliderFitter
       value: 
@@ -38604,6 +39021,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5288402482252738544, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
+      propertyPath: _surfacePatch
+      value: 
+      objectReference: {fileID: 1683254604}
     - target: {fileID: 5310038787558814203, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -38983,6 +39404,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1683254604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8866306279082358558, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
+  m_PrefabInstance: {fileID: 1683254602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd927768041afd4d90e5d822283f0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683254605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242030720880417349, guid: ee4c36c9e17ec024bb7cecfa9e590b92, type: 3}
@@ -39310,6 +39742,8 @@ GameObject:
   - component: {fileID: 1693968015}
   - component: {fileID: 1693968014}
   - component: {fileID: 1693968020}
+  - component: {fileID: 1693968022}
+  - component: {fileID: 1693968021}
   m_Layer: 0
   m_Name: Quadro_Ophelia_2x
   m_TagString: Untagged
@@ -39419,16 +39853,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: John Everett Millais
-  _price: 0
-  _year: 1851
-  _type: painting
-  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
-    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
-    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
-    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
-    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
-    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1693968017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39543,6 +39967,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1693968021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693968004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1693968022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693968004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1695607339 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11400020, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
@@ -39909,6 +40357,8 @@ GameObject:
   - component: {fileID: 1710380307}
   - component: {fileID: 1710380306}
   - component: {fileID: 1710380312}
+  - component: {fileID: 1710380314}
+  - component: {fileID: 1710380313}
   m_Layer: 0
   m_Name: Quadro_Primavera_2x
   m_TagString: Untagged
@@ -40018,16 +40468,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Sandro Botticelli
-  _price: 0
-  _year: 1480
-  _type: painting
-  _description: "Primavera (1480) di Sandro Botticelli \xE8 un capolavoro rinascimentale
-    che celebra la bellezza e la mitologia classica. Il dipinto rappresenta la dea
-    Venere al centro, circondata da figure allegoriche come le Tre Grazie e Mercurio.
-    Con una composizione armoniosa e colori delicati, l'opera simboleggia la fertilit\xE0,
-    l'amore e il rinnovamento, riflettendo l'ideale di bellezza e ordine tipico dell'umanesimo
-    fiorentino."
 --- !u!114 &1710380309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40142,6 +40582,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1710380313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710380296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1710380314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710380296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1711406924
 GameObject:
   m_ObjectHideFlags: 0
@@ -40891,6 +41355,7 @@ GameObject:
   - component: {fileID: 1725476696}
   - component: {fileID: 1725476695}
   - component: {fileID: 1725476699}
+  - component: {fileID: 1725476700}
   m_Layer: 0
   m_Name: Faretto_ColazioneSullErba
   m_TagString: Untagged
@@ -41075,6 +41540,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1725476700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725476692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727112824
 GameObject:
   m_ObjectHideFlags: 0
@@ -41090,6 +41567,7 @@ GameObject:
   - component: {fileID: 1727112828}
   - component: {fileID: 1727112827}
   - component: {fileID: 1727112831}
+  - component: {fileID: 1727112832}
   m_Layer: 0
   m_Name: Faretto_LaNascitaDiVenere
   m_TagString: Untagged
@@ -41274,6 +41752,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1727112832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727112824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1737739833
 GameObject:
   m_ObjectHideFlags: 0
@@ -41375,6 +41865,8 @@ GameObject:
   - component: {fileID: 1742411851}
   - component: {fileID: 1742411850}
   - component: {fileID: 1742411856}
+  - component: {fileID: 1742411858}
+  - component: {fileID: 1742411857}
   m_Layer: 0
   m_Name: Quadro_LaGrandeOndaDiKanagawa_2x
   m_TagString: Untagged
@@ -41484,16 +41976,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Katsushika Hokusai
-  _price: 0
-  _year: 1831
-  _type: painting
-  _description: "La Grande Onda di Kanagawa (1831), capolavoro di Katsushika Hokusai,
-    \xE8 la xilografia pi\xF9 celebre della serie Trentasei vedute del Monte Fuji.
-    Raffigura un\u2019enorme onda in procinto di travolgere barche, con il Monte
-    Fuji sullo sfondo. L\u2019opera combina tradizione giapponese e influenze occidentali,
-    come la prospettiva. Simbolo della forza della natura e della fragilit\xE0 umana,
-    \xE8 diventata un\u2019icona dell\u2019arte mondiale."
 --- !u!114 &1742411853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41608,6 +42090,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1742411857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742411840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1742411858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742411840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742857729
 GameObject:
   m_ObjectHideFlags: 0
@@ -42125,6 +42631,8 @@ GameObject:
   - component: {fileID: 1815160689}
   - component: {fileID: 1815160695}
   - component: {fileID: 1815160696}
+  - component: {fileID: 1815160698}
+  - component: {fileID: 1815160697}
   m_Layer: 0
   m_Name: Quadro_Ophelia
   m_TagString: Untagged
@@ -42235,16 +42743,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: John Everett Millais
-  _price: 0
-  _year: 1851
-  _type: painting
-  _description: "Ofelia (1851-1852) di John Everett Millais \xE8 un\u2019opera emblematicamente
-    romantica che raffigura la tragica morte di Ofelia, il personaggio di Amleto
-    di Shakespeare. La giovane, immersa in un fiume, sembra fluttuare serenamente
-    tra fiori e natura, mentre la sua morte imminente \xE8 resa con grande realismo.
-    Millais cattura con maestria l\u2019emotivit\xE0 e la bellezza tragica del momento,
-    simbolizzando la fragilit\xE0 della vita umana."
 --- !u!114 &1815160692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42379,6 +42877,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1318285547}
+--- !u!114 &1815160697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815160679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815160698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815160679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1816124879
 GameObject:
   m_ObjectHideFlags: 0
@@ -42762,6 +43284,7 @@ GameObject:
   - component: {fileID: 1857202226}
   - component: {fileID: 1857202225}
   - component: {fileID: 1857202229}
+  - component: {fileID: 1857202230}
   m_Layer: 0
   m_Name: Faretto_RagazzaColTurbante
   m_TagString: Untagged
@@ -42946,6 +43469,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1857202230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857202222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1866534070
 GameObject:
   m_ObjectHideFlags: 0
@@ -43271,6 +43806,7 @@ GameObject:
   - component: {fileID: 1877219925}
   - component: {fileID: 1877219924}
   - component: {fileID: 1877219928}
+  - component: {fileID: 1877219929}
   m_Layer: 0
   m_Name: Faretto_RondaDiNotte
   m_TagString: Untagged
@@ -43455,6 +43991,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1877219929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877219921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1881612349
 GameObject:
   m_ObjectHideFlags: 0
@@ -43776,6 +44324,7 @@ GameObject:
   - component: {fileID: 1902801332}
   - component: {fileID: 1902801331}
   - component: {fileID: 1902801335}
+  - component: {fileID: 1902801336}
   m_Layer: 0
   m_Name: Faretto_LaGrandeOnda
   m_TagString: Untagged
@@ -43960,6 +44509,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1902801336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902801328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1903955058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7259449764016024205, guid: fe268417720b8584384d8bd207306022, type: 3}
@@ -44157,6 +44718,8 @@ GameObject:
   - component: {fileID: 1913045051}
   - component: {fileID: 1913045050}
   - component: {fileID: 1913045056}
+  - component: {fileID: 1913045058}
+  - component: {fileID: 1913045057}
   m_Layer: 0
   m_Name: Quadro_RagazzaColTurbante_2x
   m_TagString: Untagged
@@ -44266,16 +44829,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Johannes Vermeer
-  _price: 0
-  _year: 1665
-  _type: painting
-  _description: " Ragazza con turbante (1665) di Johannes Vermeer \xE8 un celebre
-    dipinto che ritrae una giovane donna con un turbante esotico, spesso chiamato
-    \"la Gioconda del Nord\". La luminosit\xE0 del volto e la delicatezza dei dettagli
-    riflettono la maestria di Vermeer nel catturare la luce. L\u2019espressione enigmatica
-    della ragazza e l'uso raffinato della luce e del colore rendono quest'opera un
-    esempio perfetto del suo stile intimo e sofisticato."
 --- !u!114 &1913045053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44390,6 +44943,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1913045057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913045040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1913045058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913045040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1914308025
 GameObject:
   m_ObjectHideFlags: 0
@@ -44408,6 +44985,8 @@ GameObject:
   - component: {fileID: 1914308036}
   - component: {fileID: 1914308035}
   - component: {fileID: 1914308041}
+  - component: {fileID: 1914308043}
+  - component: {fileID: 1914308042}
   m_Layer: 0
   m_Name: Quadro_ScuolaDiAtene_2x
   m_TagString: Untagged
@@ -44517,16 +45096,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Raffaello Sanzio
-  _price: 0
-  _year: 1509
-  _type: painting
-  _description: "La Scuola di Atene (1509-1511) di Raffaello Sanzio \xE8 uno dei
-    capolavori del Rinascimento, situato nelle Stanze Vaticane. Il dipinto rappresenta
-    filosofi e pensatori dell'antichit\xE0, come Platone e Aristotele, in un'ambientazione
-    architettonica grandiosa. Con una composizione equilibrata e una luce naturale,
-    Raffaello celebra la conoscenza e l'umanesimo, simboleggiando l'incontro tra
-    filosofia, scienza e arte, icona della cultura del Rinascimento."
 --- !u!114 &1914308038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44641,6 +45210,30 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   tagPlayer: 
+--- !u!114 &1914308042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914308025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1914308043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914308025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1920145387
 GameObject:
   m_ObjectHideFlags: 0
@@ -44689,16 +45282,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: 
-  _volume: 0.4
-  _maxVolume: 1
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!114 &1920145390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45608,6 +46191,7 @@ GameObject:
   - component: {fileID: 1969508794}
   - component: {fileID: 1969508793}
   - component: {fileID: 1969508797}
+  - component: {fileID: 1969508798}
   m_Layer: 0
   m_Name: Faretto_Ophelia
   m_TagString: Untagged
@@ -45792,6 +46376,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1969508798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969508790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973155534
 GameObject:
   m_ObjectHideFlags: 0
@@ -45965,10 +46561,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2035526833894136504, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5821892114181197827, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -46052,14 +46644,6 @@ PrefabInstance:
     - target: {fileID: 7824285706473302541, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_Name
       value: B_Properties
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723335078593216745, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723335078593216745, guid: d73e39e466098434ea29cac23016e282, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8740319935926094573, guid: d73e39e466098434ea29cac23016e282, type: 3}
       propertyPath: m_AnchorMax.y
@@ -46584,6 +47168,7 @@ GameObject:
   - component: {fileID: 2025707354}
   - component: {fileID: 2025707353}
   - component: {fileID: 2025707356}
+  - component: {fileID: 2025707357}
   m_Layer: 5
   m_Name: RD_LaNascitaDiVenere_Text
   m_TagString: Untagged
@@ -46761,6 +47346,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &2025707357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025707345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2026738450
 GameObject:
   m_ObjectHideFlags: 0
@@ -46776,6 +47373,7 @@ GameObject:
   - component: {fileID: 2026738454}
   - component: {fileID: 2026738453}
   - component: {fileID: 2026738457}
+  - component: {fileID: 2026738458}
   m_Layer: 0
   m_Name: Faretto_LaZatteraDellaMedusa
   m_TagString: Untagged
@@ -46960,6 +47558,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2026738458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026738450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031289323
 GameObject:
   m_ObjectHideFlags: 0
@@ -47411,6 +48021,7 @@ GameObject:
   - component: {fileID: 2055691471}
   - component: {fileID: 2055691476}
   - component: {fileID: 2055691477}
+  - component: {fileID: 2055691478}
   m_Layer: 0
   m_Name: PannelloDescrizione_ColazioneSullErba
   m_TagString: Untagged
@@ -47586,6 +48197,18 @@ MonoBehaviour:
     ufficiale</color>, esposta al Salon des Refus\xE9s, l'opera rompe le convenzioni
     accademiche con luci, ombre e prospettiva non convenzionale. Esposta al <color=#548AF7>Mus\xE9e
     d'Orsay</color>, ha influenzato profondamente l'arte moderna.</size>"
+--- !u!114 &2055691478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055691468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056586601
 GameObject:
   m_ObjectHideFlags: 0
@@ -47974,16 +48597,6 @@ MonoBehaviour:
   m_Script: {fileID: 2120340580, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: 
-  _volume: 0.4
-  _maxVolume: 1
-  _currentTime: 0
-  _playing:
-    choice: 3
-  _paused:
-    choice: 3
-  _stopped:
-    choice: 0
 --- !u!114 &2071488197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48821,6 +49434,7 @@ GameObject:
   - component: {fileID: 2109725559}
   - component: {fileID: 2109725558}
   - component: {fileID: 2109725561}
+  - component: {fileID: 2109725562}
   m_Layer: 5
   m_Name: RD_ColazioneSullErba_Text
   m_TagString: Untagged
@@ -48998,6 +49612,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 
+--- !u!114 &2109725562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109725550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -128583732, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2113007880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49200,6 +49826,8 @@ GameObject:
   - component: {fileID: 2123225040}
   - component: {fileID: 2123225046}
   - component: {fileID: 2123225047}
+  - component: {fileID: 2123225049}
+  - component: {fileID: 2123225048}
   m_Layer: 0
   m_Name: Quadro_RondaDiNotte
   m_TagString: Untagged
@@ -49310,16 +49938,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: Rembrandt van Rijn
-  _price: 0
-  _year: 1642
-  _type: painting
-  _description: "Rembrandt van Rijn (1606-1669) \xE8 uno dei pi\xF9 grandi pittori
-    e incisori olandesi del Seicento. Famoso per la sua abilit\xE0 nel chiaroscuro
-    e la profondit\xE0 psicologica dei suoi ritratti, ha saputo catturare l'animo
-    umano con straordinaria intensit\xE0. Le sue opere, come La ronda di notte e
-    Autoritratto, esplorano temi di luce, ombra e impermanenza, rendendolo una figura
-    centrale nella storia dell'arte europea."
 --- !u!114 &2123225043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49454,6 +50072,30 @@ MonoBehaviour:
   - faretto
   listPrefab: {fileID: 90242807975922121, guid: af41454922dc07d4494c103ea69354a5, type: 3}
   spawnPrefab: {fileID: 1411126936}
+--- !u!114 &2123225048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123225030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1956438385, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2123225049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123225030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 330463712, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125259658
 GameObject:
   m_ObjectHideFlags: 0
@@ -52922,11 +53564,6 @@ MonoBehaviour:
   m_Script: {fileID: -1574112991, guid: 2697c106e3f9e864097cb87b72598f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _author: 
-  _price: 0
-  _year: 0
-  _type: 
-  _description: 
 --- !u!114 &9003801905373373345
 MonoBehaviour:
   m_ObjectHideFlags: 0

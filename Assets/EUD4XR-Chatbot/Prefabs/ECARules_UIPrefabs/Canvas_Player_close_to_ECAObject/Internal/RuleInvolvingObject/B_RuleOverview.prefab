@@ -1512,7 +1512,7 @@ GameObject:
   - component: {fileID: 8068314480166329683}
   - component: {fileID: 4723192406849629357}
   m_Layer: 0
-  m_Name: B_RuleOverview
+  m_Name: B_RuleOverview MRTK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

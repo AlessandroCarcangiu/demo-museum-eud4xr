@@ -8,8 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Behaviour))] //TODO Bug se non metti RequireComponent(typeof(Interactable))
-    [RequireComponent(typeof(Interactable))]
+    [RequireComponent(typeof(ECABehaviour))] //TODO Bug se non metti RequireComponent(typeof(ECAInteractable))
+    [RequireComponent(typeof(ECAInteractable))]
     [ECARules4All("xrinteractable")]
     public class ECAXRInteractable : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
     {

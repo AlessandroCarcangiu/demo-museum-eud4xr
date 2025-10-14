@@ -7,10 +7,10 @@ using UnityEngine;
 namespace ECARules4All_DLL.Taxonomies.Objects.Interactions.Subcategories
 {
     /// <summary>
-    /// <b>ECAText</b> is an <see cref="Interaction"/> subclass that represents a text element.
+    /// <b>ECAText</b> is an <see cref="ECAInteraction"/> subclass that represents a text element.
     /// </summary>
     [ECARules4All("text")]
-    [RequireComponent(typeof(Interaction))] //gerarchia 
+    [RequireComponent(typeof(ECAInteraction))] //gerarchia 
     [DisallowMultipleComponent]
     public class ECAText : MonoBehaviour
     {

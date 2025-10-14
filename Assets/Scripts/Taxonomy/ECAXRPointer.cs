@@ -11,8 +11,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 namespace ECARules4All_DLL.Taxonomies.Behaviours.Subcategories
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Behaviour))] //TODO Bug se non metti RequireComponent(typeof(Interactable))
-    [RequireComponent(typeof(Interactable))]
+    [RequireComponent(typeof(ECABehaviour))] //TODO Bug se non metti RequireComponent(typeof(ECAInteractable))
+    [RequireComponent(typeof(ECAInteractable))]
     [ECARules4All("xrpointer")]
     public class ECAXRPointer : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
     {
