@@ -52,8 +52,12 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
         // Read from Home Assistant
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
         var jArrayExpressions = await ((HomeAssistantClient)hassClient).GetListExpressions();
-        //var (jArrayExpressions, jArrayAutomations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
-        expressions = JArrayToExpressions(jArrayExpressions);
+        //var (jArrayExpressions, dictAutomations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
+        
+        // converte il JArray restituito da GetListExpressions() per renderlo parsabile da ParseExpressions()
+        var JObjectExpressions = new JObject { ["expressions"] = new JObject { ["default"] = jArrayExpressions } };
+        
+        expressions = ExpressionUtils.ParseExpressions(JObjectExpressions);
         
         UpdateMenu(expressions);
     }
@@ -96,26 +100,5 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
                 expressionItemScript.OnPrefabCreated(expression);
             }
         }
-    }
-
-    private List<Expression> JArrayToExpressions(JArray jArray)
-    {
-        List<Expression> expressions = new List<Expression>();
-        
-        foreach (var obj in jArray.OfType<JObject>())
-        {
-            var name = (string)obj["name"] ?? "";
-
-            if (obj["sequence"] is JArray seq)
-                expressions.Add(new Sequence { Name = name, Contents = seq.Values<string>().Select(s => new Automation(s)).ToList() });
-
-            else if (obj["order"] is JArray ord)
-                expressions.Add(new Order { Name = name, Contents = ord.Values<string>().Select(s => new Automation(s)).ToList() });
-            
-            else if (obj["choice"] is JArray ch)
-                expressions.Add(new Choice { Name = name, Contents = ch.Values<string>().Select(s => new Automation(s)).ToList() });
-        }
-
-        return expressions;
     }
 }
