@@ -24,7 +24,7 @@ public class OperatorCard : MonoBehaviour
         if (imageRef == null) throw new Exception("imageRef is null");
     }
 
-    public void OnPrefabCreated(Expression expression, int index, GameObject selectedStep, Color color)
+    public void OnPrefabCreated(Expression expression, Dictionary<string, string> automations, int index, GameObject selectedStep, Color color)
     {
         if (expression == null) throw new Exception("expression is null");
         if (selectedStep == null) throw new Exception("selectedStep is null");
@@ -46,12 +46,12 @@ public class OperatorCard : MonoBehaviour
         // Sets automation card color
         SetColor(color);
         // Sets listener to select a specific step
-        buttonRef.onClick.AddListener(() => selectedStep.GetComponent<SelectedStep>().ShowStep(expression, index, expression.Contents.Count));
+        buttonRef.onClick.AddListener(() => selectedStep.GetComponent<SelectedStep>().ShowStep(expression, automations, index, expression.Contents.Count));
     }
 
-    private void SetAutomationName([NotNull] Automation automation, TMP_Text tmp_text) => tmp_text.text = automation.Name;
+    private void SetAutomationName([NotNull] Automation automation, TMP_Text tmp_text) => tmp_text.text = automation.Name.Substring("automation.".Length);
     
-    private void SetAutomationName(string text, TMP_Text tmp_text) => tmp_text.text = text;
+    private void SetAutomationName(string text, TMP_Text tmp_text) => tmp_text.text = text.Substring("automation.".Length);
 
     private void SetAutomationNames(List<Automation> automations)
     {

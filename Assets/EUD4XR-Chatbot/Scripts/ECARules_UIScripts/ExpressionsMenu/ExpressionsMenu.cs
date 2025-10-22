@@ -41,28 +41,18 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
 
     private async Task UpdateExpressions()
     {
-        List<Expression> expressions = new List<Expression>();
-        /*
-        // Read from local file
-        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "expressions.json");
-        string json = System.IO.File.ReadAllText(path);
-        JObject root = JObject.Parse(json);
-        expressions = ExpressionUtils.ParseExpressions(root);
-        */
         // Read from Home Assistant
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
-        var jArrayExpressions = await ((HomeAssistantClient)hassClient).GetListExpressions();
-        //var (jArrayExpressions, dictAutomations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
+        var (jArrayExpressions, automations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
         
         // converte il JArray restituito da GetListExpressions() per renderlo parsabile da ParseExpressions()
         var JObjectExpressions = new JObject { ["expressions"] = new JObject { ["default"] = jArrayExpressions } };
+        List<Expression> expressions = ExpressionUtils.ParseExpressions(JObjectExpressions);
         
-        expressions = ExpressionUtils.ParseExpressions(JObjectExpressions);
-        
-        UpdateMenu(expressions);
+        UpdateMenu(expressions, automations);
     }
 
-    private void UpdateMenu(List<Expression> expressions)
+    private void UpdateMenu(List<Expression> expressions, Dictionary<string, string> automations)
     {
         // No expressions found
         if (expressions.Count == 0)
@@ -79,6 +69,18 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
         // At least one expression is found
         else
         {
+            // Creates menu listing all expressions
+            foreach (var expression in expressions)
+            {
+                // Gets info for automations involved in the expression
+                var expressionAutomations = GetExpressionAutomations(expression, automations);
+                // Instantiate the prefab and add it to the list
+                var expressionItem = Instantiate(uiExpressionItemPrefab, uiExpressionsListContent.transform);
+                // Set the expression to the prefab
+                var expressionItemScript = expressionItem.GetComponent<B_Expression_Prefab>();
+                expressionItemScript.OnPrefabCreated(expression, expressionAutomations);
+            }
+
             // Clears panel
             if (noExpressionsInstance != null)
                 Destroy(noExpressionsInstance);
@@ -89,16 +91,29 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
                 selectedExpressionInstance = Instantiate(uiSelectedExpressionPrefab, uiPlate.transform);
             else
                 selectedExpressionInstance.GetComponent<SelectedExpression>().ShowUI(false);
-            
-            // Creates menu listing all expressions
-            foreach (var expression in expressions)
+        }
+    }
+
+    private Dictionary<string, string> GetExpressionAutomations(Expression expression, Dictionary<string, string> automations)
+    {
+        var expressionAutomations = new Dictionary<string, string>();
+        
+        foreach (var (key, value) in automations)
+        {
+            foreach (var automation in expression.Contents)
             {
-                // Instantiate the prefab and add it to the list
-                var expressionItem = Instantiate(uiExpressionItemPrefab, uiExpressionsListContent.transform);
-                // Set the expression to the prefab
-                var expressionItemScript = expressionItem.GetComponent<B_Expression_Prefab>();
-                expressionItemScript.OnPrefabCreated(expression);
+                string name = automation.Name.Substring("automation.".Length);
+                if (key == name)
+                {
+                    expressionAutomations.Add(key, value);
+                    break;
+                }
             }
         }
+
+        if (expression.Contents.Count != expressionAutomations.Count)
+            throw new Exception("Automations count does not match");
+
+        return expressionAutomations;
     }
 }

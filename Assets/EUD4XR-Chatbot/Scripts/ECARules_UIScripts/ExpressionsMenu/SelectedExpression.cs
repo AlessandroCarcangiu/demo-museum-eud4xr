@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL.Utils;
 using ECARules4All_DLL.SmartHomeHubClients;
@@ -32,7 +33,7 @@ public class SelectedExpression : Singleton<SelectedExpression>
         ShowUI(false); // UI is not shown until an expression is selected
     }
 
-    public void LoadExpression(Expression expression)
+    public void LoadExpression(Expression expression, Dictionary<string, string> automations)
     {
         // Clears panel
         if (UIVisible)
@@ -47,7 +48,7 @@ public class SelectedExpression : Singleton<SelectedExpression>
 
         // Instantiate selected step prefab
         selectedStepInstance = Instantiate(uiSelectedStepPrefab, transform);
-        selectedStepInstance.GetComponent<SelectedStep>().OnPrefabCreated(expression, operatorColor);
+        selectedStepInstance.GetComponent<SelectedStep>().OnPrefabCreated(expression, automations, operatorColor);
 
         // If the expression is a sequence an operator card for each step is instantiated
         if (expression is Sequence) 
@@ -56,7 +57,7 @@ public class SelectedExpression : Singleton<SelectedExpression>
             {
                 // Instantiate the prefab and add it to the grid
                 var operatorCardScript = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
-                operatorCardScript.OnPrefabCreated(expression, i, selectedStepInstance, operatorColor);
+                operatorCardScript.OnPrefabCreated(expression, automations, i, selectedStepInstance, operatorColor);
             }
         }
         // If the expression is not a sequence a single operator card is instantiated
@@ -64,7 +65,7 @@ public class SelectedExpression : Singleton<SelectedExpression>
         {
             // Instantiate the prefab and add it to the grid
             var operatorCardScript = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
-            operatorCardScript.OnPrefabCreated(expression, 0, selectedStepInstance, operatorColor);
+            operatorCardScript.OnPrefabCreated(expression, automations, 0, selectedStepInstance, operatorColor);
         }
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL.SmartHomeHubClients;
 using TMPro;
@@ -19,24 +20,20 @@ public class B_Expression_Prefab : MonoBehaviour
         if (buttonRef == null) throw new Exception("buttonRef is null");
     }
 
-    public void OnPrefabCreated(Expression expressionToDisplay)
+    public void OnPrefabCreated(Expression expression, Dictionary<string, string> automations)
     {
-        if (expressionToDisplay == null) throw new Exception("expressionToDisplay is null");
-        
-        SetBody(expressionToDisplay);
-
-        buttonRef.onClick.AddListener(() => UpdateSelectedExpression(expressionToDisplay));
+        if (expression == null) throw new Exception("expression is null");
+        // Sets expression name as button text
+        SetBody(expression);
+        // Adds listener to the button so it shows the expression in detail when pressed
+        buttonRef.onClick.AddListener(() => UpdateSelectedExpression(expression, automations));
     }
 
     private void SetBody([NotNull] Expression expression) => contentRef.text = expression.Name;
 
-    private void UpdateSelectedExpression(Expression expression)
+    private void UpdateSelectedExpression(Expression expression, Dictionary<string, string> automations)
     {
         var selectedExpressionScript = FindObjectOfType<SelectedExpression>();
-        /* non può essere null
-        if (selectedExpressionScript == null)
-            selectedExpressionScript = Instantiate(uiSelectedExpressionPrefab, parent).GetComponent<SelectedExpression>();
-        */
-        selectedExpressionScript.LoadExpression(expression);
+        selectedExpressionScript.LoadExpression(expression, automations);
     }
 }

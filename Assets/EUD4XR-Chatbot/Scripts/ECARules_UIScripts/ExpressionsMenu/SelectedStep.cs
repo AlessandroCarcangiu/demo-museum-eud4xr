@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL.Utils;
 using ECARules4All_DLL.SmartHomeHubClients;
@@ -32,7 +33,7 @@ public class SelectedStep : Singleton<SelectedStep>
         if (imageRef == null) throw new Exception("imageRef is null");
     }
 
-    public void OnPrefabCreated(Expression expression, Color color)
+    public void OnPrefabCreated(Expression expression, Dictionary<string, string> automations, Color color)
     {
         if (expression == null) throw new Exception("expression is null");
         if (color == null) throw new Exception("color is null");
@@ -40,17 +41,17 @@ public class SelectedStep : Singleton<SelectedStep>
         // Sets background color of the nav bar
         SetColor(color); // da spostare in showstep per gestire le sequenze complesse
         // First step is automatically selected by default
-        ShowStep(expression, 0, expression.Contents.Count);
+        ShowStep(expression, automations, 0, expression.Contents.Count);
     }
 
-    public void ShowStep(Expression expression, int index, int steps)
+    public void ShowStep(Expression expression, Dictionary<string, string> automations, int index, int steps)
     {
         // Sets operator name in the nav bar
         SetOperatorName(expression);
         // Sets a text description of the operator in the nav bar
         SetOperatorDescription(expression);
         // Sets current automation info in the nav bar
-        SetAutomationInfo(expression.Contents[index]);
+        SetAutomationInfo(expression.Contents[index], automations);
 
         if (expression is Sequence)
         {
@@ -62,7 +63,7 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index > 0)
             {
                 ShowArrow(uiLeftArrow, true);
-                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, index - 1, steps));
+                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1, steps));
             }
             else
                 ShowArrow(uiLeftArrow, false);
@@ -70,7 +71,7 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index < steps - 1)
             {
                 ShowArrow(uiRightArrow, true);
-                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, index + 1, steps));
+                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1, steps));
             }
             else
                 ShowArrow(uiRightArrow, false);
@@ -85,7 +86,7 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index > 0)
             {
                 ShowArrow(uiUpArrow, true);
-                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, index - 1, steps));
+                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1, steps));
             }
             else
                 ShowArrow(uiUpArrow, false);
@@ -93,7 +94,7 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index < steps - 1)
             {
                 ShowArrow(uiDownArrow, true);
-                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, index + 1, steps));
+                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1, steps));
             }
             else
                 ShowArrow(uiDownArrow, false);
@@ -128,7 +129,18 @@ public class SelectedStep : Singleton<SelectedStep>
 
     private void SetOperatorDescription(string description) => uiOperatorDescription.text = description;
 
-    private void SetAutomationInfo([NotNull] Automation automation) => uiAutomationInfo.text = automation.Name; // non basta il nome
+    private void SetAutomationInfo([NotNull] Automation automation, Dictionary<string, string> dictAutomations)
+    {
+        foreach (var (key, value) in dictAutomations)
+        {
+            string name = automation.Name.Substring("automation.".Length);
+            if (key == name)
+            {
+                uiAutomationInfo.text = $"<size=7>{name}</size=7>\n\n{value}";
+                break;
+            }
+        }
+    }
 
     private void ShowArrow(GameObject arrow, bool flag)
     {
