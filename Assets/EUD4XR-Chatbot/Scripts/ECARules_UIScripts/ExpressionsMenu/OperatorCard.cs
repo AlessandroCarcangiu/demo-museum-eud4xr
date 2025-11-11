@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class OperatorCard : MonoBehaviour
 {
     public GameObject uiAutomationNamePrefab;
-    public GameObject uiAutomationsName;
+    public GameObject uiAutomations;
     public TMP_Text uiExpressionType;
     public Button buttonRef;
     public Image imageRef;
@@ -18,7 +18,7 @@ public class OperatorCard : MonoBehaviour
     {
         // Check for ref not null
         if (uiAutomationNamePrefab == null) throw new Exception("uiAutomationNamePrefab is null");
-        if (uiAutomationsName == null) throw new Exception("uiAutomationsName is null");
+        if (uiAutomations == null) throw new Exception("uiAutomations is null");
         if (uiExpressionType == null) throw new Exception("uiExpressionType is null");
         if (buttonRef == null) throw new Exception("buttonRef is null");
         if (imageRef == null) throw new Exception("imageRef is null");
@@ -34,61 +34,27 @@ public class OperatorCard : MonoBehaviour
         if (expression is Sequence)
         {
             // Instantiate the prefab
-            var operatorCardAutomationName = Instantiate(uiAutomationNamePrefab, uiAutomationsName.transform).GetComponentInChildren<TMP_Text>();
-            // Sets automation name in operator card
-            SetAutomationName(expression.Contents[index], operatorCardAutomationName);
+            var operatorCardAutomationScript = Instantiate(uiAutomationNamePrefab, uiAutomations.transform).GetComponent<OperatorCardAutomation>();
+            operatorCardAutomationScript.OnPrefabCreated(expression, automations, index, selectedStep);
         }
         // If expression is not a sequence the operator card contains all automations
         else
-            SetAutomationNames(expression.Contents);
+        {
+            for (int i = 0; i < expression.Contents.Count; i++)
+            {
+                // Instantiate the prefab
+                var operatorCardAutomationScript = Instantiate(uiAutomationNamePrefab, uiAutomations.transform).GetComponent<OperatorCardAutomation>();
+                operatorCardAutomationScript.OnPrefabCreated(expression, automations, i, selectedStep);
+            }
+        }
         // Sets expression type in operator card
         SetExpressionType(expression);
         // Sets automation card color
         SetColor(color);
         // Sets listener to select a specific step
-        buttonRef.onClick.AddListener(() => selectedStep.GetComponent<SelectedStep>().ShowStep(expression, automations, index, expression.Contents.Count));
+        buttonRef.onClick.AddListener(() => selectedStep.GetComponent<SelectedStep>().ShowStep(expression, automations, index));
     }
 
-    private void SetAutomationName([NotNull] Automation automation, TMP_Text tmp_text) => tmp_text.text = automation.Name.Substring("automation.".Length);
-    
-    private void SetAutomationName(string text, TMP_Text tmp_text) => tmp_text.text = text.Substring("automation.".Length);
-
-    private void SetAutomationNames(List<Automation> automations)
-    {
-        var numberOfAutomations = automations.Count;
-
-        // Limits the number of automations shown in the operator card to a maximum of 3
-        if (numberOfAutomations > 3)
-        {
-            for (int i = 0; i < numberOfAutomations; i++)
-            {
-                // Instantiate the prefab
-                var operatorCardAutomationName = Instantiate(uiAutomationNamePrefab, uiAutomationsName.transform).GetComponentInChildren<TMP_Text>();
-                if (i < 2)
-                {
-                    // Sets automation name in operator card
-                    SetAutomationName(automations[i], operatorCardAutomationName);
-                }
-                else
-                {
-                    // Shows number of remaining automations
-                    SetAutomationName($"+{numberOfAutomations - i}...", operatorCardAutomationName);
-                    break;
-                }
-            }
-        }
-        else
-        {
-            foreach (var automation in automations)
-            {
-                // Instantiate the prefab
-                var operatorCardAutomationName = Instantiate(uiAutomationNamePrefab, uiAutomationsName.transform).GetComponentInChildren<TMP_Text>();
-                // Sets automation name in operator card
-                SetAutomationName(automation, operatorCardAutomationName);
-            }
-        }
-    }
-    
     private void SetExpressionType([NotNull] Expression expression)
     {
         if (expression is Sequence)

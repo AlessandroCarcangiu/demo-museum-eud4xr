@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ECARules4All_DLL.Utils;
 using ECARules4All_DLL.SmartHomeHubClients;
 using ECARules4All_DLL.SmartHomeHubClients.Clients;
+using ECARules4All_DLL.Utils;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ExpressionsMenu : Singleton<ExpressionsMenu>
 {
@@ -41,6 +39,14 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
 
     private async Task UpdateExpressions()
     {
+        /*
+        // Read from local file
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "expressions.json");
+        string json = System.IO.File.ReadAllText(path);
+        JObject root = JObject.Parse(json);
+        List<Expression> expressions = ExpressionUtils.ParseExpressions(root);
+        Dictionary<string, string> automations = new Dictionary<string, string>();
+        */
         // Read from Home Assistant
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
         var (jArrayExpressions, automations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
@@ -58,7 +64,7 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
         if (expressions.Count == 0)
         {
             // Clears panel
-            uiExpressionsList.SetActive(false);            
+            uiExpressionsList.SetActive(false);
             if (selectedExpressionInstance != null)
                 Destroy(selectedExpressionInstance);
             
@@ -66,7 +72,7 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
             if (noExpressionsInstance == null)
                 noExpressionsInstance = Instantiate(uiNoExpressionsPrefab, uiExpressionsPanel.transform);
         }
-        // At least one expression is found
+        // At least one expression found
         else
         {
             // Creates menu listing all expressions
@@ -110,10 +116,10 @@ public class ExpressionsMenu : Singleton<ExpressionsMenu>
                 }
             }
         }
-
-        if (expression.Contents.Count != expressionAutomations.Count)
+        
+        if (expression.Contents.Count != expressionAutomations.Count) // commentare istruzione se si sta leggendo da file locale
             throw new Exception("Automations count does not match");
-
+        
         return expressionAutomations;
     }
 }

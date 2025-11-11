@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196332632015688630}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6688983606822451885}
   - component: {fileID: 3781514723104234248}
   - component: {fileID: 4276430427035683834}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SelectedExpression
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 2963238917026557480}
   - component: {fileID: 630198338491553759}
   - component: {fileID: 2645041668376088238}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sequence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 532296231159389895}
   - component: {fileID: 8703864515518887948}
   - component: {fileID: 5035732329735204446}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 2329560845615489102}
   - component: {fileID: 1428897426230937886}
   - component: {fileID: 2428159003908618386}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ExpressionGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 4481625929538676486}
   - component: {fileID: 5455547029013431533}
   - component: {fileID: 4092633720410055867}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 1969183964583323593}
   - component: {fileID: 6754663576049550366}
   - component: {fileID: 2381179238605717309}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 4646042051742780338}
   - component: {fileID: 6112759117881358139}
   - component: {fileID: 5531560901214826807}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ExpressionName
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1063,7 +1063,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5821892114181197827}
-  - component: {fileID: 1760747218629547997}
   - component: {fileID: 2035526833894136504}
   - component: {fileID: 8723335078593216745}
   - component: {fileID: 7501953995390958572}
@@ -1100,27 +1099,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1760747218629547997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824285706473302541}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 128, y: 32, z: 26.38652}
-  m_Center: {x: 0, y: 0, z: 4.6067348}
 --- !u!114 &2035526833894136504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,9 +1121,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.16862746, g: 0.1882353, b: 0.21568628, a: 1}
-    m_HighlightedColor: {r: 0.33962265, g: 0.38038656, b: 0.4528302, a: 1}
+    m_HighlightedColor: {r: 0.4346743, g: 0.48158982, b: 0.5660378, a: 1}
     m_PressedColor: {r: 0.41568628, g: 0.5254902, b: 0.7254902, a: 1}
-    m_SelectedColor: {r: 0.023529412, g: 0.05490196, b: 0.14901961, a: 1}
+    m_SelectedColor: {r: 0.28066927, g: 0.3602396, b: 0.509434, a: 1}
     m_DisabledColor: {r: 0.15294118, g: 0.16078432, b: 0.18039216, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

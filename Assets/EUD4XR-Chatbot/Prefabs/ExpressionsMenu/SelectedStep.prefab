@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7502849960398017447}
   - component: {fileID: 1439434239376084587}
   - component: {fileID: 3954171952311437120}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: StepInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9049389223786279068}
   - component: {fileID: 5692902965184796915}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: OperatorInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 1522132135769116734}
   - component: {fileID: 7550186662245356825}
   - component: {fileID: 6054379939577543177}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SelectedStep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 1441978855919342393}
   - component: {fileID: 1872367221894487818}
   - component: {fileID: 709700910738660809}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 5770025388159245752}
   - component: {fileID: 194551281450742435}
   - component: {fileID: 2261171339377521876}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DownArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 8979871639194310977}
   - component: {fileID: 4334109263741722191}
   - component: {fileID: 1303563530465095537}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LeftArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 3787564153877503027}
   - component: {fileID: 5712538129973971541}
   - component: {fileID: 4243037963393142498}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UpArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 6559166862254880809}
   - component: {fileID: 4502047466058381057}
   - component: {fileID: 8301456077289943471}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RightArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 8772848059229851745}
   - component: {fileID: 6225117328529394368}
   - component: {fileID: 7808634577368338814}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 1046990483166501264}
   - component: {fileID: 7710632439269974323}
   - component: {fileID: 8899292338217489730}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AutomationInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1384790932797841466}
   - component: {fileID: 3220047294835669555}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ChangeAutomation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 7191982623823764516}
   - component: {fileID: 4291102905272032084}
   - component: {fileID: 531371245459380306}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: OperatorDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 3057149536776563513}
   - component: {fileID: 3153205320888192059}
   - component: {fileID: 7984461187271932636}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: OperatorName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,7 +1316,7 @@ GameObject:
   - component: {fileID: 4092308054813386409}
   - component: {fileID: 7931062540315662032}
   - component: {fileID: 2553671955990976876}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

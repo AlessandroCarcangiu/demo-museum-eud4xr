@@ -41,10 +41,10 @@ public class SelectedStep : Singleton<SelectedStep>
         // Sets background color of the nav bar
         SetColor(color); // da spostare in showstep per gestire le sequenze complesse
         // First step is automatically selected by default
-        ShowStep(expression, automations, 0, expression.Contents.Count);
+        ShowStep(expression, automations, 0);
     }
 
-    public void ShowStep(Expression expression, Dictionary<string, string> automations, int index, int steps)
+    public void ShowStep(Expression expression, Dictionary<string, string> automations, int index)
     {
         // Sets operator name in the nav bar
         SetOperatorName(expression);
@@ -63,15 +63,15 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index > 0)
             {
                 ShowArrow(uiLeftArrow, true);
-                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1, steps));
+                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1));
             }
             else
                 ShowArrow(uiLeftArrow, false);
             // Activates right arrow if current step has successors
-            if (index < steps - 1)
+            if (index < expression.Contents.Count - 1)
             {
                 ShowArrow(uiRightArrow, true);
-                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1, steps));
+                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1));
             }
             else
                 ShowArrow(uiRightArrow, false);
@@ -86,15 +86,15 @@ public class SelectedStep : Singleton<SelectedStep>
             if (index > 0)
             {
                 ShowArrow(uiUpArrow, true);
-                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1, steps));
+                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index - 1));
             }
             else
                 ShowArrow(uiUpArrow, false);
             // Activates down arrow if current step has successors
-            if (index < steps - 1)
+            if (index < expression.Contents.Count - 1)
             {
                 ShowArrow(uiDownArrow, true);
-                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1, steps));
+                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expression, automations, index + 1));
             }
             else
                 ShowArrow(uiDownArrow, false);
