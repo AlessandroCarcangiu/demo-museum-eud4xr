@@ -42,6 +42,9 @@ public class OperatorCard : MonoBehaviour
         {
             for (int i = 0; i < expression.Contents.Count; i++)
             {
+                // Show only first 3 automations
+                if (i == 3)
+                    break;
                 // Instantiate the prefab
                 var operatorCardAutomationScript = Instantiate(uiAutomationNamePrefab, uiAutomations.transform).GetComponent<OperatorCardAutomation>();
                 operatorCardAutomationScript.OnPrefabCreated(expression, automations, i, selectedStep);

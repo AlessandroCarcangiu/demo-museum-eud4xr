@@ -18,7 +18,7 @@ public class SelectedStep : Singleton<SelectedStep>
     public TMP_Text uiAutomationInfo;
     public Image imageRef;
 
-    private bool UIVisible;
+    private int currentStep;
 
     private void Awake()
     {
@@ -99,7 +99,11 @@ public class SelectedStep : Singleton<SelectedStep>
             else
                 ShowArrow(uiDownArrow, false);
         }
+
+        currentStep = index;
     }
+
+    public int GetCurrentStep() => currentStep;
 
     private void SetOperatorName([NotNull] Expression expression)
     {
