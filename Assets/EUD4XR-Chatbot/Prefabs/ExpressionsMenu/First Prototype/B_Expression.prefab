@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4119907144848296530}
   - component: {fileID: 5146199680700847225}
   - component: {fileID: 6366379259471051063}
-  - component: {fileID: 1239146453864285791}
+  - component: {fileID: 2933447917394270525}
   m_Layer: 0
   m_Name: B_Expression
   m_TagString: Untagged
@@ -130,7 +130,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.16862746, g: 0.1882353, b: 0.21568628, a: 1}
     m_HighlightedColor: {r: 0.4346743, g: 0.48158982, b: 0.5660378, a: 1}
     m_PressedColor: {r: 0.41568628, g: 0.5254902, b: 0.7254902, a: 1}
-    m_SelectedColor: {r: 0.28066927, g: 0.3602396, b: 0.509434, a: 1}
+    m_SelectedColor: {r: 0.16862746, g: 0.1882353, b: 0.21568628, a: 1}
     m_DisabledColor: {r: 0.15294118, g: 0.16078432, b: 0.18039216, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -325,7 +325,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8285736833145001099}
   m_CullTransparentMesh: 1
---- !u!114 &1239146453864285791
+--- !u!114 &2933447917394270525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,7 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4e4a721974769418864468e663a64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiSelectedExpressionPrefab: {fileID: 1918657110031736932, guid: 32e793f469804b54eb51f88ba9098aee, type: 3}
   contentRef: {fileID: 3335481522885738175}
   buttonRef: {fileID: 8152566049483011325}
 --- !u!1 &8333449082816429296

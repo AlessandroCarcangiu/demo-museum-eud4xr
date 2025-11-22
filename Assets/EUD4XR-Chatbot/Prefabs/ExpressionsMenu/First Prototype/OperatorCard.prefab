@@ -373,9 +373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f64d1c9e607242ac01ef79c81cd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiExpressions: {fileID: 0}
   uiAutomationNamePrefab: {fileID: 1582589477220729165, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
   uiAutomations: {fileID: 7463077711828407592}
-  uiExpressionType: {fileID: 6233993958693303750}
+  uiOperatorName: {fileID: 6233993958693303750}
   buttonRef: {fileID: 8845001181614445363}
   imageRef: {fileID: 2721066376582419242}
 --- !u!1 &7463077711828407592
