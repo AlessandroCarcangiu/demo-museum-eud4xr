@@ -7,16 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-/*
-public class HassData
-{
-    private List<Expression> expressions;
-    private Dictionary<string, string> automations;
 
-    public List<Expression> Expressions { get => expressions; set => expressions = value; }
-    public Dictionary<string, string> Automations { get => automations; set => automations = value; }
-}
-*/
 public class UIExpressions : Singleton<UIExpressions>
 {
     public ExpressionsPanel expressionsPanel;
@@ -43,14 +34,14 @@ public class UIExpressions : Singleton<UIExpressions>
 
     private async void Start()
     {
-        // Reads data from home assistant
+        // Read data from home assistant
         await UpdateExpressions();
 
-        // Updates expressions panel with retrieved data
+        // Update expressions panel with retrieved data
         expressionsPanel.UpdateMenu();
         
-        // Adds listener to the go back button in the expression manager, expressions panel listeners are dynamically added in B_Expression_Prefab
-        expressionManager.uiGoBack.onClick.AddListener(() => SwitchMenu(false));
+        // Add listener to the go back button in the expression manager, expressions panel listeners are dynamically added in B_Expression_Prefab
+        expressionManager.uiGoBack.onClick.AddListener(() => BackToMenu());
 
         // Expressions panel is shown at start
         expressionsPanel.gameObject.SetActive(true);
@@ -59,15 +50,15 @@ public class UIExpressions : Singleton<UIExpressions>
 
     private async Task UpdateExpressions()
     {
-        // Reads data from home assistant
+        // Read data from home assistant
         AbstractClient<HomeAssistantClient> hassClient = AbstractClient<HomeAssistantClient>.GetInstance();
         var (jArrayExpressions, dictAutomations) = await ((HomeAssistantClient)hassClient).GetExpressionsAndAutomations();
         
-        // Converts JArray to parse it as a list and saves it in the menu data
+        // Convert JArray to parse it as a list
         var JObjectExpressions = new JObject { ["expressions"] = new JObject { ["default"] = jArrayExpressions } };
+        
+        // Save expressions and automations
         expressions = ExpressionUtils.ParseExpressions(JObjectExpressions);
-
-        // Saves automations dictionary in the menu data
         automations = dictAutomations;
     }
 
@@ -75,6 +66,12 @@ public class UIExpressions : Singleton<UIExpressions>
     {
         SwitchMenu(true);
         expressionManager.ShowExpression(index);
+    }
+
+    public void BackToMenu()
+    {
+        SwitchMenu(false);
+        expressionManager.ClearExpressionData();
     }
 
     private IEnumerator MoveMenu(float deltaX, float duration)
@@ -97,7 +94,7 @@ public class UIExpressions : Singleton<UIExpressions>
     {
         if (goForward)
         {
-            // Container is moving to the left, show selected expression panel
+            // Container is moving to the left, show expression manager
             expressionManager.gameObject.SetActive(true);
             StartCoroutine(MoveMenu(-deltaX, duration));
             expressionsPanel.gameObject.SetActive(false);
@@ -157,8 +154,6 @@ public class UIExpressions : Singleton<UIExpressions>
 
         return -1;
     }
-
-    public Dictionary<string, string> GetAutomations() => automations;
 
     public Dictionary<string, string> GetExpressionAutomations(int index)
     {

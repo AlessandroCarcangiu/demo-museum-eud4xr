@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
+  uiExpressions: {fileID: 0}
   uiOperatorCardPrefab: {fileID: 7165671237337488862, guid: d361c385b0809d4439947bf8392ff872, type: 3}
   uiStepsManagerPrefab: {fileID: 2283285218630337449, guid: 20bc1ff6dbaa506479afd6cc1f8b5c54, type: 3}
   uiExpressionName: {fileID: 5531560901214826807}
   uiGoBack: {fileID: 8972682606758354088}
   uiExpressionGrid: {fileID: 6330205634014458616}
-  uiExpressions: {fileID: 0}
 --- !u!1 &2784109363551090950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1582589477220729165, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Name
-      value: OperatorCardAutomation
+      value: OperatorCardItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173412354387291553, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5575018159298721737, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Pivot.x
@@ -1641,7 +1645,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1582589477220729165, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Name
-      value: OperatorCardAutomation
+      value: OperatorCardItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173412354387291553, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5575018159298721737, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Pivot.x
@@ -1743,7 +1751,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1582589477220729165, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Name
-      value: OperatorCardAutomation
+      value: OperatorCardItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173412354387291553, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5575018159298721737, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Pivot.x
@@ -1845,7 +1857,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1582589477220729165, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Name
-      value: OperatorCardAutomation
+      value: OperatorCardItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173412354387291553, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5575018159298721737, guid: 685dbcb15948dc24bb310bfae4c1a8f8, type: 3}
       propertyPath: m_Pivot.x

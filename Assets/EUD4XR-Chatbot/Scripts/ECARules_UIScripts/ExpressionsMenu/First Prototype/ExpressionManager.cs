@@ -17,7 +17,6 @@ public class ExpressionManager : Singleton<ExpressionManager>
     public GameObject uiExpressionGrid;
     
     private List<OperatorCard> operatorCards;
-    private List<int> subExpressionsPositions;
     private StepsManager stepsManagerInstance;
 
     private void Awake()
@@ -30,137 +29,105 @@ public class ExpressionManager : Singleton<ExpressionManager>
         if (uiGoBack == null) throw new Exception("uiGoBack is null");
         if (uiExpressionGrid == null) throw new Exception("uiExpressionGrid is null");
 
-        // Init lists
+        // Init list
         operatorCards = new List<OperatorCard>();
-        subExpressionsPositions = new List<int>();
     }
 
     public void ShowExpression(int index)
     {
-        // Clears panel
-        ClearExpressionData();
-        
         var expression = uiExpressions.GetExpressionAtIndex(index);
 
-        // Sets expression name in the nav bar
+        // Set expression name in the nav bar
         SetExpressionName(expression);
 
         // Instantiate selected step prefab
         stepsManagerInstance = Instantiate(uiStepsManagerPrefab, transform).GetComponent<StepsManager>();
         stepsManagerInstance.OnPrefabCreated(index, uiExpressions);
 
-        // If the expression is a sequence an operator card for each step is instantiated
+        // If expression is a sequence then an operator card for each step is instantiated
         if (expression is Sequence)
         {
             for (int i = 0; i < expression.Contents.Count; i++)
-            {
-                //if (expression.Contents[i].Name.StartsWith("automation."))
-                // Instantiate the prefab and add it to the grid
-                var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
-                operatorCard.OnPrefabCreated(index, i, false, uiExpressions);
-                operatorCards.Add(operatorCard);
-            }
+                CreateOperatorCard(index, i);
         }
-        // If the expression is not a sequence a single operator card is instantiated
+        // If expression is not a sequence then a single operator card is instantiated
         else
-        {
-            // Instantiate the prefab and add it to the grid
-            var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
-            operatorCard.OnPrefabCreated(index, 0, false, uiExpressions);
+            CreateOperatorCard(index, 0);
+    }
+
+    private void CreateOperatorCard(int expressionIndex, int stepIndex)
+    {
+        // Instantiate the prefab and add it to the grid
+        var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
+        operatorCard.OnPrefabCreated(expressionIndex, stepIndex, false, uiExpressions);
+        // Add operator card reference to the list
+        operatorCards.Add(operatorCard);
+    }
+
+    public void OpenSubExpression(int expressionIndex, int stepIndex, int positionIndex)
+    {
+        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
+        var subExpressionIndex = uiExpressions.GetExpressionIndexByName(expression.Contents[stepIndex].Name);
+
+        CreateSubExpressionOperatorCard(subExpressionIndex, positionIndex);
+    }
+
+    private void CreateSubExpressionOperatorCard(int expressionIndex, int positionIndex)
+    {
+        Debug.Log("Creating sub-expression operator card for expression \"" + uiExpressions.GetExpressionAtIndex(expressionIndex) + "\" at index " + expressionIndex + " at position index " + (positionIndex + 1));
+        
+        var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
+        operatorCard.transform.SetSiblingIndex(positionIndex + 1);
+        operatorCard.OnPrefabCreated(expressionIndex, 0, true, uiExpressions);
+
+        if (positionIndex == operatorCards.Count - 1)
             operatorCards.Add(operatorCard);
+        else
+            operatorCards.Insert(positionIndex + 1, operatorCard);
+    }
+
+    public void CloseSubExpressionsAfterIndex(int index)
+    {
+        // Count how many sub-expressions depend on the pressed card
+        var openedSubExpressions = CountCardSubExpressions(index);
+
+        // Remove all sub-expressions depending on the pressed card
+        for (int i = index + openedSubExpressions; i > index; i--)
+        {
+            // Destroy sub-expression card and remove it from list
+            Destroy(operatorCards[i].gameObject);
+            operatorCards.RemoveAt(i);
         }
     }
 
-    private void ClearExpressionData()
+    private int CountCardSubExpressions(int cardIndex)
     {
+        var count = 0;
+        
+        for (int i = cardIndex + 1; i < operatorCards.Count; i++)
+        {
+            if (operatorCards[i].IsSubExpression())
+                count++;
+            else
+                break;
+        }
+
+        return count;
+    }
+
+    public void ClearExpressionData()
+    {
+        // Clear operator cards
         foreach (Transform child in uiExpressionGrid.transform)
             Destroy(child.gameObject);
-
         operatorCards.Clear();
-        subExpressionsPositions.Clear();
-        /*
-        Debug.Log(operatorCards.Count + " operator cards to clear.");
-        // Clear cards
-        for (int i = 0; i < operatorCards.Count; i++)
-        {
-            Debug.Log("steps manager destroying operator card " + i);
-            Destroy(operatorCards[i].gameObject);
-            operatorCards.RemoveAt(i);
-            i--;
-        }
-        Debug.Log("Operator cards cleared. Remaining: " + operatorCards.Count);
-        */
+        
         // Clear steps manager
         if (stepsManagerInstance != null)
             Destroy(stepsManagerInstance.gameObject);
     }
 
-    public void LoadSubExpression(int expressionIndex, int stepIndex, int positionIndex)
-    {
-        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
-        var subExpressionIndex = uiExpressions.GetExpressionIndexByName(expression.Contents[stepIndex].Name);
-
-        var subExpressionPrefab = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform);
-        subExpressionPrefab.transform.SetSiblingIndex(positionIndex + 1);
-        var subExpression = subExpressionPrefab.GetComponent<OperatorCard>();
-        subExpression.OnPrefabCreated(subExpressionIndex, 0, true, uiExpressions);
-
-        if (positionIndex == operatorCards.Count - 1)
-            operatorCards.Add(subExpression);
-        else
-            operatorCards.Insert(positionIndex + 1, subExpression);
-
-        subExpressionsPositions.Add(positionIndex + 1);
-    }
-    /*
-    public void CloseAllSubExpressions()
-    {
-        for (int i = 0; i < subExpressionsPositions.Count; i++)
-        {
-            var subExpressionIndex = subExpressionsPositions[i];
-            Destroy(uiExpressionGrid.transform.GetChild(subExpressionIndex).gameObject);
-            subExpressionsPositions.RemoveAt(i);
-
-            // Link image of the first deleted card needs to be explicitly destroyed
-            if (i == 0)
-            {
-                var firstCard = uiExpressionGrid.transform.GetChild(subExpressionIndex - 1).GetComponent<OperatorCard>();
-            }
-
-            i--;
-        }
-    }
-    */
-    public void ClearSubExpressions(int positionIndex)
-    {
-        // Takes the index of the pressed card to check if subexpressions need to be cleared
-
-        // USANDO OPERATOR CARDS POSSO CONTROLLARE CARTA PER CARTA SE LA CARTA È UNA SOTTOESPRESSIONE
-        Debug.Log("operator card at index " + positionIndex + " pressed, checking for subexpressions to clear...");
-        for (int i = 0; i < subExpressionsPositions.Count; i++)
-        {
-            var subExpressionIndex = subExpressionsPositions[i];
-            Debug.Log("found subexpression at index " + subExpressionIndex);
-            if (positionIndex != subExpressionIndex)
-            {
-                Debug.Log($"clearing subexpression at index {subExpressionIndex} because it is not {positionIndex}");
-                Destroy(uiExpressionGrid.transform.GetChild(subExpressionIndex).gameObject);
-                subExpressionsPositions.RemoveAt(i);
-
-                // Link image of the first deleted card needs to be explicitly destroyed
-                if (i == 0)
-                {
-                    var firstCard = uiExpressionGrid.transform.GetChild(subExpressionIndex - 1).GetComponent<OperatorCard>();
-                }
-
-                i--;
-            }
-        }
-    }
-
     public StepsManager GetStepsManagerInstance() => stepsManagerInstance;
-
-    public List<int> GetSubExpressionsPositions() => subExpressionsPositions;
 
     private void SetExpressionName([NotNull] Expression expression) => uiExpressionName.text = expression.Name;
 }

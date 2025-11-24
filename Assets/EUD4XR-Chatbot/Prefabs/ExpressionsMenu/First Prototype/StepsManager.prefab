@@ -257,13 +257,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
+  uiExpressions: {fileID: 0}
   uiLeftArrow: {fileID: 5470032333791728125}
   uiRightArrow: {fileID: 5692344768413528995}
   uiUpArrow: {fileID: 5554063192775233386}
   uiDownArrow: {fileID: 3941901841658837476}
   uiOperatorName: {fileID: 709700910738660809}
   uiOperatorDescription: {fileID: 2553671955990976876}
-  uiAutomationInfo: {fileID: 7808634577368338814}
+  uiItemInfo: {fileID: 7808634577368338814}
   imageRef: {fileID: 3954171952311437120}
 --- !u!1 &3700311007540609365
 GameObject:
@@ -944,7 +945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Info automazione
+  m_text: Info passo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1025,7 +1026,7 @@ GameObject:
   - component: {fileID: 7710632439269974323}
   - component: {fileID: 8899292338217489730}
   m_Layer: 0
-  m_Name: AutomationInfo
+  m_Name: ItemInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1100,7 +1101,7 @@ GameObject:
   - component: {fileID: 1384790932797841466}
   - component: {fileID: 3220047294835669555}
   m_Layer: 0
-  m_Name: ChangeAutomation
+  m_Name: ChangeItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -27,25 +27,25 @@ public class ExpressionsPanel : Singleton<ExpressionsPanel>
         // No expressions found
         if (expressions.Count == 0)
         {
-            // Clears panel
+            // Clear panel
             uiExpressionsList.SetActive(false);
-            // Shows 'no expressions' message
+            // Show 'no expressions' message
             uiNoExpressions.SetActive(true);
         }
-        // At least one expression found
+        // Expressions found
         else
         {
-            // Creates menu listing all expressions
+            // Create menu listing all expressions
             for (int i = 0; i < expressions.Count; i++)
             {
-                // Instantiate the prefab and add it to the list
+                // Instantiate the button prefab and add it to the list
                 var expressionItem = Instantiate(uiExpressionItemPrefab, uiExpressionsListContent.transform).GetComponent<B_Expression_Prefab>();
                 expressionItem.OnPrefabCreated(uiExpressions, i);
             }
 
-            // Clears panel
+            // Clear panel
             uiNoExpressions.SetActive(false);
-            // Sets up panel
+            // Show menu
             uiExpressionsList.SetActive(true);
         }
     }

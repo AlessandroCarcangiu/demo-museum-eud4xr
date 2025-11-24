@@ -22,11 +22,11 @@ public class B_Expression_Prefab : MonoBehaviour
     {
         if (uiExpressions == null) throw new Exception("uiExpressions is null");
 
-        // Sets expression name as button text
+        // Set expression name as button text
         var expression = uiExpressions.GetExpressionAtIndex(index);
         SetBody(expression);
 
-        // Adds listener to the button so it shows the selected expression when pressed
+        // Add listener to button so it loads the expression when pressed
         buttonRef.onClick.AddListener(() => uiExpressions.LoadExpression(index));
     }
 
