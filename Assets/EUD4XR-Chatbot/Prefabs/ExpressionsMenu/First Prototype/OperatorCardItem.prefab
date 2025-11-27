@@ -136,10 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be1f117ddd43254e86f497f8aa424e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiExpressions: {fileID: 0}
   contentRef: {fileID: 4627850159672508076}
   buttonRef: {fileID: 4735553719655101687}
-  imageRef: {fileID: 1783506025879362000}
+  linkRef: {fileID: 2173412354387291553}
 --- !u!1 &2173412354387291553
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: 0}
+  m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: 4, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5912723762477818141
@@ -199,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

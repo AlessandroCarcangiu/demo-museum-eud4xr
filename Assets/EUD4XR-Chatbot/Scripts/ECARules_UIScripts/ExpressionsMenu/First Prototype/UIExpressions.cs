@@ -155,29 +155,24 @@ public class UIExpressions : Singleton<UIExpressions>
         return -1;
     }
 
-    public Dictionary<string, string> GetExpressionAutomations(int index)
+    public Expression GetExpressionByName(string name)
     {
-        var expression = expressions[index];
+        var index = GetExpressionIndexByName(name);
+        return GetExpressionAtIndex(index);
+    }
 
-        var expressionAutomations = new Dictionary<string, string>();
+    public Expression GetCurrentExpression() => GetExpressionAtIndex(expressionManager.GetCurrentExpressionIndex());
 
-        foreach (var content in expression.Contents)
+    public string GetAutomationInfo(Automation automation)
+    {
+        var name = automation.Name.Substring("automation.".Length);
+
+        foreach (var (key, value) in automations)
         {
-            if (content.Name.StartsWith("automation."))
-            {
-                string name = content.Name.Substring("automation.".Length);
-
-                foreach (var (key, value) in automations)
-                {
-                    if (key == name)
-                    {
-                        expressionAutomations.Add(key, value);
-                        break;
-                    }
-                }
-            }
+            if (key == name)
+                return value;
         }
 
-        return expressionAutomations;
+        return "";
     }
 }

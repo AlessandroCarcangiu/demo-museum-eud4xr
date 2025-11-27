@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class B_Expression_Prefab : MonoBehaviour
 {
-    public UIExpressions uiExpressions;
     public TMP_Text contentRef;
     public Button buttonRef;
 
@@ -18,16 +17,14 @@ public class B_Expression_Prefab : MonoBehaviour
         if (buttonRef == null) throw new Exception("buttonRef is null");
     }
 
-    public void OnPrefabCreated(UIExpressions uiExpressions, int index)
+    public void OnPrefabCreated(int index)
     {
-        if (uiExpressions == null) throw new Exception("uiExpressions is null");
-
         // Set expression name as button text
-        var expression = uiExpressions.GetExpressionAtIndex(index);
+        var expression = UIExpressions.Instance.GetExpressionAtIndex(index);
         SetBody(expression);
 
         // Add listener to button so it loads the expression when pressed
-        buttonRef.onClick.AddListener(() => uiExpressions.LoadExpression(index));
+        buttonRef.onClick.AddListener(() => UIExpressions.Instance.LoadExpression(index));
     }
 
     private void SetBody([NotNull] Expression expression) => contentRef.text = expression.Name;

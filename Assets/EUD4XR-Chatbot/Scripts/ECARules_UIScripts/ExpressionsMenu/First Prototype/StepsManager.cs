@@ -1,15 +1,12 @@
 using ECARules4All_DLL.SmartHomeHubClients;
-using ECARules4All_DLL.Utils;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StepsManager : Singleton<StepsManager>
+public class StepsManager : MonoBehaviour
 {
-    public UIExpressions uiExpressions;
     public GameObject uiLeftArrow;
     public GameObject uiRightArrow;
     public GameObject uiUpArrow;
@@ -19,7 +16,8 @@ public class StepsManager : Singleton<StepsManager>
     public TMP_Text uiItemInfo;
     public Image imageRef;
 
-    private int currentStep;
+    private int horizontalIndex;
+    private int verticalIndex;
 
     private void Awake()
     {
@@ -34,31 +32,74 @@ public class StepsManager : Singleton<StepsManager>
         if (imageRef == null) throw new Exception("imageRef is null");
     }
 
-    public void OnPrefabCreated(int expressionIndex, UIExpressions uiExprRef)
+    public void OnPrefabCreated()
     {
-        // Save reference to UIExpressions
-        uiExpressions = uiExprRef;
         // First step is automatically selected by default
-        ShowStep(expressionIndex, 0);
+        ShowStep(0, 0);
     }
 
-    public void ShowStep(int expressionIndex, int stepIndex)
+    public void ShowStep(int horizontalIndex, int verticalIndex)
     {
-        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
+        this.horizontalIndex = horizontalIndex;
+        this.verticalIndex = verticalIndex;
 
-        var color = uiExpressions.ExpressionToColor(expression, stepIndex);
+        // Save UIExpressions reference
+        var uiExprRef = UIExpressions.Instance;
 
-        // Remove all previous listeners from arrows to avoid multiple calls
-        ResetListeners();
-        // Set operator info in the sequence bar
-        SetOperatorInfo(expression, stepIndex);
-        // Set current automation info in the sequence bar
-        SetItemInfo(expression.Contents[stepIndex], expressionIndex);
-        // Set background color of the sequence bar
-        SetColor(imageRef, color);
+        var card = uiExprRef.expressionManager.GetOperatorCard(horizontalIndex);
+
+        Expression expression;
+        int stepIndex;
+
+        if (!card.IsSubExpression())
+            expression = uiExprRef.GetCurrentExpression();
+        else
+            expression = uiExprRef.GetExpressionAtIndex(card.GetIndex());
 
         if (expression is Sequence)
+            stepIndex = card.GetIndex();
+        else
+            stepIndex = verticalIndex;
+
+        // Handle navigation arrows based on expression type
+        HandleNavigation(expression, stepIndex, uiExprRef);
+
+        // Set operator info in the sequence bar
+        SetOperatorInfo(expression, stepIndex);
+        // Set current item info in the sequence bar
+        SetItemInfo(expression, stepIndex);
+        // Set background color of the sequence bar
+        SetColor(uiExprRef.ExpressionToColor(expression, stepIndex));
+    }
+
+    private void HandleNavigation(Expression expression, int stepIndex, UIExpressions uiExprRef)
+    {
+        // Remove all previous listeners from arrows to avoid multiple calls
+        ResetListeners();
+
+        var openCards = uiExprRef.expressionManager.GetOpenCards();
+
+        // Handles sequence
+        if (expression is Sequence)
         {
+            // Handle horizontal navigation
+            if (horizontalIndex > 0)
+            {
+                // Activate left arrow if current step has predecessors
+                ShowArrow(uiLeftArrow, true);
+                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex - 1, 0));
+            }
+            else
+                ShowArrow(uiLeftArrow, false);
+            if (horizontalIndex < openCards - 1)
+            {
+                // Activate right arrow if current step has successors
+                ShowArrow(uiRightArrow, true);
+                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex + 1, 0));
+            }
+            else
+                ShowArrow(uiRightArrow, false);
+
             // Hide vertical navigation if current step is an automation
             if (expression.Contents[stepIndex].Name.StartsWith("automation."))
             {
@@ -68,88 +109,80 @@ public class StepsManager : Singleton<StepsManager>
             // Handle vertical navigation if current step is an expression
             else
             {
-                Debug.Log("Handling vertical navigation for expression at step index " + stepIndex);
+                var currentStepExpression = UIExpressions.Instance.GetExpressionByName(expression.Contents[stepIndex].Name);
 
-                // Activates up arrow if current step has predecessors
-                if (stepIndex > 0)
+                // Activate up arrow if current step has predecessors
+                if (verticalIndex > 0)
                 {
-                    Debug.Log("Adding listener to up arrow for expressionIndex: " + expressionIndex + ", stepIndex: " + (stepIndex - 1));
                     ShowArrow(uiUpArrow, true);
-                    uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex - 1));
+                    uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex, verticalIndex - 1));
                 }
                 else
-                {
-                    Debug.Log("Deactivating up arrow");
                     ShowArrow(uiUpArrow, false);
-                }
 
-                // Activates down arrow if current step has successors
-                if (stepIndex < expression.Contents.Count - 1)
+                // Activate down arrow if current step has successors
+                if (verticalIndex < currentStepExpression.Contents.Count - 1)
                 {
-                    Debug.Log("Adding listener to up arrow for expressionIndex: " + expressionIndex + ", stepIndex: " + (stepIndex + 1));
                     ShowArrow(uiDownArrow, true);
-                    uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex + 1));
+                    uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex, verticalIndex + 1));
                 }
                 else
-                {
-                    Debug.Log("Deactivating down arrow");
                     ShowArrow(uiDownArrow, false);
-                }
-                
             }
-
-            // Activate left arrow if current step has predecessors
-            if (stepIndex > 0)
-            {
-                ShowArrow(uiLeftArrow, true);
-                uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex - 1));
-            }
-            else
-                ShowArrow(uiLeftArrow, false);
-
-            // Activate right arrow if current step has successors
-            if (stepIndex < expression.Contents.Count - 1)
-            {
-                ShowArrow(uiRightArrow, true);
-                uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex + 1));
-            }
-            else
-                ShowArrow(uiRightArrow, false);
         }
+        // Handles other expressions
         else
         {
-            // Hide vertical navigation if current step is an automation
-            if (expression.Contents[stepIndex].Name.StartsWith("automation."))
+            var currentExpression = uiExprRef.GetCurrentExpression();
+
+            //  Expression is not a subexpression
+            if (expression == currentExpression)
             {
-                // Hide horizontal navigation (da cambiare per gestire le sottoespressioni)
+                // Hide horizontal navigation
                 ShowArrow(uiLeftArrow, false);
                 ShowArrow(uiRightArrow, false);
             }
+            // Expression is a subexpression
+            else
+            {
+                if (horizontalIndex > 0)
+                {
+                    // Activate left arrow if is a subexpression
+                    ShowArrow(uiLeftArrow, true);
+                    uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex - 1, 0));
+                }
+                else
+                    ShowArrow(uiLeftArrow, false);
 
-            // Activate up arrow if current step has predecessors
+                if (horizontalIndex < openCards - 1)
+                {
+                    // Activate right arrow if current step has successors
+                    ShowArrow(uiRightArrow, true);
+                    uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex + 1, 0));
+                }
+                else
+                    ShowArrow(uiRightArrow, false);
+            }
+
+            // Handle vertical navigation
             if (stepIndex > 0)
             {
+                // Activate up arrow if current step has predecessors
                 ShowArrow(uiUpArrow, true);
-                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex - 1));
+                uiUpArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex, verticalIndex - 1));
             }
             else
                 ShowArrow(uiUpArrow, false);
-
-            // Activate down arrow if current step has successors
             if (stepIndex < expression.Contents.Count - 1)
             {
+                // Activate down arrow if current step has successors
                 ShowArrow(uiDownArrow, true);
-                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(expressionIndex, stepIndex + 1));
+                uiDownArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex, verticalIndex + 1));
             }
             else
                 ShowArrow(uiDownArrow, false);
-            
         }
-
-        currentStep = stepIndex;
     }
-
-    public int GetCurrentStep() => currentStep;
 
     private void ResetListeners()
     {
@@ -202,32 +235,30 @@ public class StepsManager : Singleton<StepsManager>
     // Set a text description of the operator in the sequence bar
     private void SetOperatorDescription(string description) => uiOperatorDescription.text = description;
 
-    private void SetItemInfo([NotNull] Automation automation, int expressionIndex)
+    private void SetItemInfo([NotNull] Expression expression, int stepIndex)
     {
-        if (automation.Name.StartsWith("automation."))
-            SetItemInfo(automation, uiExpressions.GetExpressionAutomations(expressionIndex));
-        else
-            SetItemInfo($"<size=7>{automation.Name.Substring(automation.Name.IndexOf(".") + 1 )}</size=7>\n\n" +
-                $"Sottoespressione rilevata, fare click sull'etichetta dedicata per aprire una carta temporanea");
-    }
+        var item = expression.Contents[stepIndex];
 
-    private void SetItemInfo([NotNull] Automation automation, Dictionary<string, string> dictAutomations)
-    {
-        // da formattare meglio
-        foreach (var (key, value) in dictAutomations)
+        if (item.Name.StartsWith("automation."))
         {
-            string name = automation.Name.Substring("automation.".Length);
-            if (key == name)
-            {
-                uiItemInfo.text = $"<size=7>{name}</size=7>\n\n{value}";
-                break;
-            }
+            // da formattare meglio
+            var name = item.Name.Substring("automation.".Length);
+            var info = UIExpressions.Instance.GetAutomationInfo(item);
+            SetItemInfo($"<size=7>{name}</size=7>\n\n{info}");
         }
+        else if (expression is Sequence)
+        {
+            var stepExpression = UIExpressions.Instance.GetExpressionByName(item.Name);
+            SetItemInfo(stepExpression, verticalIndex);
+        }
+        else
+            SetItemInfo($"<size=7>{item.Name.Substring(item.Name.IndexOf(".") + 1)}</size=7>\n\n" +
+                $"Sottoespressione rilevata, fare click sull'etichetta dedicata per aprire una carta temporanea");
     }
 
     private void SetItemInfo(string info) => uiItemInfo.text = info;
 
-    private void SetColor([NotNull] Image image, [NotNull] Color color) => image.color = color;
+    private void SetColor([NotNull] Color color) => imageRef.color = color;
 
     private void ShowArrow(GameObject arrow, bool flag)
     {
@@ -235,4 +266,5 @@ public class StepsManager : Singleton<StepsManager>
         arrow.GetComponent<Image>().enabled = flag;
     }
 
+    public int GetVerticalIndex() => verticalIndex;
 }

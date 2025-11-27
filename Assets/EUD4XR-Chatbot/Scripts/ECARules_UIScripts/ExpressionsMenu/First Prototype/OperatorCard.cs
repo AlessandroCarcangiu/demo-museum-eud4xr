@@ -1,6 +1,5 @@
 using ECARules4All_DLL.SmartHomeHubClients;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
@@ -8,15 +7,15 @@ using UnityEngine.UI;
 
 public class OperatorCard : MonoBehaviour
 {
-    public UIExpressions uiExpressions;
     public GameObject uiItemPrefab;
     public GameObject uiItems;
     public TMP_Text uiOperatorName;
     public Button buttonRef;
     public Image imageRef;
 
+    private int index;
     private bool isSubExpression;
-    private List<OperatorCardItem> operatorCardItems;
+    private OperatorCardItem[] operatorCardItems;
 
     private void Awake()
     {
@@ -28,73 +27,80 @@ public class OperatorCard : MonoBehaviour
         if (imageRef == null) throw new Exception("imageRef is null");
 
         // Init list
-        operatorCardItems = new List<OperatorCardItem>();
+        operatorCardItems = new OperatorCardItem[1];
     }
 
-    public void OnPrefabCreated(int expressionIndex, int stepIndex, bool state, UIExpressions uiExprRef)
+    public void OnPrefabCreated(int index, bool isSubExpression)
     {
-        isSubExpression = state;
+        this.index = index;
+        this.isSubExpression = isSubExpression;
 
         // Save reference to UIExpressions
-        uiExpressions = uiExprRef;
+        var uiExprRef = UIExpressions.Instance;
 
-        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
+        if (!isSubExpression)
+        {
+            var expression = uiExprRef.GetCurrentExpression();
 
-        var stepsManager = uiExpressions.expressionManager.GetStepsManagerInstance();
+            // Set operator type in operator card
+            SetOperatorName(expression, index);
 
-        Debug.Log($"OperatorCard for expression \"{expression.Name}\" - OnPrefabCreated called with expressionIndex: {expressionIndex}, stepIndex: {stepIndex}, state: {state}, positionIndex: {transform.GetSiblingIndex()}");
+            // Set operator card color
+            SetColor(uiExprRef.ExpressionToColor(expression, index));
 
-        // Set operator type in operator card
-        SetOperatorName(expression, stepIndex);
-
-        // Set operator card color
-        SetColor(uiExpressions.ExpressionToColor(expression, stepIndex));
-
-        // If operator is an automation the operator card contains one item
-        if (expression is Sequence && expression.Contents[stepIndex].Name.StartsWith("automation."))
-            CreateOperatorCardItem(expressionIndex, stepIndex);
-        // If operator is an expression the operator card contains all its items
+            // If operator is an automation the operator card contains one item
+            if (expression is Sequence && expression.Contents[index].Name.StartsWith("automation."))
+                CreateOperatorCardItem(0);
+            // If operator is an expression the operator card contains all its items
+            else
+            {
+                // Handle complex sequences
+                if (expression is Sequence)
+                    HandleMultipleItems(uiExprRef.GetExpressionIndexByName(expression.Contents[index].Name));
+                // Handle order independence and choice
+                else
+                    HandleMultipleItems(uiExprRef.expressionManager.GetCurrentExpressionIndex());
+            }
+        }
         else
         {
-            // Handle complex sequences
-            if (expression is Sequence)
-            {
-                expressionIndex = uiExpressions.GetExpressionIndexByName(expression.Contents[stepIndex].Name);
-                HandleMultipleItems(expressionIndex);
-            }
-            // Handle order independence and choice
-            else
-                HandleMultipleItems(expressionIndex);
+            var subexpression = UIExpressions.Instance.GetExpressionAtIndex(index);
+
+            // Set operator type in operator card
+            SetOperatorName(subexpression, 0);
+
+            // Set operator card color
+            SetColor(uiExprRef.ExpressionToColor(subexpression, 0));
+
+            HandleMultipleItems(index);
         }
 
         // Set listener to select a specific step
-        buttonRef.onClick.AddListener(() => {
-            Debug.Log($"OperatorCard for expression \"{expression.Name}\" - Button clicked to show expressionIndex: {expressionIndex}, stepIndex: {stepIndex}, positionIndex: {transform.GetSiblingIndex()}");
-            stepsManager.ShowStep(expressionIndex, stepIndex);
-        });
+        buttonRef.onClick.AddListener(() => uiExprRef.expressionManager.GetStepsManagerInstance().ShowStep(transform.GetSiblingIndex(), 0));
     }
 
     private void HandleMultipleItems(int expressionIndex)
     {
-        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
+        var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
 
-        for (int i = 0; i < expression.Contents.Count; i++)
-        {
-            // Show only first 3 items
-            if (i == 3)
-                break;
+        var expressionsCount = expression.Contents.Count;
 
-            CreateOperatorCardItem(expressionIndex, i);
-        }
+        if (expressionsCount > 3)
+            operatorCardItems = new OperatorCardItem[3];
+        else
+            operatorCardItems = new OperatorCardItem[expressionsCount];
+        
+        for (int i = 0; i < operatorCardItems.Length; i++)
+            CreateOperatorCardItem(i);
     }
 
-    private void CreateOperatorCardItem(int expressionIndex, int stepIndex)
+    private void CreateOperatorCardItem(int itemIndex)
     {
         // Instantiate the prefab and add it to the operator card
         var operatorCardItem = Instantiate(uiItemPrefab, uiItems.transform).GetComponent<OperatorCardItem>();
-        operatorCardItem.OnPrefabCreated(expressionIndex, stepIndex, uiExpressions);
+        operatorCardItem.OnPrefabCreated(itemIndex, this);
         // Add item reference to the list
-        operatorCardItems.Add(operatorCardItem);
+        operatorCardItems[itemIndex] = operatorCardItem;
     }
 
     public bool IsSubExpression()
@@ -102,10 +108,9 @@ public class OperatorCard : MonoBehaviour
         return isSubExpression;
     }
 
-    public int GetCardPosition()
-    {
-        return transform.GetSiblingIndex();
-    }
+    public int GetIndex() => index;
+
+    public int GetPosition() => transform.GetSiblingIndex();
 
     private void SetOperatorName([NotNull] Expression expression, int index)
     {

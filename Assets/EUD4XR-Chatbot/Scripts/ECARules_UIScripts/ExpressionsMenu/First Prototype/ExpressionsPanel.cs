@@ -1,19 +1,16 @@
-using ECARules4All_DLL.Utils;
 using System;
 using UnityEngine;
 
-public class ExpressionsPanel : Singleton<ExpressionsPanel>
+public class ExpressionsPanel : MonoBehaviour
 {
-    public UIExpressions uiExpressions;
     public GameObject uiExpressionItemPrefab;
     public GameObject uiExpressionsList;
     public GameObject uiExpressionsListContent;
     public GameObject uiNoExpressions;
-    
+
     private void Awake()
     {
         // Check for ref not null
-        if (uiExpressions == null) throw new Exception("uiExpressions is null");
         if (uiExpressionItemPrefab == null) throw new Exception("uiExpressionItemPrefab is null");
         if (uiExpressionsList == null) throw new Exception("uiExpressionsList is null");
         if (uiExpressionsListContent == null) throw new Exception("uiExpressionsListContent is null");
@@ -22,7 +19,7 @@ public class ExpressionsPanel : Singleton<ExpressionsPanel>
 
     public void UpdateMenu()
     {
-        var expressions = uiExpressions.GetExpressions();
+        var expressions = UIExpressions.Instance.GetExpressions();
 
         // No expressions found
         if (expressions.Count == 0)
@@ -40,7 +37,7 @@ public class ExpressionsPanel : Singleton<ExpressionsPanel>
             {
                 // Instantiate the button prefab and add it to the list
                 var expressionItem = Instantiate(uiExpressionItemPrefab, uiExpressionsListContent.transform).GetComponent<B_Expression_Prefab>();
-                expressionItem.OnPrefabCreated(uiExpressions, i);
+                expressionItem.OnPrefabCreated(i);
             }
 
             // Clear panel

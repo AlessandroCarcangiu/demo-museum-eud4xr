@@ -1,5 +1,4 @@
 using ECARules4All_DLL.SmartHomeHubClients;
-using ECARules4All_DLL.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -7,22 +6,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExpressionManager : Singleton<ExpressionManager>
+public class ExpressionManager : MonoBehaviour
 {
-    public UIExpressions uiExpressions;
     public GameObject uiOperatorCardPrefab;
     public GameObject uiStepsManagerPrefab;
     public TMP_Text uiExpressionName;
     public Button uiGoBack;
     public GameObject uiExpressionGrid;
-    
+
+    private int currentExpressionIndex;
     private List<OperatorCard> operatorCards;
     private StepsManager stepsManagerInstance;
 
     private void Awake()
     {
-        // Check for ref not null
-        if (uiExpressions == null) throw new Exception("uiExpressions is null");
         if (uiOperatorCardPrefab == null) throw new Exception("uiOperatorCardPrefab is null");
         if (uiStepsManagerPrefab == null) throw new Exception("uiStepsManagerPrefab is null");
         if (uiExpressionName == null) throw new Exception("uiExpressionName is null");
@@ -35,50 +32,40 @@ public class ExpressionManager : Singleton<ExpressionManager>
 
     public void ShowExpression(int index)
     {
-        var expression = uiExpressions.GetExpressionAtIndex(index);
+        currentExpressionIndex = index;
+        var currentExpression = UIExpressions.Instance.GetExpressionAtIndex(currentExpressionIndex);
 
         // Set expression name in the nav bar
-        SetExpressionName(expression);
+        SetExpressionName(currentExpression);
 
-        // Instantiate selected step prefab
+        // Instantiate steps manager prefab
         stepsManagerInstance = Instantiate(uiStepsManagerPrefab, transform).GetComponent<StepsManager>();
-        stepsManagerInstance.OnPrefabCreated(index, uiExpressions);
 
         // If expression is a sequence then an operator card for each step is instantiated
-        if (expression is Sequence)
-        {
-            for (int i = 0; i < expression.Contents.Count; i++)
-                CreateOperatorCard(index, i);
-        }
+        if (currentExpression is Sequence)
+            for (int i = 0; i < currentExpression.Contents.Count; i++)
+                CreateOperatorCard(i);
         // If expression is not a sequence then a single operator card is instantiated
         else
-            CreateOperatorCard(index, 0);
+            CreateOperatorCard(0);
+
+        stepsManagerInstance.OnPrefabCreated();
     }
 
-    private void CreateOperatorCard(int expressionIndex, int stepIndex)
+    private void CreateOperatorCard(int stepIndex)
     {
         // Instantiate the prefab and add it to the grid
         var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
-        operatorCard.OnPrefabCreated(expressionIndex, stepIndex, false, uiExpressions);
+        operatorCard.OnPrefabCreated(stepIndex, false);
         // Add operator card reference to the list
         operatorCards.Add(operatorCard);
     }
 
-    public void OpenSubExpression(int expressionIndex, int stepIndex, int positionIndex)
+    public void CreateSubExpressionOperatorCard(int subExpressionIndex, int positionIndex)
     {
-        var expression = uiExpressions.GetExpressionAtIndex(expressionIndex);
-        var subExpressionIndex = uiExpressions.GetExpressionIndexByName(expression.Contents[stepIndex].Name);
-
-        CreateSubExpressionOperatorCard(subExpressionIndex, positionIndex);
-    }
-
-    private void CreateSubExpressionOperatorCard(int expressionIndex, int positionIndex)
-    {
-        Debug.Log("Creating sub-expression operator card for expression \"" + uiExpressions.GetExpressionAtIndex(expressionIndex) + "\" at index " + expressionIndex + " at position index " + (positionIndex + 1));
-        
         var operatorCard = Instantiate(uiOperatorCardPrefab, uiExpressionGrid.transform).GetComponent<OperatorCard>();
         operatorCard.transform.SetSiblingIndex(positionIndex + 1);
-        operatorCard.OnPrefabCreated(expressionIndex, 0, true, uiExpressions);
+        operatorCard.OnPrefabCreated(subExpressionIndex, true);
 
         if (positionIndex == operatorCards.Count - 1)
             operatorCards.Add(operatorCard);
@@ -128,6 +115,12 @@ public class ExpressionManager : Singleton<ExpressionManager>
     }
 
     public StepsManager GetStepsManagerInstance() => stepsManagerInstance;
+
+    public int GetCurrentExpressionIndex() => currentExpressionIndex;
+
+    public OperatorCard GetOperatorCard(int index) => operatorCards[index];
+
+    public int GetOpenCards() => operatorCards.Count;
 
     private void SetExpressionName([NotNull] Expression expression) => uiExpressionName.text = expression.Name;
 }
