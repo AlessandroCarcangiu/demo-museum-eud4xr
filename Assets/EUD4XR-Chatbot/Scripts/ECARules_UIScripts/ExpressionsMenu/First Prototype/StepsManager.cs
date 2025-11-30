@@ -43,7 +43,7 @@ public class StepsManager : MonoBehaviour
         this.horizontalIndex = horizontalIndex;
         this.verticalIndex = verticalIndex;
 
-        // Save UIExpressions reference
+        // Save local reference to UIExpressions
         var uiExprRef = UIExpressions.Instance;
 
         var card = uiExprRef.expressionManager.GetOperatorCard(horizontalIndex);

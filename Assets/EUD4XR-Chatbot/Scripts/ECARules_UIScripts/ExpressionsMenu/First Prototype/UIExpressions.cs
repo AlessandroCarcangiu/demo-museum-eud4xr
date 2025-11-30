@@ -14,11 +14,12 @@ public class UIExpressions : Singleton<UIExpressions>
     public ExpressionManager expressionManager;
     public RectTransform menuContainer;
 
+    private RectTransform rectTransform;
+    private float deltaX;
+    private float duration;
+
     private List<Expression> expressions;
     private Dictionary<string, string> automations;
-
-    private float deltaX = 210f;
-    private float duration = 0.2f;
 
     private void Awake()
     {
@@ -26,6 +27,11 @@ public class UIExpressions : Singleton<UIExpressions>
         if (expressionsPanel == null) throw new Exception("expressionsPanel is null");
         if (expressionManager == null) throw new Exception("expressionManager is null");
         if (menuContainer == null) throw new Exception("menuContainer is null");
+        if ((rectTransform = GetComponent<RectTransform>()) == null) throw new Exception("missing RectTransform component");
+
+        // Set up variables for menu switching
+        deltaX = rectTransform.rect.width;
+        duration = 0.2f;
 
         // Init data structures
         expressions = new List<Expression>();
