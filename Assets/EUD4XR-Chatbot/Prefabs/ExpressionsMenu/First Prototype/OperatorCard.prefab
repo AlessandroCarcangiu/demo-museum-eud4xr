@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 793386712596564833}
   - component: {fileID: 5216515737245312193}
   - component: {fileID: 2686718275833359746}
-  - component: {fileID: 6507221329224121497}
+  - component: {fileID: 5164591925534403959}
   m_Layer: 0
   m_Name: Items
   m_TagString: Untagged
@@ -954,7 +954,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &6507221329224121497
+--- !u!114 &5164591925534403959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
