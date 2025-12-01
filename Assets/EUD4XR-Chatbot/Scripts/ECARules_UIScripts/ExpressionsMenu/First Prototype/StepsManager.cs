@@ -81,7 +81,7 @@ namespace FirstPrototype
 
             var openCards = uiExprRef.expressionManager.GetOpenCards();
 
-            // Handles sequence
+            // Handle sequence
             if (expression is Sequence)
             {
                 // Handle horizontal navigation
@@ -132,38 +132,46 @@ namespace FirstPrototype
                         ShowArrow(uiDownArrow, false);
                 }
             }
-            // Handles other expressions
+            // Handle other expressions
             else
             {
+                // Handle horizontal navigation
                 var currentExpression = uiExprRef.GetCurrentExpression();
-
-                //  Expression is not a subexpression
                 if (expression == currentExpression)
                 {
-                    // Hide horizontal navigation
+                    // Hide horizontal navigation if expression is not a subexpression
                     ShowArrow(uiLeftArrow, false);
                     ShowArrow(uiRightArrow, false);
                 }
-                // Expression is a subexpression
                 else
                 {
-                    if (horizontalIndex > 0)
+                    // Handle horizontal navigation if expression is a subexpression inside a complex sequence
+                    if (currentExpression is Sequence)
                     {
-                        // Activate left arrow if is a subexpression
-                        ShowArrow(uiLeftArrow, true);
-                        uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex - 1, 0));
-                    }
-                    else
-                        ShowArrow(uiLeftArrow, false);
+                        if (horizontalIndex > 0)
+                        {
+                            // Activate left arrow if current step has predecessors
+                            ShowArrow(uiLeftArrow, true);
+                            uiLeftArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex - 1, 0));
+                        }
+                        else
+                            ShowArrow(uiLeftArrow, false);
 
-                    if (horizontalIndex < openCards - 1)
-                    {
-                        // Activate right arrow if current step has successors
-                        ShowArrow(uiRightArrow, true);
-                        uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex + 1, 0));
+                        if (horizontalIndex < openCards - 1)
+                        {
+                            // Activate right arrow if current step has successors
+                            ShowArrow(uiRightArrow, true);
+                            uiRightArrow.GetComponent<Button>().onClick.AddListener(() => ShowStep(horizontalIndex + 1, 0));
+                        }
+                        else
+                            ShowArrow(uiRightArrow, false);
                     }
+                    // Hide horizontal navigation otherwise
                     else
+                    {
+                        ShowArrow(uiLeftArrow, false);
                         ShowArrow(uiRightArrow, false);
+                    }
                 }
 
                 // Handle vertical navigation
@@ -255,7 +263,7 @@ namespace FirstPrototype
             }
             else
                 SetItemInfo($"<size=7>{item.Name.Substring(item.Name.IndexOf(".") + 1)}</size=7>\n\n" +
-                    $"Sottoespressione rilevata, fare click sull'etichetta dedicata per aprire una carta temporanea");
+                    $"Sottoespressione rilevata, interagisci con l'etichetta dedicata per aprire/chiudere una carta temporanea");
         }
 
         private void SetItemInfo(string info) => uiItemInfo.text = info;
@@ -268,6 +276,6 @@ namespace FirstPrototype
             arrow.GetComponent<Image>().enabled = flag;
         }
 
-        public int GetVerticalIndex() => verticalIndex;
+        public int GetHorizontalIndex() => horizontalIndex;
     }
 }

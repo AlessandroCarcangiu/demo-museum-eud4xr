@@ -152,13 +152,13 @@ namespace FirstPrototype
         {
             var positionIndex = parentCard.GetPosition();
 
-            // Closes sub-expression if it is open
+            // Close sub-expressions if link is open
             if (isLinkOpen)
                 UIExpressions.Instance.expressionManager.CloseSubExpressionsAfterIndex(positionIndex);
-            // Opens sub-expression if it is closed
+            // Open sub-expression if link is closed
             else
             {
-                // Checks for other sub-expressions depending from this card and closes them
+                // Check for other sub-expressions depending from this card and closes them
                 foreach (var item in parentCard.GetItems())
                 {
                     if (item.IsLinkOpen())
@@ -168,12 +168,11 @@ namespace FirstPrototype
                         break;
                     }
                 }
-
-                // Creates sub-expression card
+                // Create sub-expression card
                 UIExpressions.Instance.expressionManager.CreateSubExpressionOperatorCard(subExpressionIndex, positionIndex);
             }
 
-            // Updates link icon
+            // Update link icon
             HandleLink();
         }
 

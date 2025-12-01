@@ -80,13 +80,23 @@ namespace FirstPrototype
             // Count how many sub-expressions depend on the pressed card
             var openedSubExpressions = CountCardSubExpressions(index);
 
+            // Get index of last sub-expression card to be deleted
+            var lastSubExpressionIndex = index + openedSubExpressions;
+
+            // Get current step in steps manager
+            var currentHorizontalIndex = stepsManagerInstance.GetHorizontalIndex();
+
             // Remove all sub-expressions depending on the pressed card
-            for (int i = index + openedSubExpressions; i > index; i--)
+            for (int i = lastSubExpressionIndex; i > index; i--)
             {
                 // Destroy sub-expression card and remove it from list
                 Destroy(operatorCards[i].gameObject);
                 operatorCards.RemoveAt(i);
             }
+
+            // Change step to pressed card if current step is deleted
+            if (currentHorizontalIndex > index && currentHorizontalIndex <= lastSubExpressionIndex)
+                stepsManagerInstance.ShowStep(index, 0);
         }
 
         private int CountCardSubExpressions(int cardIndex)
