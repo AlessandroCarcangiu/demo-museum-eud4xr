@@ -15,8 +15,8 @@ namespace SecondPrototype
         public ExpressionsPanel expressionsPanel;
         public ExpressionManager expressionManager;
         public RectTransform menuContainer;
+        public RectTransform plate;
 
-        private RectTransform rectTransform;
         private float deltaX;
         private float duration;
 
@@ -29,7 +29,10 @@ namespace SecondPrototype
             if (expressionsPanel == null) throw new Exception("expressionsPanel is null");
             if (expressionManager == null) throw new Exception("expressionManager is null");
             if (menuContainer == null) throw new Exception("menuContainer is null");
-            if ((rectTransform = GetComponent<RectTransform>()) == null) throw new Exception("missing RectTransform component");
+
+            // Set up variables for menu switching
+            deltaX = plate.rect.width;
+            duration = 0.2f;
 
             // Init data structures
             expressions = new List<Expression>();
@@ -50,10 +53,6 @@ namespace SecondPrototype
             // Expressions panel is shown at start
             expressionsPanel.gameObject.SetActive(true);
             expressionManager.gameObject.SetActive(false);
-
-            // Set up variables for menu switching (needs to be done after menu are loaded)
-            deltaX = rectTransform.rect.width;
-            duration = 0.2f;
         }
 
         private async Task UpdateExpressions()
@@ -80,11 +79,12 @@ namespace SecondPrototype
         {
             SwitchMenu(false);
             expressionManager.ClearExpressionData();
+            UpdatePlateSize(false);
         }
 
-        private IEnumerator MoveMenu(float deltaX, float duration)
+        public IEnumerator MoveContainer(RectTransform container, float deltaX, float duration)
         {
-            Vector2 start = menuContainer.anchoredPosition;
+            Vector2 start = container.anchoredPosition;
             Vector2 target = start + new Vector2(deltaX, 0f);
             float elapsed = 0f;
             while (elapsed < duration)
@@ -92,10 +92,10 @@ namespace SecondPrototype
                 elapsed += Time.deltaTime;
                 float t = Mathf.Clamp01(elapsed / duration);
                 t = t * t * (3f - 2f * t);
-                menuContainer.anchoredPosition = Vector2.Lerp(start, target, t);
+                container.anchoredPosition = Vector2.Lerp(start, target, t);
                 yield return null;
             }
-            menuContainer.anchoredPosition = target;
+            container.anchoredPosition = target;
         }
 
         public void SwitchMenu(bool goForward)
@@ -104,46 +104,32 @@ namespace SecondPrototype
             {
                 // Container is moving to the left, show expression manager
                 expressionManager.gameObject.SetActive(true);
-                StartCoroutine(MoveMenu(-deltaX, duration));
+                StartCoroutine(MoveContainer(menuContainer, -deltaX, duration));
                 expressionsPanel.gameObject.SetActive(false);
             }
             else
             {
                 // Container is moving to the right, show expressions panel
                 expressionsPanel.gameObject.SetActive(true);
-                StartCoroutine(MoveMenu(deltaX, duration));
+                StartCoroutine(MoveContainer(menuContainer, deltaX, duration));
                 expressionManager.gameObject.SetActive(false);
             }
         }
 
-        public Color ExpressionToColor(Expression expression, int stepIndex)
+        public void UpdatePlateSize(bool enlarge)
         {
-            if (expression is Order)
-                return Color.blue;
-
-            if (expression is Choice)
-                return Color.yellow;
-
-            if (expression is Sequence)
-                return AutomationToColor(expression.Contents[stepIndex]);
-
-            return Color.white;
-        }
-
-        public Color AutomationToColor(Automation automation)
-        {
-            var name = automation.Name;
-
-            if (name.StartsWith("automation."))
-                return Color.gray;
-
-            if (name.StartsWith("order."))
-                return Color.blue;
-
-            if (name.StartsWith("choice."))
-                return Color.yellow;
-
-            return Color.white;
+            if (plate.rect.width == deltaX && enlarge)
+            {
+                // Make plate as wide as the expression manager
+                plate.sizeDelta = new Vector2(expressionManager.gameObject.GetComponent<RectTransform>().rect.width, plate.sizeDelta.y);
+                return;
+            }
+            if (plate.rect.width > deltaX && !enlarge)
+            {
+                // Go back to default size
+                plate.sizeDelta = new Vector2(deltaX, plate.sizeDelta.y);
+                return;
+            }
         }
 
         public List<Expression> GetExpressions() => expressions;
@@ -152,7 +138,6 @@ namespace SecondPrototype
 
         public int GetExpressionIndexByName(string name)
         {
-            Debug.Log("getting expression index of expression: " + name);
             name = name.Substring(name.IndexOf(".") + 1);
 
             for (int i = 0; i < expressions.Count; i++)

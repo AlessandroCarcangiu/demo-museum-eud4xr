@@ -557,6 +557,7 @@ MonoBehaviour:
   expressionsPanel: {fileID: 5513249911987109443}
   expressionManager: {fileID: 389162061076684252}
   menuContainer: {fileID: 8953845840818004135}
+  plate: {fileID: 5160870987589637468}
 --- !u!1001 &7444398667579789690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2248131565515444114, guid: 9a9478a4b167bc741be8d00071c0d844, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2248131565515444114, guid: 9a9478a4b167bc741be8d00071c0d844, type: 3}
       propertyPath: m_SizeDelta.y
@@ -966,6 +967,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9157758496294135144, guid: 9a9478a4b167bc741be8d00071c0d844, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157758496294135144, guid: 9a9478a4b167bc741be8d00071c0d844, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -1044,7 +1049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339145192025979990, guid: 43ed743fba7c51148b2579576dff20d6, type: 3}
       propertyPath: m_Size
-      value: 0.9999718
+      value: 0.99998903
       objectReference: {fileID: 0}
     - target: {fileID: 2339145192025979990, guid: 43ed743fba7c51148b2579576dff20d6, type: 3}
       propertyPath: m_Value
@@ -1120,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6314288642944108573, guid: 43ed743fba7c51148b2579576dff20d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00060272217
+      value: -0.0005722046
       objectReference: {fileID: 0}
     - target: {fileID: 6756835849395272411, guid: 43ed743fba7c51148b2579576dff20d6, type: 3}
       propertyPath: m_AnchorMax.y

@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 9217625457674019448}
   - component: {fileID: 4569811085327892258}
   - component: {fileID: 5324885668994411874}
-  - component: {fileID: 1885867802491824341}
   - component: {fileID: 4193861357599432512}
   m_Layer: 0
   m_Name: ExpressionItem
@@ -257,27 +256,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 4
---- !u!95 &1885867802491824341
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536380012574428229}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 1
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4193861357599432512
 MonoBehaviour:
   m_ObjectHideFlags: 0
