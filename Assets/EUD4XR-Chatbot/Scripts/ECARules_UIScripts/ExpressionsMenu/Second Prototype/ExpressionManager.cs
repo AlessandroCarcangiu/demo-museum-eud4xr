@@ -1,7 +1,6 @@
 using ECARules4All_DLL.SmartHomeHubClients;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,11 +15,11 @@ namespace SecondPrototype
         public GameObject uiHierachyItemPrefab;
         public GameObject uiExpressionContainerMask;
         public GameObject uiExpressionContainer;
-        public GameObject uiExpressionDescriptorPrefab;
+        public GameObject uiExpressionViewerPrefab;
 
-        private List<ExpressionDescriptor> expressionDescriptors;
+        private List<ExpressionViewer> expressionViewers;
         private int currentExpressionIndex;
-        private float expressionDescriptorWidth;
+        private float expressionViewerWidth;
 
         private void Awake()
         {
@@ -29,18 +28,16 @@ namespace SecondPrototype
             if (uiExpressionContainerMask == null) throw new Exception("uiExpressionContainerMask is null");
             if (uiExpressionContainer == null) throw new Exception("uiExpressionContainer is null");
             
-            expressionDescriptorWidth = uiExpressionDescriptorPrefab.GetComponent<RectTransform>().rect.width;
+            expressionViewerWidth = uiExpressionViewerPrefab.GetComponent<RectTransform>().rect.width;
 
             // Init list
-            expressionDescriptors = new List<ExpressionDescriptor>();
+            expressionViewers = new List<ExpressionViewer>();
         }
 
         public void ShowExpression(int index)
         {
             currentExpressionIndex = index;
             var currentExpression = UIExpressions.Instance.GetExpressionAtIndex(currentExpressionIndex);
-
-            CreateExpressionDescriptor(index);
 
             // Set root in the hierarchy
             /*if (currentExpression is Sequence)
@@ -54,53 +51,67 @@ namespace SecondPrototype
                 }
             }*/
 
+            CreateExpressionViewer(index);
         }
 
-        public void CreateExpressionDescriptor(int expressionIndex)
+        public void CreateExpressionViewer(int expressionIndex)
         {
-            // Instantiate expression descriptor
-            var expressionDescriptor = Instantiate(uiExpressionDescriptorPrefab, uiExpressionContainer.transform).GetComponent<ExpressionDescriptor>();
-            expressionDescriptor.OnPrefabCreated(expressionIndex);
-            expressionDescriptors.Add(expressionDescriptor);
-            CheckExpressionDescriptorsSize();
+            // Check if expression viewer already exists
+            if (CheckDuplicates(expressionIndex))
+                return;
+
+            // Instantiate expression viewer
+            var expressionViewer = Instantiate(uiExpressionViewerPrefab, uiExpressionContainer.transform).GetComponent<ExpressionViewer>();
+            expressionViewer.OnPrefabCreated(expressionIndex);
+            expressionViewers.Add(expressionViewer);
+            CheckExpressionViewersSize();
         }
 
-        private void CheckExpressionDescriptorsSize()
+        private bool CheckDuplicates(int expressionIndex)
         {
-            // Second expression descriptor was just added
-            if (expressionDescriptors.Count == 2)
+            foreach (var viewer in expressionViewers)
+                if (viewer.GetExpressionIndex() == expressionIndex)
+                    return true;
+            
+            return false;
+        }
+
+        private void CheckExpressionViewersSize()
+        {
+            // Second expression viewer was just added
+            if (expressionViewers.Count == 2)
             {
                 var maskRect = uiExpressionContainerMask.GetComponent<RectTransform>();
-                maskRect.sizeDelta = new Vector2(expressionDescriptorWidth * 2, maskRect.sizeDelta.y);
+                maskRect.sizeDelta = new Vector2(expressionViewerWidth * 2, maskRect.sizeDelta.y);
 
                 var rect = gameObject.GetComponent<RectTransform>();
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x + expressionDescriptorWidth, rect.sizeDelta.y);
+                rect.sizeDelta = new Vector2(rect.sizeDelta.x + expressionViewerWidth, rect.sizeDelta.y);
                 
                 UIExpressions.Instance.UpdatePlateSize(true);
             }
-            else if (expressionDescriptors.Count > 2)
-                StartCoroutine(UIExpressions.Instance.MoveContainer(uiExpressionContainer.GetComponent<RectTransform>(), -expressionDescriptorWidth, 0.2f));
+            else if (expressionViewers.Count > 2)
+                StartCoroutine(UIExpressions.Instance.MoveContainer(uiExpressionContainer.GetComponent<RectTransform>(), -expressionViewerWidth, 0.2f));
         }
 
         public void ClearExpressionData()
         {
             // Set container and mask data to default
-            if (expressionDescriptors.Count > 1)
+            if (expressionViewers.Count > 1)
             {
                 var maskRect = uiExpressionContainerMask.GetComponent<RectTransform>();
-                maskRect.sizeDelta = new Vector2(expressionDescriptorWidth, maskRect.sizeDelta.y);
+                maskRect.sizeDelta = new Vector2(expressionViewerWidth, maskRect.sizeDelta.y);
 
                 var rect = gameObject.GetComponent<RectTransform>();
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x - expressionDescriptorWidth, rect.sizeDelta.y);
+                rect.sizeDelta = new Vector2(rect.sizeDelta.x - expressionViewerWidth, rect.sizeDelta.y);
 
-                if (expressionDescriptors.Count > 2)
+                if (expressionViewers.Count > 2)
                     uiExpressionContainer.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
 
-            // Clear expression descriptors
+            // Clear expression viewers
             foreach (Transform child in uiExpressionContainer.transform)
                 Destroy(child.gameObject);
-            expressionDescriptors.Clear();
+            expressionViewers.Clear();
         }
 
         public int GetCurrentExpressionIndex() => currentExpressionIndex;

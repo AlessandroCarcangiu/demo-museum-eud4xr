@@ -252,7 +252,7 @@ namespace FirstPrototype
             if (item.Name.StartsWith("automation."))
             {
                 // da formattare meglio
-                var name = item.Name.Substring("automation.".Length);
+                var name = item.Name["automation.".Length..];
                 var info = UIExpressions.Instance.GetAutomationInfo(item);
                 SetItemInfo($"<size=7>{name}</size=7>\n\n{info}");
             }

@@ -1,6 +1,5 @@
 using ECARules4All_DLL.SmartHomeHubClients;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
@@ -12,16 +11,13 @@ namespace SecondPrototype
     {
         public Image uiHintImageRef;
         public TMP_Text uiHintTextRef;
-        public GameObject uiVerticalLayout;
-        public GameObject uiHorizontalLayout;
+        public GameObject uiLayout;
         public GameObject uiExpressionItemPrefab;
 
         private void Awake()
         {
             if (uiHintImageRef == null) throw new Exception("uiHintImageRef is null");
             if (uiHintTextRef == null) throw new Exception("uiHintTextRef is null");
-            if (uiVerticalLayout == null) throw new Exception("uiVerticalLayout is null");
-            if (uiHorizontalLayout == null) throw new Exception("uiHorizontalLayout is null");
         }
 
         // OnPrefabCreated for sequences
@@ -31,10 +27,7 @@ namespace SecondPrototype
 
             SetHint(expression);
 
-            uiVerticalLayout.SetActive(false);
-            uiHorizontalLayout.SetActive(true);
-
-            CreateExpressionItem(expression, stepIndex, uiHorizontalLayout);
+            CreateExpressionItem(expression, stepIndex);
         }
 
         // OnPrefabCreated for other expressions
@@ -44,28 +37,13 @@ namespace SecondPrototype
 
             SetHint(expression);
 
-            GameObject activeLayout;
-
-            if (expression is Order)
-            {
-                uiVerticalLayout.SetActive(true);
-                uiHorizontalLayout.SetActive(false);
-                activeLayout = uiVerticalLayout;
-            }
-            else
-            {
-                uiVerticalLayout.SetActive(false);
-                uiHorizontalLayout.SetActive(true);
-                activeLayout = uiHorizontalLayout;
-            }
-
             for (int i = 0; i < expression.Contents.Count; i++)
-                CreateExpressionItem(expression, i, activeLayout);
+                CreateExpressionItem(expression, i);
         }
 
-        private void CreateExpressionItem(Expression expression, int stepIndex, GameObject layout)
+        private void CreateExpressionItem(Expression expression, int stepIndex)
         {
-            var expressionItem = Instantiate(uiExpressionItemPrefab, layout.transform).GetComponent<ExpressionItem>();
+            var expressionItem = Instantiate(uiExpressionItemPrefab, uiLayout.transform).GetComponent<ExpressionItem>();
             expressionItem.OnPrefabCreated(expression, stepIndex);
         }
 

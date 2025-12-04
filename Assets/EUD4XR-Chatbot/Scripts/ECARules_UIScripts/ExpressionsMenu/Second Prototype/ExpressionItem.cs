@@ -10,35 +10,59 @@ namespace SecondPrototype
     public class ExpressionItem : MonoBehaviour
     {
         public TMP_Text contentRef;
+        public Image iconRef;
         public Button buttonRef;
+        public Sprite choiceIcon;
+        public Sprite orderIcon;
 
         private void Awake()
         {
             // Check for ref not null
             if (contentRef == null) throw new Exception("contentRef is null");
             if (buttonRef == null) throw new Exception("buttonRef is null");
+            if (iconRef == null) throw new Exception("iconRef is null");
+            if (choiceIcon == null) throw new Exception("choiceIcon is null");
+            if (orderIcon == null) throw new Exception("orderIcon is null");
         }
 
         public void OnPrefabCreated(Expression expression, int index)
         {
             var item = expression.Contents[index];
-
-            SetItemName(item);
             
             if (item.Name.StartsWith("automation."))
             {
+                // Show automation name
+                SetItemName(item);
+                iconRef.gameObject.SetActive(false);
                 // TODO: add popup with automation info
                 //var uiExprRef = UIExpressions.Instance;
                 //buttonRef.onClick.AddListener(() => 
             }
             else
             {
+                var uiExprRef = UIExpressions.Instance;
+                // Show operator icon
+                SetLogo(uiExprRef.GetExpressionByName(item.Name));
+                contentRef.gameObject.SetActive(false);
                 // Add listener to button so it loads the expression when pressed
-                var uiExprRef = UIExpressions.Instance; 
-                buttonRef.onClick.AddListener(() => uiExprRef.expressionManager.CreateExpressionDescriptor(uiExprRef.GetExpressionIndexByName(item.Name)));
+                buttonRef.onClick.AddListener(() => uiExprRef.expressionManager.CreateExpressionViewer(uiExprRef.GetExpressionIndexByName(item.Name)));
             }
         }
 
         private void SetItemName([NotNull] Automation automation) => contentRef.text = automation.Name[(automation.Name.IndexOf(".") + 1)..];
+
+        private void SetLogo(Expression expression)
+        {
+            if (expression is Order)
+            {
+                iconRef.sprite = orderIcon;
+                buttonRef.image.color = Color.blue;
+            }
+            else
+            {
+                iconRef.sprite = choiceIcon;
+                buttonRef.image.color = Color.yellow;
+            }
+        }
     }
 }

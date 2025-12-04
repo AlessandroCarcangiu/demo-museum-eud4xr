@@ -16,8 +16,8 @@ namespace FirstPrototype
         public Image backgroundRef;
         public Image uiIconLogoRef;
         public TMP_Text uiIconTextRef;
-        public Sprite orderIcon;
         public Sprite choiceIcon;
+        public Sprite orderIcon;
 
         private int index;
         private bool isSubExpression;
@@ -33,6 +33,8 @@ namespace FirstPrototype
             if (backgroundRef == null) throw new Exception("backgroundRef is null");
             if (uiIconLogoRef == null) throw new Exception("uiIconLogoRef is null");
             if (uiIconTextRef == null) throw new Exception("uiIconTextRef is null");
+            if (choiceIcon == null) throw new Exception("choiceIcon is null");
+            if (orderIcon == null) throw new Exception("orderIcon is null");
 
             // Init list
             operatorCardItems = new OperatorCardItem[1];

@@ -184,6 +184,6 @@ namespace FirstPrototype
 
         public bool IsLinkOpen() => isLinkOpen;
 
-        private void SetItemName([NotNull] Automation automation, TMP_Text tmp_text) => tmp_text.text = automation.Name.Substring(automation.Name.IndexOf(".") + 1);
+        private void SetItemName([NotNull] Automation automation, TMP_Text tmp_text) => tmp_text.text = automation.Name[(automation.Name.IndexOf(".") + 1)..];
     }
 }

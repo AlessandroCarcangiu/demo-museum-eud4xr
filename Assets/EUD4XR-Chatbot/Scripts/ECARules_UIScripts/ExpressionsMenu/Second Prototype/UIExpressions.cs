@@ -138,7 +138,7 @@ namespace SecondPrototype
 
         public int GetExpressionIndexByName(string name)
         {
-            name = name.Substring(name.IndexOf(".") + 1);
+            name = name[(name.IndexOf(".") + 1)..];
 
             for (int i = 0; i < expressions.Count; i++)
             {
@@ -159,7 +159,7 @@ namespace SecondPrototype
 
         public string GetAutomationInfo(Automation automation)
         {
-            var name = automation.Name.Substring("automation.".Length);
+            var name = automation.Name["automation.".Length..];
 
             foreach (var (key, value) in automations)
             {
