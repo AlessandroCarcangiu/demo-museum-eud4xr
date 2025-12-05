@@ -72,14 +72,13 @@ namespace SecondPrototype
         public void LoadExpression(int index)
         {
             SwitchMenu(true);
-            expressionManager.ShowExpression(index);
+            expressionManager.OpenExpression(index);
         }
 
         public void BackToMenu()
         {
             SwitchMenu(false);
             expressionManager.ClearExpressionData();
-            UpdatePlateSize(false);
         }
 
         public IEnumerator MoveContainer(RectTransform container, float deltaX, float duration)
@@ -154,8 +153,6 @@ namespace SecondPrototype
             var index = GetExpressionIndexByName(name);
             return GetExpressionAtIndex(index);
         }
-
-        public Expression GetCurrentExpression() => GetExpressionAtIndex(expressionManager.GetCurrentExpressionIndex());
 
         public string GetAutomationInfo(Automation automation)
         {

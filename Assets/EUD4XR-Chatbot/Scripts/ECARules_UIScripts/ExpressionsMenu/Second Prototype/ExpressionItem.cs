@@ -44,8 +44,8 @@ namespace SecondPrototype
                 // Show operator icon
                 SetLogo(uiExprRef.GetExpressionByName(item.Name));
                 contentRef.gameObject.SetActive(false);
-                // Add listener to button so it loads the expression when pressed
-                buttonRef.onClick.AddListener(() => uiExprRef.expressionManager.CreateExpressionViewer(uiExprRef.GetExpressionIndexByName(item.Name)));
+                // Add listener to button so it opens the expression when pressed
+                buttonRef.onClick.AddListener(() => uiExprRef.expressionManager.OpenExpression(uiExprRef.GetExpressionIndexByName(item.Name)));
             }
         }
 

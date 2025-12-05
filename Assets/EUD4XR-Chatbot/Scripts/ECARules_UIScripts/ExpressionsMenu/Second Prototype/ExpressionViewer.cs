@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace SecondPrototype
 {
