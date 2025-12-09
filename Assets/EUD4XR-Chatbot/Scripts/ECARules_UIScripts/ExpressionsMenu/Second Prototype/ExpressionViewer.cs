@@ -15,7 +15,6 @@ namespace SecondPrototype
         public GameObject uiExpressionStepVerticalPrefab;
 
         private List<ExpressionStep> expressionSteps;
-        private int expressionIndex;
         
         private void Awake()
         {
@@ -27,9 +26,7 @@ namespace SecondPrototype
         }
 
         public void OnPrefabCreated(int expressionIndex)
-        {
-            this.expressionIndex = expressionIndex;
-            
+        {   
             var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
 
             // Set expression name in the nav bar
@@ -37,47 +34,46 @@ namespace SecondPrototype
 
             if (expression is Sequence)
                 for (int i = 0; i < expression.Contents.Count; i++)
-                    CreateExpressionStep(expression, i);
+                    CreateSequenceStep(expressionIndex, i);
             else
-                CreateExpressionStep(expression);
+                // Pass -1 as step index to indicate that it's not part of a sequence
+                CreateExpressionStep(expressionIndex, -1);
         }
 
-        // CreateExpressionStep for sequences
-        private void CreateExpressionStep(Expression expression, int index)
+        // Create expression step for sequences
+        private void CreateSequenceStep(int expressionIndex, int stepIndex)
         {
-            var contentName = expression.Contents[index].Name;
+            var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
+            var contentName = expression.Contents[stepIndex].Name;
 
             if (contentName.StartsWith("automation."))
             {
                 // Instantiate the prefab
                 var expressionStep = Instantiate(uiExpressionStepHorizontalPrefab, uiExpressionStepsContent.transform).GetComponent<ExpressionStep>();
-                expressionStep.OnPrefabCreated(expression, index);
+                expressionStep.OnPrefabCreated(expressionIndex, stepIndex);
 
                 // Add expression step reference to the list
                 expressionSteps.Add(expressionStep);
             }
             else
-                CreateExpressionStep(UIExpressions.Instance.GetExpressionByName(contentName));
+                CreateExpressionStep(UIExpressions.Instance.GetExpressionIndexByName(contentName), stepIndex);
         }
 
-        // CreateExpressionStep for other expressions
-        private void CreateExpressionStep(Expression expression)
+        // Create expression step for other expressions
+        private void CreateExpressionStep(int expressionIndex, int stepIndex)
         {
-            // Instantiate the prefab
-            GameObject expressionStepRef;
-            if (expression is Choice)
-                expressionStepRef = Instantiate(uiExpressionStepHorizontalPrefab, uiExpressionStepsContent.transform);
-            else
-                expressionStepRef = Instantiate(uiExpressionStepVerticalPrefab, uiExpressionStepsContent.transform);
+            var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
 
-            expressionStepRef.GetComponent<ExpressionStep>().OnPrefabCreated(expression);
+            // Instantiate the prefab
+            var expressionStep = expression is Choice ? 
+                Instantiate(uiExpressionStepHorizontalPrefab, uiExpressionStepsContent.transform).GetComponent<ExpressionStep>():
+                Instantiate(uiExpressionStepVerticalPrefab, uiExpressionStepsContent.transform).GetComponent<ExpressionStep>();
+            expressionStep.OnPrefabCreated(expressionIndex, stepIndex);
             
             // Add expression step reference to the list
-            expressionSteps.Add(expressionStepRef.GetComponent<ExpressionStep>());
+            expressionSteps.Add(expressionStep);
         }
 
         private void SetExpressionName([NotNull] Expression expression) => uiExpressionName.text = expression.Name;
-
-        public int GetExpressionIndex() => expressionIndex;
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +8,8 @@ namespace SecondPrototype
     public class ExpressionManager : MonoBehaviour
     {
         public Button uiGoBack;
-        public GameObject uiHierarchy;
-        public GameObject uiHierachyItemPrefab;
+        public GameObject uiHierarchyContent;
+        public GameObject uiHierarchyItemPrefab;
         public GameObject uiExpressionContainerMask;
         public GameObject uiExpressionContainer;
         public GameObject uiExpressionViewerPrefab;
@@ -27,7 +26,7 @@ namespace SecondPrototype
         private void Awake()
         {
             if (uiGoBack == null) throw new Exception("uiGoBack is null");
-            if (uiHierarchy == null) throw new Exception("uiHierarchy is null");
+            if (uiHierarchyContent == null) throw new Exception("uiHierarchyContent is null");
             if (uiExpressionContainerMask == null) throw new Exception("uiExpressionContainerMask is null");
             if (uiExpressionContainer == null) throw new Exception("uiExpressionContainer is null");
             if ((rect = GetComponent<RectTransform>()) == null) throw new Exception("No RectTransform found in this gameobject");
@@ -43,11 +42,6 @@ namespace SecondPrototype
         
         public void OpenExpression(int expressionIndex)
         {
-            // Check if expression was already opened
-            if (expressionIndexes.Count > 1)
-                if (CheckDuplicates(expressionIndex))
-                    return;
-
             CreateHierarchyItem(expressionIndex, expressionIndexes.Count);
 
             CreateExpressionViewer(expressionIndex);
@@ -55,42 +49,11 @@ namespace SecondPrototype
             expressionIndexes.Add(expressionIndex);
         }
         
-        private bool CheckDuplicates(int expressionIndex)
-        {
-            foreach (var index in expressionIndexes)
-                if (index == expressionIndex)
-                    return true;
-
-            return false;
-        }
-
         public void CreateHierarchyItem(int expressionIndex, int hierarchyLevel)
         {
             // Instantiate hierarchy item
-            var hierarchyItem = Instantiate(uiHierachyItemPrefab, uiHierarchy.transform).GetComponent<HierarchyItem>();
+            var hierarchyItem = Instantiate(uiHierarchyItemPrefab, uiHierarchyContent.transform).GetComponent<HierarchyItem>();
             hierarchyItem.OnPrefabCreated(expressionIndex, hierarchyLevel);
-
-            //UpdateHierarchy(hierarchyLevel);
-        }
-
-        public void UpdateHierarchy(int level)
-        {
-            // Do nothing if expression is already shown
-            if (level == currentLevel)
-                return;
-
-            if (level > currentLevel)
-            {
-                if (currentLevel == 0)
-                {
-                    ActivateTwoViewersVisualization();
-                    if (level == 1)
-                        return;
-                }
-                SwitchViewer(true, level - currentLevel);
-            }
-            else
-                SwitchViewer(false, -(level - currentLevel));
         }
         
         public void CreateExpressionViewer(int expressionIndex)
@@ -144,6 +107,58 @@ namespace SecondPrototype
             StartCoroutine(UIExpressions.Instance.MoveContainer(uiExpressionContainer.GetComponent<RectTransform>(), deltaX * steps, 0.2f));
         }
 
+        public void UpdateHierarchy(int level)
+        {
+            // Do nothing if expression is already shown
+            if (level == currentLevel)
+                return;
+
+            if (level > currentLevel)
+            {
+                if (currentLevel == 0)
+                {
+                    ActivateTwoViewersVisualization();
+                    if (level == 1)
+                        return;
+                }
+                SwitchViewer(true, level - currentLevel);
+            }
+            else
+                SwitchViewer(false, -(level - currentLevel));
+        }
+
+        public bool CheckDuplicates(int expressionIndex)
+        {
+            foreach (var index in expressionIndexes)
+                if (index == expressionIndex)
+                    return true;
+
+            return false;
+        }
+
+        public void CheckSubExpressions(int expressionIndex)
+        {
+            var openExpressions = expressionIndexes.Count - 1;
+            var startIndex = currentLevel == 0 ? currentLevel : currentLevel - 1;
+
+            for (int i = startIndex; i <= currentLevel; i++)
+                if (expressionIndexes[i] == expressionIndex)
+                    if (i < openExpressions)
+                        CloseSubExpressionsAfterIndex(i);
+        }
+
+        private void CloseSubExpressionsAfterIndex(int index)
+        {
+            for (int i = expressionIndexes.Count - 1; i > index; i--)
+            {
+                Destroy(uiHierarchyContent.transform.GetChild(i).gameObject);
+                Destroy(uiExpressionContainer.transform.GetChild(i).gameObject);
+                expressionIndexes.RemoveAt(i);
+            }
+
+            currentLevel = index;
+        }
+
         public void ClearExpressionData()
         {
             if (expressionIndexes.Count > 1)
@@ -157,7 +172,7 @@ namespace SecondPrototype
             }
 
             // Clear hierarchy items
-            foreach (Transform child in uiHierarchy.transform)
+            foreach (Transform child in uiHierarchyContent.transform)
                 Destroy(child.gameObject);
 
             // Clear expression viewers
@@ -174,7 +189,7 @@ namespace SecondPrototype
             {
                 // Set container and mask size to handle two viewers
                 maskRect.sizeDelta = new Vector2(expressionViewerWidth * 2, maskRect.sizeDelta.y);
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x + expressionViewerWidth, rect.sizeDelta.y);
+                rect.sizeDelta = new Vector2(defaultWidth + expressionViewerWidth, rect.sizeDelta.y);
             }
             else
             {
@@ -186,5 +201,7 @@ namespace SecondPrototype
             // Notify UIExpressions to update plate size
             UIExpressions.Instance.UpdatePlateSize(enlarge);
         }
+
+        public int GetExpressionIndexesCount() => expressionIndexes.Count;
     }
 }

@@ -9,6 +9,7 @@ namespace SecondPrototype
 {
     public class ExpressionStep : MonoBehaviour
     {
+        public TMP_Text uiNumberRef;
         public Image uiHintImageRef;
         public TMP_Text uiHintTextRef;
         public GameObject uiLayout;
@@ -16,36 +17,38 @@ namespace SecondPrototype
 
         private void Awake()
         {
+            if (uiNumberRef == null) throw new Exception("uiNumberRef is null");
             if (uiHintImageRef == null) throw new Exception("uiHintImageRef is null");
             if (uiHintTextRef == null) throw new Exception("uiHintTextRef is null");
+            if (uiLayout == null) throw new Exception("uiLayout is null");
         }
-
-        // OnPrefabCreated for sequences
-        public void OnPrefabCreated(Expression expression, int stepIndex)
+        
+        public void OnPrefabCreated(int expressionIndex, int stepIndex)
         {
-            if (expression is not Sequence) throw new Exception("expression is not a sequence, use other OnPrefabCreated()");
+            var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
+
+            // If step index is negative expression is not apart of a sequence
+            if (stepIndex >= 0)
+                SetSequenceNumber(stepIndex);
+            else
+                uiNumberRef.gameObject.SetActive(false);
+
+            if (expression is Sequence)
+                CreateExpressionItem(expressionIndex, stepIndex);
+            else
+                for (int i = 0; i < expression.Contents.Count; i++)
+                    CreateExpressionItem(expressionIndex, i);
 
             SetHint(expression);
-
-            CreateExpressionItem(expression, stepIndex);
         }
 
-        // OnPrefabCreated for other expressions
-        public void OnPrefabCreated(Expression expression)
-        {
-            if (expression is Sequence) throw new Exception("expression is a sequence, use other OnPrefabCreated()");
-
-            SetHint(expression);
-
-            for (int i = 0; i < expression.Contents.Count; i++)
-                CreateExpressionItem(expression, i);
-        }
-
-        private void CreateExpressionItem(Expression expression, int stepIndex)
+        private void CreateExpressionItem(int expressionIndex, int stepIndex)
         {
             var expressionItem = Instantiate(uiExpressionItemPrefab, uiLayout.transform).GetComponent<ExpressionItem>();
-            expressionItem.OnPrefabCreated(expression, stepIndex);
+            expressionItem.OnPrefabCreated(expressionIndex, stepIndex);
         }
+
+        private void SetSequenceNumber(int stepIndex) => uiNumberRef.text = (stepIndex + 1).ToString();
 
         private void SetHint([NotNull] Expression expression)
         {
