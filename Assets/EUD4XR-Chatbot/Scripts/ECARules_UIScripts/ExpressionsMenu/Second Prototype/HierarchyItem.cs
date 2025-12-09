@@ -10,7 +10,9 @@ namespace SecondPrototype
     public class HierarchyItem : MonoBehaviour
     {
         public Image arrowRef;
-        public Image iconRef;
+        public GameObject iconRef;
+        public Image iconBackgroundRef;
+        public Image iconLogoRef;
         public TMP_Text textRef;
         public Button buttonRef;
         public Sprite choiceIcon;
@@ -21,6 +23,8 @@ namespace SecondPrototype
             // Check for ref not null
             if (arrowRef == null) throw new Exception("arrowRef is null");
             if (iconRef == null) throw new Exception("iconRef is null");
+            if (iconBackgroundRef == null) throw new Exception("iconBackgroundRef is null");
+            if (iconLogoRef == null) throw new Exception("iconLogoRef is null");
             if (textRef == null) throw new Exception("textRef is null");
             if (buttonRef == null) throw new Exception("buttonRef is null");
         }
@@ -43,11 +47,12 @@ namespace SecondPrototype
         private void SetExpressionIcon([NotNull] Expression expression)
         {
             if (expression is Sequence)
-                iconRef.enabled = false;
+                iconRef.SetActive(false);
             else
-            { 
-                iconRef.enabled = true;
-                iconRef.sprite = expression is Choice ? choiceIcon : orderIcon;
+            {
+                iconRef.SetActive(true);
+                iconLogoRef.sprite = expression is Order ? orderIcon : choiceIcon;
+                iconBackgroundRef.color = expression is Order ? Color.blue : Color.yellow;
             }
         }
 
