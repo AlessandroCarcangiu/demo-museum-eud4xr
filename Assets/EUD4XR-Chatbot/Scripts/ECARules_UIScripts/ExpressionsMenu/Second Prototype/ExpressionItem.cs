@@ -11,16 +11,14 @@ namespace SecondPrototype
     {
         public TMP_Text contentRef;
         public Button buttonRef;
-        public GameObject automationInfo;
-        public TMP_Text automationInfoText;
+        public GameObject automationInfoPrefab;
 
         private void Awake()
         {
             // Check for ref not null
             if (contentRef == null) throw new Exception("contentRef is null");
             if (buttonRef == null) throw new Exception("buttonRef is null");
-            if (automationInfo == null) throw new Exception("automationInfo is null");
-            if (automationInfoText == null) throw new Exception("automationInfoText is null");
+            if (automationInfoPrefab == null) throw new Exception("automationInfoPrefab is null");
         }
 
         public void OnPrefabCreated(int expressionIndex, int stepIndex)
@@ -34,7 +32,7 @@ namespace SecondPrototype
             if (item.Name.StartsWith("automation."))
             {
                 // Open pop-up with automation info
-                buttonRef.onClick.AddListener(() => ToggleAutomationInfo(item));
+                buttonRef.onClick.AddListener(() => HandleAutomationInfo(item));
             }
             else
             {
@@ -46,23 +44,41 @@ namespace SecondPrototype
             }
         }
 
-        private void ToggleAutomationInfo(Automation automation)
+        private void HandleAutomationInfo(Automation automation)
         {
-            automationInfo.SetActive(!automationInfo.activeInHierarchy);
-            // da formattare meglio e fixare aggiornamento altezza transform
-            //automationInfoText.text = UIExpressions.Instance.GetAutomationInfo(automation);
+            var uiExprRef = UIExpressions.Instance;
+            var openAutomation = uiExprRef.expressionManager.GetOpenAutomation();
+
+            // Open pop-up if it's not already open
+            if (buttonRef != openAutomation)
+            {
+                // Instantiate the prefab
+                var popUp = Instantiate(automationInfoPrefab, transform).GetComponent<AutomationInfo>();
+                popUp.OnPrefabCreated(uiExprRef.GetAutomationInfo(automation), buttonRef);
+            }
+            // Close pop-up if it's already open
+            else
+                uiExprRef.expressionManager.CloseAutomationInfo();
         }
 
         private void HandleExpressionOpening(int currentExpressionIndex, int newExpressionIndex)
         {
             var uiExprRef = UIExpressions.Instance;
-            
+
+            uiExprRef.expressionManager.CloseAutomationInfo();
+
             // Perform checks if multiple expressions are already open
             if (uiExprRef.expressionManager.GetExpressionIndexesCount() > 1)
             {
-                // Check if new expression is already open
-                if (uiExprRef.expressionManager.CheckDuplicates(newExpressionIndex))
+                // Get expression level to check if new expression is already open
+                var expressionLevel = uiExprRef.expressionManager.GetExpressionLevel(newExpressionIndex);
+
+                if (expressionLevel >= 0)
+                {
+                    // If new expression is already open, update hierarchy to that level
+                    uiExprRef.expressionManager.UpdateHierarchy(expressionLevel);
                     return;
+                }
 
                 // Check if current expression already opened sub-expressions and close them
                 uiExprRef.expressionManager.CheckSubExpressions(currentExpressionIndex);
@@ -74,6 +90,6 @@ namespace SecondPrototype
 
         private void SetItemName([NotNull] Automation automation) => contentRef.text = automation.Name[(automation.Name.IndexOf(".") + 1)..];
 
-        private void SetBackground(Expression expression) => buttonRef.image.color = expression is Order ? Color.blue : Color.yellow;
+        private void SetBackground([NotNull] Expression expression) => buttonRef.image.color = expression is Order ? Color.blue : Color.yellow;
     }
 }

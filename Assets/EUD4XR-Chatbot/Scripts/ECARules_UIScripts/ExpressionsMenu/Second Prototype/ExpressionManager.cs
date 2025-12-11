@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace SecondPrototype
@@ -17,6 +18,10 @@ namespace SecondPrototype
         private RectTransform rect;
         private RectTransform maskRect;
 
+        private EventTrigger eventTrigger;
+        private AutomationInfo automationInfoInstance;
+        private Button openAutomation;
+
         private float defaultWidth;
         private float expressionViewerWidth;
 
@@ -25,13 +30,17 @@ namespace SecondPrototype
 
         private void Awake()
         {
+            // Check for ref not null
             if (uiGoBack == null) throw new Exception("uiGoBack is null");
             if (uiHierarchyContent == null) throw new Exception("uiHierarchyContent is null");
             if (uiExpressionContainerMask == null) throw new Exception("uiExpressionContainerMask is null");
             if (uiExpressionContainer == null) throw new Exception("uiExpressionContainer is null");
+
+            // Check expected components exist
             if ((rect = GetComponent<RectTransform>()) == null) throw new Exception("No RectTransform found in this gameobject");
             if ((maskRect = uiExpressionContainerMask.GetComponent<RectTransform>()) == null) throw new Exception("No RectTransform found in container mask");
 
+            // Set up size variables
             defaultWidth = rect.rect.width;
             expressionViewerWidth = maskRect.rect.width;
             currentLevel = 0;
@@ -69,13 +78,13 @@ namespace SecondPrototype
         {
             // Second expression viewer was just added
             if (expressionIndexes.Count == 1)
-                ActivateTwoViewersVisualization();
-            // Hide oldest viewer to only show the last two
+                ActivateDoubleViewer();
+            // Hide oldest viewer so focus goes always to the last two
             else if (expressionIndexes.Count > 1)
                 SwitchViewer(true, 1);
         }
 
-        private void ActivateTwoViewersVisualization()
+        private void ActivateDoubleViewer()
         {
             // Enlarge canvas to fit two viewers
             UpdateCanvasSize(true);
@@ -85,6 +94,8 @@ namespace SecondPrototype
         public void SwitchViewer(bool goForward, int steps)
         {
             float deltaX;
+
+            // Update current level and set up direction
             if (goForward)
             {
                 currentLevel += steps;
@@ -101,10 +112,12 @@ namespace SecondPrototype
                 // Set canvas size to default
                 UpdateCanvasSize(false);
 
+                // Adjust steps to account for canvas size change
                 steps -= 1;
             }
 
-            StartCoroutine(UIExpressions.Instance.MoveContainer(uiExpressionContainer.GetComponent<RectTransform>(), deltaX * steps, 0.2f));
+            // Move expression container
+            StartCoroutine(UIExpressions.Instance.MoveContainer(uiExpressionContainer.GetComponent<RectTransform>(), deltaX * steps));
         }
 
         public void UpdateHierarchy(int level)
@@ -117,23 +130,28 @@ namespace SecondPrototype
             {
                 if (currentLevel == 0)
                 {
-                    ActivateTwoViewersVisualization();
+                    // Open second viewer
+                    ActivateDoubleViewer();
+                    // Do nothing if expression is already shown
                     if (level == 1)
                         return;
                 }
+                // Move downward in hierarchy
                 SwitchViewer(true, level - currentLevel);
             }
+            // Move upward in hierarchy
             else
                 SwitchViewer(false, -(level - currentLevel));
         }
 
-        public bool CheckDuplicates(int expressionIndex)
+        public int GetExpressionLevel(int expressionIndex)
         {
-            foreach (var index in expressionIndexes)
-                if (index == expressionIndex)
-                    return true;
+            for (int i = 0; i < expressionIndexes.Count; i++)
+                if (expressionIndexes[i] == expressionIndex)
+                    return i;
 
-            return false;
+            // Expression not found
+            return -1;
         }
 
         public void CheckSubExpressions(int expressionIndex)
@@ -201,6 +219,38 @@ namespace SecondPrototype
             // Notify UIExpressions to update plate size
             UIExpressions.Instance.UpdatePlateSize(enlarge);
         }
+
+        public void OpenAutomationInfo(AutomationInfo automationInfo)
+        {
+            // Show only one pop-up at a time
+            if (eventTrigger != null)
+                CloseAutomationInfo();
+            // Save reference to automation info instance
+            automationInfoInstance = automationInfo;
+            // Create event trigger
+            eventTrigger = gameObject.AddComponent<EventTrigger>();
+            // Create pointer down trigger
+            EventTrigger.Entry trigger = new() { eventID = EventTriggerType.PointerDown };
+            // Add listener to trigger
+            trigger.callback.AddListener((data) => CloseAutomationInfo());
+            // Add trigger to event trigger list
+            eventTrigger.triggers.Add(trigger);
+        }
+
+        public void CloseAutomationInfo()
+        {
+            // Destroy automation info instance and event trigger
+            if (automationInfoInstance != null)
+                Destroy(automationInfoInstance.gameObject);
+            if (eventTrigger != null)
+                Destroy(eventTrigger);
+            eventTrigger = null;
+            openAutomation = null;
+        }
+        
+        public Button GetOpenAutomation() => openAutomation;
+
+        public void SetOpenAutomation(Button button) => openAutomation = button;
 
         public int GetExpressionIndexesCount() => expressionIndexes.Count;
     }

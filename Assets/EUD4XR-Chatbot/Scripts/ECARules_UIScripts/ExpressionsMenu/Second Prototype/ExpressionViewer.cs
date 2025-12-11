@@ -18,6 +18,7 @@ namespace SecondPrototype
         
         private void Awake()
         {
+            // Check for ref not null
             if (uiExpressionName == null) throw new Exception("uiExpressionName is null");
             if (uiExpressionStepsContent == null) throw new Exception("uiExpressionStepsContent is null");
 
@@ -32,11 +33,12 @@ namespace SecondPrototype
             // Set expression name in the nav bar
             SetExpressionName(expression);
 
+            // Create expression steps
             if (expression is Sequence)
                 for (int i = 0; i < expression.Contents.Count; i++)
                     CreateSequenceStep(expressionIndex, i);
+            // Create single expression step passing -1 as step index to signal it is not apart of a sequence
             else
-                // Pass -1 as step index to indicate that it's not part of a sequence
                 CreateExpressionStep(expressionIndex, -1);
         }
 
@@ -46,6 +48,7 @@ namespace SecondPrototype
             var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
             var contentName = expression.Contents[stepIndex].Name;
 
+            // Create expression step for an automation in a sequence
             if (contentName.StartsWith("automation."))
             {
                 // Instantiate the prefab
@@ -55,6 +58,7 @@ namespace SecondPrototype
                 // Add expression step reference to the list
                 expressionSteps.Add(expressionStep);
             }
+            // Create expression step for an expression in a sequence
             else
                 CreateExpressionStep(UIExpressions.Instance.GetExpressionIndexByName(contentName), stepIndex);
         }
@@ -64,7 +68,7 @@ namespace SecondPrototype
         {
             var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
 
-            // Instantiate the prefab
+            // Instantiate the proper prefab based on expression type
             var expressionStep = expression is Choice ? 
                 Instantiate(uiExpressionStepHorizontalPrefab, uiExpressionStepsContent.transform).GetComponent<ExpressionStep>():
                 Instantiate(uiExpressionStepVerticalPrefab, uiExpressionStepsContent.transform).GetComponent<ExpressionStep>();

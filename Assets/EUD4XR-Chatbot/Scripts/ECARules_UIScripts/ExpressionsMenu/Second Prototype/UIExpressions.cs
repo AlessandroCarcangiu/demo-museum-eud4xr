@@ -81,7 +81,7 @@ namespace SecondPrototype
             expressionManager.ClearExpressionData();
         }
 
-        public IEnumerator MoveContainer(RectTransform container, float deltaX, float duration)
+        public IEnumerator MoveContainer(RectTransform container, float deltaX)
         {
             Vector2 start = container.anchoredPosition;
             Vector2 target = start + new Vector2(deltaX, 0f);
@@ -103,14 +103,14 @@ namespace SecondPrototype
             {
                 // Container is moving to the left, show expression manager
                 expressionManager.gameObject.SetActive(true);
-                StartCoroutine(MoveContainer(menuContainer, -deltaX, duration));
+                StartCoroutine(MoveContainer(menuContainer, -deltaX));
                 expressionsPanel.gameObject.SetActive(false);
             }
             else
             {
                 // Container is moving to the right, show expressions panel
                 expressionsPanel.gameObject.SetActive(true);
-                StartCoroutine(MoveContainer(menuContainer, deltaX, duration));
+                StartCoroutine(MoveContainer(menuContainer, deltaX));
                 expressionManager.gameObject.SetActive(false);
             }
         }

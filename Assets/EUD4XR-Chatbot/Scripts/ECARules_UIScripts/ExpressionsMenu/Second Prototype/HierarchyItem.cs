@@ -27,27 +27,39 @@ namespace SecondPrototype
             if (iconLogoRef == null) throw new Exception("iconLogoRef is null");
             if (textRef == null) throw new Exception("textRef is null");
             if (buttonRef == null) throw new Exception("buttonRef is null");
+            if (choiceIcon == null) throw new Exception("choiceIcon is null");
+            if (orderIcon == null) throw new Exception("orderIcon is null");
         }
 
         public void OnPrefabCreated(int expressionIndex, int level)
         {
-            if (level == 0)
-                arrowRef.gameObject.SetActive(false);
-            else
-                arrowRef.gameObject.SetActive(true);
+            var uiExprRef = UIExpressions.Instance;
 
-            var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
+            // Set icon and name
+            var expression = uiExprRef.GetExpressionAtIndex(expressionIndex);
             SetExpressionIcon(expression);
             SetExpressionName(expression);
 
-            // Add listener to button so it shows the corresponding expression viewer when pressed
-            buttonRef.onClick.AddListener(() => UIExpressions.Instance.expressionManager.UpdateHierarchy(level));
+            // Show or hide arrow based on if it is a sub-expression or not
+            var flag = level == 0 ? false : true;
+            arrowRef.gameObject.SetActive(flag);
+
+            // Add listener to button so it updates the expression manager
+            buttonRef.onClick.AddListener(() =>
+            {
+                // Close any open automation info
+                uiExprRef.expressionManager.CloseAutomationInfo();
+                // Update hierarchy and expression viewer
+                uiExprRef.expressionManager.UpdateHierarchy(level);
+            });
         }
 
         private void SetExpressionIcon([NotNull] Expression expression)
         {
+            // Hide icon if expression is a sequence
             if (expression is Sequence)
                 iconRef.SetActive(false);
+            // Set icon and background color based on expression type
             else
             {
                 iconRef.SetActive(true);
