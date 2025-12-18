@@ -17,6 +17,10 @@ namespace SecondPrototype
         public RectTransform menuContainer;
         public RectTransform plate;
 
+        public Color sequenceColor;
+        public Color orderColor;
+        public Color choiceColor;
+
         private float deltaX;
         private float duration;
 
@@ -29,6 +33,9 @@ namespace SecondPrototype
             if (expressionsPanel == null) throw new Exception("expressionsPanel is null");
             if (expressionManager == null) throw new Exception("expressionManager is null");
             if (menuContainer == null) throw new Exception("menuContainer is null");
+            if (sequenceColor == null) throw new Exception("sequenceColor is null");
+            if (orderColor == null) throw new Exception("orderColor is null");
+            if (choiceColor == null) throw new Exception("choiceColor is null");
 
             // Set up variables for menu switching
             deltaX = plate.rect.width;
@@ -165,6 +172,16 @@ namespace SecondPrototype
             }
 
             return "";
+        }
+
+        public Color ExpressionToColor(Expression expression)
+        {
+            if (expression is Sequence)
+                return sequenceColor;
+            else if (expression is Order)
+                return orderColor;
+            else
+                return choiceColor;
         }
     }
 }

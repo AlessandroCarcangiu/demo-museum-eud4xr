@@ -11,34 +11,51 @@ namespace SecondPrototype
     {
         public TMP_Text contentRef;
         public Button buttonRef;
+        public Image backgroundRef;
+        public GameObject iconRef;
+        public Image iconLogoRef;
         public GameObject automationInfoPrefab;
+        public Sprite choiceIcon;
+        public Sprite orderIcon;
 
         private void Awake()
         {
             // Check for ref not null
             if (contentRef == null) throw new Exception("contentRef is null");
             if (buttonRef == null) throw new Exception("buttonRef is null");
+            if (backgroundRef == null) throw new Exception("backgroundRef is null");
+            if (iconRef == null) throw new Exception("iconRef is null");
+            if (iconLogoRef == null) throw new Exception("iconLogoRef is null");
             if (automationInfoPrefab == null) throw new Exception("automationInfoPrefab is null");
+            if (choiceIcon == null) throw new Exception("choiceIcon is null");
+            if (orderIcon == null) throw new Exception("orderIcon is null");
         }
 
         public void OnPrefabCreated(int expressionIndex, int stepIndex)
         {
-            var expression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
-            var item = expression.Contents[stepIndex];
+            var currentExpression = UIExpressions.Instance.GetExpressionAtIndex(expressionIndex);
+            var item = currentExpression.Contents[stepIndex];
 
             // Show item name
             SetItemName(item);
 
             if (item.Name.StartsWith("automation."))
             {
+                // Hide icon
+                iconRef.SetActive(false);
                 // Open pop-up with automation info
                 buttonRef.onClick.AddListener(() => HandleAutomationInfo(item));
             }
             else
             {
-                // Show operator icon
                 var uiExprRef = UIExpressions.Instance;
-                SetBackground(UIExpressions.Instance.GetExpressionByName(item.Name));
+                var expression = uiExprRef.GetExpressionByName(item.Name);
+                // Show icon
+                iconRef.SetActive(true);
+                // Set expression color as background
+                SetBackground(expression);
+                // Set expression icon
+                SetIcon(expression);
                 // Add listener to button so it opens the expression when pressed
                 buttonRef.onClick.AddListener(() => HandleExpressionOpening(expressionIndex, uiExprRef.GetExpressionIndexByName(item.Name)));
             }
@@ -90,6 +107,8 @@ namespace SecondPrototype
 
         private void SetItemName([NotNull] Automation automation) => contentRef.text = automation.Name[(automation.Name.IndexOf(".") + 1)..];
 
-        private void SetBackground([NotNull] Expression expression) => buttonRef.image.color = expression is Order ? Color.blue : Color.yellow;
+        private void SetBackground([NotNull] Expression expression) => backgroundRef.color = UIExpressions.Instance.ExpressionToColor(expression);
+
+        private void SetIcon([NotNull] Expression expression) => iconLogoRef.sprite = expression is Order ? orderIcon : choiceIcon;
     }
 }

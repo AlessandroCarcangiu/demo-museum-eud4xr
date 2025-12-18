@@ -20,6 +20,10 @@ namespace FirstPrototype
         private float deltaX;
         private float duration;
 
+        public Color automationColor;
+        public Color orderColor;
+        public Color choiceColor;
+
         private List<Expression> expressions;
         private Dictionary<string, string> automations;
 
@@ -30,6 +34,9 @@ namespace FirstPrototype
             if (expressionManager == null) throw new Exception("expressionManager is null");
             if (menuContainer == null) throw new Exception("menuContainer is null");
             if ((rectTransform = GetComponent<RectTransform>()) == null) throw new Exception("missing RectTransform component");
+            if (automationColor == null) throw new Exception("automationColor is null");
+            if (orderColor == null) throw new Exception("orderColor is null");
+            if (choiceColor == null) throw new Exception("choiceColor is null");
 
             // Set up variables for menu switching
             deltaX = rectTransform.rect.width;
@@ -119,10 +126,10 @@ namespace FirstPrototype
         public Color ExpressionToColor(Expression expression, int stepIndex)
         {
             if (expression is Order)
-                return Color.blue;
+                return orderColor;
 
             if (expression is Choice)
-                return Color.yellow;
+                return choiceColor;
 
             if (expression is Sequence)
                 return AutomationToColor(expression.Contents[stepIndex]);
@@ -135,13 +142,13 @@ namespace FirstPrototype
             var name = automation.Name;
 
             if (name.StartsWith("automation."))
-                return Color.gray;
+                return automationColor;
 
             if (name.StartsWith("order."))
-                return Color.blue;
+                return orderColor;
 
             if (name.StartsWith("choice."))
-                return Color.yellow;
+                return choiceColor;
 
             return Color.white;
         }

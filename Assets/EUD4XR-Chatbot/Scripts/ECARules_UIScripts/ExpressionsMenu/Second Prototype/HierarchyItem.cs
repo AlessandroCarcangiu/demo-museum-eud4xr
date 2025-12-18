@@ -63,11 +63,15 @@ namespace SecondPrototype
             else
             {
                 iconRef.SetActive(true);
-                iconLogoRef.sprite = expression is Order ? orderIcon : choiceIcon;
-                iconBackgroundRef.color = expression is Order ? Color.blue : Color.yellow;
+                SetBackground(expression);
+                SetIcon(expression);
             }
         }
 
         private void SetExpressionName([NotNull] Expression expression) => textRef.text = expression.Name;
+
+        private void SetBackground([NotNull] Expression expression) => iconBackgroundRef.color = UIExpressions.Instance.ExpressionToColor(expression);
+
+        private void SetIcon([NotNull] Expression expression) => iconLogoRef.sprite = expression is Order ? orderIcon : choiceIcon;
     }
 }

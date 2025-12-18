@@ -57,21 +57,13 @@ namespace SecondPrototype
 
         private void SetHint([NotNull] Expression expression)
         {
+            uiHintImageRef.color = UIExpressions.Instance.ExpressionToColor(expression);
             if (expression is Order)
-            {
-                uiHintImageRef.color = Color.blue;
                 uiHintTextRef.text = "Esegui tutte:";
-            }
             else if (expression is Choice)
-            {
-                uiHintImageRef.color = Color.yellow;
                 uiHintTextRef.text = "Esegui una:";
-            }
             else if (expression is Sequence)
-            {
-                uiHintImageRef.color = Color.gray;
                 uiHintTextRef.text = "Esegui:";
-            }
         }
     }
 }
