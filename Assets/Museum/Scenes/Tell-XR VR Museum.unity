@@ -7345,6 +7345,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f0448a976651cc34983d042394c317fd, type: 3}
+--- !u!1 &353580006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4018413051704124200, guid: 6a0f7256e06d1eb409c267bb22805160, type: 3}
+  m_PrefabInstance: {fileID: 1605938250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &356410503
 GameObject:
   m_ObjectHideFlags: 0
@@ -16278,7 +16283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2761832387435165687, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.101
+      value: 0.679
       objectReference: {fileID: 0}
     - target: {fileID: 2761832387435165687, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16298,7 +16303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2761832387435165687, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.547
+      value: -6.328
       objectReference: {fileID: 0}
     - target: {fileID: 2761832387435165687, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -16319,6 +16324,10 @@ PrefabInstance:
     - target: {fileID: 4018413051704124200, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_Name
       value: TaskModellingViewerV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018413051704124200, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4628371972712544522, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: _size.y
@@ -16455,6 +16464,10 @@ PrefabInstance:
     - target: {fileID: 8315379249857999749, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849322152161692736, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
+      propertyPath: m_text
+      value: <size=11>Expressions List V2</color></size>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24552,7 +24565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.000026
+      value: 9.995478
       objectReference: {fileID: 0}
     - target: {fileID: 7007339729973531297, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Name
@@ -27258,13 +27271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ab3040b3a454f6298c21d0231d7224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persistent: 1
-  settings:
-    hassUrl: 
-    hassToken: 
-    doLog: 0
-  path: 
-  isStarted: 0
 --- !u!1 &1153644819
 GameObject:
   m_ObjectHideFlags: 0
@@ -31604,6 +31610,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302864432}
   m_CullTransparentMesh: 1
+--- !u!1 &1303109174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303109175}
+  - component: {fileID: 1303109176}
+  - component: {fileID: 1303109177}
+  m_Layer: 0
+  m_Name: _UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303109175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303109174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1459852420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303109176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303109174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efde597624243f2bae3f46c5dda8f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIVersion1: {fileID: 353580006}
+  UIVersion2: {fileID: 1687126374}
+  toggleUIAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle UI
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 238cf570-5930-4f50-b789-650b57c16618
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 02a81332-a90f-4ec7-a8ea-3e8f78c9599d
+        m_Path: <XRController>{LeftHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Toggle UI
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+--- !u!114 &1303109177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303109174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a6fcea29f2e4fbda214d18210ad656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+    hassUrl: 
+    hassToken: 
+    doLog: 0
+    taskModellingUIVersion: 
 --- !u!1 &1305020671
 GameObject:
   m_ObjectHideFlags: 0
@@ -35765,6 +35855,7 @@ Transform:
   m_Children:
   - {fileID: 1605938251}
   - {fileID: 801929533}
+  - {fileID: 1303109175}
   m_Father: {fileID: 1027076436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459994795 stripped
@@ -40788,6 +40879,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3593555780982061458, guid: 6a0f7256e06d1eb409c267bb22805160, type: 3}
+      propertyPath: m_text
+      value: <size=11>Expressions List V1</color></size>
+      objectReference: {fileID: 0}
     - target: {fileID: 4018413051704124200, guid: 6a0f7256e06d1eb409c267bb22805160, type: 3}
       propertyPath: m_Name
       value: TaskModellingViewerV1
@@ -42882,6 +42977,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686521577}
   m_Mesh: {fileID: 5622126682026569557, guid: b210779c1f254e94e8945e6229ef17a1, type: 3}
+--- !u!1 &1687126374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4018413051704124200, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
+  m_PrefabInstance: {fileID: 801929532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1688181308
 PrefabInstance:
   m_ObjectHideFlags: 0

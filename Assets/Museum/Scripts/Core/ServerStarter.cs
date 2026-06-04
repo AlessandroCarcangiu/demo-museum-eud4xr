@@ -14,6 +14,7 @@ public class ServerStarter : MonoBehaviour
         public string hassUrl;
         public string hassToken;
         public bool doLog;
+        public string taskModellingUIVersion;
     }
     
     private APIServer _apiServer;
