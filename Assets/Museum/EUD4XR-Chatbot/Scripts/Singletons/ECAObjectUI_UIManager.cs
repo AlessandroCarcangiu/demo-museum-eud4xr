@@ -2,8 +2,8 @@ using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
 using UnityEngine;
 
-// public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
-public class ECAObjectUI_UIManager : UIGenericMRTKMenu, ISourceProvider<ECAObject>
+// public class ECAObjectUI_UIManager : UIGenericMRTKMenu, ISourceProvider<ECAObject>
+public class ECAObjectUI_UIManager : UIGenericMenu, ISourceProvider<ECAObject>
 {
     public void PlayerStartsTriggeringEcaObject(ECAObject ecaObject, Transform playerTransform)
     {
@@ -22,8 +22,11 @@ public class ECAObjectUI_UIManager : UIGenericMRTKMenu, ISourceProvider<ECAObjec
     
     public void PlayerStopsTriggeringEcaObject(ECAObject ecaObject, Transform playerTransform)
     {
+        if (dataSourceRef != null && dataSourceRef.gameObject.name != ecaObject.name)
+        {
+            return;
+        }
         dataSourceRef = null;
-        
         Debug.Log("Player leaves trigger");
         HideAll();
     }
@@ -31,12 +34,12 @@ public class ECAObjectUI_UIManager : UIGenericMRTKMenu, ISourceProvider<ECAObjec
      public ECAObject dataSourceRef { get; set; }
 }
 
-// public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMenu>
-public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMRTKMenu>
+// public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMRTKMenu>
+public class ECAObjectUI_UIManagerSingleton : Singleton<ECAObjectUI_UIManager, UIGenericMenu>
 {
     protected override void OnAwake()
     {
         base.OnAwake();
-        Debug.Log("ECAObjectUI_UIManagerSingleton initialized.");
+        Debug.Log($"{nameof(ECAObjectUI_UIManagerSingleton)} initialized.");
     }
 }

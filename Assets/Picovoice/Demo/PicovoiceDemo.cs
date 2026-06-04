@@ -10,7 +10,7 @@ using Pv.Unity;
 
 public class PicovoiceDemo : MonoBehaviour
 {
-    private static string ACCESS_KEY = "QbodFcLg52O1IfQdo5G6UQaqqb3rB3+QdBBtJr/7Gw5Xumz4I9lqVw=="; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
+    private static string ACCESS_KEY = "${YOUR_ACCESS_KEY_HERE}"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
 
     Text _activityText;
     Text _errorMessage;
@@ -51,7 +51,7 @@ public class PicovoiceDemo : MonoBehaviour
         try
         {
             _picovoiceManager = PicovoiceManager.Create(
-                 ACCESS_KEY,
+                ACCESS_KEY,
                 _keywordPath,
                 OnWakeWordDetected,
                 _contextPath,

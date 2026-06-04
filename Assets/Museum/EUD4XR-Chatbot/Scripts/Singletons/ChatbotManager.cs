@@ -14,35 +14,31 @@ public class ChatbotManager : Singleton<ChatbotManager>
 
     public bool isLogged = false;
 
-    private const string urlChatAI = "http://localhost:3000/api/message"; // "http://localhost:3000/api/forceExport"; // "http://localhost:3000/api/fake-answer";
-    //private const string urlChatAI = "http://localhost:3000/api/fake-answer"; 
-    private const string forceLoginUrl = "http://localhost:3000/force-login-admin";
-    private const string forceLogoutUrl = "http://localhost:3000/api/logout";
-    
-    /* Speech detection every 1 second */
-    private bool isSpeaking = false;
-    private float lastSpeechTime;
+    /* Look at MicrophoneMaanger.MonitorAudioLevel */
+    private bool _isSpeaking = false;
+    // private float lastSpeechTime;
     //private AudioClip microphoneClip;
-    private const int SampleRate = 44100;
-    private const float Threshold = 0.02f;
-    private const float isSpeakingTolerance = 1.5f;
+    // private const int SampleRate = 44100;
+    // private const float Threshold = 0.02f;
+    // private const float isSpeakingTolerance = 1.5f;
     // check update
     // private float checkInterval = 0.5f;
     // private float lastSpeechCheckTime = 0f;
-    
-    
+
+
     private void OnEnable()
     {
         Debug.Log("Enabling ChatbotManager");
-        StartCoroutine(ForceLogin(isFirstLogin:true));
+        StartCoroutine(ForceLogin(isFirstLogin: true));
         interactionButton.action.performed += HandleRecording;
     }
 
-        private void Start()
+    private void Start()
     {
         // Checks?
 
         const string defaultStartMessage = "Ciao";
+
         void GetDefaultMessage()
         {
             void AfterChatbotAnswered(AIMessageResponse chatbotAnswer)
@@ -63,9 +59,10 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     ChatbotAnimationController.RequestAnimationChange(ChatbotState.Answering);
                     // Update audio 
                     ChatbotUIManager.Instance.SpeakTranscription(botVoiceClip, AfterAudioPlaybackCompleted);
-                    
+
                     ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
                 }
+
                 void IfFailedGeneratingVoice(string ttsErrorMessage)
                 {
                     void AfterAudioPlaybackCompleted()
@@ -73,7 +70,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                         // Update animation
                         ChatbotAnimationController.RequestAnimationChange(ChatbotState.Idle);
                     }
-                        
+
                     // Trigger the EndedGeneratingAudioAnswer event
                     // EndedGeneratingAudioAnswer?.Invoke();
                     // Update Text
@@ -92,7 +89,8 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 // Call Listeners
                 // EndedGeneratingAnswer?.Invoke();
                 // The chatbot answered, generate the fake voice
-                StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, IfFailedGeneratingVoice));
+                StartCoroutine(EndpointUtils_Post_GenerateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated,
+                    IfFailedGeneratingVoice));
             }
 
             // Update text
@@ -103,15 +101,15 @@ public class ChatbotManager : Singleton<ChatbotManager>
             // EndedAnalyzingUserInput?.Invoke();
 
             // The transcription is ready, ask the chatbot
-            StartCoroutine(this.AskChatbot(defaultStartMessage, AfterChatbotAnswered));
+            StartCoroutine(this.AskChatbot(defaultStartMessage, AfterChatbotAnswered)); //TODO 25-08-27 Part1
         }
 
-        GetDefaultMessage();
+        GetDefaultMessage(); //TODO 25-08-27 Part2 J - We may want to remove this because it's a double Ask 
     }
-        
+
     public void HandleRecording(InputAction.CallbackContext context)
     {
-        if (isSpeaking)
+        if (_isSpeaking)
         {
             HandleEndRecording();
         }
@@ -120,38 +118,38 @@ public class ChatbotManager : Singleton<ChatbotManager>
             HandleStartRecording();
         }
     }
-    
+
     public void HandleStartRecording()
     {
-        if(!isSpeaking)
+        if (!_isSpeaking)
         {
             WakeUpWordHandler.Instance.picovoiceManager.Stop();
-            
+
             Debug.Log("Started recording");
 
             // Start the recording
             MicrophoneManager.Instance.StartRecording();
-            
+
             // Stop the chatbot from speaking
             ChatbotUIManager.Instance.StopSpeaking();
-            
+
             // Update Text
             ChatbotUIManager.Instance.UpdateTranscription("Ti sto ascoltando :)");
             // Update Animation
             ChatbotAnimationController.RequestAnimationChange(ChatbotState.Listening);
 
             // Start speaking
-            isSpeaking = true;
-            lastSpeechTime = Time.time;
+            _isSpeaking = true;
+            // lastSpeechTime = Time.time;
         }
     }
-    
+
     public void HandleEndRecording()
     {
         Debug.Log("Ending recording");
-        
-        isSpeaking = false;
-        
+
+        _isSpeaking = false;
+
         // End the recording
         void AfterUserStoppedSpeaking(AudioClip clip, byte[] clipBytes)
         {
@@ -170,7 +168,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                                 StartCoroutine(ResetSession());
                             }
                         }
-                        
+
                         // Trigger the EndedGeneratingAudioAnswer event
                         // EndedGeneratingAudioAnswer?.Invoke();
                         // Update Text
@@ -182,6 +180,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                         // Make feedback if an automation is triggered
                         ChatbotUIManager.Instance.FeedbackAutomationCreated(chatbotAnswer.currNode);
                     }
+
                     void IfFailedGeneratingVoice(string ttsErrorMessage)
                     {
                         void AfterAudioPlaybackCompleted()
@@ -193,7 +192,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                                 StartCoroutine(ResetSession());
                             }
                         }
-                        
+
                         // Trigger the EndedGeneratingAudioAnswer event
                         // EndedGeneratingAudioAnswer?.Invoke();
                         // Update Text
@@ -214,46 +213,51 @@ public class ChatbotManager : Singleton<ChatbotManager>
                     // Call Listeners
                     // EndedGeneratingAnswer?.Invoke();
                     // The chatbot answered, generate the fake voice
-                    StartCoroutine(Text2Speech.CreateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated, IfFailedGeneratingVoice));
+                    StartCoroutine(EndpointUtils_Post_GenerateAudio(chatbotAnswer.message, AfterFakeVoiceGenerated,
+                        IfFailedGeneratingVoice));
                 }
-                
+
                 // Update text
-                ChatbotUIManager.Instance.UpdateTranscription("Ho analizzato ciò che hai detto, ora genero una risposta...dammi qualche secondo");
+                ChatbotUIManager.Instance.UpdateTranscription(
+                    "Ho analizzato ciò che hai detto, ora genero una risposta...dammi qualche secondo");
                 // Update animation
                 ChatbotAnimationController.RequestAnimationChange(ChatbotState.GeneratingAnswer);
                 // Call listeners
                 // EndedAnalyzingUserInput?.Invoke();
-                
+
                 // The transcription is ready, ask the chatbot
                 StartCoroutine(this.AskChatbot(transcription, AfterChatbotAnswered));
             }
-            
+
             // Update the transcription UI
             ChatbotUIManager.Instance.UpdateTranscription("Sto analizzando ciò che hai detto...dammi qualche secondo");
             // Update the Avatar animation
             ChatbotAnimationController.RequestAnimationChange(ChatbotState.Analyzing);
             // If there are listeners, trigger the EndedListeningUser event
             // EndedListeningUser?.Invoke();
-            
+
             // The user stopped speaking, the clip contains the audio
-            StartCoroutine(Speech2Text.Transcribe(clipBytes, AfterTranscriptionGenerated));
+            StartCoroutine(EndpointUtils_Post_TranscribeAudio(clipBytes, AfterTranscriptionGenerated));
         }
-        
+
         MicrophoneManager.Instance.EndRecording(AfterUserStoppedSpeaking);
-        
+
         WakeUpWordHandler.Instance.picovoiceManager.Start();
     }
-    
+
     private IEnumerator AskChatbot(string userMessage, System.Action<AIMessageResponse> callback)
     {
+        yield return new WaitUntil(() => DualChatbotServerSettings.Instance.IsInitialized);
         // Do a Unity POST request to the chatbot server with the { message = userMessage }
         // The server will respond with a JSON object { success: {true, false}, message: <string answer> }
+        string urlChatAI = DualChatbotServerSettings.Instance.GetChatAIUrl(); 
+        //string urlChatAI = DualChatbotServerSettings.Instance.GetFakeAnswerUrl(); // or if you want a fake answer
         
         using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(urlChatAI, "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"message\": \"" + userMessage + "\"}");
-            uwr.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
-            uwr.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+            uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+            uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
             uwr.SetRequestHeader("Content-Type", "application/json");
             yield return uwr.SendWebRequest();
 
@@ -262,7 +266,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new System.Exception("Error: " + uwr.error);
             }
-            
+
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -286,6 +290,78 @@ public class ChatbotManager : Singleton<ChatbotManager>
             }
         }
     }
+
+    private IEnumerator EndpointUtils_Post_TranscribeAudio(byte[] audioBytes, System.Action<string> onSuccessCallback)
+    {
+        yield return new WaitUntil(() => DualChatbotServerSettings.Instance.IsInitialized);
+
+        
+        string url =   DualChatbotServerSettings.Instance.GetTranscriptionAudioUrl(); ;
+
+        void MyCustomCallback(string jsonResponse)
+        {
+            // Optional: Parse the JSON response if needed (assuming it's in JSON format)
+            try
+            {
+                // Example of parsing a JSON response
+                var audioResponse = JsonConvert.DeserializeObject<TranscriptionResponse>(jsonResponse);
+                if (audioResponse != null && audioResponse.success)
+                {
+                    Debug.Log("Transcription: " + audioResponse.transcription);
+                    onSuccessCallback?.Invoke(audioResponse.transcription);
+                }
+                else
+                {
+                    throw new Exception("Transcription not found or failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error parsing JSON response: " + ex.Message);
+            }
+        }
+
+        yield return UnityWebRequestUtils.POST_RAWFILE_return_JSON(url, audioBytes , MyCustomCallback);
+    }
+    
+    private static IEnumerator EndpointUtils_Post_GenerateAudio(string textToSpeak, System.Action<AudioClip> callback, System.Action<string> onErrorCallback)
+    {
+        yield return new WaitUntil(() => DualChatbotServerSettings.Instance.IsInitialized);
+
+        string url =   DualChatbotServerSettings.Instance.GetGenerateAudioUrl(); 
+
+        
+        // Create the JSON payload
+        var jsonPayload = new { message = textToSpeak };
+        string jsonString = JsonConvert.SerializeObject(jsonPayload);
+
+        // Create the UnityWebRequest
+        UnityWebRequest uwr = new UnityWebRequest(url, "POST");
+        byte[] jsonToSend = System.Text.Encoding.UTF8.GetBytes(jsonString);
+
+        // Use UploadHandlerRaw for sending the JSON payload
+        uwr.uploadHandler = new UploadHandlerRaw(jsonToSend);
+        uwr.downloadHandler = new DownloadHandlerAudioClip(url, AudioType.MPEG); // Expect MP3 data
+        uwr.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request
+        yield return uwr.SendWebRequest();
+
+        if (uwr.result != UnityWebRequest.Result.Success)
+            // if (true)
+        {
+            Debug.LogError("Error in TTS Request: " + uwr.error);
+            onErrorCallback?.Invoke(uwr.error);
+        }
+        else
+        {
+            Debug.Log("TTS Request Successful, Processing Audio...");
+
+            // Directly get the AudioClip from the response
+            AudioClip audioClip = DownloadHandlerAudioClip.GetContent(uwr);
+            callback?.Invoke(audioClip);
+        }
+    }
     
     // Define a response structure to match your server's JSON response
     [System.Serializable]
@@ -295,27 +371,41 @@ public class ChatbotManager : Singleton<ChatbotManager>
         public string currNode;
         public string sessionId;
     }
+
     [System.Serializable]
     private class AILoginResponse
     {
         public bool success;
     }
+
     [System.Serializable]
     private class AILogoutResponse
     {
         public bool success;
     }
+
+    // Define a response structure to match your server's JSON response
+    [System.Serializable]
+    private class TranscriptionResponse
+    {
+        public bool success;
+        public string transcription;
+    }
     
     private IEnumerator ForceLogin(bool isFirstLogin)
     {
+        yield return new WaitUntil(() => DualChatbotServerSettings.Instance.IsInitialized);
+
         if (isLogged)
         {
             Debug.LogWarning("Already logged in.");
             yield break;
         }
+
         // Get request to the forceLoginUrl
         // The server will respond with a JSON object { success: {true, false} }
-        var url = forceLoginUrl + $"?firstLogin={isFirstLogin}";   
+        string forceLoginUrl = DualChatbotServerSettings.Instance.GetForceLoginUrl();
+        var url = forceLoginUrl + $"?firstLogin={isFirstLogin}";
         using (UnityWebRequest uwr = UnityWebRequest.Get(url))
         {
             yield return uwr.SendWebRequest();
@@ -325,7 +415,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new Exception("Error: " + uwr.error);
             }
-            
+
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -351,15 +441,15 @@ public class ChatbotManager : Singleton<ChatbotManager>
 
     private IEnumerator ForceLogout()
     {
-        
         if (!isLogged)
         {
             Debug.LogWarning("Already logged out.");
             yield break;
         }
-        
+
         // Do a Post request to the forceLogoutUrl
         // The server will respond with a JSON object { success: {true, false} }
+        string forceLogoutUrl = DualChatbotServerSettings.Instance.GetForceLogoutUrl();
         using (UnityWebRequest uwr = UnityWebRequest.PostWwwForm(forceLogoutUrl, "POST"))
         {
             yield return uwr.SendWebRequest();
@@ -369,7 +459,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 Debug.LogError("Error: " + uwr.error);
                 throw new Exception("Error: " + uwr.error);
             }
-            
+
             string responseText = uwr.downloadHandler.text;
 
             try
@@ -391,7 +481,6 @@ public class ChatbotManager : Singleton<ChatbotManager>
                 throw new Exception("Error parsing JSON response: " + ex.Message);
             }
         }
-        
     }
 
     private void OnDisable()
@@ -399,7 +488,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
         Debug.Log("Disabling ChatbotManager");
         StartCoroutine(ForceLogout());
     }
-    
+
     [ContextMenu("TEST RESET SESSION")]
     void TestCoroutineResetSession()
     {
@@ -408,22 +497,22 @@ public class ChatbotManager : Singleton<ChatbotManager>
         Debug.Log("[RESETSESSION] AFTER STOPPING ALL COROUTINES");
         StartCoroutine(ResetSession());
     }
-    
+
     private IEnumerator ResetSession()
     {
-
         yield return ForceLogout();
         Debug.Log("[RESETSESSION] HO FATTO LOGOUT");
-        yield return ForceLogin(isFirstLogin:false);
+        yield return ForceLogin(isFirstLogin: false);
         Debug.Log("[RESETSESSION] HO FATTO LOGIN");
-        
+
         const string defaultStartMessage = "Ciao";
+
         void GetDefaultMessage()
         {
             // The transcription is ready, ask the chatbot
             StartCoroutine(this.AskChatbot(defaultStartMessage, null));
         }
-        
+
         GetDefaultMessage();
     }
 }

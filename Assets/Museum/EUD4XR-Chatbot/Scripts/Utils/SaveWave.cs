@@ -35,10 +35,6 @@ public static class SaveWav
 
     public static byte[] Save(AudioClip clip)
     {
-        // var filepath = Path.Combine(Application.persistentDataPath, filename);
-        // Make sure directory exists if user is saving to sub dir.
-        // Directory.CreateDirectory(Path.GetDirectoryName(filepath) ?? string.Empty);
-
         using (var memoryStream = CreateEmpty())
         {
             ConvertAndWrite(memoryStream, clip);

@@ -1,12 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using MixedReality.Toolkit.Input;
-using MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ScrollTextAreaByUpDownButtons : MonoBehaviour
@@ -17,8 +12,8 @@ public class ScrollTextAreaByUpDownButtons : MonoBehaviour
 
    public Canvas textCanvas;
    public TMP_Text text;
-   public PressableButton scrollUp;
-   public PressableButton scrollDown;
+   public Button scrollUp;
+   public Button scrollDown;
 
    [SerializeField] private RectTransform rt;
 
@@ -69,8 +64,8 @@ public class ScrollTextAreaByUpDownButtons : MonoBehaviour
 
    void Start()
    {
-      scrollUp.OnClicked.AddListener(ScrollUp);
-      scrollDown.OnClicked.AddListener(ScrollDown);
+      scrollUp.onClick.AddListener(ScrollUp);
+      scrollDown.onClick.AddListener(ScrollDown);
       Debug.Log("LISTENERS ADDED");
    }
    

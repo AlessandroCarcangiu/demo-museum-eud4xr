@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
 {
+    /**
+     * [CLASS NOT USED ANYMORE - BUT DO [[ NOT ]] DELETE IT FOR NOW]
+     */
     public ECAUI_Rule ecaui_ruleScript;
     public Button backRuleButton;
     public Button saveRuleButton;
     private ECAUI_UIManager uiManager;
-
+    
+    // private ECAUI_Utils.RulePlaceholder rulePlaceholder;
     private ECAObjectInfo.ECAObjectsCapabilties infoCapabilities;
-
     private void Awake()
     {
         uiManager = GameObject.FindObjectOfType<ECAUI_UIManager>();
@@ -20,40 +23,32 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
         {
             throw new ArgumentNullException("uiManager", "uiManager must be set");
         }
-
+        
         if (ecaui_ruleScript == null)
         {
             throw new ArgumentNullException("ecaui_RuleDetails", "ecaui_RuleDetails must be set");
         }
-
+        
         if (backRuleButton == null)
         {
             throw new ArgumentNullException("backRuleButton", "backRuleButton must be set");
         }
-
-        backRuleButton.onClick.AddListener(() => {
-            uiManager.Intention_ShowAllRules();
-        });
-
+        backRuleButton.onClick.AddListener(() => { uiManager.Intention_ShowAllRules(); });
         if (saveRuleButton == null)
         {
             throw new ArgumentNullException("saveRuleButton", "saveRuleButton must be set");
         }
-
-        saveRuleButton.onClick.AddListener(() => {
-            uiManager.Intention_SaveRuleEditedFromUI(ecaui_ruleScript.GetRule(), ecaui_ruleScript.GetRulePlaceholder());
-        });
+        saveRuleButton.onClick.AddListener(() => { uiManager.Intention_SaveRuleEditedFromUI(ecaui_ruleScript.GetRule(), ecaui_ruleScript.GetRulePlaceholder()); });
     }
-
+    
     private void OnEnable()
     {
         this.ClearView();
 
         if (uiManager.SelectedRule == null)
         {
-            Debug.LogWarning("ECAUI: Tentativo di mostrare una regola, ma SelectedRule è null. Chiudo la visualizzazione.");
-            gameObject.SetActive(false);
-            return;
+            // The user want to create a new rule from scratch
+            throw new NotImplementedException();
         }
 
         infoCapabilities = ECAObjectInfo.Instance.GetAllInfoAboutCurrentECAObjects_Cached();
@@ -64,14 +59,18 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
     {
         this.ClearView();
     }
-
+   
+    
     private void DrawView(Rule rule)
     {
+        // rulePlaceholder = ECAUI_Utils.RulePlaceholder.FromRule(uiManager.SelectedRule, "NaN");
+
         if (rule == null)
         {
-            throw new ArgumentNullException("rule", "rule must be set");
+            //todo Probably create an empty RulePlaceholder
+            throw new System.ArgumentNullException("rule", "rule must be set");
         }
-
+        
         ecaui_ruleScript.DrawView(rule, infoCapabilities);
     }
 
@@ -79,9 +78,9 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
     {
         ecaui_ruleScript.ClearView();
     }
-}
-
- ///////// NEW CODE /////////
+    
+    
+    ///////// NEW CODE /////////
     // private void AddRulePlaceholder(string subject, string verb)
     // {
     //     throw new NotImplementedException();
@@ -111,3 +110,4 @@ public class ECAUI_ShowSelectedRuleManager : MonoBehaviour
     //     throw new NotImplementedException();
     // }
     
+}

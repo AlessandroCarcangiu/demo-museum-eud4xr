@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using ECARules4All_DLL.Utils;
 using System.Collections;
+using ECARules4All_DLL;
 
 public class MicrophoneManager : Singleton<MicrophoneManager>
 {
@@ -56,7 +57,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
             return;
         }
 
-        if (makeBeep)
+        if (makeBeep && !this.listenBack)
         {
             _audioSource.clip = startRecordingSound;
             _audioSource.Play();
@@ -155,7 +156,7 @@ public class MicrophoneManager : Singleton<MicrophoneManager>
         }
 
         isRecording = false;
-        if (makeBeep)
+        if (makeBeep && !this.listenBack)
         {
             _audioSource.clip = stopRecordingSound;
             _audioSource.Play();

@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,9 +18,11 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
     
     private void Start()
     {
+        const string defaultOption = "Select Microphone";
         void DrawDropdownMicOptions()
         {
             d_micList.ClearOptions();
+            d_micList.options.Add(new TMP_Dropdown.OptionData(defaultOption));
 #if UNITY_WEBGL && !UNITY_EDITOR
             dropdown.options.Add(new Dropdown.OptionData("Microphone not supported on WebGL"));
 #else
@@ -35,21 +37,29 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
             
         void OnDropdownValueChanged(int index)
         {
+            if (index == 0) return; // First option is just a label
+            
             PlayerPrefs.SetInt("user-mic-device-index", index);
             string newMic = Microphone.devices[index];
-            MicrophoneManager.Instance.ChangeMicrophone(newMic);
+            //MicrophoneManager.Instance.ChangeMicrophone(newMic);
         }
-        d_micList.onValueChanged.AddListener(OnDropdownValueChanged);
-
+        
         var index = PlayerPrefs.GetInt("user-mic-device-index", 1);
-        string mic = Microphone.devices[index];
-        MicrophoneManager.Instance.ChangeMicrophone(mic);
+        
+        Debug.Log($"[ChatbotUIManager - Start] Microphone.devices.Length: {Microphone.devices.Length} - " +
+                  $"Microphone.devices: {Microphone.devices} - index: {index}");
+        
+        //string mic = Microphone.devices[index]; // ?
+        
+        //MicrophoneManager.Instance.ChangeMicrophone(mic);
         d_micList.SetValueWithoutNotify(index);
         
         if (feedbackGenerator == null)
         {
             throw new Exception("FeedbackGenerator not set in ChatbotUIManager");
         }
+        
+        d_micList.onValueChanged.AddListener(OnDropdownValueChanged);
     }
 
     public void UpdateTranscription(string s)
@@ -57,11 +67,6 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         message.text = s;
     }
 
-    // private void SpeakTranscription(string s)
-    // {
-    //     void OnAudioCreated(AudioClip clip) => SpeakTranscription(clip);
-    //     StartCoroutine(Text2Speech.CreateAudio(s, OnAudioCreated));
-    // }
     
     public void SpeakTranscription(AudioClip clip, Action adHocCallback = null)
     {
@@ -93,7 +98,7 @@ public class ChatbotUIManager : Singleton<ChatbotUIManager>
         speaker.Stop();
     }
 
-    private const string EXPORT_AGENT_LABEL = "exportAgent";
+    private const string EXPORT_AGENT_LABEL = "exportAgent"; //TODO Fare qualcosa per la taskModellingExportAgent?
     public void FeedbackAutomationCreated(string currNode)
     {
         if (currNode == EXPORT_AGENT_LABEL)

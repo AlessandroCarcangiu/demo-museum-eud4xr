@@ -1,8 +1,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
+using Oculus.Interaction;
 using TMPro;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class ECAObjectUI_Capabilities : Singleton<ECAObjectUI_Capabilities>
     public GameObject listParent;
 
     public TMP_Text titleRef;
-
+    [SerializeField] PokeInteractable pokeInteractable;
 
     private void Awake()
     {
@@ -51,14 +51,14 @@ public class ECAObjectUI_Capabilities : Singleton<ECAObjectUI_Capabilities>
         // Set the rule to the prefab
         var ruleItemScript = ruleItem.GetComponent<ECAObjectUI_Capabilities_Prefab>();
         // var s = $"test {i}";
-        ruleItemScript.OnPrefabCreated(t.Variables, ecaObject);
+        ruleItemScript.OnPrefabCreated(t.Variables, ecaObject, pokeInteractable);
         
         // Instantiate the prefab and add it to the list
         var ruleItem2 = Instantiate(uiInfoItemPrefab, listParent.transform);
         // Set the rule to the prefab
         var ruleItemScript2 = ruleItem2.GetComponent<ECAObjectUI_Capabilities_Prefab>();
         // var s = $"test {i}";
-        ruleItemScript2.OnPrefabCreated(t.Actions, ecaObject);
+        ruleItemScript2.OnPrefabCreated(t.Actions, ecaObject, pokeInteractable);
         
         
         SetTitle(ecaObject);
@@ -73,11 +73,11 @@ public class ECAObjectUI_Capabilities : Singleton<ECAObjectUI_Capabilities>
         }
     }
 
-    private void SetTitle([NotNull] GameObject ecaObject)
+    private void SetTitle([NotNull] GameObject gO)
     {
         const string template = "<size=11>Info di </size><size=11><color=#548AF7>{0}</color></size>";
         // const string template = "<size=14>Info </size><size=11>di <color=#7f7f7f>{0}</color></size>";
-        titleRef.text = string.Format(template, ecaObject.gameObject.name);
+        titleRef.text = string.Format(template, gO.name);
     }
 
     private void SetTitle([NotNull] ECAObject ecaObject) => SetTitle(ecaObject.gameObject);

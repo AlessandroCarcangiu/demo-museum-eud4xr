@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ECARules4All_DLL.UI;
 using ECARules4All_DLL.Utils;
-using MixedReality.Toolkit.UX;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -201,39 +200,39 @@ public class ECAUI_Action : MonoBehaviour
     private ECAObjectInfo.ECAObjectsCapabilties infoCapabilities;
 
     public void SetUIParameters(ActionPreLabel preLabel, Action action, ECAObjectInfo.ECAObjectsCapabilties infoCapabilities, ECAUI_Rule containerRuleRef, bool enableDeleteButton = true)
-{
-    this.ClearFieldsAndTheirListeners();
-    this.infoCapabilities = infoCapabilities;
-    // this.containerRuleRef = containerRuleRef;
-
-    SetActionLabelAsWhen(preLabel);
-    if (enableDeleteButton)
     {
-        deleteActionButton.gameObject.SetActive(true);
-        deleteActionButton.onClick.AddListener(() =>
+        this.ClearFieldsAndTheirListeners();
+        this.infoCapabilities = infoCapabilities;
+        // this.containerRuleRef = containerRuleRef;
+
+        SetActionLabelAsWhen(preLabel);
+        if (enableDeleteButton)
         {
-            Debug.Log("CLICK DELETE ACTION");
-            containerRuleRef?.RemoveThenAction(this);
-        });
+            deleteActionButton.gameObject.SetActive(true);
+            deleteActionButton.onClick.AddListener(() =>
+                {
+                    Debug.Log("CLICK DELETE ACTION");
+                    containerRuleRef?.RemoveThenAction(this);
+                }
+            );
+        }
+        else
+        {
+            deleteActionButton.gameObject.SetActive(false);
+        }
+
+        if (action == null) 
+        {
+            throw new NotImplementedException(
+                "Action is null. Why? Do we want to create Rules from the UI from scratch?");
+        }
+
+        // Load the current action's values into the dropdowns
+        actionPlaceholder.SetFromAction(action);
+
+        // Draw the UI
+        this.DrawView();
     }
-    else
-    {
-        deleteActionButton.gameObject.SetActive(false);
-    }
-
-    if (action == null) 
-    {
-        throw new NotImplementedException(
-            "Action is null. Why? Do we want to create Rules from the UI from scratch?");
-    }
-
-    // Load the current action's values into the dropdowns
-    actionPlaceholder.SetFromAction(action);
-
-    // Draw the UI
-    this.DrawView();
-}
-
 
     private void DrawView()
     {
@@ -262,19 +261,6 @@ public class ECAUI_Action : MonoBehaviour
         var isPrepInserted = !string.IsNullOrEmpty(prep);
         var isValueInserted = !string.IsNullOrEmpty(value);
 
-        /**
-        *          <Dropdown className={classes.dropdown}
-                    value={subject}
-                    options={subjects}
-                    onChange={handleSubjectChange}
-                    placeholder="Select the subject"/>
-                <Dropdown disabled={!subjectInserted}
-                    className={classes.dropdown}
-                    value={verb}
-                    options={evalVerbs(subject)}
-                    onChange={handleVerbChange}
-                    placeholder="Select the verb"/>
-         */
         Subject_1_Dropdown.gameObject.SetActive(true);
         Subject_1_Dropdown.ClearOptions();
         Subject_1_Dropdown.AddOptions(infoCapabilities.allActionAttributes.Keys.ToList());
@@ -296,30 +282,10 @@ public class ECAUI_Action : MonoBehaviour
 
         void SetComponentsAfterVerb()
         {
-            /**
-             *         const objectInserted = object !== undefined && object !== null && object !== "";
-        const prepInserted = prep !== undefined && prep !== null && prep !== "";
-        const valueInserted = value !== undefined && value !== null && !isNaN(value);
-             */
             var objectInserted = !string.IsNullOrEmpty(obj);
             var prepInserted = !string.IsNullOrEmpty(prep);
             var valueInserted = !string.IsNullOrEmpty(value);
 
-            /**
-             *         const getObjectOptions = (s, v) => {
-            let options = []
-            if (!s || !v) return options
-
-            const dropdowns_after_verb = ctx.info.allDropdownOptionsAfterVerbs[s][v]
-
-            if (dropdowns_after_verb[DROPDOWN_OBJECT])
-                options = dropdowns_after_verb[DROPDOWN_OBJECT]
-            else if (dropdowns_after_verb[DROPDOWN_OBJECT_VALUE])
-                options = dropdowns_after_verb[DROPDOWN_OBJECT_VALUE]
-
-            return options
-        }
-             */
             List<string> GetObjectOptions(string s, string v)
             {
                 var options = new List<string>();
@@ -347,25 +313,6 @@ public class ECAUI_Action : MonoBehaviour
                 return options;
             }
 
-            /**
-             *         const TryToGetPrepositionOptions = (s, v, o) => {
-            output = {'isTherePrep': false, 'optionsWithSelectedObject': []}
-
-            if (!s || !v) {
-                return output
-            }
-            output.isTherePrep = Object.keys(ctx.info.allDropdownOptionsAfterObjects[s][v]).length > 0
-            if (!o) return output
-            if (!output.isTherePrep) return output
-
-            const tmp = ctx.info.allDropdownOptionsAfterObjects[s][v][o]
-
-            if (tmp[DROPDOWN_PREPOSITION])
-                output.optionsWithSelectedObject = tmp[DROPDOWN_PREPOSITION]
-
-            return output
-        }
-             */
             (bool isTherePrep, List<string> optionsWithSelectedObject) TryToGetPrepositionOptions(string s, string v,
                 string o)
             {
@@ -383,50 +330,6 @@ public class ECAUI_Action : MonoBehaviour
                 return output;
             }
 
-            /**
-             *         const TryToGetValueOptions = (s, v, o, p) => {
-            output = {'isThereValue': false, 'type': 'dropdown'}
-
-            if (!s || !v) {
-                return output
-            }
-            output.isThereValue = Object.keys(ctx.info.allDropdownOptionsAfterObjects[s][v]).length > 0
-            if (!o) return output
-            if (!output.isThereValue) return output
-
-            const tmp = ctx.info.allDropdownOptionsAfterObjects[s][v][o]
-
-            if (tmp[DROPDOWN_VALUE]) {
-                output.optionsWithSelectedObject = tmp[DROPDOWN_VALUE]
-            } else if (tmp[DROPDOWN_INPUT_FIELD]) {
-                output.optionsWithSelectedObject = tmp[DROPDOWN_INPUT_FIELD]
-                output.type = 'input'
-                output.InputTypeOriginal = tmp[DROPDOWN_INPUT_FIELD]
-                output.InputTypeMappedForPrimeReact = "text"
-            } else if (tmp[FETCH_MEDIA]) {
-                switch (tmp[FETCH_MEDIA].toString()) {
-                    case "images":
-                        output.optionsWithSelectedObject = images
-                        break;
-                    case "audios":
-                        output.optionsWithSelectedObject = audios
-                        break;
-                    case "videos":
-                        output.optionsWithSelectedObject = videos
-                        break;
-                    default:
-                        output.optionsWithSelectedObject = []
-                        console.warn("Media type not supported: " + tmp[FETCH_MEDIA])
-                        break;
-                }
-            } else {
-                return {'isThereValue': false, 'type': 'dropdown', 'optionsWithSelectedObject': []}
-            }
-
-
-            return output
-        }
-             */
             (bool isThereValue, string type, List<string> options) TryToGetValueOptions(string s, string v, string o,
                 string p)
             {
@@ -481,10 +384,6 @@ public class ECAUI_Action : MonoBehaviour
                 return output;
             }
 
-            /**
-             *         let output = <></>
-        if (!(subjectInserted && verbInserted)) return output;
-             */
             if (!(isSubjectInserted && isVerbInserted))
             {
                 Object_3_Dropdown.gameObject.SetActive(false);
@@ -493,17 +392,6 @@ public class ECAUI_Action : MonoBehaviour
                 Value_5B_InputText.gameObject.SetActive(false);
             }
 
-            /**
-             *         const objDropdownOptions = getObjectOptions(subject, verb)
-        const objectDropdown = objDropdownOptions.length === 0 ? <></>
-            :
-            <Dropdown
-                className={classes.dropdown}
-                value={object}
-                options={objDropdownOptions}
-                onChange={handleObjectChange}
-                placeholder="Select the object"/>;
-             */
             var objDropdownOptions = GetObjectOptions(subject, verb);
             if (objDropdownOptions.Count == 0)
             {
@@ -526,17 +414,6 @@ public class ECAUI_Action : MonoBehaviour
                 }
             }
 
-            /**
-             *         const {isTherePrep, optionsWithSelectedObject} = TryToGetPrepositionOptions(subject, verb, object);
-        if (!isTherePrep) return objectDropdown
-        const prepositionDropdown =
-            <Dropdown disabled={!(objectInserted || prepInserted)}
-                      className={classes.dropdown}
-                      value={prep}
-                      options={optionsWithSelectedObject}
-                      onChange={handlePrepChange}
-                      placeholder="Select the object"/>
-             */
             var (isTherePrep, prepDropdownOptions) = TryToGetPrepositionOptions(subject, verb, obj);
             if (!isTherePrep)
             {
@@ -559,26 +436,6 @@ public class ECAUI_Action : MonoBehaviour
                 Preposition_4_Dropdown.interactable = (objectInserted || prepInserted);
             }
 
-            /**
-        const objValue = TryToGetValueOptions(subject, verb, object, prep);
-        if (!objValue.isThereValue) return <>{objectDropdown}{prepositionDropdown}</>
-        let valueDropdown = NaN
-        if (objValue.type === 'dropdown')
-            valueDropdown = <Dropdown disabled={!(objectInserted && prepInserted)}
-                                      className={classes.dropdown}
-                                      value={value}
-                                      options={objValue.optionsWithSelectedObject}
-                                      onChange={handleValueChange}
-                                      placeholder="Select the object"/>
-        else
-            valueDropdown = <InputText disabled={!(objectInserted && prepInserted)}
-                // className={classes.dropdown}
-                                       value={value}
-                                       type={output.InputTypeMappedForPrimeReact}
-                                       onChange={handleValueChange}
-                                       placeholder="Select the object"/>
-        return <>{objectDropdown}{prepositionDropdown}{valueDropdown}</>
-         */
             var objValue = TryToGetValueOptions(subject, verb, obj, prep);
             if (!objValue.isThereValue)
             {

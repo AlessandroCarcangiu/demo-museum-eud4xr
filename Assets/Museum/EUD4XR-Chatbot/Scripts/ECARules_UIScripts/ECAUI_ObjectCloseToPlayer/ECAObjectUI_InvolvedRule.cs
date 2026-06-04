@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
+using Oculus.Interaction;
 using TMPro;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class ECAObjectUI_InvolvedRule : Singleton<ECAObjectUI_InvolvedRule>
 
     public TMP_Text titleRef;
     public GameObject T_GoToRules;
-    
+    [SerializeField] private PokeInteractable pokeInteractable;
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class ECAObjectUI_InvolvedRule : Singleton<ECAObjectUI_InvolvedRule>
 
                 // Set the rule to the prefab
                 var ruleItemScript = ruleItem.GetComponent<ECAObjectUI_InvolvedRule_Prefab>();
-                ruleItemScript.OnPrefabCreated(rule, ecaObject);
+                ruleItemScript.OnPrefabCreated(rule, ecaObject, pokeInteractable);
             }
 
         SetTitle(ecaObject);

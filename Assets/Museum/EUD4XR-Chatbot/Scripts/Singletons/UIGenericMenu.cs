@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using MixedReality.Toolkit.UX;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +31,14 @@ public abstract class UIGenericMenu : MonoBehaviour
             menuItem.b_open.onClick.AddListener(() => SwitchCanvas(menuItem.canvas));
 
             // Add a listener to the button that closes the canvas
-            menuItem.b_close.onClick.AddListener(() => ShowDefaultCanvas());
+            if (menuItem.b_close != null)
+            {
+                menuItem.b_close.onClick.AddListener(() => ShowDefaultCanvas());
+            }
+            else
+            {
+                Debug.LogError("[UIGenericMenu] b_close is null.");
+            }
         }
 
         // Show the default canvas
@@ -112,8 +118,8 @@ public abstract class UIGenericMRTKMenu : MonoBehaviour
     public struct MenuItem
     {
         public Canvas canvas;
-        public PressableButton b_open;
-        public PressableButton b_close;
+        public Button b_open;
+        public Button b_close;
     }
 
     public Canvas defaultCanvas;
@@ -131,10 +137,10 @@ public abstract class UIGenericMRTKMenu : MonoBehaviour
             menuItem.canvas.transform.localPosition = Vector3.zero;
             
             // Add a listener to the button that opens the canvas
-            menuItem.b_open.OnClicked.AddListener(() => SwitchCanvas(menuItem.canvas));
+            menuItem.b_open.onClick.AddListener(() => SwitchCanvas(menuItem.canvas));
 
             // Add a listener to the button that closes the canvas
-            menuItem.b_close.OnClicked.AddListener(() => ShowDefaultCanvas());
+            menuItem.b_close.onClick.AddListener(() => ShowDefaultCanvas());
         }
 
         // Show the default canvas

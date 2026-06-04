@@ -109,6 +109,12 @@ namespace Pv.Unity
         private static readonly Dictionary<BuiltInKeyword, string> _builtInKeywordPaths;
         public static readonly string DEFAULT_MODEL_PATH;
 
+        
+        private static readonly string WD = "Picovoice/"; // custom
+        private static readonly string KEYWORD_FILES_JPATH = WD + "keyword_files";
+        private static readonly string DEFAULT_MODEL_JPATH = WD + "porcupine_params.pv";
+        
+
         static Porcupine()
         {
             _platform = GetPlatform();
@@ -182,13 +188,15 @@ namespace Pv.Unity
             }
 
             modelPath = modelPath ?? DEFAULT_MODEL_PATH;
+            Debug.Log($"[Porcupine.cs BEFORE !File.Exists] path at {modelPath}");
             if (!File.Exists(modelPath))
             {
-
+                Debug.Log($"[Porcupine.cs IN !File.Exists] path at {modelPath}");
 #if !UNITY_EDITOR && UNITY_ANDROID
 
                 try {
                     modelPath = ExtractResource(modelPath);
+                    Debug.Log($"[Porcupine.cs Android] Extract Resource with succes at path {modelPath}");
                 } catch {
                     throw new PorcupineIOException($"Couldn't find model file at '{modelPath}'");
                 }
@@ -200,6 +208,7 @@ namespace Pv.Unity
 #endif
 
             }
+            Debug.Log($"[Porcupine.cs AFTER !File.Exists] path at {modelPath}");
 
             if (keywordPaths == null || keywordPaths.Count() == 0)
             {
@@ -408,7 +417,6 @@ namespace Pv.Unity
 
             return messageStack;
         }
-
         private static string GetPlatform()
         {
             switch (Application.platform)
@@ -436,11 +444,11 @@ namespace Pv.Unity
 
 #if !UNITY_EDITOR && UNITY_ANDROID
 
-            return ExtractResource(Path.Combine(Application.streamingAssetsPath, "porcupine_params.pv"));
+            return ExtractResource(Path.Combine(Application.streamingAssetsPath, DEFAULT_MODEL_JPATH));
 
 #else
 
-            return Path.Combine(Application.streamingAssetsPath, "porcupine_params.pv");
+            return Path.Combine(Application.streamingAssetsPath, DEFAULT_MODEL_JPATH);
 
 #endif
 
@@ -451,13 +459,13 @@ namespace Pv.Unity
 
 #if !UNITY_EDITOR && UNITY_ANDROID
 
-            string keywordFilesDir = Path.Combine(Path.Combine(Application.persistentDataPath, "keyword_files"), platform);
+            string keywordFilesDir = Path.Combine(Path.Combine(Application.persistentDataPath, KEYWORD_FILES_JPATH), platform);
             if (!Directory.Exists(keywordFilesDir))
             {
                 Directory.CreateDirectory(keywordFilesDir);
             }
 
-            string assetDir = Path.Combine(Path.Combine(Application.streamingAssetsPath, "keyword_files"), platform);
+            string assetDir = Path.Combine(Path.Combine(Application.streamingAssetsPath, KEYWORD_FILES_JPATH), platform);
             foreach (string keyword in Enum.GetNames(typeof(BuiltInKeyword))) 
             {
                 ExtractResource(Path.Combine(
@@ -467,7 +475,7 @@ namespace Pv.Unity
 
 #else
 
-            string keywordFilesDir = Path.Combine(Application.streamingAssetsPath, "keyword_files", platform);
+            string keywordFilesDir = Path.Combine(Application.streamingAssetsPath, KEYWORD_FILES_JPATH, platform);
 
 #endif
 

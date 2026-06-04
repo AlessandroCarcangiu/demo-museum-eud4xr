@@ -116,6 +116,11 @@ namespace Pv.Unity
 
         public static readonly string DEFAULT_MODEL_PATH;
 
+        
+        private static readonly string WD = "Picovoice/"; // custom
+        private static readonly string DEFAULT_MODEL_JPATH = WD + "rhino_params.pv";
+        
+        
         static Rhino()
         {
             DEFAULT_MODEL_PATH = GetDefaultModelPath();
@@ -502,9 +507,9 @@ namespace Pv.Unity
         private static string GetDefaultModelPath()
         {
 #if !UNITY_EDITOR && UNITY_ANDROID
-            return ExtractResource(Path.Combine(Application.streamingAssetsPath, "rhino_params.pv"));
+            return ExtractResource(Path.Combine(Application.streamingAssetsPath, DEFAULT_MODEL_JPATH));
 #else
-            return Path.Combine(Application.streamingAssetsPath, "rhino_params.pv");
+            return Path.Combine(Application.streamingAssetsPath, DEFAULT_MODEL_JPATH);
 #endif
         }
 
