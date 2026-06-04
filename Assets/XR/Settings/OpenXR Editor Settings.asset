@@ -15,8 +15,8 @@ MonoBehaviour:
   Keys: 010000000e00000007000000
   Values:
   - featureSets:
-    - com.microsoft.openxr.featureset.wmr
     - com.meta.openxr.featureset.metaxr
   - featureSets: []
   - featureSets:
     - com.meta.openxr.featureset.metaxr
+  m_vulkanAdditionalGraphicsQueue: 0

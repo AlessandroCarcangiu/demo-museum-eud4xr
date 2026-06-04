@@ -90,11 +90,13 @@ PrefabInstance:
       addedObject: {fileID: 2860812748032766547}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 541b7053b07b4a34794a97150350300f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7950314427794874671}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 541b7053b07b4a34794a97150350300f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3789992904987656879}
   m_SourcePrefab: {fileID: 100100000, guid: 541b7053b07b4a34794a97150350300f, type: 3}
+--- !u!4 &7043185529079712766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 541b7053b07b4a34794a97150350300f, type: 3}
+  m_PrefabInstance: {fileID: 7364742812569086997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7707272223035724100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 541b7053b07b4a34794a97150350300f, type: 3}
@@ -102,7 +104,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &5119660185284261944
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116,6 +118,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -318,7 +321,7 @@ MonoBehaviour:
   <OnDisabled>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  hostTransform: {fileID: 0}
+  hostTransform: {fileID: 7043185529079712766}
   allowedManipulations: 7
   allowedInteractionTypes: -2147483641
   rigidbodyMovementType: 0
@@ -368,18 +371,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.45, z: 0.3}
   m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &7950314427794874671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707272223035724100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fa2c8661c4416ba2458a036e19b2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &3789992904987656879
 AudioSource:
   m_ObjectHideFlags: 0
@@ -391,6 +382,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

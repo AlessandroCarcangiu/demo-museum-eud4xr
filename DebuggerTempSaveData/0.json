@@ -1,0 +1,1512 @@
+{
+  "Timestamp": "2026-06-03T14:49:17.6088598+02:00",
+  "ActionString": "Faretto_Ophelia (UnityEngine.GameObject) turns on  ",
+  "RulesString": [
+    "when the object Player interacts with the object Quadro_Ophelia \r\nthen the light Faretto_Ophelia turns on ;\r\n\n"
+  ],
+  "Properties": {
+    "PannelloDescrizione_Primavera": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.86586666,
+          "y": 4.655487,
+          "z": -4.6425
+        },
+        "r": {
+          "x": 345.259979,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.001,
+          "y": 0.00085,
+          "z": 0.0008
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>Primavera</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Sandro Botticelli</color> tra il 1480 e il 1482, quest'opera celebra la bellezza della primavera e dell'amore, unendo elementi mitologici e allegorici.</size>\n\n<size=40><color=#fff>Un simbolo di bellezza</size>\n<size=32><color=#c2c2c3>\"Primavera\" incarna l'ideale rinascimentale di bellezza e amore, diventando un capolavoro universale che continua a ispirare per la sua straordinaria bellezza e significato culturale.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_AbilitaFileMultimediali": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -6.642867,
+          "y": 2.75804734,
+          "z": -1.49374914
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "yes"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Statuetta_Anubis": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.770364,
+          "y": 2.608137,
+          "z": 1.16999912
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "RD_ColazioneSullErba": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 9.034135,
+          "y": 2.50670743,
+          "z": -3.43375063
+        },
+        "r": {
+          "x": 90.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.100000031,
+          "y": 0.100000039,
+          "z": 0.08474579
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Beethoven": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.87764454,
+          "y": 1.47100616,
+          "z": -1.88749933
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Porta": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.59,
+          "y": 2.14,
+          "z": 4.262825
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 0.2
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_ColazioneSullErba": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.92713451,
+          "y": 4.655487,
+          "z": -2.951251
+        },
+        "r": {
+          "x": 345.26,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.001,
+          "y": 0.00085,
+          "z": 0.0008
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>Colazione sull'erba</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Édouard Manet</color> nel 1863, quest'opera segna una svolta nell'arte francese, passando dal <color=#548AF7>Realismo all'Impressionismo</color>.</size>\n\n<size=40><color=#fff>Un'opera rivoluzionaria</size>\n<size=32><color=#c2c2c3>Rifiutata dal <color=#548AF7>Salon ufficiale</color>, esposta al Salon des Refusés, l'opera rompe le convenzioni accademiche con luci, ombre e prospettiva non convenzionale. Esposta al <color=#548AF7>Musée d'Orsay</color>, ha influenzato profondamente l'arte moderna.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_Primavera": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.897644,
+          "y": 3.52933574,
+          "z": -4.808733
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_LaZatteraDellaMedusa": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 5.102358,
+          "y": 3.52933574,
+          "z": 5.19126558
+        },
+        "r": {
+          "x": 0.0,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Display_B1 (1)": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.770364,
+          "y": 1.47100616,
+          "z": 1.16999912
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      }
+    },
+    "Animated_Poddy": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.65241814,
+          "y": 2.474,
+          "z": 1.295094
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 300.0,
+          "y": 300.0,
+          "z": 300.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_LaZatteraDellaMedusa": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 4.978135,
+          "y": 4.655487,
+          "z": 4.987499
+        },
+        "r": {
+          "x": 345.259979,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.001,
+          "y": 0.00085,
+          "z": 0.0008
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>La Zattera della Medusa</size>  \r\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Théodore Géricault tra il 1818 e il 1819</color>, quest'opera è un capolavoro del Romanticismo francese e si ispira a un tragico evento reale: il naufragio della fregata francese Medusa nel 1816.</size>  \r\n\r\n<size=40><color=#fff>Contrasto e potenza emotiva</size>  \r\n<size=32><color=#c2c2c3>Il contrasto tra <color=#548AF7>vita e morte</color>, speranza e disperazione, è reso attraverso un drammatico uso della luce e dei colori cupi. L'opera è conservata al <color=#548AF7>Museo del Louvre di Parigi</color>.</size>  \r"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Audio_2": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -5.990866,
+          "y": 2.052407,
+          "z": 3.77000141
+        },
+        "r": {
+          "x": 0.0,
+          "y": 358.3636,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 0.847457647,
+          "z": 0.800000131
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_Verde_LaGrandeOnda": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 0.8421339,
+          "y": 2.90790725,
+          "z": -4.692499
+        },
+        "r": {
+          "x": 90.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.1000001,
+          "y": 0.100000054,
+          "z": 0.0847457945
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Player": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -8.950442,
+          "y": 3.77451038,
+          "z": -0.782352
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_ColazioneSullErba": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 9.067134,
+          "y": 3.49304748,
+          "z": -2.948751
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.03067,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_Viola": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -5.538868,
+          "y": 2.08780742,
+          "z": 3.16875148
+        },
+        "r": {
+          "x": 357.144,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.100000076,
+          "y": 0.0501052737,
+          "z": 0.16924341
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Anubis": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.770364,
+          "y": 1.47100616,
+          "z": 1.16999912
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Schermo_Beethoven": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -3.21764469,
+          "y": 3.619786,
+          "z": -1.70624971
+        },
+        "r": {
+          "x": -0.00300357561,
+          "y": 270.06,
+          "z": 318.144
+        },
+        "s": {
+          "x": 0.190412328,
+          "y": 0.177046284,
+          "z": 0.160000071
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAVideo": {
+        "source": "nona_sinfonia_video.mp4",
+        "volume": 0.0,
+        "maxVolume": 1.0,
+        "playing": "no",
+        "paused": "no",
+        "stopped": "yes"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_RondaDiNotte": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.8978653,
+          "y": 6.230048,
+          "z": 3.77750063
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.8000003,
+          "y": 1.17647076,
+          "z": 1.052632
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_Ophelia": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.080135,
+          "y": 6.222048,
+          "z": 3.762501
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.8000003,
+          "y": 1.17647076,
+          "z": 1.052632
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_RondaDiNotte": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.897643,
+          "y": 3.52933574,
+          "z": 5.191267
+        },
+        "r": {
+          "x": 0.0,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_LaPersistenzaDellaMemoria": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 7.62213659,
+          "y": 6.230048,
+          "z": 3.30000114
+        },
+        "r": {
+          "x": 60.0000038,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {}
+    },
+    "Scettro_Egizio": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 6.092135,
+          "y": 2.37926745,
+          "z": -1.02750015
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 1.69491529,
+          "z": 1.5999999
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_LaNascitaDiVenere": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 5.102357,
+          "y": 3.52933574,
+          "z": -4.808735
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "RD_Ophelia_Text": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.50213492,
+          "y": 3.01272845,
+          "z": 5.06125
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": ""
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_RondaDiNotte": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.92586565,
+          "y": 4.655487,
+          "z": 4.98750067
+        },
+        "r": {
+          "x": 345.259979,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.001,
+          "y": 0.00085,
+          "z": 0.0008
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>La Ronda di Notte</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Rembrandt van Rijn nel 1642</color>, quest'opera è un capolavoro del Barocco olandese, rappresentante una compagnia di miliziani in movimento, guidata da <color=#548AF7>Frans Banning Cocq</color> e <color=#548AF7>Willem van Ruytenburch</color>.</size>\n\n<size=40><color=#fff>Un capolavoro senza tempo</size>\n<size=32><color=#c2c2c3>Esposta al <color=#548AF7>Rijksmuseum di Amsterdam</color>,l'opera  è celebrata per la sua composizione dinamica e la maestria nel catturare luce, spazio e l'animo umano, testimoniando il genio di Rembrandt.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_LaGrandeOnda": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.283134,
+          "y": 4.648407,
+          "z": -4.70000267
+        },
+        "r": {
+          "x": 350.486,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.00100000028,
+          "y": 0.0008499999,
+          "z": 0.0008000002
+        },
+        "isVisible": "off",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>La Grande Onda di Kanagawa</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Katsushika Hokusai nel 1831</color>, quest'opera iconica fa parte della serie \"Trentasei vedute del Monte Fuji\".</size>\n\n<size=40><color=#fff>Un simbolo senza tempo</size>\n<size=32><color=#c2c2c3>Raffigura un'enorme onda in procinto di travolgere barche, con il Monte Fuji sereno sullo sfondo. La scena combina dinamismo e equilibrio, rappresentando il <color=#548AF7>contrasto tra la forza della natura e la stabilità</color>.</size>\n\n<size=40><color=#fff>L’onda e il Monte Fuji</size>\n<size=32><color=#c2c2c3>Celebrata per la sua bellezza e influenza sull'arte occidentale, <color=#548AF7>è un simbolo universale</color> dell'arte globale.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_LaGrandeOnda": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.092133,
+          "y": 6.230048,
+          "z": -3.44124985
+        },
+        "r": {
+          "x": 60.0000038,
+          "y": 259.060028,
+          "z": 6.83018925E-06
+        },
+        "s": {
+          "x": 0.800000131,
+          "y": 1.17647076,
+          "z": 1.05263186
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Museo": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -3.19999981,
+          "y": 7.57000065,
+          "z": -1.59717512
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 10.0,
+          "y": 10.0,
+          "z": 10.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_Ophelia": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.10235679,
+          "y": 3.52933764,
+          "z": 5.191267
+        },
+        "r": {
+          "x": 0.0,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Schermo_Anubis": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.461364,
+          "y": 3.65990615,
+          "z": 1.15499878
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 350.0
+        },
+        "s": {
+          "x": 0.190412357,
+          "y": 0.1770463,
+          "z": 0.160000131
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAVideo": {
+        "source": "nona_sinfonia_video.mp4",
+        "volume": 0.0,
+        "maxVolume": 1.0,
+        "playing": "no",
+        "paused": "no",
+        "stopped": "yes"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_RagazzaColTurbante": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -5.437866,
+          "y": 6.230048,
+          "z": 3.30000257
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Lampada": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 3.16013479,
+          "y": 2.14444757,
+          "z": 1.02749991
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.749999762,
+          "y": 0.635593235,
+          "z": 0.599999964
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.25,
+        "maxIntensity": 10.0,
+        "color": "RGBA(0.896, 0.861, 0.521, 1.000)",
+        "on": "no"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_Ophelia": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.03513479,
+          "y": 4.655487,
+          "z": 4.9875
+        },
+        "r": {
+          "x": 345.259979,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.001,
+          "y": 0.00085,
+          "z": 0.0008
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>Ophelia</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>John Everett Millais</color> tra il 1851 e il 1852, questa opera è un capolavoro del Preraffaellitismo, che celebra la purezza dei dettagli medievali e rinascimentali.</size>\n\n<size=40><color=#fff>Un capolavoro preraffaellita</size>\n<size=32><color=#c2c2c3>Esibita alla <color=#548AF7>Tate Britain</color>, \"Ophelia\" è nota per la sua maestria tecnica e il contrasto tra la bellezza della natura e la tragedia imminente, lasciando un impatto emotivo duraturo.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Schermo_Nefertiti": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.480359,
+          "y": 3.65990615,
+          "z": -0.831251144
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 350.0
+        },
+        "s": {
+          "x": 0.190412357,
+          "y": 0.1770463,
+          "z": 0.160000131
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAVideo": {
+        "source": "nona_sinfonia_video.mp4",
+        "volume": 0.0,
+        "maxVolume": 1.0,
+        "playing": "no",
+        "paused": "no",
+        "stopped": "yes"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Audio_1": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 3.14813471,
+          "y": 2.14444757,
+          "z": 0.5437498
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 0.847457647,
+          "z": 0.8000001
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "TextField": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -10.30533,
+          "y": 2.89387846,
+          "z": -7.365095
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {},
+      "ECAText": {
+        "content": ""
+      }
+    },
+    "HandMenu_EUD4XR": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -8.950442,
+          "y": 0.01699996,
+          "z": -0.782352
+        },
+        "r": {
+          "x": 0.0,
+          "y": 291.358,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_MostraDescrizione_Ophelia": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.50213492,
+          "y": 2.84772754,
+          "z": 5.06125
+        },
+        "r": {
+          "x": 90.0,
+          "y": 90.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.100000076,
+          "y": 0.100000069,
+          "z": 0.08474578
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Statua_Nefertiti": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.771361,
+          "y": 2.608137,
+          "z": -0.8025007
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Statua_Beethoven": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.89564514,
+          "y": 2.608137,
+          "z": -1.71125031
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Casse_Nefertiti": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.789359,
+          "y": 1.47100616,
+          "z": -0.8300009
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_LaZatteraDellaMedusa": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 5.09213448,
+          "y": 6.230048,
+          "z": 3.77249861
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.8000003,
+          "y": 1.17647076,
+          "z": 1.052632
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_Rosso": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 2.282135,
+          "y": 2.14444757,
+          "z": 0.7800002
+        },
+        "r": {
+          "x": 357.144,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.100000076,
+          "y": 0.05010527,
+          "z": 0.169243425
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Display_B1": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 8.789359,
+          "y": 1.47100616,
+          "z": -0.8300009
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      }
+    },
+    "Faretto_ScuolaDiAtene": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -5.437867,
+          "y": 6.230048,
+          "z": -2.95499945
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_Primavera": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.89786625,
+          "y": 6.230048,
+          "z": -3.44124985
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.800000131,
+          "y": 1.17647076,
+          "z": 1.05263186
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Statua_Attalus": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -2.79786682,
+          "y": 2.59284759,
+          "z": 2.07000113
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_ColazioneSullErba": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 7.622135,
+          "y": 6.230048,
+          "z": -2.95500088
+        },
+        "r": {
+          "x": 60.0000038,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Pulsante_Giallo": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 2.28213453,
+          "y": 2.14444757,
+          "z": 1.04500008
+        },
+        "r": {
+          "x": 357.144,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.100000076,
+          "y": 0.05010527,
+          "z": 0.169243425
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "RD_ColazioneSullErba_Text": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 9.034135,
+          "y": 2.67170882,
+          "z": -3.43375063
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": ""
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Quadro_LaGrandeOnda": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 1.33313382,
+          "y": 3.59204745,
+          "z": -4.81999969
+        },
+        "r": {
+          "x": 0.0,
+          "y": 270.797882,
+          "z": 0.0
+        },
+        "s": {
+          "x": 2.0,
+          "y": 2.0,
+          "z": 2.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "PannelloDescrizione_LaNascitaDiVenere": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 5.10213661,
+          "y": 4.655487,
+          "z": -4.70000267
+        },
+        "r": {
+          "x": 350.486053,
+          "y": 90.0,
+          "z": 1.29852117E-06
+        },
+        "s": {
+          "x": 0.0010000004,
+          "y": 0.0008499999,
+          "z": 0.0008000005
+        },
+        "isVisible": "no",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAText": {
+        "content": "<size=40><color=#fff>La nascita di Venere</size>\n<size=32><color=#c2c2c3>Realizzata da <color=#548AF7>Sandro Botticelli</color> tra il 1484 e il 1486, quest'opera celebra la bellezza ideale e la mitologia classica del Rinascimento.</size>\n\n<size=40><color=#fff>Un simbolo universale</size>\n<size=32><color=#c2c2c3>Oggi conservata alla <color=#548AF7>Galleria degli Uffizi di Firenze</color>, \"La nascita di Venere\" è un simbolo di amore, fertilità e della rinascita culturale del Rinascimento.</size>"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Faretto_LaNascitaDiVenere": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": 5.09213448,
+          "y": 6.230048,
+          "z": -3.44625282
+        },
+        "r": {
+          "x": 60.0000153,
+          "y": 270.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.800000131,
+          "y": 1.17647076,
+          "z": 1.05263186
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECALight": {
+        "intensity": 1.0,
+        "maxIntensity": 10.0,
+        "color": "RGBA(1.000, 0.957, 0.839, 1.000)",
+        "on": "off"
+      },
+      "ECAInteraction": {},
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    }
+  }
+}

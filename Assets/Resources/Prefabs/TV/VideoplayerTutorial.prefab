@@ -143,7 +143,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8082273266905078756}
-  - component: {fileID: 8419068286423537537}
   - component: {fileID: 5209717601070256243}
   - component: {fileID: 9071598266441416811}
   m_Layer: 0
@@ -169,30 +168,6 @@ Transform:
   - {fileID: 5615667888998297833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &8419068286423537537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901562242079814706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3abce0afaf62dd4194209bebbbc69fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleVisibilityInputActionReference: {fileID: -2917254893984224145, guid: 18c412191cdc9274897f101c7fd5316f, type: 3}
-  objectToToggleVisibility: {fileID: 1831760627201814994}
-  screen: {fileID: 2629744320438548315}
-  source: nona_sinfonia_video.mp4
-  volume: 1
-  maxVolume: 1
-  playing:
-    choice: 3
-  paused:
-    choice: 3
-  stopped:
-    choice: 0
 --- !u!114 &5209717601070256243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +272,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -582,6 +560,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -666,6 +647,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -739,6 +723,10 @@ PrefabInstance:
     - target: {fileID: 2680564774038242941, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: m_text
       value: -30s
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680564774038242941, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 2718509930268960452, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: m_IsActive
@@ -881,10 +869,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -947,13 +931,13 @@ PrefabInstance:
       value: "\uF81E"
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: managedReferences[8862287145298821121]
+      propertyPath: 'managedReferences[8862287145298821121]'
       value: Assembly-CSharp SpriteTextSwapEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: managedReferences[8862287145298821121].target
       value: 
-      objectReference: {fileID: 357358123724836729}
+      objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: managedReferences[8862287145298821121].activeIcon
       value: Icon 22
@@ -971,7 +955,7 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: stateContainers.entries.Array.data[4].value.effects.Array.data[2]
+      propertyPath: 'stateContainers.entries.Array.data[4].value.effects.Array.data[2]'
       value: 8862287145298821121
       objectReference: {fileID: 0}
     - target: {fileID: 1963984375101849849, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
@@ -1139,14 +1123,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <IsToggled>k__BackingField.onExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <IsToggled>k__BackingField.onEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: <IsToggled>k__BackingField.onExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1207,17 +1183,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
---- !u!114 &357358123724836729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4125577527756308866, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-  m_PrefabInstance: {fileID: 4446576440943038203}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258623d14a250c648b5b9f7b96354ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &9077010122410208173 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4633479625465750870, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
@@ -1236,13 +1201,13 @@ PrefabInstance:
       value: "\uF602"
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: managedReferences[8862287145298821121]
+      propertyPath: 'managedReferences[8862287145298821121]'
       value: Assembly-CSharp SpriteTextSwapEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: managedReferences[8862287145298821121].target
       value: 
-      objectReference: {fileID: 6478494466844383983}
+      objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: managedReferences[8862287145298821121].activeIcon
       value: Icon 122
@@ -1260,7 +1225,7 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1827152535872991592, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: stateContainers.entries.Array.data[4].value.effects.Array.data[2]
+      propertyPath: 'stateContainers.entries.Array.data[4].value.effects.Array.data[2]'
       value: 8862287145298821121
       objectReference: {fileID: 0}
     - target: {fileID: 1963984375101849849, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
@@ -1424,14 +1389,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <IsToggled>k__BackingField.onExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <IsToggled>k__BackingField.onEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: <IsToggled>k__BackingField.onExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1493,17 +1450,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4633479625465750870, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
   m_PrefabInstance: {fileID: 6965030694387456877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6478494466844383983 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4125577527756308866, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-  m_PrefabInstance: {fileID: 6965030694387456877}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258623d14a250c648b5b9f7b96354ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7688632750226059076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1551,6 +1497,10 @@ PrefabInstance:
     - target: {fileID: 2680564774038242941, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: m_text
       value: +30s
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680564774038242941, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 2718509930268960452, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: m_IsActive
@@ -1692,10 +1642,6 @@ PrefabInstance:
       propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
-      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8419068286423537537}
     - target: {fileID: 5574784954626229040, guid: 41f1cbd6ed68b6d4bb1f0a92579f11e7, type: 3}
       propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

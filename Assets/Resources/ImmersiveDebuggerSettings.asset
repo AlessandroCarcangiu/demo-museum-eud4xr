@@ -23,10 +23,12 @@ MonoBehaviour:
     - Meta.XR.MultiplayerBlocks.Shared.FriendsMatchmaking
   immersiveDebuggerEnabled: 1
   immersiveDebuggerDisplayAtStartup: 0
+  enableOnlyInDebugBuild: 0
   showInspectors: 0
   showConsole: 0
   followOverride: 1
   rotateOverride: 0
+  recenterOnToggle: 1
   showInfoLog: 0
   showWarningLog: 1
   showErrorLog: 1

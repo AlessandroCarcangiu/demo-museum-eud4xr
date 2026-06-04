@@ -1,5 +1,5 @@
 ﻿{
-  "hassUrl": "http://192.168.68.122:8123",
-  "hassToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0Nzk2M2NlMmMwODY0MTA0OGQ4NDQ5ZmFmNGNjODhkNyIsImlhdCI6MTc0NzE0NDI5MiwiZXhwIjoyMDYyNTA0MjkyfQ.k_E3058JJFfibf-ccFOZo5BtSH1VSvTbtW0e35Se8Is",
+  "hassUrl": "http://localhost:8123/",
+  "hassToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwYWNkYjI2M2Q0MjM0MzlmOTMwODU3OWQ5YjA3MmI1OCIsImlhdCI6MTc3NjI0NTM0NSwiZXhwIjoyMDkxNjA1MzQ1fQ.hPRE4S9KYyZlXMLaHJ721QhYhhfcpZRolDjlhLxZ5qE",
   "doLog": true
 }
