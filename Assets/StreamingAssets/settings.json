@@ -1,5 +1,5 @@
 ﻿{
   "hassUrl": "http://localhost:8123/",
   "hassToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwYWNkYjI2M2Q0MjM0MzlmOTMwODU3OWQ5YjA3MmI1OCIsImlhdCI6MTc3NjI0NTM0NSwiZXhwIjoyMDkxNjA1MzQ1fQ.hPRE4S9KYyZlXMLaHJ721QhYhhfcpZRolDjlhLxZ5qE",
-  "taskModellingUIVersion": "V1"
+  "taskModellingUIVersion": "V2"
 }

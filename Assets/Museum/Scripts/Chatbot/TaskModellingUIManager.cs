@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.IO;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TaskModellingUIManager : MonoBehaviour
@@ -8,6 +10,25 @@ public class TaskModellingUIManager : MonoBehaviour
     public InputActionProperty toggleUIAction;
 
     private GameObject activeUI;
+
+    public class UIVersion
+    {
+        public string taskModellingUIVersion;
+    }
+    
+    private UIVersion currentUIVersion;
+    
+
+    void Awake()
+    {
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "settings.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            currentUIVersion = JsonUtility.FromJson<UIVersion>(json);
+            Debug.Log("TaskModellingUIManager loaded");
+        }
+    }
 
     void Start()
     {
@@ -31,9 +52,9 @@ public class TaskModellingUIManager : MonoBehaviour
     {
         ServerStarter server = FindFirstObjectByType<ServerStarter>();
     
-        if (activeUI == null && server != null && server.settings != null)
+        if (activeUI == null && currentUIVersion != null)
         {
-            activeUI = (server.settings.taskModellingUIVersion == "V2") ? UIVersion2 : UIVersion1;
+            activeUI = (currentUIVersion.taskModellingUIVersion == "V2") ? UIVersion2 : UIVersion1;
         }
 
         if (activeUI) activeUI.SetActive(!activeUI.activeSelf);

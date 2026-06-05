@@ -16467,7 +16467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849322152161692736, guid: 0af37c263c43b814791082e8af95adb0, type: 3}
       propertyPath: m_text
-      value: <size=11>Expressions List V2</color></size>
+      value: <size=11>Expressions List</color></size>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24565,7 +24565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999273166493667411, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.995478
+      value: 10.000058
       objectReference: {fileID: 0}
     - target: {fileID: 7007339729973531297, guid: 6590996e6d8555149ab4816aceb05246, type: 3}
       propertyPath: m_Name
@@ -31620,7 +31620,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1303109175}
   - component: {fileID: 1303109176}
-  - component: {fileID: 1303109177}
   m_Layer: 0
   m_Name: _UIManager
   m_TagString: Untagged
@@ -31677,23 +31676,6 @@ MonoBehaviour:
         m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
---- !u!114 &1303109177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303109174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a6fcea29f2e4fbda214d18210ad656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings:
-    hassUrl: 
-    hassToken: 
-    doLog: 0
-    taskModellingUIVersion: 
 --- !u!1 &1305020671
 GameObject:
   m_ObjectHideFlags: 0
@@ -40881,7 +40863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3593555780982061458, guid: 6a0f7256e06d1eb409c267bb22805160, type: 3}
       propertyPath: m_text
-      value: <size=11>Expressions List V1</color></size>
+      value: <size=11>Expressions List</color></size>
       objectReference: {fileID: 0}
     - target: {fileID: 4018413051704124200, guid: 6a0f7256e06d1eb409c267bb22805160, type: 3}
       propertyPath: m_Name
