@@ -9534,6 +9534,24 @@
             for ECA automation rules that should run at application startup.
             </summary>
         </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAAirPurifier.TurnOn">
+            Attiva il purificatore d'aria.
+        </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAAirPurifier.TurnOff">
+            Spegne il purificatore d'aria e azzera la velocità della ventilatore
+        </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAAirPurifier.SetSpeed(System.Int32)">
+            Imposta una velocità specifica per la ventola.
+        </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAFireplace.Ignite">
+            Azione per accendere il camino (Imposta intensità a 20 di default)
+        </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAFireplace.Extinguish">
+            Azione per spegnere completamente il camino
+        </member>
+        <member name="M:ECARules4All_DLL.Taxonomies.Objects.Taverna.ECAFireplace.SetIntensity(System.Int32)">
+            Azione per impostare l'intensità del camino
+        </member>
         <member name="M:ECARules4All_DLL.Utils.ECAObjectInfo.GetSubjectsNameAsSet">
             <summary>
             Restituisce l'insieme dei soggetti (ECA Object) nella scena

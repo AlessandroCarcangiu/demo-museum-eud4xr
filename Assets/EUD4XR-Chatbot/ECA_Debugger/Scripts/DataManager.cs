@@ -16,8 +16,8 @@ public static class DataManager
         SavedStates = new Dictionary<int, DebuggerTest.FrozenState>();
         ReadSavedData();
 
-        DebuggerTest.OnStateSaved -= HandleNewSave;
-        DebuggerTest.OnStateSaved += HandleNewSave;
+        //DebuggerTest.OnStateSaved -= HandleNewSave;
+        //DebuggerTest.OnStateSaved += HandleNewSave;
     }
 
     private static void ReadSavedData()
