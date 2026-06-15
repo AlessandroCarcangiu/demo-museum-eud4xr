@@ -1,0 +1,224 @@
+﻿[
+  {
+    "id": "20241231101151",
+    "trigger": [
+      {
+        "verb": "interacts with",
+        "subject": "Sphere@Character",
+        "obj": "Cube2@ECAObject"
+      }
+    ],
+    "conditions": {
+      "component": "Light@ECAObject",
+      "property": "active",
+      "symbol": "==",
+      "compareWith": "yes"
+    },
+    "actions": [
+      {
+        "verb": "plays",
+        "subject": "tv@ECAVideo"
+      },
+      {
+        "verb": "turns",
+        "subject": "Light@ECALight",
+        "obj": "on"
+      }
+    ],
+    "alias": " alias 1",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101152",
+    "trigger": [
+      {
+        "verb": "plays",
+        "subject": "tv@ECAVideo"
+      }
+    ],
+    "conditions": {
+      "component": "Patata@ECAObject",
+      "property": "active",
+      "symbol": "=",
+      "compareWith": "yes"
+    },
+    "actions": [
+      {
+        "verb": "deactivates",
+        "subject": "Patata@ECAObject"
+      }
+    ],
+    "alias": " alias 2",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101153",
+    "trigger": [
+      {
+        "verb": "deactivates",
+        "subject": "Patata@ECAObject"
+      }
+    ],
+    "conditions": null,
+    "actions": [
+      {
+        "verb": "moves to",
+        "subject": "Cube1@ECAObject",
+        "obj": {
+          "x": 10,
+          "y": 10,
+          "z": 10
+        }
+      }
+    ],
+    "alias": " alias 3",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101154",
+    "trigger": [
+      {
+        "verb": "deactivates",
+        "subject": "Patata@ECAObject"
+      }
+    ],
+    "conditions": {
+      "op": "and",
+      "conditions": [
+        {
+          "component": "Audio_Source@Sound",
+          "property": "source",
+          "symbol": "==",
+          "compareWith": "lazatteradellamedusa_ad.mp3"
+        },
+        {
+          "component": "Audio_Source@Sound",
+          "property": "playing",
+          "symbol": "==",
+          "compareWith": "no"
+        }
+      ]
+    },
+    "actions": [
+      {
+        "verb": "moves to",
+        "subject": "Cube2@ECAObject",
+        "obj": {
+          "x": 10,
+          "y": 10,
+          "z": 10
+        }
+      }
+    ],
+    "alias": " alias 4",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101155",
+    "trigger": [
+      {
+        "verb": "moves to",
+        "subject": "Cube2@ECAObject",
+        "obj": {
+          "x": 10,
+          "y": 10,
+          "z": 10
+        }
+      }
+    ],
+    "conditions": null,
+    "actions": [
+      {
+        "verb": "rotates around",
+        "subject": "tv@ECAObject",
+        "obj": {
+          "x": 50,
+          "y": 50,
+          "z": 50
+        }
+      },
+      {
+        "verb": "plays",
+        "subject": "Audio_Source@Sound"
+      }
+    ],
+    "alias": " alias 5",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101156",
+    "trigger": [
+      {
+        "verb": "plays",
+        "subject": "Audio_Source@Sound"
+      }
+    ],
+    "conditions": {
+      "component": "Capsule@ECAObject",
+      "property": "visible",
+      "symbol": "==",
+      "compareWith": "yes"
+    },
+    "actions": [
+      {
+        "verb": "changes",
+        "subject": "Capsule@ECAObject",
+        "variable": "visible",
+        "modifier": "to",
+        "value": "no"
+      }
+    ],
+    "alias": " alias 6",
+    "description": "",
+    "mode": "single"
+  },
+  {
+    "id": "20241231101157",
+    "trigger": [
+      {
+        "verb": "changes",
+        "subject": "Capsule@ECAObject",
+        "variable": "visible",
+        "modifier": "to",
+        "value": "no"
+      }
+    ],
+    "conditions": {
+      "component": "Audio_Source@Sound",
+      "property": "playing",
+      "symbol": "==",
+      "compareWith": "yes"
+    },
+    "actions": [
+      {
+        "verb": "changes",
+        "subject": "Audio_Source@Sound",
+        "variable": "source",
+        "modifier": "to",
+        "value": "nona_sinfonia_audio.mp3"
+      },
+      {
+        "verb": "increases",
+        "subject": "Light@ECALight",
+        "variable": "intensity",
+        "modifier": "by",
+        "value": 1
+      },
+      {
+        "verb": "changes",
+        "subject": "tv@ECAObject",
+        "variable": "visible",
+        "modifier": "to",
+        "value": "false"
+      }
+    ],
+    "alias": " alias 7",
+    "description": "",
+    "mode": "single"
+  }
+]

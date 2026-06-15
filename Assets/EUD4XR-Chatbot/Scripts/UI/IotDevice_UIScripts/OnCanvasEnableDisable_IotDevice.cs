@@ -1,0 +1,1 @@
+public class OnCanvasEnableDisable_IotDevice : OnCanvasEnableDisable<IotDevice> { }

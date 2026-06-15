@@ -4,5 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Museum 2.0 Demo Test.unity
+    guid: 6a001c2b0b15fc14ab3f7cc1348ce28d
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 5dc1ae4fb7779464da0b9d07af38bc48, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 899b4c90a1bb00c4c82cadca42907ec5, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 02a34bb5b4cb1dc4d82d834085f16a5f, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1e9caac6d46e93142bd5212b69058f67, type: 2}
+  m_UseUCBPForAssetBundles: 0

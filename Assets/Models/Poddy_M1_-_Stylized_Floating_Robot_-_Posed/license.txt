@@ -1,0 +1,11 @@
+Model Information:
+* title:	Poddy M1 - Stylized Floating Robot - Posed
+* source:	https://sketchfab.com/3d-models/poddy-m1-stylized-floating-robot-posed-6b5b90dc52ae4933a103d0a71777ecbd
+* author:	Exmoor beast (https://sketchfab.com/Exmoorbeast)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Poddy M1 - Stylized Floating Robot - Posed" (https://sketchfab.com/3d-models/poddy-m1-stylized-floating-robot-posed-6b5b90dc52ae4933a103d0a71777ecbd) by Exmoor beast (https://sketchfab.com/Exmoorbeast) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
