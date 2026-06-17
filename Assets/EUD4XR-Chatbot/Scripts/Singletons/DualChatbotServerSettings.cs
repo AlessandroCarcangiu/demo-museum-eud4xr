@@ -29,7 +29,7 @@ public class DualChatbotServerSettings : Singleton<DualChatbotServerSettings>
     ///////////////////////// CHANGE THESE URLS TO POINT TO YOUR SERVERS //////////////////////
     private const string URL_SERVER_CAGLIARI = "http://localhost:3000/";
     // private const string URL_SERVER_CAGLIARI = "http://mercurio.isti.cnr.it:3000/";
-    private const string URL_SERVER_PISA = "https://urlPisa:3000/";
+    // private const string URL_SERVER_PISA = "https://urlPisa:3000/";
 
     private const string ENDPOINT_GET_ALL_SETTINGS = "api/get-all-settings";
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ public class DualChatbotServerSettings : Singleton<DualChatbotServerSettings>
     protected override void OnAwake()
     {
         const string CAGLIARI_GET_SETTINGS_URL = URL_SERVER_CAGLIARI + ENDPOINT_GET_ALL_SETTINGS;
-        const string PISA_GET_SETTINGS_URL = URL_SERVER_PISA + ENDPOINT_GET_ALL_SETTINGS;
+       // const string PISA_GET_SETTINGS_URL = URL_SERVER_PISA + ENDPOINT_GET_ALL_SETTINGS;
 
 
         StartCoroutine(
@@ -100,11 +100,11 @@ public class DualChatbotServerSettings : Singleton<DualChatbotServerSettings>
             )
         );
 
-        StartCoroutine(
+        /*StartCoroutine(
             UnityWebRequestUtils.GET_JSON(
                 PISA_GET_SETTINGS_URL,
                 json => OnGetSettingFromWeb(URL_SERVER_PISA, json)
-            ));
+            ));*/
     }
     //endregion
 

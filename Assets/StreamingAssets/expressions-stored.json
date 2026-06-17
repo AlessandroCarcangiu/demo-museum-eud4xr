@@ -1,0 +1,37 @@
+{
+  "name": "sequenza_test",
+  "sequence": [
+    "automation.r1",
+    "automation.r2",
+    "automation.r3",
+    {
+      "name": "iteration_example",
+      "iteration": {
+        "n_steps": 4,
+        "expression": "automation.r15"
+      }
+    },
+    "automation.r4",
+    {
+      "name": "choice_test",
+      "choice": [
+        "automation.r3",
+        "automation.r4",
+        "automation.r5",
+        "automation.r6"
+      ]
+    },
+    "automation.r6",
+    "automation.r7",
+    {
+      "name": "order",
+      "order": [
+        "automation.r8",
+        "automation.r9",
+        "automation.r10",
+        "automation.r11"
+      ]
+    },
+    "automation.r12"
+  ]
+}

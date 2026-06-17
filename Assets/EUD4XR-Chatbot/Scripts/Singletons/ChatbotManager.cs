@@ -30,7 +30,7 @@ public class ChatbotManager : Singleton<ChatbotManager>
     {
         Debug.Log("Enabling ChatbotManager");
         StartCoroutine(ForceLogin(isFirstLogin: true));
-        interactionButton.action.performed += HandleRecording;
+        //interactionButton.action.performed += HandleRecording;
     }
 
     private void Start()

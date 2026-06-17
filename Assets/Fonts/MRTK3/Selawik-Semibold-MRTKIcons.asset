@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07519d2ebf2444c8912626a7284696d, type: 3}
+  m_Name: Selawik-Semibold-MRTKIcons
+  m_EditorClassIdentifier: 
+  glyphIconsByName:
+    entries:
+    - key: Icon 1
+      value: 63518
+    - key: Icon 2
+      value: 63520
+    - key: Icon 3
+      value: 59407
+    - key: Icon 4
+      value: 59440
+    - key: Icon 5
+      value: 59460
+    - key: Icon 6
+      value: 59521
+    - key: Icon 7
+      value: 59522
+    - key: Icon 8
+      value: 59523
+    - key: Icon 9
+      value: 59527
+    - key: Icon 10
+      value: 59529
+    - key: Icon 11
+      value: 59531
+    - key: Icon 12
+      value: 59532
+    - key: Icon 13
+      value: 59846
+    - key: Icon 14
+      value: 59977
+    - key: Icon 15
+      value: 60227
+    - key: Icon 16
+      value: 60235
+    - key: Icon 17
+      value: 60390
+    - key: Icon 18
+      value: 61706
+    - key: Icon 19
+      value: 61709
+    - key: Icon 20
+      value: 61717
+    - key: Icon 21
+      value: 61721
+    - key: Icon 22
+      value: 61752
+    - key: Icon 23
+      value: 61758
+    - key: Icon 24
+      value: 61769
+    - key: Icon 25
+      value: 61788
+    - key: Icon 26
+      value: 61801
+    - key: Icon 27
+      value: 61826
+    - key: Icon 28
+      value: 61835
+    - key: Icon 29
+      value: 61852
+    - key: Icon 30
+      value: 61866
+    - key: Icon 31
+      value: 61942
+    - key: Icon 32
+      value: 62037
+    - key: Icon 33
+      value: 62087
+    - key: Icon 34
+      value: 62101
+    - key: Icon 35
+      value: 62116
+    - key: Icon 36
+      value: 62123
+    - key: Icon 37
+      value: 62129
+    - key: Icon 38
+      value: 62135
+    - key: Icon 39
+      value: 62166
+    - key: Icon 40
+      value: 62208
+    - key: Icon 41
+      value: 62233
+    - key: Icon 42
+      value: 62267
+    - key: Icon 43
+      value: 62285
+    - key: Icon 44
+      value: 62314
+    - key: Icon 45
+      value: 62318
+    - key: Icon 46
+      value: 62430
+    - key: Icon 47
+      value: 62450
+    - key: Icon 48
+      value: 62624
+    - key: Icon 49
+      value: 62628
+    - key: Icon 50
+      value: 62679
+    - key: Icon 51
+      value: 62693
+    - key: Icon 52
+      value: 63703
+  iconFontAsset: {fileID: 11400000, guid: 674a16a240bb469498aadd09089a0f1f, type: 2}
+  optionalEditorMaterial: {fileID: 0}

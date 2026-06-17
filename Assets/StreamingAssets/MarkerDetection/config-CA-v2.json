@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Straccio",
+    "prefabName": "PrefabCleaningRag",
+    "description": "Sono uno straccio.",
+    "ID": 0,
+    "trans_offset": {
+      "x": 0,
+      "y": 1.60,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.02
+    }
+  },
+  {
+    "name": "Spruzzino",
+    "prefabName": "PrefabSprayBottle",
+    "description": "Sono uno spruzzino.",
+    "ID": 2,
+    "trans_offset": {
+      "x": 0,
+      "y": 1.45,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.0010,
+      "y": 0.0010,
+      "z": 0.0010
+    }
+  },
+  {
+    "name": "Scopa",
+    "prefabName": "PrefabBroom",
+    "description": "Sono una scopa.",
+    "ID": 3,
+    "trans_offset": {
+      "x": 0.1,
+      "y": 0.5,
+      "z": 0.25
+    },
+    "scale": {
+      "x": 0.25,
+      "y": 0.25,
+      "z": 0.25
+    }
+  },
+  {
+    "name": "Mocio",
+    "prefabName": "PrefabMop",
+    "description": "Sono un mocio.",
+    "ID": 4,
+    "trans_offset": {
+      "x": 0.15,
+      "y": 0.45,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.4,
+      "y": 0.2,
+      "z": 0.4
+    }
+  },
+  {
+    "name": "SpruzzinoAmuchina",
+    "prefabName": "PrefabSprayBottle_Amuchina",
+    "description": "Sono uno spruzzino che contiene amuchina.",
+    "ID": 6,
+    "trans_offset": {
+      "x": 0,
+      "y": 1.37,
+      "z": 0.01
+    },
+    "scale": {
+      "x": 0.0011,
+      "y": 0.0013,
+      "z": 0.0011
+    }
+  },
+  {
+    "name": "SpruzzinoAntibatterico",
+    "prefabName": "PrefabSprayBottle_RimuoveBatteri",
+    "description": "Sono uno spruzzino che contiene un liquido antibatterico.",
+    "ID": 7,
+    "trans_offset": {
+      "x": 0,
+      "y": 1.45,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.0010,
+      "y": 0.0010,
+      "z": 0.0010
+    }
+  },
+  {
+    "name": "Paletta",
+    "prefabName": "PrefabDustPan",
+    "description": "Sono uno paletta, utile per raccogliere la polvere.",
+    "ID": 8,
+    "trans_offset": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    }
+  },
+  {
+    "name": "SpruzzinoSgrassatore",
+    "prefabName": "PrefabSprayDegreaser",
+    "description": "Sono uno spruzzino che contiene dello sgrassatore.",
+    "ID": 9,
+    "trans_offset": {
+      "x": 0,
+      "y": 1.40,
+      "z": 0.01
+    },
+    "scale": {
+      "x": 0.0011,
+      "y": 0.0013,
+      "z": 0.0011
+    }
+  },
+  {
+    "name": "shellydw2-402822",
+    "prefabName": "PrefabIotDevice_SPECIAL",
+    "description": "Sono shelly, un sensore che rileva se la finestra è aperta o chiusa.",
+    "ID": 20,
+    "trans_offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.01
+    }
+  },
+  {
+    "name": "NetatmoEUD4XR",
+    "prefabName": "PrefabIotDevice_SPECIAL",
+    "description": "Sono il sensore Netatmo.",
+    "ID": 21,
+    "trans_offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.01
+    }
+  },
+  {
+    "name": "Xiaomi Smart Air Purifier 4 Compact",
+    "prefabName": "PrefabIotDevice_SPECIAL",
+    "description": "Sono il purificatore Xiaomi Smart Air Purifier 4 Compact.",
+    "ID": 22,
+    "trans_offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.01
+    }
+  }
+]
