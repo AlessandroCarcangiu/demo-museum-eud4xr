@@ -206,5 +206,21 @@
       "y": 0.01,
       "z": 0.01
     }
+  },
+  {
+    "name": "Boccale",
+    "prefabName": "MugShabby",
+    "description": "Sono un boccale della taverna",
+    "ID": 22,
+    "trans_offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.01
+    }
   }
 ]
