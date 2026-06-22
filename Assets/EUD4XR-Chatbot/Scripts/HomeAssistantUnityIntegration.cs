@@ -7,6 +7,8 @@ using ECARules4All_DLL;
 using ECARules4All_DLL.Logger;
 using ECARules4All_DLL.SmartHomeHubClients;
 using ECARules4All_DLL.SmartHomeHubClients.Clients;
+using ECARules4All_DLL.Taxonomies.Objects.Props.Subcategories;
+using ECARules4All_DLL.Taxonomies.Objects.Taverna;
 using ECARules4All_DLL.Utils;
 using EUD4XR_Chatbot.TaskModelling;
 using Newtonsoft.Json;
@@ -47,6 +49,47 @@ public class HomeAssistantUnityIntegration : Singleton<HomeAssistantUnityIntegra
     void Start()
     {
         StartCoroutine(GetExpressionsAndAutomations());
+
+        //regole step1
+        GameObject fireplace = GameObject.Find("Fireplace");
+        GameObject window = GameObject.Find("Window");
+        
+        if (fireplace != null && window != null)
+        {
+            Action fireplaceTrigger = new Action(fireplace, "ignite");
+            Action fireplaceTriggerE = new Action(fireplace, "extinguish");
+
+            
+            Action openWindow = new Action(window, "opens");
+            Action closeWindow = new Action(window, "closes");
+            
+            List<Action> actions = new List<Action> { openWindow };
+            List<Action> actionsE = new List<Action> { closeWindow };
+
+            
+            Rule ruleStep1_1 = Rule.TryCreateRule(fireplaceTrigger, actions);
+            Rule ruleStep1_2 = Rule.TryCreateRule(fireplaceTriggerE, actionsE);
+
+            
+            if (ruleStep1_1 != null)
+            {
+                RuleEngine.GetInstance().Add(ruleStep1_1);
+                Debug.Log("[Rule Engine] Regola Step 1 'ignite' aggiunta con successo!");
+            }
+            if (ruleStep1_2 != null)
+            {
+                RuleEngine.GetInstance().Add(ruleStep1_2);
+                Debug.Log("[Rule Engine] Regola Step 1 'extinguish' aggiunta con successo!");
+            }
+            else
+            {
+                Debug.LogError("[Rule Engine] Errore creazione regola.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[Rule Engine] ECAFireplace o ECAWindow non trovati nella scena");
+        }
     }
 
     IEnumerator OnSettingsAvailable()
@@ -196,24 +239,6 @@ public class HomeAssistantUnityIntegration : Singleton<HomeAssistantUnityIntegra
         {
             ExpressionController.Instance.RenderExpression(expressions[0]);
         }
-        
-        GameObject fireplace = GameObject.Find("Fireplace");
-        GameObject window = GameObject.Find("Window");
-        //GameObject airPurifier = GameObject.Find("AirPurifier");
-
-        Action checkSmokeLevel = new Action(fireplace, "changed");
-
-        SimpleCondition highSmokeLevel = new SimpleCondition(fireplace, "smoke_particles", ">", 33);
-
-        List<Action> actions = new List<Action> 
-        { 
-            new Action(window, "open"),
-            //new Action(airPurifier, "turn_on")
-        };
-
-        Rule ruleStep1 = Rule.TryCreateRule(checkSmokeLevel, highSmokeLevel, actions);
-
-        RuleEngine.GetInstance().Add(ruleStep1);
     }
 
     //region Endpoints
