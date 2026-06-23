@@ -209,9 +209,9 @@
   },
   {
     "name": "Boccale",
-    "prefabName": "MugShabby",
+    "prefabName": "ECATankard",
     "description": "Sono un boccale della taverna",
-    "ID": 22,
+    "ID": 25,
     "trans_offset": {
       "x": 0,
       "y": 0,
