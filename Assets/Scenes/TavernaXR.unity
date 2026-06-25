@@ -6131,7 +6131,8 @@ MonoBehaviour:
   _price: 0
   _isLit:
     choice: 2
-  _fuelLevel: 100
+  _fuelLevel: 5
+  burnRate: 1
   fireParticle: {fileID: 1925789832}
   candleLight: {fileID: 149483931}
 --- !u!114 &1567107392
@@ -11107,7 +11108,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 0
-    light: {fileID: 0}
+    light: {fileID: 149483931}
     randomDistribution: 1
     color: 1
     range: 1
