@@ -1,12 +1,13 @@
 {
-  "Timestamp": "2026-06-24T11:14:22.082752+02:00",
-  "ActionString": "Fireplace (UnityEngine.GameObject) ignite   ",
+  "Timestamp": "2026-06-25T12:59:55.3672023+02:00",
+  "ActionString": "Chandelier (UnityEngine.GameObject) invert state   ",
   "RulesString": [
     "when the fireplace Fireplace ignite \r\nthen the window Window opens ;\r\n\n",
     "when the fireplace Fireplace extinguish \r\nthen the window Window closes ;\r\n\n",
     "when the human Player interacts with the fireplace Fireplace \r\nthen the fireplace Fireplace ignite ;\r\n\n",
     "when the human Player stops-interacting with the fireplace Fireplace \r\nthen the fireplace Fireplace extinguish ;\r\n\n",
-    "when the human Player interacts with the beerBarrel BeerBarrel \r\nthen the beerBarrel BeerBarrel pour beer ;\r\n\n"
+    "when the human Player interacts with the beerBarrel BeerBarrel \r\nthen the beerBarrel BeerBarrel pour beer ;\r\n\n",
+    "when the human Player interacts with the object ButtonLights \r\nthen the chandelier Chandelier invert state ;\r\n\n"
   ],
   "Properties": {
     "Window": {
@@ -40,17 +41,17 @@
         "isOpen": "false"
       }
     },
-    "Fireplace": {
+    "Chandelier": {
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -4.698828,
-          "y": 1.1920929E-07,
-          "z": 1.593
+          "x": -5.79662848,
+          "y": 3.06367588,
+          "z": -1.45915031
         },
         "r": {
           "x": 0.0,
-          "y": 180.0,
+          "y": 0.0,
           "z": 0.0
         },
         "s": {
@@ -62,23 +63,20 @@
         "isActive": "yes",
         "isInsideCamera": "yes"
       },
-      "ECAInteraction": {},
-      "ECAFireplace": {
-        "isLit": "off",
-        "intensity": 0,
-        "smokeLevel": 0.0,
-        "price": 0.0
-      },
       "ECABehaviour": {},
-      "ECAInteractable": {}
+      "ECAInteractable": {},
+      "ECAChandelier": {
+        "brightness": 0,
+        "price": 0.0
+      }
     },
-    "BeerBarrel": {
+    "Player": {
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -2.04428864,
-          "y": 1.068676,
-          "z": 1.2545352
+          "x": -2.0,
+          "y": 0.309999973,
+          "z": -2.0
         },
         "r": {
           "x": 0.0,
@@ -87,24 +85,19 @@
         },
         "s": {
           "x": 1.0,
-          "y": 2.05262947,
-          "z": 0.6574269
+          "y": 1.0,
+          "z": 1.0
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
-      "ECAInteraction": {},
-      "ECAProp": {
-        "price": 0.0
+      "ECACharacter": {
+        "life": 1.0,
+        "playing": "yes"
       },
-      "ECABeerBarrel": {
-        "isTapped": "false",
-        "remainingLiquid": 100.0,
-        "liquidType": "beer"
-      },
-      "ECABehaviour": {},
-      "ECAInteractable": {}
+      "ECAAnimal": {},
+      "ECAHuman": {}
     },
     "Tankard": {
       "ECAObject": {
@@ -178,13 +171,47 @@
         "on": "off"
       }
     },
-    "Player": {
+    "BeerBarrel": {
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -2.0,
-          "y": 0.309999973,
-          "z": -2.0
+          "x": -2.04428864,
+          "y": 1.068676,
+          "z": 1.2545352
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 2.05262947,
+          "z": 0.6574269
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECAInteraction": {},
+      "ECAProp": {
+        "price": 0.0
+      },
+      "ECABeerBarrel": {
+        "isTapped": "false",
+        "remainingLiquid": 100.0,
+        "liquidType": "beer"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Candle": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -4.59528875,
+          "y": 0.0559999943,
+          "z": -2.39946461
         },
         "r": {
           "x": 0.0,
@@ -198,14 +225,70 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
-      "ECACharacter": {
-        "life": 1.0,
-        "playing": "yes"
+      "ECACandle": {
+        "isLit": "false",
+        "fuelLevel": 100.0,
+        "price": 0.0
+      }
+    },
+    "ButtonLights": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -6.30762863,
+          "y": 0.477512836,
+          "z": -5.52615
+        },
+        "r": {
+          "x": -2.504478E-06,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.31941,
+          "y": 0.687835157,
+          "z": 0.31941
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "yes"
       },
-      "ECAAnimal": {},
-      "ECAHuman": {}
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Fireplace": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -4.698828,
+          "y": 1.1920929E-07,
+          "z": 1.593
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "yes"
+      },
+      "ECAInteraction": {},
+      "ECAFireplace": {
+        "isLit": "off",
+        "intensity": 0,
+        "smokeLevel": 0.0,
+        "price": 0.0
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
     }
   }
 }

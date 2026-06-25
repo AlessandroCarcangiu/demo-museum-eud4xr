@@ -12,6 +12,7 @@ namespace Core
         {
             InitializeStep1Rule();
             InitializeStep2Rule();
+            InitializeStep3Rule();
         }
 
         private void InitializeStep1Rule()
@@ -131,6 +132,81 @@ namespace Core
             {
                 Debug.LogError(
                     "Errore: Impossibile trovare nella scena gli oggetti 'Player' o 'BeerBarrel'. Verifica i nomi esatti nella Hierarchy.");
+            }
+        }
+
+        private void InitializeStep3Rule()
+        {
+            /*GameObject player = GameObject.Find("Player");
+            GameObject buttonLights = GameObject.Find("ButtonLights");
+            GameObject chandelier = GameObject.Find("Chandelier");
+
+            if (player != null && chandelier != null && buttonLights != null)
+            {
+                Action playerTriggerI = new Action(player, "interacts with", buttonLights);
+                Action playerTriggerO = new Action(player, "stops-interacting with", buttonLights);
+                
+                Action setBrightnessI = new Action(chandelier, "set brightness 100");
+                Action setBrightnessO = new Action(chandelier, "set brightness 0");
+                
+                List<Action> actionsI = new List<Action> { setBrightnessI };
+                List<Action> actionsO = new List<Action> { setBrightnessO };
+                
+                Rule ruleStep3_1 = Rule.TryCreateRule(playerTriggerI, actionsI);
+                Rule ruleStep3_2 = Rule.TryCreateRule(playerTriggerO, actionsO);
+                
+                if (ruleStep3_1 != null)
+                {
+                    RuleEngine.GetInstance().Add(ruleStep3_1);
+                    Debug.Log("[Rule Engine] Regola Step 3_1 configurata");
+                }
+                else
+                {
+                    Debug.LogError("[Rule Engine] Errore critico nella creazione della regola step 3_1");
+                }
+                if (ruleStep3_2 != null)
+                {
+                    RuleEngine.GetInstance().Add(ruleStep3_2);
+                    Debug.Log("[Rule Engine] Regola Step 3_2 configurata");
+                }
+                else
+                {
+                    Debug.LogError("[Rule Engine] Errore critico nella creazione della regola step 3_2");
+                }
+            }
+            else
+            {
+                Debug.LogError("[Rule Engine] Non è stato possibile trovare gli oggetti per la regola 3 nella scena");
+            }
+        }*/
+            
+            GameObject player = GameObject.Find("Player");
+            GameObject buttonLights = GameObject.Find("ButtonLights");
+            GameObject chandelier = GameObject.Find("Chandelier");
+
+            if (player != null && chandelier != null && buttonLights != null)
+            {
+                Action playerTriggerI = new Action(player, "interacts with", buttonLights);
+                
+                Action setBrightnessI = new Action(chandelier, "invert state");
+                
+                List<Action> actionsI = new List<Action> { setBrightnessI };
+                
+                Rule ruleStep3 = Rule.TryCreateRule(playerTriggerI, actionsI);
+                
+                if (ruleStep3 != null)
+                {
+                    RuleEngine.GetInstance().Add(ruleStep3);
+                    Debug.Log("[Rule Engine] Regola Step 3 configurata");
+                }
+                else
+                {
+                    Debug.LogError("[Rule Engine] Errore critico nella creazione della regola step 3");
+                }
+            }
+            else
+            {
+                Debug.LogError("[Rule Engine] Non è stato possibile trovare gli oggetti per la regola 3 nella scena");
             }
         }
         
