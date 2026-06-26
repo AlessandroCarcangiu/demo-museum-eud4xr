@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using ECARules4All_DLL;
+using ECARules4All_DLL.Utils;
 using Action = ECARules4All_DLL.Action;
 
 
@@ -13,6 +14,7 @@ namespace Core
             InitializeStep1Rule();
             InitializeStep2Rule();
             InitializeStep3Rule();
+            InitializeStep4Rule();
         }
 
         private void InitializeStep1Rule()
@@ -209,6 +211,38 @@ namespace Core
                 Debug.LogError("[Rule Engine] Non è stato possibile trovare gli oggetti per la regola 3 nella scena");
             }
         }
-        
+
+        private void InitializeStep4Rule()
+        {
+            GameObject player = GameObject.Find("Player");
+            GameObject key = GameObject.Find("Key");
+            GameObject door = GameObject.Find("Door");
+
+            if (player != null && door != null && key != null)
+            {
+                Action playerTrigger = new Action(player, "interacts with", door);
+                Action openDoor = new Action(door, "opens");
+
+                SimpleCondition keyIsHeld = new SimpleCondition(key, "isPickedUp", "=", ECABoolean.TRUE);
+                
+                List<Action> actions = new List<Action> { openDoor };
+                
+                Rule ruleStep4 = Rule.TryCreateRule(playerTrigger, keyIsHeld, actions);
+
+                if (ruleStep4 != null)
+                {
+                    RuleEngine.GetInstance().Add(ruleStep4);
+                    Debug.Log("[Rule Engine] Regola Step 4 configurata");
+                }
+                else
+                {
+                    Debug.LogError("[Rule Engine] Errore configurazione regola 4");
+                }
+            }
+            else
+            {
+                Debug.LogError("Impossibile trovare gli oggetti per la regola 4 nella scena");
+            }
+        }
     }
 }
