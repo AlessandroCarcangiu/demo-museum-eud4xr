@@ -1,0 +1,23 @@
+# ninja log v5
+0	1199	8040981253205854	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	fde1fdec53a14ee2
+45	273	8040981244053817	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c3acd4a7578ee3b4
+17	910	8040981250376068	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f3a0aace749400a4
+275	408	8040981245340834	C:/DiegoSerra/demo-museum-eud4xr/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4l2i2d10/obj/arm64-v8a/libswappywrapper.so	ea531f6fe2506251
+28	917	8040981250361011	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4f47fcb9af05e0e2
+34	1083	8040981252115980	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3d401ee15068bf20
+7	925	8040981250557609	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8d3c1c6f73aeaab8
+12	970	8040981250976812	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	edd413cdaa9f9481
+39	932	8040981250592704	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	fa63cb2e8edbac3e
+23	1122	8040981252483281	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1c6bd2e21e918649
+1200	1284	8040981254108001	C:/DiegoSerra/demo-museum-eud4xr/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4l2i2d10/obj/arm64-v8a/libgame.so	b645c054bac1c3d6
+56	171	8041014039886359	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c3acd4a7578ee3b4
+172	273	8041014040876355	C:/DiegoSerra/demo-museum-eud4xr/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4l2i2d10/obj/arm64-v8a/libswappywrapper.so	ea531f6fe2506251
+38	864	8041014046757926	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4f47fcb9af05e0e2
+26	886	8041014047023874	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8d3c1c6f73aeaab8
+21	935	8041014047467494	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f3a0aace749400a4
+50	937	8041014047467494	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	fa63cb2e8edbac3e
+14	941	8041014047518217	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	edd413cdaa9f9481
+32	1014	8041014048315645	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3d401ee15068bf20
+44	1085	8041014048984549	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1c6bd2e21e918649
+7	1192	8041014050041306	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	fde1fdec53a14ee2
+1193	1285	8041014051000295	C:/DiegoSerra/demo-museum-eud4xr/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4l2i2d10/obj/arm64-v8a/libgame.so	b645c054bac1c3d6

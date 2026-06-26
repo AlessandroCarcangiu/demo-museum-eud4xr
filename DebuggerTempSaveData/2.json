@@ -1,6 +1,6 @@
 {
-  "Timestamp": "2026-06-25T13:00:05.7369561+02:00",
-  "ActionString": "Chandelier (UnityEngine.GameObject) invert state   ",
+  "Timestamp": "2026-06-26T11:40:46.1141887+02:00",
+  "ActionString": "Window (UnityEngine.GameObject) opens   ",
   "RulesString": [
     "when the fireplace Fireplace ignite \r\nthen the window Window opens ;\r\n\n",
     "when the fireplace Fireplace extinguish \r\nthen the window Window closes ;\r\n\n",
@@ -10,66 +10,6 @@
     "when the human Player interacts with the object ButtonLights \r\nthen the chandelier Chandelier invert state ;\r\n\n"
   ],
   "Properties": {
-    "Window": {
-      "ECAObject": {
-        "description": "",
-        "p": {
-          "x": -7.421548,
-          "y": -1.1920929E-07,
-          "z": 1.7
-        },
-        "r": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "s": {
-          "x": 1.0,
-          "y": 1.0,
-          "z": 1.0
-        },
-        "isVisible": "yes",
-        "isActive": "yes",
-        "isInsideCamera": "yes"
-      },
-      "ECAProp": {
-        "price": 0.0
-      },
-      "ECABehaviour": {},
-      "ECAInteractable": {},
-      "ECAWindow": {
-        "isOpen": "false"
-      }
-    },
-    "Chandelier": {
-      "ECAObject": {
-        "description": "",
-        "p": {
-          "x": -5.79662848,
-          "y": 3.06367588,
-          "z": -1.45915031
-        },
-        "r": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "s": {
-          "x": 1.0,
-          "y": 1.0,
-          "z": 1.0
-        },
-        "isVisible": "yes",
-        "isActive": "yes",
-        "isInsideCamera": "no"
-      },
-      "ECABehaviour": {},
-      "ECAInteractable": {},
-      "ECAChandelier": {
-        "brightness": 0,
-        "price": 0.0
-      }
-    },
     "Player": {
       "ECAObject": {
         "description": "",
@@ -103,13 +43,13 @@
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -2.02128863,
+          "x": 1.05171156,
           "y": 0.123675942,
-          "z": 0.6015352
+          "z": 0.359535217
         },
         "r": {
           "x": 0.0,
-          "y": 292.099976,
+          "y": 345.78183,
           "z": 0.0
         },
         "s": {
@@ -119,7 +59,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAProp": {
         "price": 0.0
@@ -168,16 +108,73 @@
         "intensity": 1.0,
         "maxIntensity": 10.0,
         "color": "RGBA(1.000, 0.318, 0.000, 1.000)",
-        "on": "off"
+        "on": "true"
       }
+    },
+    "ButtonLights": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -6.30762863,
+          "y": 0.477512836,
+          "z": -5.52615
+        },
+        "r": {
+          "x": -2.504478E-06,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 0.31941,
+          "y": 0.687835157,
+          "z": 0.31941
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
+    },
+    "Fireplace": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -4.698828,
+          "y": 1.1920929E-07,
+          "z": 1.593
+        },
+        "r": {
+          "x": 0.0,
+          "y": 180.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "yes"
+      },
+      "ECAInteraction": {},
+      "ECAFireplace": {
+        "isLit": "true",
+        "intensity": 20,
+        "smokeLevel": 33.3,
+        "price": 0.0
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {}
     },
     "BeerBarrel": {
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -2.04428864,
+          "x": 1.528018,
           "y": 1.068676,
-          "z": 1.2545352
+          "z": 0.651849747
         },
         "r": {
           "x": 0.0,
@@ -191,7 +188,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAInteraction": {},
       "ECAProp": {
@@ -225,50 +222,25 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECACandle": {
-        "isLit": "false",
+        "isLit": "true",
         "fuelLevel": 100.0,
         "price": 0.0
       }
     },
-    "ButtonLights": {
+    "Window": {
       "ECAObject": {
         "description": "",
         "p": {
-          "x": -6.30762863,
-          "y": 0.477512836,
-          "z": -5.52615
-        },
-        "r": {
-          "x": -2.504478E-06,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "s": {
-          "x": 0.31941,
-          "y": 0.687835157,
-          "z": 0.31941
-        },
-        "isVisible": "yes",
-        "isActive": "yes",
-        "isInsideCamera": "yes"
-      },
-      "ECABehaviour": {},
-      "ECAInteractable": {}
-    },
-    "Fireplace": {
-      "ECAObject": {
-        "description": "",
-        "p": {
-          "x": -4.698828,
-          "y": 1.1920929E-07,
-          "z": 1.593
+          "x": -7.421548,
+          "y": -1.1920929E-07,
+          "z": 1.7
         },
         "r": {
           "x": 0.0,
-          "y": 180.0,
+          "y": 0.0,
           "z": 0.0
         },
         "s": {
@@ -280,15 +252,43 @@
         "isActive": "yes",
         "isInsideCamera": "no"
       },
-      "ECAInteraction": {},
-      "ECAFireplace": {
-        "isLit": "off",
-        "intensity": 0,
-        "smokeLevel": 0.0,
+      "ECAProp": {
         "price": 0.0
       },
       "ECABehaviour": {},
-      "ECAInteractable": {}
+      "ECAInteractable": {},
+      "ECAWindow": {
+        "isOpen": "false"
+      }
+    },
+    "Chandelier": {
+      "ECAObject": {
+        "description": "",
+        "p": {
+          "x": -5.79662848,
+          "y": 3.06367588,
+          "z": -1.45915031
+        },
+        "r": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "s": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "isVisible": "yes",
+        "isActive": "yes",
+        "isInsideCamera": "no"
+      },
+      "ECABehaviour": {},
+      "ECAInteractable": {},
+      "ECAChandelier": {
+        "brightness": 100,
+        "price": 0.0
+      }
     }
   }
 }

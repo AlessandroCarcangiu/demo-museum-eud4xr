@@ -222,5 +222,21 @@
       "y": 0.01,
       "z": 0.01
     }
+  },
+  {
+    "name": "Candela",
+    "prefabName": "ECACandle",
+    "description": "Sono la candela della taverna",
+    "ID": 24,
+    "trans_offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.01
+    }
   }
 ]

@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Museum 2.0 Demo Test.unity
     guid: 6a001c2b0b15fc14ab3f7cc1348ce28d
+  - enabled: 1
+    path: Assets/Scenes/TavernaXR.unity
+    guid: 6e9ac55603373044091fa3ba807fca89
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 5dc1ae4fb7779464da0b9d07af38bc48, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 899b4c90a1bb00c4c82cadca42907ec5, type: 2}
