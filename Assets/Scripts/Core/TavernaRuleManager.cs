@@ -2,6 +2,7 @@
 using UnityEngine;
 using ECARules4All_DLL;
 using ECARules4All_DLL.Utils;
+using NUnit.Framework;
 using Action = ECARules4All_DLL.Action;
 
 
@@ -15,6 +16,7 @@ namespace Core
             InitializeStep2Rule();
             InitializeStep3Rule();
             InitializeStep4Rule();
+            InitializeStep5Rule();
         }
 
         private void InitializeStep1Rule()
@@ -242,6 +244,37 @@ namespace Core
             else
             {
                 Debug.LogError("Impossibile trovare gli oggetti per la regola 4 nella scena");
+            }
+        }
+
+        private void InitializeStep5Rule()
+        {
+            GameObject player = GameObject.Find("Player");
+            GameObject buttonPlay = GameObject.Find("ButtonPlay");
+            GameObject carillon = GameObject.Find("Gramophone");
+
+            if (player != null && carillon != null && buttonPlay != null)
+            {
+                Action playerTrigger = new Action(player, "pushes", buttonPlay);
+                Action playCarillon = new Action(carillon, "Play");
+                
+                List<Action> actions = new List<Action> { playCarillon };
+                
+                Rule ruleStep5 = Rule.TryCreateRule(playerTrigger, actions);
+
+                if (ruleStep5 != null)
+                {
+                    RuleEngine.GetInstance().Add(ruleStep5);
+                    Debug.Log("[Rule Engine] Regola Step 5 configurata");
+                }
+                else
+                {
+                    Debug.LogError("[Rule Engine] Errore configurata regola 5");
+                }
+            }
+            else
+            {
+                Debug.LogError("[Rule Engine] Impossibile trovare gli oggetti per la Rule 5");
             }
         }
     }
