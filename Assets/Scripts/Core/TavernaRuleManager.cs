@@ -250,17 +250,16 @@ namespace Core
         private void InitializeStep5Rule()
         {
             GameObject player = GameObject.Find("Player");
-            GameObject buttonPlay = GameObject.Find("ButtonPlay");
-            GameObject carillon = GameObject.Find("Gramophone");
+            GameObject carillon = GameObject.Find("Carillon");
 
-            if (player != null && carillon != null && buttonPlay != null)
+            if (carillon != null && player != null)
             {
-                Action playerTrigger = new Action(player, "pushes", buttonPlay);
-                Action playCarillon = new Action(carillon, "Play");
+                Action triggerPlayer = new Action(player, "interacts with", carillon);
+                Action play = new Action(carillon, "play");
                 
-                List<Action> actions = new List<Action> { playCarillon };
-                
-                Rule ruleStep5 = Rule.TryCreateRule(playerTrigger, actions);
+                List<Action> actions = new List<Action> { play };
+
+                Rule ruleStep5 = Rule.TryCreateRule(triggerPlayer, actions);
 
                 if (ruleStep5 != null)
                 {
@@ -269,12 +268,12 @@ namespace Core
                 }
                 else
                 {
-                    Debug.LogError("[Rule Engine] Errore configurata regola 5");
+                    Debug.LogError("[Rule Engine] Errore configurazione regola 5");
                 }
             }
             else
             {
-                Debug.LogError("[Rule Engine] Impossibile trovare gli oggetti per la Rule 5");
+                Debug.Log("[Rule Engine] impossibile trovare gli oggetti per la regola 5");
             }
         }
     }

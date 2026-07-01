@@ -4976,7 +4976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _price: 0
   _isLit:
-    choice: 2
+    choice: 5
   _fuelLevel: 100
   burnRate: 1
   fireParticle: {fileID: 6187158902960992874}

@@ -1,6 +1,6 @@
 {
-  "Timestamp": "2026-07-01T15:41:11.8281434+02:00",
-  "ActionString": "Carillon (UnityEngine.GameObject) play   ",
+  "Timestamp": "2026-07-01T15:41:35.6457126+02:00",
+  "ActionString": "Chandelier (UnityEngine.GameObject) invert state   ",
   "RulesString": [
     "when the fireplace Fireplace ignite \r\nthen the window Window opens ;\r\n\n",
     "when the fireplace Fireplace extinguish \r\nthen the window Window closes ;\r\n\n",
@@ -32,7 +32,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAProp": {
         "price": 0.0
@@ -74,7 +74,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
@@ -101,7 +101,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
@@ -163,12 +163,12 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
       "ECAChandelier": {
-        "brightness": 0,
+        "brightness": 100,
         "price": 0.0
       }
     },
@@ -221,7 +221,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAInteraction": {},
       "ECAFireplace": {
@@ -253,7 +253,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECACandle": {
         "isLit": "false",
@@ -281,7 +281,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAInteraction": {},
       "ECAProp": {
@@ -323,12 +323,12 @@
         "volume": 0.0,
         "maxVolume": 1.0,
         "currentTime": 0.0,
-        "playing": "no",
+        "playing": "yes",
         "paused": "no",
-        "stopped": "yes"
+        "stopped": "no"
       },
       "ECACarillon": {
-        "isPlaying": "false",
+        "isPlaying": "true",
         "price": 0.0
       },
       "ECAInteractable": {}
@@ -353,7 +353,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECAProp": {
         "price": 0.0
