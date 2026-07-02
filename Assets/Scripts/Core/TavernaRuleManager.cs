@@ -64,16 +64,18 @@ namespace Core
             }
             
             GameObject player = GameObject.Find("Player");
+            GameObject candle = GameObject.Find("Candle");
             
             if (fireplace != null && player != null)
             {
                 Action playerTrigger = new Action(player, "interacts with", fireplace);
                 Action ignite = new Action(fireplace, "ignite");
+                Action lightsUp = new Action(candle, "lights up");
                 
                 Action playerNotTrigger = new Action(player, "stops-interacting with", fireplace);
                 Action extinguish = new Action(fireplace, "extinguish");
                 
-                List<Action> actionsI = new List<Action> {ignite };
+                List<Action> actionsI = new List<Action> {ignite , lightsUp};
                 List<Action> actionsO = new List<Action> {extinguish };
                 
                 Rule ruleStep1_3 = Rule.TryCreateRule(playerTrigger, actionsI);
@@ -222,14 +224,16 @@ namespace Core
 
             if (player != null && door != null && key != null)
             {
-                Action playerTrigger = new Action(player, "interacts with", door);
+                Action playerTrigger = new Action(player, "interacts with", door); 
+                //Action keyTrigger = new Action(key, "interacts with", door);
                 Action openDoor = new Action(door, "opens");
 
-                SimpleCondition keyIsHeld = new SimpleCondition(key, "isPickedUp", "=", ECABoolean.TRUE);
+                //SimpleCondition keyIsHeld = new SimpleCondition(key, "isPickedUp", "=", ECABoolean.TRUE);
                 
                 List<Action> actions = new List<Action> { openDoor };
                 
-                Rule ruleStep4 = Rule.TryCreateRule(playerTrigger, keyIsHeld, actions);
+                Rule ruleStep4 = Rule.TryCreateRule(playerTrigger, actions);
+                //Rule ruleStep4 = Rule.TryCreateRule(keyTrigger, actions);
 
                 if (ruleStep4 != null)
                 {
