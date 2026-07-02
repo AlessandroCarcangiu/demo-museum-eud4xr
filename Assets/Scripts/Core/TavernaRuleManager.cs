@@ -228,7 +228,7 @@ namespace Core
                 //Action keyTrigger = new Action(key, "interacts with", door);
                 Action openDoor = new Action(door, "opens");
 
-                //SimpleCondition keyIsHeld = new SimpleCondition(key, "isPickedUp", "=", ECABoolean.TRUE);
+                SimpleCondition keyIsHeld = new SimpleCondition(key, "isPickedUp", "=", ECABoolean.TRUE);
                 
                 List<Action> actions = new List<Action> { openDoor };
                 

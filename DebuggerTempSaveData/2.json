@@ -1,6 +1,6 @@
 {
-  "Timestamp": "2026-07-02T15:45:40.2255943+02:00",
-  "ActionString": "Door (UnityEngine.GameObject) opens   ",
+  "Timestamp": "2026-07-02T15:50:34.5849187+02:00",
+  "ActionString": "Carillon (UnityEngine.GameObject) play   ",
   "RulesString": [
     "when the fireplace Fireplace ignite \r\nthen the window Window opens ;\r\n\n",
     "when the fireplace Fireplace extinguish \r\nthen the window Window closes ;\r\n\n",
@@ -32,7 +32,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
@@ -127,7 +127,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
@@ -156,7 +156,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECAProp": {
         "price": 0.0
@@ -198,7 +198,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECAProp": {
         "price": 0.0
@@ -287,7 +287,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "no"
+        "isInsideCamera": "yes"
       },
       "ECABehaviour": {},
       "ECAInteractable": {},
@@ -319,7 +319,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECACandle": {
         "isLit": "false",
@@ -352,7 +352,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECAInteraction": {},
       "ECAProp": {
@@ -386,7 +386,7 @@
         },
         "isVisible": "yes",
         "isActive": "yes",
-        "isInsideCamera": "yes"
+        "isInsideCamera": "no"
       },
       "ECAInteraction": {},
       "ECAFireplace": {
